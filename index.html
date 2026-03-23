@@ -315,23 +315,26 @@
   }
   .atraccion-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 1rem 1.2rem;
+    padding: 0.85rem 1.2rem;
     cursor: pointer;
+    gap: 0.5rem;
   }
   .atraccion-titulo {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.6rem;
     flex: 1;
+    min-width: 0;
   }
   .atraccion-titulo .nombre {
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    line-height: 1.3;
   }
-  .atraccion-titulo .emoji { font-size: 1.2rem; }
-  .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .atraccion-titulo .emoji { font-size: 1.1rem; flex-shrink: 0; }
+  .badges { display: flex; gap: 0.3rem; flex-wrap: wrap; justify-content: flex-end; max-width: 130px; }
   .badge {
     font-size: 0.7rem;
     padding: 0.2rem 0.6rem;
@@ -740,6 +743,7 @@
         <button class="tab activo" onclick="cambiarTab(this,'dlp-atracciones')">🎢 Atracciones</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-shows')">🎭 Shows</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-estrategia')">💡 Estrategia</button>
+        <button class="tab" onclick="cambiarTab(this,'dlp-comer')">🍽️ Comer</button>
       </div>
 
       <!-- Atracciones DLP -->
@@ -752,9 +756,12 @@
             </div>
             <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
-              <span class="badge badge-altura">📏 1,02m</span>
               <span class="badge badge-pa">Premier Access</span>
-            </div> a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
             <div class="tip">💡 <strong>Tip:</strong> Ir apenas abre el parque o conseguir Premier Access. Fila corta al final del día.</div>
           </div>
         </div>
@@ -877,60 +884,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Juego interactivo en el que disparás con un láser a blancos para ganar puntos. Divertido para todas las edades — hay cierta competencia entre los que van juntos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para el mediodía. Apuntá a los blancos con estrella para más puntos.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚀</span>
-              <span class="nombre">Star Tours: The Adventures Continue</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-altura">📏 1,02m</span>
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Simulador de vuelo 3D en el universo Star Wars. Más de 80 combinaciones posibles de destinos — cada viaje es diferente. Más suave que Hyperspace Mountain, buena para quienes no quieren montañas rusas.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada la mayoría del día. Sentarse en el centro para la mejor experiencia 3D.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌊</span>
-              <span class="nombre">Le Pays des Contes de Fées</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Paseo en bote por escenas en miniatura de cuentos de hadas clásicos de Disney: Cenicienta, Blancanieves, Pinocho y más. Sin altura mínima, perfecto para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila muy corta casi siempre. Muy relajante — ideal para el mediodía o cuando los chicos están cansados.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🔱</span>
-              <span class="nombre">Les Mystères du Nautilus</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Paseo a pie gratuito por el interior del submarino Nautilus de Jules Verne. Ambientación increíble con sonidos, luces y escenas del fondo del mar. Una joya escondida de Discoveryland que muy poca gente hace.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin costo extra, casi sin fila y muy pocos lo conocen. Unos 10 minutos muy bien aprovechados.</div>
+            <p>Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para las horas del mediodía.</div>
           </div>
         </div>
 
@@ -938,17 +893,16 @@
           <div class="atraccion-header">
             <div class="atraccion-titulo">
               <span class="emoji">🏰</span>
-              <span class="nombre">El Castillo y la Dragona</span>
+              <span class="nombre">Le Château de la Belle au Bois Dormant</span>
             </div>
             <div class="badges">
-              <span class="badge badge-top">⭐ ÚNICO</span>
               <span class="badge badge-familia">Familia</span>
             </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El castillo de La Bella Durmiente se puede recorrer por dentro: tapices y vitrales que narran el cuento. Lo imperdible está en el <strong>sótano</strong>: una dragona animatrónica dormida bajo el castillo, única en todos los Disney del mundo.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Gratis, sin fila y casi nadie lo sabe. No salir del castillo sin bajar al sótano.</div>
+            <p>El castillo icónico de Disneyland París. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
           </div>
         </div>
       </div>
@@ -959,28 +913,28 @@
           <span class="emoji">✨</span>
           <div>
             <h4>Disney Illuminations</h4>
-            <p>Espectáculo nocturno de proyecciones, fuegos artificiales y láser sobre el Castillo. El gran cierre del día. Ver desde Main Street para la mejor vista. Dura unos 20 minutos.</p>
+            <p>Espectáculo nocturno de proyecciones, fuegos artificiales y láser sobre el Castillo. El gran cierre del día. Imperdible.</p>
           </div>
         </div>
         <div class="show-card">
           <span class="emoji">🎭</span>
           <div>
             <h4>Dream... and Shine Brighter!</h4>
-            <p>Desfile diurno con todos los personajes principales en carrozas temáticas por Main Street U.S.A. Consultar horarios en la app — suele salir 2 veces por día en temporada alta.</p>
+            <p>Desfile diurno con todos los personajes principales de Disney. Carrozas temáticas por Main Street U.S.A.</p>
           </div>
         </div>
         <div class="show-card">
           <span class="emoji">🎵</span>
           <div>
             <h4>Mickey and the Magician</h4>
-            <p>Show en teatro con Mickey como mago invocando personajes de Disney. ~45 minutos con música en vivo, efectos especiales y bailarines. Hay que reservar asiento desde la app. También tiene aire acondicionado — buena pausa en días calurosos.</p>
+            <p>Show en teatro con Mickey como mago invocando a los personajes de Disney. Música en vivo, efectos especiales y bailarines.</p>
           </div>
         </div>
         <div class="show-card">
-          <span class="emoji">🦁</span>
+          <span class="emoji">🌅</span>
           <div>
             <h4>The Lion King: Rhythms of the Pride Lands</h4>
-            <p>Show permanente en el teatro más grande del parque (~30 min). Acrobacias, fuego, música africana en vivo y bailarines. Reservar asiento desde la app — el teatro se llena rápido.</p>
+            <p>Show permanente en el teatro más grande de Disneyland París (~30 min). Acrobacias, fuego, música africana en vivo y bailarines. Se puede reservar asiento desde la app oficial — muy recomendado porque el teatro se llena rápido.</p>
           </div>
         </div>
       </div>
@@ -989,52 +943,77 @@
       <div class="tab-content" id="dlp-estrategia">
         <div class="estrategia-card">
           <h4>🌅 Apertura del parque</h4>
-          <p>Llegar 30 minutos antes de la apertura. Los primeros 30-40 minutos son oro: las filas de Peter Pan, Big Thunder Mountain y Phantom Manor son mínimas. Los huéspedes de hoteles Disney tienen acceso anticipado (Extra Magic Time).</p>
+          <p>Llegar 30 minutos antes de la apertura oficial. Los primeros 30-40 minutos son oro puro: las filas de las atracciones más populares son mínimas.</p>
         </div>
         <div class="estrategia-card">
-          <h4>⚡ Premier Access — qué es y cómo funciona</h4>
-          <p>Sistema de filas pagas disponible en la app oficial. Se compra por atracción individual o como paquete "Ultimate" para todo el día. Se puede comprar desde la app antes de entrar al parque. Muy recomendado para:</p>
+          <h4>⚡ Premier Access</h4>
+          <p>Sistema de filas pagas disponible desde la app Disneyland Paris. Se compra por atracción. Recomendado para:</p>
           <ul>
-            <li>Peter Pan's Flight (siempre larguísima)</li>
-            <li>Star Wars Hyperspace Mountain</li>
+            <li>Peter Pan's Flight</li>
             <li>Big Thunder Mountain</li>
+            <li>Star Wars Hyperspace Mountain</li>
             <li>Indiana Jones (si se quiere hacer)</li>
           </ul>
         </div>
         <div class="estrategia-card">
           <h4>🎯 Orden sugerido de mañana</h4>
           <ul>
-            <li>Peter Pan's Flight (apertura — primeros 10 min)</li>
+            <li>Peter Pan's Flight (apertura)</li>
             <li>Phantom Manor</li>
             <li>Big Thunder Mountain</li>
             <li>Pirates of the Caribbean</li>
-            <li>It's a Small World o Pays des Contes (descanso)</li>
-            <li>Tarde: Hyperspace Mountain + Indiana Jones</li>
+            <li>It's a Small World (descanso)</li>
           </ul>
-        </div>
-        <div class="estrategia-card">
-          <h4>🍽️ Dónde comer — Disneyland Park</h4>
-          <ul>
-            <li><strong>Captain Jack's Restaurant des Pirates</strong> (€€€): El más especial — mesas dentro de la atracción Pirates of the Caribbean con las barcazas pasando. Reservar con meses de anticipación desde la app.</li>
-            <li><strong>Auberge de Cendrillon</strong> (€€€): Restaurante de princesas con encuentro incluido. Para las nenas. Reserva obligatoria.</li>
-            <li><strong>Plaza Gardens Restaurant</strong> (€€): Buffet internacional en Main Street. Ambiente victoriano. Opción con personajes Disney al desayuno y cena.</li>
-            <li><strong>Hakuna Matata</strong> (€): Comida rápida africana en Adventureland. Económica y variada.</li>
-            <li><strong>Lucky Nugget Saloon</strong> (€): Tex-Mex y BBQ en Frontierland. Sin reserva, precio razonable.</li>
-          </ul>
-          <div class="tip">💡 <strong>Tip:</strong> Se puede traer comida propia al parque — bocadillos y snacks son permitidos en los controles de seguridad. Hay zona de picnic entre el estacionamiento y la entrada.</div>
         </div>
         <div class="estrategia-card">
           <h4>📱 App Disneyland Paris — imprescindible</h4>
-          <p>Descargar antes del viaje. Desde la app: tiempos de espera en tiempo real, compra de Premier Access, reservas de restaurantes, mapa interactivo y horarios de shows. También se puede comprar el Premier Access Ultimate (acceso ilimitado a todas las atracciones).</p>
+          <p>Descargar antes del viaje. Desde la app: tiempos de espera en tiempo real, compra de Premier Access, reservas de restaurantes, mapa interactivo y horarios de shows.</p>
         </div>
         <div class="estrategia-card">
           <h4>💡 Consejos generales</h4>
           <ul>
-            <li>Las filas más cortas son a la apertura, durante los desfiles y los últimos 30 minutos antes del cierre.</li>
-            <li>Muchas atracciones tienen <strong>Single Rider</strong> (fila para personas solas) — puede reducir hasta un 70% el tiempo de espera.</li>
-            <li>Llegar un día antes al hotel Disney da acceso al Extra Magic Time (30-60 min antes de apertura).</li>
-            <li>Los precios de comida rápida rondan €15-20 por adulto. Buffet €40-45. Mesa de servicio €45-55.</li>
-            <li>Reservar restaurantes de mesa con al menos 2 meses de anticipación (o antes si es con personajes).</li>
+            <li>Las filas más cortas son a la apertura, durante los desfiles y los últimos 30 min antes del cierre.</li>
+            <li>Muchas atracciones tienen <strong>Single Rider</strong> (fila para personas solas) — puede reducir hasta un 70% la espera.</li>
+            <li>Los huéspedes de hoteles Disney tienen acceso al <strong>Extra Magic Time</strong>: pueden entrar al parque 30-60 minutos antes del horario de apertura oficial al público general.</li>
+            <li>Reservar restaurantes de mesa con al menos 2 meses de anticipación desde la app.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Comer DLP -->
+      <div class="tab-content" id="dlp-comer">
+        <div class="estrategia-card">
+          <h4>⭐ Captain Jack's Restaurant des Pirates</h4>
+          <p>El más especial del parque. Las mesas están dentro de la atracción Pirates of the Caribbean — las barcazas pasan a metros mientras comés. Comida caribeña. Reservar con meses de anticipación desde la app.</p>
+          <div class="tip">💡 €€€ · Reserva obligatoria · Adventureland</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🏰 Auberge de Cendrillon</h4>
+          <p>Restaurante temático de cuento dentro del castillo de Cenicienta. Encuentro con princesas Disney incluido — perfecto para los más chicos. Cocina francesa elaborada. Reserva obligatoria con mucha anticipación.</p>
+          <div class="tip">💡 €€€ · Reserva obligatoria · Fantasyland</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🍽️ Plaza Gardens Restaurant</h4>
+          <p>Buffet internacional en Main Street. Ambiente victoriano elegante. Opción de desayuno o cena con personajes Disney (Mickey, Minnie y amigos pasan por las mesas). Sin personajes al mediodía y más barato.</p>
+          <div class="tip">💡 €€ · Buffet · Reserva recomendada · Main Street U.S.A.</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🌍 Hakuna Matata</h4>
+          <p>Comida rápida africana con opciones variadas y vegetarianas. Económica y con buen ambiente temático en Adventureland.</p>
+          <div class="tip">💡 € · Sin reserva · Adventureland</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🤠 The Lucky Nugget Saloon</h4>
+          <p>Tex-Mex y costillas BBQ en pleno Frontierland. Buen precio, buena porción. Sin reserva.</p>
+          <div class="tip">💡 € · Sin reserva · Frontierland</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>💡 Tips de comida</h4>
+          <ul>
+            <li>Se puede traer comida propia — bocadillos y snacks son permitidos en los controles de seguridad.</li>
+            <li>Hay una zona de picnic entre el estacionamiento y la entrada al parque.</li>
+            <li>Comida rápida: €15-20 por adulto. Buffet: €40-45. Servicio de mesa: €45-55.</li>
+            <li>Menús infantiles desde €9-12 en todos los restaurantes.</li>
           </ul>
         </div>
       </div>
@@ -1052,6 +1031,7 @@
         <button class="tab activo" onclick="cambiarTab(this,'wds-atracciones')">🎢 Atracciones</button>
         <button class="tab" onclick="cambiarTab(this,'wds-shows')">🎭 Shows</button>
         <button class="tab" onclick="cambiarTab(this,'wds-estrategia')">💡 Estrategia</button>
+        <button class="tab" onclick="cambiarTab(this,'wds-comer')">🍽️ Comer</button>
       </div>
 
       <!-- Atracciones WDS -->
@@ -1143,145 +1123,67 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo tranquilo por la Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos más pequeños.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo o en la última hora del día.</div>
+            <p>Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo.</div>
           </div>
         </div>
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
             <div class="atraccion-titulo">
-              <span class="emoji">🪂</span>
-              <span class="nombre">Toy Soldiers Parachute Drop</span>
+              <span class="emoji">🌊</span>
+              <span class="nombre">Crush's Coaster</span>
             </div>
             <div class="badges">
-              <span class="badge badge-altura">📏 1,02m</span>
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Torre de caída libre temática de Toy Story — subís y bajás suavemente como un soldadito en paracaídas. Mucho menos intensa que Tower of Terror. Buena para chicos que quieren probar las caídas.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila generalmente corta. Buena opción familiar en Worlds of Pixar.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐕</span>
-              <span class="nombre">Slinky Dog ZigZag Spin</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Atracción giratoria familiar con el perro Slinky de Toy Story. Suave, colorida y muy disfrutable para los más chicos. Sin altura mínima.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Perfecta para chicos pequeños en Worlds of Pixar.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🪄</span>
-              <span class="nombre">Les Tapis Volants — Flying Carpets over Agrabah</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Clásica atracción de alfombras voladoras de Aladdin. Subís y bajás controlando vos mismo la alfombra. Sin altura mínima — apta para toda la familia.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta. Buena pausa entre atracciones más intensas.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">❄️</span>
-              <span class="nombre">Frozen Ever After</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-top">⭐ NUEVO</span>
-              <span class="badge badge-familia">Familia</span>
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-altura">📏 1,07m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa, Olaf y Kristoff. Ambientación espectacular con audio-animatronics y efectos de hielo y nieve. Inspirada en la versión de EPCOT pero exclusiva para París.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Al ser nueva tiene filas largas. Ir de primera o conseguir Premier Access. También tiene Single Rider disponible.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌸</span>
-              <span class="nombre">Raiponce Tangled Spin</span>
-            </div>
-            <div class="badges">
-              <span class="badge badge-top">⭐ NUEVO</span>
-              <span class="badge badge-familia">Familia</span>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en Adventure Way. Carrusel aéreo inspirado en Rapunzel — girás en góndola bajo un cielo de linternas flotantes con la canción "I See the Light". La voz original de Rapunzel (Mandy Moore) grabó los anuncios exclusivamente para esta atracción.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima, perfecta para todas las edades. Al ser nueva habrá fila — ir temprano o al final del día.</div>
+            <p>Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
           </div>
         </div>
       </div>
 
-      <!-- Shows DAW -->
+      <!-- Shows WDS -->
       <div class="tab-content" id="wds-shows">
-        <div class="show-card">
-          <span class="emoji">❄️</span>
-          <div>
-            <h4>Celebration in Arendelle</h4>
-            <p>Show diurno en los barcos vikingos de Adventure Bay con Anna, Elsa, Kristoff y el nuevo Olaf robótico (primero en su tipo en el mundo). Espectáculo sobre el lago con música de Frozen en vivo. Imperdible para los fanáticos de Frozen.</p>
-          </div>
-        </div>
-        <div class="show-card">
-          <span class="emoji">💧</span>
-          <div>
-            <h4>Disney Cascade of Lights</h4>
-            <p>Nuevo espectáculo nocturno inaugural del 29 de marzo 2026 sobre Adventure Bay. Combina fuegos artificiales, pantallas de agua, proyecciones y el primer sistema de drones acuáticos integrado con drones aéreos del mundo. El gran cierre del día en Disney Adventure World.</p>
-          </div>
-        </div>
         <div class="show-card">
           <span class="emoji">🦸</span>
           <div>
             <h4>Avengers: Power the Night</h4>
-            <p>Espectáculo nocturno en el Avengers Campus con proyecciones, drones y efectos especiales. Consultar disponibilidad en la app.</p>
+            <p>Espectáculo nocturno en el Avengers Campus con proyecciones, drones y efectos especiales. Gran cierre del día en Studios.</p>
           </div>
         </div>
         <div class="show-card">
           <span class="emoji">🎬</span>
           <div>
             <h4>Disney Junior Dream Factory</h4>
-            <p>Show musical para los más chicos con personajes de Disney Junior. Ideal para familias con niños pequeños. En teatro con butacas.</p>
+            <p>Show musical para los más chicos con personajes de Disney Junior. Ideal para familias con niños pequeños.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">❄️</span>
+          <div>
+            <h4>Frozen Ever After</h4>
+            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa y los personajes de Frozen. Muy popular — Premier Access recomendado o ir temprano.</p>
           </div>
         </div>
       </div>
 
-      <!-- Estrategia DAW -->
+      <!-- Estrategia WDS -->
       <div class="tab-content" id="wds-estrategia">
         <div class="estrategia-card">
           <h4>🎯 Orden sugerido de mañana</h4>
           <ul>
-            <li>Tower of Terror (apertura — sin fila)</li>
+            <li>Tower of Terror (apertura, sin fila)</li>
             <li>Avengers Assemble: Flight Force</li>
             <li>Crush's Coaster</li>
+            <li>Ratatouille (imperdible)</li>
             <li>Frozen Ever After (World of Frozen)</li>
-            <li>Ratatouille: The Adventure</li>
             <li>Spider-Man W.E.B. Adventure</li>
-            <li>Tarde: Raiponce Tangled Spin + Toy Soldiers</li>
           </ul>
         </div>
         <div class="estrategia-card">
@@ -1289,33 +1191,47 @@
           <ul>
             <li>Tower of Terror</li>
             <li>Crush's Coaster</li>
-            <li>Frozen Ever After (al ser nueva, filas muy largas)</li>
-            <li>Ratatouille: The Adventure</li>
+            <li>Ratatouille (especialmente con chicos)</li>
             <li>Avengers Assemble: Flight Force</li>
+            <li>Frozen Ever After (nueva, filas largas)</li>
           </ul>
         </div>
         <div class="estrategia-card">
-          <h4>⚠️ Ratatouille — importante</h4>
-          <p>La atracción estuvo cerrada para refurbishment hasta primavera de 2026 y reabrió con mejoras técnicas y escénicas. Puede tener filas extra largas por la reapertura reciente. Premier Access muy recomendado.</p>
-        </div>
-        <div class="estrategia-card">
-          <h4>🍽️ Dónde comer — Disney Adventure World</h4>
-          <ul>
-            <li><strong>Bistrot Chez Rémy</strong> (€€€): El más especial — todo está a escala de ratón. Reservar con meses de anticipación desde la app.</li>
-            <li><strong>The Regal View Restaurant &amp; Lounge</strong> (€€€): Nuevo en 2026. Vistas al lago Adventure Bay y al World of Frozen. Desayuno con princesas Disney. El primer bar dentro de los parques de Disneyland París.</li>
-            <li><strong>PYM Kitchen</strong> (€€): Buffet en el Avengers Campus con comida americana y opciones vegetarianas/veganas. Ambiente Marvel muy bien logrado.</li>
-            <li><strong>Stark Factory</strong> (€): Comida rápida en Avengers Campus. Pizza, pasta y opciones rápidas.</li>
-          </ul>
-          <div class="tip">💡 <strong>Tip:</strong> Reservar Bistrot Chez Rémy y The Regal View con al menos 2 meses de anticipación desde la app oficial. Son los más demandados del parque.</div>
+          <h4>⚠️ Ratatouille — reabierta en 2026</h4>
+          <p>Estuvo cerrada para refurbishment y reabrió en primavera 2026 con mejoras técnicas y escénicas. Puede tener filas extra largas por la reapertura reciente. Premier Access muy recomendado.</p>
         </div>
         <div class="estrategia-card">
           <h4>💡 Aclaraciones importantes</h4>
           <ul>
-            <li>El parque se llama <strong>Disney Adventure World</strong> desde el 29 de marzo de 2026 (antes Walt Disney Studios).</li>
-            <li>El <strong>World of Frozen</strong> abrió el 29 de marzo de 2026 — nuevo e inmersivo, casi duplica el tamaño del parque.</li>
-            <li>El acceso al World of Frozen está incluido con la entrada normal al parque.</li>
-            <li>En el World of Frozen hay encuentro con Anna y Elsa dentro del castillo de Arendelle (reservar desde la app).</li>
+            <li>El parque se llama <strong>Disney Adventure World</strong> desde el 29/3/2026 (antes Walt Disney Studios).</li>
+            <li>El <strong>World of Frozen</strong> abrió el 29/3/2026 — nuevo e inmersivo, casi duplica el tamaño del parque.</li>
+            <li>Entrada al World of Frozen incluida con el ticket normal del parque.</li>
+            <li>Encuentro con Anna y Elsa en el castillo de Arendelle — reservar desde la app con anticipación.</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Comer DAW -->
+      <div class="tab-content" id="wds-comer">
+        <div class="estrategia-card">
+          <h4>⭐ Bistrot Chez Rémy</h4>
+          <p>El más especial del parque. Todo está decorado a escala de ratón — te sentís dentro de la película. Cocina francesa de calidad. El restaurante más demandado de Disney Adventure World.</p>
+          <div class="tip">💡 €€€ · Reserva obligatoria con meses de anticipación · Worlds of Pixar</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🏔️ The Regal View Restaurant &amp; Lounge</h4>
+          <p>Nuevo en 2026. Vistas al lago Adventure Bay y al World of Frozen. Desayuno con princesas Disney disponible. Tiene el primer bar dentro de los parques de Disneyland París con cócteles temáticos.</p>
+          <div class="tip">💡 €€€ · Reserva recomendada · Adventure Way</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🦸 Restaurantes del Avengers Campus</h4>
+          <p><strong>PYM Kitchen</strong> — buffet con comida americana y opciones veganas/vegetarianas. Ambiente Marvel muy logrado. <strong>Stark Factory</strong> — comida rápida con pizza, pasta y opciones simples.</p>
+          <div class="tip">💡 PYM Kitchen €€ · Stark Factory € · Avengers Campus</div>
+        </div>
+        <div class="estrategia-card">
+          <h4>❄️ Opciones en World of Frozen</h4>
+          <p>El World of Frozen tiene nuevas opciones gastronómicas temáticas inauguradas en 2026. Ambiente nórdico inmersivo. Ideal para comer en el medio de la visita al área de Frozen.</p>
+          <div class="tip">💡 € a €€ · Consultá opciones en la app · World of Frozen</div>
         </div>
       </div>
     </div>
