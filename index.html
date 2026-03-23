@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disnerd París</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --celeste: #b8d8e8;
+    --celeste-light: #daeef7;
+    --lavanda: #c9c3e8;
+    --lavanda-light: #e8e5f5;
+    --rosa: #f0c8d0;
+    --rosa-light: #fae8eb;
+    --crema: #fdf8f2;
+    --marfil: #f9f4ee;
+    --dorado: #c9a96e;
+    --dorado-light: #e8d5b0;
+    --texto: #3a3240;
+    --texto-suave: #7a6e84;
+    --blanco: #ffffff;
+    --sombra: rgba(100,80,120,0.10);
+    --sombra-hover: rgba(100,80,120,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* ─── PANTALLA LOGIN ─── */
+  #login-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #daeef7 0%, #e8e5f5 40%, #fae8eb 100%);
+    padding: 2rem;
+  }
+  .login-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 3rem 2.5rem 2.5rem;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 40px var(--sombra);
+    text-align: center;
+  }
+  .login-estrella {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: var(--dorado);
+    margin-bottom: 0.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+  }
+  .login-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--texto);
+    margin-bottom: 0.3rem;
+  }
+  .login-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--texto-suave);
+    margin-bottom: 2rem;
+  }
+  .login-emoji {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .login-input {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    border: 1.5px solid var(--lavanda);
+    border-radius: 1rem;
+    background: var(--blanco);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: var(--texto);
+    margin-bottom: 0.9rem;
+    outline: none;
+    transition: border 0.2s;
+  }
+  .login-input:focus { border-color: var(--celeste); }
+  .login-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--celeste) 0%, var(--lavanda) 100%);
+    border: none;
+    border-radius: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.3rem;
+  }
+  .login-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--sombra-hover); }
+  .login-error {
+    color: #c0657a;
+    font-size: 0.88rem;
+    margin-top: 0.8rem;
+    min-height: 1.2em;
+  }
+
+  /* ─── APP PRINCIPAL ─── */
+  #app { display: none; }
+
+  /* Header */
+  .header {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(180,160,200,0.18);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--texto);
+    letter-spacing: 0.02em;
+  }
+  .header-logo span { color: var(--dorado); }
+  .header-usuario {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .btn-salir {
+    background: none;
+    border: 1.5px solid var(--lavanda);
+    border-radius: 0.6rem;
+    padding: 0.3rem 0.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    color: var(--texto-suave);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-salir:hover { background: var(--lavanda-light); }
+
+  /* ─── PANTALLA INICIO ─── */
+  .pantalla { display: none; padding: 1.5rem; max-width: 700px; margin: 0 auto; }
+  .pantalla.activa { display: block; }
+
+  .bienvenida-header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+  }
+  .bienvenida-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--texto);
+    margin-bottom: 0.4rem;
+  }
+  .bienvenida-header p {
+    font-size: 1rem;
+    color: var(--texto-suave);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+  }
+
+  .destinos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .destino-card {
+    background: var(--blanco);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--sombra);
+    transition: all 0.2s;
+    border: 2px solid transparent;
+  }
+  .destino-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
+  .destino-card.disney { border-color: var(--celeste); }
+  .destino-card.francia { border-color: var(--rosa); }
+  .destino-card .emoji { font-size: 2.8rem; display: block; margin-bottom: 0.8rem; }
+  .destino-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .destino-card p { font-size: 0.82rem; color: var(--texto-suave); }
+  .destino-card .arrow { font-size: 1.2rem; color: var(--dorado); margin-top: 0.8rem; display: block; }
+
+  /* Sección info */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  .info-card {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 12px var(--sombra);
+  }
+  .info-card .ico { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+  .info-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .info-card p { font-size: 0.8rem; color: var(--texto-suave); line-height: 1.5; }
+
+  /* ─── PANTALLA DISNEY ─── */
+  .parques-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .parque-card {
+    background: var(--blanco);
+    border-radius: 1.5rem;
+    padding: 2rem 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--sombra);
+    transition: all 0.2s;
+  }
+  .parque-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
+  .parque-card .emoji { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+  .parque-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .parque-card p { font-size: 0.8rem; color: var(--texto-suave); }
+
+  /* ─── SECCIÓN GENERAL ─── */
+  .seccion-header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+  }
+  .seccion-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+  }
+  .seccion-header p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 0.5rem 1.1rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--lavanda);
+    background: var(--blanco);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--texto-suave);
+    transition: all 0.2s;
+  }
+  .tab.activo {
+    background: linear-gradient(135deg, var(--celeste), var(--lavanda));
+    border-color: transparent;
+    color: var(--texto);
+  }
+  .tab-content { display: none; }
+  .tab-content.activo { display: block; }
+
+  /* Atracciones */
+  .atraccion {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 12px var(--sombra);
+    overflow: hidden;
+  }
+  .atraccion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+  }
+  .atraccion-titulo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex: 1;
+  }
+  .atraccion-titulo .nombre {
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .atraccion-titulo .emoji { font-size: 1.2rem; }
+  .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-weight: 600;
+  }
+  .badge-altura { background: var(--rosa-light); color: #c06080; }
+  .badge-pa { background: var(--lavanda-light); color: #7060c0; }
+  .badge-sr { background: var(--celeste-light); color: #4080a0; }
+  .badge-top { background: #fff3cd; color: #a07000; }
+  .badge-familia { background: #d4edda; color: #2d6a4f; }
+  .chevron { font-size: 0.9rem; color: var(--texto-suave); transition: transform 0.2s; }
+  .atraccion.abierta .chevron { transform: rotate(180deg); }
+  .atraccion-body {
+    display: none;
+    padding: 0 1.2rem 1rem;
+    border-top: 1px solid var(--lavanda-light);
+  }
+  .atraccion.abierta .atraccion-body { display: block; }
+  .atraccion-body p { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.6; margin-top: 0.7rem; }
+  .atraccion-body .tip {
+    background: var(--crema);
+    border-left: 3px solid var(--dorado);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--texto);
+  }
+
+  /* Shows */
+  .show-card {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 12px var(--sombra);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .show-card .emoji { font-size: 1.8rem; flex-shrink: 0; }
+  .show-card h4 { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.2rem; }
+  .show-card p { font-size: 0.85rem; color: var(--texto-suave); line-height: 1.5; }
+
+  /* Estrategia */
+  .estrategia-card {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 12px var(--sombra);
+  }
+  .estrategia-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--texto);
+  }
+  .estrategia-card p, .estrategia-card li {
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+  }
+  .estrategia-card ul { padding-left: 1.2rem; }
+
+  /* ─── GUÍA FRANCIA ─── */
+  .dias-nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin: 1rem 0;
+    scrollbar-width: none;
+  }
+  .dias-nav::-webkit-scrollbar { display: none; }
+  .dia-btn {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--rosa);
+    background: var(--blanco);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--texto-suave);
+    transition: all 0.2s;
+  }
+  .dia-btn.activo {
+    background: linear-gradient(135deg, var(--rosa), var(--lavanda));
+    border-color: transparent;
+    color: var(--texto);
+  }
+  .dia-content { display: none; }
+  .dia-content.activo { display: block; }
+
+  .lugar-card {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 12px var(--sombra);
+    cursor: pointer;
+  }
+  .lugar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: space-between;
+  }
+  .lugar-header-left { display: flex; align-items: center; gap: 0.8rem; }
+  .lugar-header .emoji { font-size: 1.6rem; }
+  .lugar-header h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .lugar-header .horario {
+    font-size: 0.78rem;
+    color: var(--dorado);
+    font-weight: 600;
+  }
+  .lugar-body {
+    display: none;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--lavanda-light);
+  }
+  .lugar-card.abierto .lugar-body { display: block; }
+  .lugar-body p { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.6; margin-bottom: 0.5rem; }
+  .lugar-body .tip {
+    background: var(--rosa-light);
+    border-left: 3px solid var(--rosa);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Transporte */
+  .transporte-card {
+    background: var(--blanco);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 12px var(--sombra);
+  }
+  .transporte-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .transporte-card p, .transporte-card li {
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+  }
+  .transporte-card ul { padding-left: 1.2rem; }
+
+  /* ─── BOTÓN VOLVER ─── */
+  .btn-volver {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    cursor: pointer;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+  .btn-volver:hover { color: var(--texto); }
+
+  /* ─── NAV BOTTOM ─── */
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(180,160,200,0.2);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.6rem 0 calc(0.6rem + env(safe-area-inset-bottom));
+    z-index: 100;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+    border-radius: 0.8rem;
+    transition: all 0.2s;
+    background: none;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    color: var(--texto-suave);
+  }
+  .nav-item.activo { color: var(--texto); }
+  .nav-item .nav-ico { font-size: 1.4rem; }
+  .nav-item .nav-label { font-size: 0.68rem; font-weight: 600; }
+  .nav-item.activo .nav-ico-bg {
+    background: linear-gradient(135deg, var(--celeste-light), var(--lavanda-light));
+    border-radius: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  /* contenedor con padding bottom para nav */
+  .app-content { padding-bottom: 5rem; }
+
+  /* ─── PANEL SOFI ─── */
+  .panel-sofi {
+    background: var(--blanco);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 20px var(--sombra);
+  }
+  .panel-sofi h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .cliente-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--lavanda-light);
+  }
+  .cliente-row:last-child { border-bottom: none; }
+  .cliente-info .nombre { font-weight: 700; font-size: 0.9rem; }
+  .cliente-info .usuario { font-size: 0.8rem; color: var(--texto-suave); }
+  .btn-eliminar {
+    background: var(--rosa-light);
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+    color: #c0657a;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+  }
+  .btn-eliminar:hover { background: #fcd0d8; }
+  .form-agregar { margin-top: 1.2rem; }
+  .form-agregar h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .form-agregar input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--lavanda);
+    border-radius: 0.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    margin-bottom: 0.6rem;
+    outline: none;
+    background: var(--crema);
+  }
+  .form-agregar input:focus { border-color: var(--celeste); }
+  .btn-agregar {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--celeste), var(--lavanda));
+    border: none;
+    border-radius: 0.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--texto);
+    margin-top: 0.3rem;
+  }
+  .msg-ok { color: #2d6a4f; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; }
+  .msg-err { color: #c0657a; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; }
+
+  /* Responsive */
+  @media (max-width: 400px) {
+    .destinos-grid, .parques-grid, .info-grid { grid-template-columns: 1fr; }
+    .login-titulo { font-size: 2.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     LOGIN
+══════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-estrella">✦ Disnerd Sofi ✦</div>
+    <span class="login-emoji">🗼</span>
+    <div class="login-titulo">Guía<br>París</div>
+    <div class="login-subtitulo">tu guía mágica de viaje</div>
+    <input class="login-input" type="text" id="login-usuario" placeholder="Usuario" autocomplete="username">
+    <input class="login-input" type="password" id="login-clave" placeholder="Contraseña" autocomplete="current-password">
+    <button class="login-btn" onclick="doLogin()">✨ Ingresar</button>
+    <div class="login-error" id="login-error"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     APP
+══════════════════════════════════════ -->
+<div id="app">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">Disnerd <span>París</span></div>
+    <div class="header-usuario">
+      <span id="header-nombre">Hola!</span>
+      <button class="btn-salir" onclick="salir()">Salir</button>
+    </div>
+  </div>
+
+  <div class="app-content">
+
+    <!-- ── INICIO ── -->
+    <div class="pantalla activa" id="pantalla-inicio">
+      <div class="bienvenida-header">
+        <h1>París 2026 ✨</h1>
+        <p>¡Que empiece la magia!</p>
+      </div>
+      <div class="destinos-grid">
+        <div class="destino-card disney" onclick="irA('pantalla-disney')">
+          <span class="emoji">🏰</span>
+          <h3>Disneyland París</h3>
+          <p>2 parques · Magic & Studios</p>
+          <span class="arrow">→</span>
+        </div>
+        <div class="destino-card francia" onclick="irA('pantalla-francia')">
+          <span class="emoji">🇫🇷</span>
+          <h3>Guía Francia</h3>
+          <p>6 días · París & Versalles</p>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="ico">🎢</span>
+          <h4>Atracciones</h4>
+          <p>Todas con descripción, alturas y Premier Access</p>
+        </div>
+        <div class="info-card">
+          <span class="ico">💡</span>
+          <h4>Tips & estrategia</h4>
+          <p>Cómo aprovechar al máximo cada parque</p>
+        </div>
+        <div class="info-card">
+          <span class="ico">🗺️</span>
+          <h4>Itinerarios</h4>
+          <p>Día a día por París y alrededores</p>
+        </div>
+        <div class="info-card">
+          <span class="ico">🚇</span>
+          <h4>Transporte</h4>
+          <p>Metro, RER y tipos de tickets</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem; padding-bottom:1rem;">
+        <a href="https://wa.me/541132924274" style="color:var(--dorado); font-size:0.88rem; text-decoration:none;">📱 Escribime por WhatsApp</a>
+        &nbsp;·&nbsp;
+        <a href="https://instagram.com/disnerd.sofi" style="color:var(--dorado); font-size:0.88rem; text-decoration:none;">📸 @disnerd.sofi</a>
+      </div>
+    </div>
+
+    <!-- ── DISNEY ── -->
+    <div class="pantalla" id="pantalla-disney">
+      <button class="btn-volver" onclick="irA('pantalla-inicio')">← Volver</button>
+      <div class="seccion-header">
+        <h2>🏰 Disneyland París</h2>
+        <p>Elegí el parque que querés ver</p>
+      </div>
+      <div class="parques-grid">
+        <div class="parque-card" onclick="irA('pantalla-dlp')">
+          <span class="emoji">🏰</span>
+          <h3>Disneyland Park</h3>
+          <p>El parque clásico</p>
+        </div>
+        <div class="parque-card" onclick="irA('pantalla-studios')">
+          <span class="emoji">🎬</span>
+          <h3>Walt Disney Studios</h3>
+          <p>Acción y espectáculo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DISNEYLAND PARK ── -->
+    <div class="pantalla" id="pantalla-dlp">
+      <button class="btn-volver" onclick="irA('pantalla-disney')">← Volver</button>
+      <div class="seccion-header">
+        <h2>🏰 Disneyland Park</h2>
+        <p>Atracciones · Shows · Estrategia</p>
+      </div>
+      <div class="tabs">
+        <button class="tab activo" onclick="cambiarTab(this,'dlp-atracciones')">🎢 Atracciones</button>
+        <button class="tab" onclick="cambiarTab(this,'dlp-shows')">🎭 Shows</button>
+        <button class="tab" onclick="cambiarTab(this,'dlp-estrategia')">💡 Estrategia</button>
+      </div>
+
+      <!-- Atracciones DLP -->
+      <div class="tab-content activo" id="dlp-atracciones">
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🚀</span>
+              <span class="nombre">Big Thunder Mountain</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Ir apenas abre el parque o conseguir Premier Access. Fila corta al final del día.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">👻</span>
+              <span class="nombre">Phantom Manor</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>La versión europea de la Haunted Mansion. Una mansión encantada con historia de amor trágico única en el mundo. No tan oscura como parece.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Generalmente tiene fila corta. Leer los detalles del cuento mientras esperás.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🌊</span>
+              <span class="nombre">Pirates of the Caribbean</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🚂</span>
+              <span class="nombre">Indiana Jones et le Temple du Péril</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-altura">📏 1,40m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Montaña rusa con loop completo en un templo arqueológico. La única en todo Disney con un loop. Sacudida intensa.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila larga casi siempre. Prioridad si les gustan las montañas rusas fuertes.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🐘</span>
+              <span class="nombre">It's a Small World</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Clásico relajante para toda la familia. Paseo en bote por países del mundo representados con muñecos animados. Perfecto para los más chicos.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Buena opción para descansar los pies a mitad del día.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🧙</span>
+              <span class="nombre">Peter Pan's Flight</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Vuelo sobre Londres y Nunca Jamás en un barco pirata. Una de las atracciones más mágicas del parque. Siempre tiene cola larguísima.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Vale absolutamente el Premier Access. Si no, ir a la apertura del parque.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🏔️</span>
+              <span class="nombre">Space Mountain: Mission 2</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-altura">📏 1,32m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Montaña rusa espacial oscura con lanzamiento inicial tipo cañón. Más intensa que la versión de Orlando. Giros y caídas en la oscuridad total.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila larga todo el día. Premier Access muy recomendado.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🌌</span>
+              <span class="nombre">Star Wars Hyperspace Mountain</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-altura">📏 1,20m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Versión temática de Star Wars de Space Mountain. Misma estructura pero con proyecciones y efectos del universo Star Wars.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Verificar cuál versión está activa según la temporada del viaje.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🎪</span>
+              <span class="nombre">Buzz Lightyear Laser Blast</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para las horas del mediodía.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🏰</span>
+              <span class="nombre">Le Château de la Belle au Bois Dormant</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>El castillo icónico de Disneyland París. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shows DLP -->
+      <div class="tab-content" id="dlp-shows">
+        <div class="show-card">
+          <span class="emoji">✨</span>
+          <div>
+            <h4>Disney Illuminations</h4>
+            <p>Espectáculo nocturno de proyecciones, fuegos artificiales y láser sobre el Castillo. El gran cierre del día. Imperdible.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">🎭</span>
+          <div>
+            <h4>Dream... and Shine Brighter!</h4>
+            <p>Desfile diurno con todos los personajes principales de Disney. Carrozas temáticas por Main Street U.S.A.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">🎵</span>
+          <div>
+            <h4>Mickey and the Magician</h4>
+            <p>Show en teatro con Mickey como mago invocando a los personajes de Disney. Música en vivo, efectos especiales y bailarines.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">🌅</span>
+          <div>
+            <h4>The Lion King: Rhythms of the Pride Lands</h4>
+            <p>Show al aire libre con acrobacias, fuego y música africana. Muy espectacular. Consultar disponibilidad según temporada.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia DLP -->
+      <div class="tab-content" id="dlp-estrategia">
+        <div class="estrategia-card">
+          <h4>🌅 Apertura del parque</h4>
+          <p>Llegar 30 minutos antes de la apertura oficial. Los primeros 30-40 minutos son oro puro: las filas de las atracciones más populares son mínimas.</p>
+        </div>
+        <div class="estrategia-card">
+          <h4>⚡ Premier Access</h4>
+          <p>Sistema de filas pagas disponible desde la app Disneyland Paris. Se compra por atracción. Recomendado para:</p>
+          <ul>
+            <li>Big Thunder Mountain</li>
+            <li>Peter Pan's Flight</li>
+            <li>Space Mountain / Hyperspace Mountain</li>
+            <li>Indiana Jones (si se quiere hacer)</li>
+          </ul>
+        </div>
+        <div class="estrategia-card">
+          <h4>🎯 Orden sugerido de mañana</h4>
+          <ul>
+            <li>Peter Pan's Flight (apertura)</li>
+            <li>Phantom Manor</li>
+            <li>Big Thunder Mountain</li>
+            <li>Pirates of the Caribbean</li>
+            <li>It's a Small World (descanso)</li>
+          </ul>
+        </div>
+        <div class="estrategia-card">
+          <h4>🍽️ Dónde comer</h4>
+          <p>El Blue Lagoon Restaurant dentro de Pirates of the Caribbean es el más especial. Reservar con antelación en la app. Para algo rápido, las carretas de Main Street Street tienen buenas opciones.</p>
+        </div>
+        <div class="estrategia-card">
+          <h4>📱 App Disneyland Paris</h4>
+          <p>Descargar antes del viaje. Desde la app se ven los tiempos de espera en tiempo real, se compra Premier Access y se hacen reservas en restaurantes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WALT DISNEY STUDIOS ── -->
+    <div class="pantalla" id="pantalla-studios">
+      <button class="btn-volver" onclick="irA('pantalla-disney')">← Volver</button>
+      <div class="seccion-header">
+        <h2>🎬 Walt Disney Studios</h2>
+        <p>Atracciones · Shows · Estrategia</p>
+      </div>
+      <div class="tabs">
+        <button class="tab activo" onclick="cambiarTab(this,'wds-atracciones')">🎢 Atracciones</button>
+        <button class="tab" onclick="cambiarTab(this,'wds-shows')">🎭 Shows</button>
+        <button class="tab" onclick="cambiarTab(this,'wds-estrategia')">💡 Estrategia</button>
+      </div>
+
+      <!-- Atracciones WDS -->
+      <div class="tab-content activo" id="wds-atracciones">
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🕷️</span>
+              <span class="nombre">The Twilight Zone Tower of Terror</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-altura">📏 1,02m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Ascensor de caída libre en un hotel embrujado. Caídas aleatorias que la hacen diferente cada vez. Una de las mejores del parque.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Primer destino al abrir el parque o Premier Access. Fila larguísima todo el día.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🦸</span>
+              <span class="nombre">Avengers Assemble: Flight Force</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-altura">📏 1,20m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Montaña rusa de alta velocidad en el Avengers Campus. Giros, inversiones y gran velocidad. Temática Marvel muy bien lograda.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Segunda parada obligada al abrir. Fila muy larga todo el día.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🕸️</span>
+              <span class="nombre">Spider-Man W.E.B. Adventure</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Atracción interactiva donde el visitante usa poderes de Spider-Man para capturar robots. Similar al Toy Story Mania pero con telarañas.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Buena para toda la familia. Fila moderada comparado con Tower of Terror.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🎬</span>
+              <span class="nombre">Ratatouille: The Adventure</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-familia">Familia</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de París. Efecto 4D con olores, proyecciones y movimiento.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Exclusivo de este parque en el mundo. No perdérselo bajo ningún concepto.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🚗</span>
+              <span class="nombre">Cars Road Trip</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-familia">Familia</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🌊</span>
+              <span class="nombre">Crush's Coaster</span>
+            </div>
+            <div class="badges">
+              <span class="badge badge-top">⭐ TOP</span>
+              <span class="badge badge-altura">📏 1,07m</span>
+              <span class="badge badge-pa">Premier Access</span>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <p>Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shows WDS -->
+      <div class="tab-content" id="wds-shows">
+        <div class="show-card">
+          <span class="emoji">🦸</span>
+          <div>
+            <h4>Avengers: Power the Night</h4>
+            <p>Espectáculo nocturno en el Avengers Campus con proyecciones, drones y efectos especiales. Gran cierre del día en Studios.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">🎬</span>
+          <div>
+            <h4>Disney Junior Dream Factory</h4>
+            <p>Show musical para los más chicos con personajes de Disney Junior. Ideal para familias con niños pequeños.</p>
+          </div>
+        </div>
+        <div class="show-card">
+          <span class="emoji">🎸</span>
+          <div>
+            <h4>Moteurs... Action! Stunt Show</h4>
+            <p>Show de acrobacias con autos y motos. Espectacular para todas las edades. Consultar disponibilidad.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia WDS -->
+      <div class="tab-content" id="wds-estrategia">
+        <div class="estrategia-card">
+          <h4>🎯 Orden sugerido de mañana</h4>
+          <ul>
+            <li>Tower of Terror (apertura, sin fila)</li>
+            <li>Avengers Assemble: Flight Force</li>
+            <li>Crush's Coaster</li>
+            <li>Ratatouille (si la fila bajó)</li>
+            <li>Spider-Man W.E.B. Adventure</li>
+          </ul>
+        </div>
+        <div class="estrategia-card">
+          <h4>⚡ Premier Access recomendados</h4>
+          <ul>
+            <li>Tower of Terror</li>
+            <li>Crush's Coaster</li>
+            <li>Ratatouille (especialmente si van con chicos)</li>
+            <li>Avengers Assemble</li>
+          </ul>
+        </div>
+        <div class="estrategia-card">
+          <h4>🍽️ Dónde comer</h4>
+          <p>Bistrot Chez Rémy, el restaurante temático de Ratatouille, es el más especial del parque. Reservar con antelación. También hay opciones rápidas en el Avengers Campus.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GUÍA FRANCIA ── -->
+    <div class="pantalla" id="pantalla-francia">
+      <button class="btn-volver" onclick="irA('pantalla-inicio')">← Volver</button>
+      <div class="seccion-header">
+        <h2>🇫🇷 Guía Francia</h2>
+        <p>París día a día · Transporte · Tips</p>
+      </div>
+      <div class="dias-nav">
+        <button class="dia-btn activo" onclick="cambiarDia(this,'dia-transporte')">🚇 Transporte</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-1')">Día 1</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-2')">Día 2</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-3')">Día 3</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-4')">Día 4</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-5')">Día 5</button>
+        <button class="dia-btn" onclick="cambiarDia(this,'dia-6')">Día 6</button>
+      </div>
+
+      <!-- Transporte -->
+      <div class="dia-content activo" id="dia-transporte">
+        <div class="transporte-card">
+          <h4>🚇 El Metro de París</h4>
+          <p>La red de metro cubre prácticamente toda la ciudad. Hay 16 líneas numeradas del 1 al 14 (más 3b y 7b). Opera de 5:30 a 1:00 (viernes y sábados hasta las 2:15).</p>
+        </div>
+        <div class="transporte-card">
+          <h4>🚆 RER</h4>
+          <p>El RER conecta París con los alrededores, incluyendo Disneyland París (Línea A, estación Marne-la-Vallée/Chessy) y Versalles (Línea C). Es más rápido que el metro para distancias largas.</p>
+        </div>
+        <div class="transporte-card">
+          <h4>🎫 Tipos de tickets</h4>
+          <ul>
+            <li><strong>t+:</strong> Ticket individual para una sola zona. Válido para metro, RER zona 1-2, bus y tranvía.</li>
+            <li><strong>Carnet de 10:</strong> Pack de 10 tickets t+ con descuento.</li>
+            <li><strong>Navigo Easy:</strong> Tarjeta recargable. Se carga con viajes individuales o abonos.</li>
+            <li><strong>Navigo Semaine:</strong> Pase semanal ilimitado para todas las zonas. Muy conveniente si se viaja mucho.</li>
+            <li><strong>Paris Visite:</strong> Pase turístico por 1, 2, 3 o 5 días. Incluye museos y descuentos.</li>
+          </ul>
+        </div>
+        <div class="transporte-card">
+          <h4>🏰 Cómo llegar a Disneyland París</h4>
+          <p>Tomar el RER A dirección "Marne-la-Vallée/Chessy". Dura aproximadamente 40-50 minutos desde el centro de París. La estación queda a metros de las puertas del parque.</p>
+        </div>
+        <div class="transporte-card">
+          <h4>🚕 Taxi / Uber</h4>
+          <p>Uber y Bolt funcionan muy bien en París. Para grandes grupos puede ser más conveniente que el metro. Uber a Disneyland desde el centro sale aproximadamente €50-70 según tráfico.</p>
+        </div>
+      </div>
+
+      <!-- Día 1: Torre Eiffel -->
+      <div class="dia-content" id="dia-1">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">🗼</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 1 · Torre Eiffel</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Campo de Marte · Trocadéro · Barrio 7°</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🗼</span>
+              <h4>Torre Eiffel</h4>
+            </div>
+            <span class="horario">9:00 - 23:45</span>
+          </div>
+          <div class="lugar-body">
+            <p>La dama de hierro de París. Diseñada por Gustave Eiffel para la Exposición Universal de 1889. Tiene tres niveles: 1° piso (57m), 2° piso (115m) y cima (276m).</p>
+            <p>Se puede subir en ascensor o a pie hasta el 2° piso. La cima solo en ascensor.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Comprar los tickets online con anticipación en eiffel-tower.com. La cola sin ticket puede ser de 2-3 horas.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">📸</span>
+              <h4>Trocadéro</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>La mejor foto de la Torre Eiffel se saca desde la explanada del Trocadéro. Llegar temprano para evitar multitudes y tener la mejor luz.</p>
+            <div class="tip">💡 <strong>Tip:</strong> La foto perfecta es a las 7-8am o al atardecer. El jardín de Trocadéro también es hermoso para pasear.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🌳</span>
+              <h4>Campo de Marte</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>El gran parque detrás de la Torre Eiffel. Ideal para hacer un picnic con vista a la torre. Los parisinos vienen acá a tomar sol y relajarse.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Comprar algo en una boulangerie cercana y comer en el pasto con vista a la Torre. Experiencia parisina auténtica.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">✨</span>
+              <h4>Juego de luces nocturno</h4>
+            </div>
+            <span class="horario">Cada hora de noche</span>
+          </div>
+          <div class="lugar-body">
+            <p>Todos los días desde el anochecer, la Torre Eiffel tiene un juego de luces destellantes de 5 minutos al comienzo de cada hora.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Quedarse hasta las 21:00 o 22:00 para verlo. Visto desde el Campo de Marte es mágico.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Día 2: Louvre -->
+      <div class="dia-content" id="dia-2">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">🎨</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 2 · Museo del Louvre</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Louvre · Jardines de las Tullerías · Pont Neuf</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🎨</span>
+              <h4>Museo del Louvre</h4>
+            </div>
+            <span class="horario">9:00 - 18:00 (cerrado martes)</span>
+          </div>
+          <div class="lugar-body">
+            <p>El museo más visitado del mundo con más de 35.000 obras. Imposible verlo todo en un día. Lo imperdible: la Mona Lisa (sala 711), la Venus de Milo (sala 346) y la Victoria Alada.</p>
+            <p>Dividido en 3 alas: Richelieu, Sully y Denon. Se entra por la famosa pirámide de vidrio en el patio central.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Comprar ticket online. Llegar en la apertura. Ir directo a la Mona Lisa (hay señalización). Dedicar máximo 2-3 obras para ver en profundidad.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🌸</span>
+              <h4>Jardines de las Tullerías</h4>
+            </div>
+            <span class="horario">7:00 - 21:00</span>
+          </div>
+          <div class="lugar-body">
+            <p>Jardines de estilo francés que conectan el Louvre con la Place de la Concorde. Perfecto para caminar después del museo y descansar.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Hay sillas de jardín en las que cualquiera puede sentarse. Tomarse un café en el café de los jardines.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🌉</span>
+              <h4>Pont des Arts</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>El famoso puente de los candados (aunque ahora los retiran). Es el puente peatonal más romántico de París con vista al Sena y al Louvre.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Cruzar caminando y sacar fotos al río. Muy cerca del Louvre, es una parada de 10 minutos.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Día 3: Montmartre -->
+      <div class="dia-content" id="dia-3">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">🎨</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 3 · Montmartre</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Sacré-Cœur · Place du Tertre · Moulin Rouge</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">⛪</span>
+              <h4>Basílica del Sacré-Cœur</h4>
+            </div>
+            <span class="horario">6:00 - 22:30</span>
+          </div>
+          <div class="lugar-body">
+            <p>La cúpula blanca icónica de París en la cima de la colina de Montmartre. Desde las escalinatas se tiene la mejor vista panorámica de la ciudad.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Subir a pie por las escalinatas para la experiencia completa. Llegar temprano para evitar la multitud y tener la mejor luz.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🖼️</span>
+              <h4>Place du Tertre</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>La plaza de los artistas. Pintores callejeros retratan a los visitantes y venden sus obras. Ambiente bohemio único.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Ir temprano a la mañana para verla sin turistas. Los retratos cuestan entre €20-50 según el artista.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🎠</span>
+              <h4>Moulin Rouge</h4>
+            </div>
+            <span class="horario">Para ver de afuera: todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>El mítico cabaret de París con sus aspas rojas. El show nocturno es caro (desde €115) pero se puede ver el edificio de afuera e ir al barrio Pigalle circundante.</p>
+            <div class="tip">💡 <strong>Tip:</strong> El barrio alrededor del Moulin Rouge tiene muchos bares y restaurantes animados. Buena zona para cenar.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Día 4: Notre Dame -->
+      <div class="dia-content" id="dia-4">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">⛪</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 4 · Notre Dame</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Île de la Cité · Saint-Chapelle · Île Saint-Louis</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">⛪</span>
+              <h4>Catedral de Notre Dame</h4>
+            </div>
+            <span class="horario">Reabierta dic 2024</span>
+          </div>
+          <div class="lugar-body">
+            <p>La catedral gótica más famosa del mundo, reabierta en diciembre de 2024 tras el incendio de 2019. Obra maestra del gótico francés del siglo XII.</p>
+            <p>La entrada a la catedral es gratuita. Para subir a las torres hay que pagar y reservar con anticipación.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Verificar el estado de reapertura y reservar entradas para las torres online antes del viaje. La restauración ha dejado el interior más luminoso que nunca.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">💎</span>
+              <h4>Sainte-Chapelle</h4>
+            </div>
+            <span class="horario">9:00 - 17:00</span>
+          </div>
+          <div class="lugar-body">
+            <p>Capilla gótica con los vitrales más hermosos de París. A 5 minutos de Notre Dame. Menos conocida que la catedral pero impresionante.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Ir en un día soleado para ver los vitrales con la luz natural. La planta baja es oscura; la planta alta es la joya.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🍦</span>
+              <h4>Île Saint-Louis</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>La isla vecina a Notre Dame. Calles tranquilas, tiendas de artesanía y la famosa heladería Berthillon.</p>
+            <div class="tip">💡 <strong>Tip:</strong> El helado de Berthillon es legendario en París. Cola inevitable pero vale la pena. Comer caminando por las orillas del Sena.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Día 5: Versalles -->
+      <div class="dia-content" id="dia-5">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">👑</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 5 · Versalles</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Palacio · Jardines · Gran Trianón</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">👑</span>
+              <h4>Palacio de Versalles</h4>
+            </div>
+            <span class="horario">9:00 - 17:30 (cerrado lunes)</span>
+          </div>
+          <div class="lugar-body">
+            <p>El palacio más grande de Europa, residencia de Luis XIV. Imperdibles: la Galería de los Espejos, la Capilla Real y los Aposentos del Rey y la Reina.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Comprar ticket con acceso a los jardines online. Llegar a las 9am en punto. La cola sin ticket previo puede ser de 2 horas.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🌿</span>
+              <h4>Jardines de Versalles</h4>
+            </div>
+            <span class="horario">8:00 - 18:00</span>
+          </div>
+          <div class="lugar-body">
+            <p>Jardines de 800 hectáreas diseñados por André Le Nôtre. Los sábados de verano hay espectáculos de fuentes musicales.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Alquilar una bicicleta o un carrito eléctrico para recorrer los jardines. Son enormes y hay mucho que ver.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🏛️</span>
+              <h4>Gran Trianón y Pequeño Trianón</h4>
+            </div>
+            <span class="horario">12:00 - 17:30</span>
+          </div>
+          <div class="lugar-body">
+            <p>Las residencias privadas de la familia real dentro de los jardines. El Petit Trianon fue el retiro de María Antonieta. Más íntimos que el palacio principal.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Incluidos en el ticket del Pasaporte. La Aldea de la Reina cerca del Petit Trianon parece de cuento.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🚆</span>
+              <h4>Cómo llegar</h4>
+            </div>
+            <span class="horario">~40 min desde París</span>
+          </div>
+          <div class="lugar-body">
+            <p>Tomar el RER C dirección "Versailles-Château-Rive Gauche". Dura aproximadamente 35-40 minutos desde Saint-Michel. También hay tren Transilien desde Gare Saint-Lazare o Gare Montparnasse.</p>
+            <div class="tip">💡 <strong>Tip:</strong> El ticket de RER no está incluido en el Paris Visite hasta zona 4. Verificar antes de viajar.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Día 6: Marais -->
+      <div class="dia-content" id="dia-6">
+        <div style="text-align:center; padding:1rem 0 0.5rem;">
+          <div style="font-size:2rem;">🏘️</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500;">Día 6 · Barrio Marais</div>
+          <div style="font-size:0.85rem; color:var(--texto-suave);">Place des Vosges · Centre Pompidou · Falafel Street</div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🏛️</span>
+              <h4>Place des Vosges</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>La plaza más antigua de París (1612), perfectamente simétrica y con arcadas. Rodeada de casas de ladrillo rojo. Fue la residencia de Victor Hugo.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Sentarse en el jardín central a leer o tomar algo. La casa-museo de Victor Hugo está en uno de los ángulos de la plaza.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🎨</span>
+              <h4>Centre Pompidou</h4>
+            </div>
+            <span class="horario">11:00 - 21:00 (cerrado martes)</span>
+          </div>
+          <div class="lugar-body">
+            <p>Museo de arte moderno y contemporáneo con arquitectura "inside-out" muy original. La terraza del 6° piso tiene una vista panorámica increíble de París.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Aunque no se entre al museo, subir a la terraza exterior es gratuito y tiene una de las mejores vistas de la ciudad.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🥙</span>
+              <h4>Rue des Rosiers - Barrio Judío</h4>
+            </div>
+            <span class="horario">Todo el día</span>
+          </div>
+          <div class="lugar-body">
+            <p>La calle más famosa del Marais, corazón del barrio judío. Falafel y comida israelí de calidad mundial. Las colas en L'As du Fallafel son legendarias.</p>
+            <div class="tip">💡 <strong>Tip:</strong> L'As du Fallafel (n°34) es el más famoso pero Chez Marianne (n°2) también es excelente. Comer parado en la calle como lo hacen los locales.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header">
+            <div class="lugar-header-left">
+              <span class="emoji">🛍️</span>
+              <h4>Shopping en el Marais</h4>
+            </div>
+            <span class="horario">11:00 - 19:00</span>
+          </div>
+          <div class="lugar-body">
+            <p>El Marais tiene la mejor mezcla de tiendas vintage, marcas de diseño indie y galerías de arte. Calles principales: Rue Vieille-du-Temple y Rue des Archives.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Las tiendas del Marais suelen abrir los domingos a diferencia del resto de París. Buena opción para el último día de compras.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL SOFI ── -->
+    <div class="pantalla" id="pantalla-panel">
+      <div class="seccion-header">
+        <h2>✦ Panel Sofi</h2>
+      </div>
+      <div class="panel-sofi">
+        <h3>Clientes activos</h3>
+        <div id="lista-clientes">Cargando...</div>
+      </div>
+      <div class="panel-sofi">
+        <h3>Agregar nuevo cliente</h3>
+        <div class="form-agregar">
+          <input type="text" id="nuevo-nombre" placeholder="Nombre (se muestra en la app)">
+          <input type="text" id="nuevo-usuario" placeholder="Usuario">
+          <input type="password" id="nuevo-clave" placeholder="Contraseña">
+          <button class="btn-agregar" onclick="agregarCliente()">+ Agregar cliente</button>
+          <div id="msg-agregar"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /app-content -->
+
+  <!-- Nav Bottom -->
+  <nav class="nav-bottom">
+    <button class="nav-item activo" id="nav-inicio" onclick="irA('pantalla-inicio'); setNavActivo('nav-inicio')">
+      <span class="nav-ico">🏠</span>
+      <span class="nav-label">Inicio</span>
+    </button>
+    <button class="nav-item" id="nav-disney" onclick="irA('pantalla-disney'); setNavActivo('nav-disney')">
+      <span class="nav-ico">🏰</span>
+      <span class="nav-label">Disney</span>
+    </button>
+    <button class="nav-item" id="nav-francia" onclick="irA('pantalla-francia'); setNavActivo('nav-francia')">
+      <span class="nav-ico">🇫🇷</span>
+      <span class="nav-label">Francia</span>
+    </button>
+    <button class="nav-item" id="nav-panel" onclick="irA('pantalla-panel'); setNavActivo('nav-panel')" style="display:none">
+      <span class="nav-ico">✦</span>
+      <span class="nav-label">Panel</span>
+    </button>
+  </nav>
+</div>
+
+<script>
+  // ─── SUPABASE ───────────────────────────────────────
+  const { createClient } = supabase;
+  const sb = createClient(
+    'https://wjfglsafgaltusmbnccl.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqZmdsc2FmZ2FsdHVzbWJuY2NsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzM2OTksImV4cCI6MjA4OTAwOTY5OX0.OOwgyKDNQsbBaGDaL0OhJfc8eOsCClvvAPW0VFBKrOA'
+  );
+
+  let usuarioActual = null;
+
+  // ─── LOGIN ───────────────────────────────────────────
+  document.getElementById('login-usuario').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+  document.getElementById('login-clave').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+
+  async function doLogin() {
+    const u = document.getElementById('login-usuario').value.trim().toLowerCase();
+    const c = document.getElementById('login-clave').value;
+    document.getElementById('login-error').textContent = '';
+    if(!u||!c){ document.getElementById('login-error').textContent='Completá los datos'; return; }
+
+    const { data, error } = await sb.from('disnerd_paris_users')
+      .select('*').eq('usuario', u).eq('clave', c).single();
+
+    if(error || !data){
+      document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos';
+      return;
+    }
+    usuarioActual = data;
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    document.getElementById('header-nombre').textContent = data.nombre;
+    if(data.usuario === 'sofi'){
+      document.getElementById('nav-panel').style.display = 'flex';
+      cargarClientes();
+    }
+  }
+
+  function salir(){
+    usuarioActual = null;
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('app').style.display = 'none';
+    document.getElementById('login-usuario').value = '';
+    document.getElementById('login-clave').value = '';
+  }
+
+  // ─── NAVEGACIÓN ─────────────────────────────────────
+  function irA(id){
+    document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+    document.getElementById(id).classList.add('activa');
+    window.scrollTo(0,0);
+  }
+
+  function setNavActivo(id){
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('activo'));
+    document.getElementById(id).classList.add('activo');
+  }
+
+  // ─── TABS ────────────────────────────────────────────
+  function cambiarTab(btn, contenidoId){
+    const padre = btn.closest('.pantalla');
+    padre.querySelectorAll('.tab').forEach(t => t.classList.remove('activo'));
+    padre.querySelectorAll('.tab-content').forEach(t => t.classList.remove('activo'));
+    btn.classList.add('activo');
+    document.getElementById(contenidoId).classList.add('activo');
+  }
+
+  // ─── DÍAS FRANCIA ────────────────────────────────────
+  function cambiarDia(btn, contenidoId){
+    const padre = btn.closest('.pantalla');
+    padre.querySelectorAll('.dia-btn').forEach(b => b.classList.remove('activo'));
+    padre.querySelectorAll('.dia-content').forEach(d => d.classList.remove('activo'));
+    btn.classList.add('activo');
+    document.getElementById(contenidoId).classList.add('activo');
+  }
+
+  // ─── TOGGLE ATRACCIONES ─────────────────────────────
+  function toggleAtraccion(el){
+    el.classList.toggle('abierta');
+  }
+
+  // ─── TOGGLE LUGARES ─────────────────────────────────
+  function toggleLugar(el){
+    el.classList.toggle('abierto');
+  }
+
+  // ─── PANEL SOFI ─────────────────────────────────────
+  async function cargarClientes(){
+    const { data } = await sb.from('disnerd_paris_users').select('*').order('id');
+    if(!data){ document.getElementById('lista-clientes').textContent='Error al cargar'; return; }
+    const html = data.map(c => `
+      <div class="cliente-row">
+        <div class="cliente-info">
+          <div class="nombre">${c.nombre}</div>
+          <div class="usuario">@${c.usuario}</div>
+        </div>
+        ${c.usuario !== 'sofi' ? `<button class="btn-eliminar" onclick="eliminarCliente(${c.id})">Eliminar</button>` : '<span style="font-size:0.75rem;color:var(--dorado)">admin</span>'}
+      </div>
+    `).join('');
+    document.getElementById('lista-clientes').innerHTML = html;
+  }
+
+  async function eliminarCliente(id){
+    if(!confirm('¿Eliminar este cliente?')) return;
+    await sb.from('disnerd_paris_users').delete().eq('id', id);
+    cargarClientes();
+  }
+
+  async function agregarCliente(){
+    const nombre = document.getElementById('nuevo-nombre').value.trim();
+    const usuario = document.getElementById('nuevo-usuario').value.trim().toLowerCase();
+    const clave = document.getElementById('nuevo-clave').value;
+    const msg = document.getElementById('msg-agregar');
+    msg.textContent = '';
+    if(!nombre||!usuario||!clave){ msg.className='msg-err'; msg.textContent='Completá todos los campos'; return; }
+    const { error } = await sb.from('disnerd_paris_users').insert([{nombre, usuario, clave}]);
+    if(error){ msg.className='msg-err'; msg.textContent='Error: usuario ya existe'; return; }
+    msg.className='msg-ok'; msg.textContent='¡Cliente agregado!';
+    document.getElementById('nuevo-nombre').value='';
+    document.getElementById('nuevo-usuario').value='';
+    document.getElementById('nuevo-clave').value='';
+    cargarClientes();
+    setTimeout(()=>msg.textContent='', 3000);
+  }
+</script>
+</body>
+</html>
