@@ -316,30 +316,28 @@
   .atraccion-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.85rem 1rem;
+    padding: 0.9rem 1rem;
     cursor: pointer;
     gap: 0.5rem;
   }
   .atraccion-titulo {
     display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+    align-items: center;
+    gap: 0.5rem;
     flex: 1;
     min-width: 0;
-  }
-  .atraccion-titulo-row {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
+    flex-wrap: nowrap;
   }
   .atraccion-titulo .nombre {
     font-weight: 600;
     font-size: 0.88rem;
-    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
   }
   .atraccion-titulo .emoji { font-size: 1.1rem; flex-shrink: 0; }
-  .badges { display: flex; gap: 0.3rem; flex-wrap: nowrap; padding-left: 1.65rem; }
+  .badges { display: flex; gap: 0.3rem; flex-wrap: nowrap; flex-shrink: 0; }
   .badge {
     font-size: 0.7rem;
     padding: 0.2rem 0.6rem;
@@ -754,14 +752,14 @@
       <div class="tab-content activo" id="dlp-atracciones">
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🚀</span>
-              <span class="nombre">Big Thunder Mountain</span></div>
-            <div class="badges">
+              <span class="nombre">Big Thunder Mountain</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -772,14 +770,14 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">👻</span>
-              <span class="nombre">Phantom Manor</span></div>
-            <div class="badges">
+              <span class="nombre">Phantom Manor</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -790,13 +788,13 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🌊</span>
-              <span class="nombre">Pirates of the Caribbean</span></div>
-            <div class="badges">
+              <span class="nombre">Pirates of the Caribbean</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -807,14 +805,14 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🚂</span>
-              <span class="nombre">Indiana Jones et le Temple du Péril</span></div>
-            <div class="badges">
+              <span class="nombre">Indiana Jones et le Temple du Péril</span>
+              <div class="badges">
               <span class="badge badge-altura">📏 1,40m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -825,13 +823,13 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🐘</span>
-              <span class="nombre">It's a Small World</span></div>
-            <div class="badges">
+              <span class="nombre">It's a Small World</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -842,14 +840,14 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🧙</span>
-              <span class="nombre">Peter Pan's Flight</span></div>
-            <div class="badges">
+              <span class="nombre">Peter Pan's Flight</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -860,14 +858,14 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🌌</span>
-              <span class="nombre">Star Wars Hyperspace Mountain</span></div>
-            <div class="badges">
+              <span class="nombre">Star Wars Hyperspace Mountain</span>
+              <div class="badges">
               <span class="badge badge-altura">📏 1,20m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -878,13 +876,13 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🎪</span>
-              <span class="nombre">Buzz Lightyear Laser Blast</span></div>
-            <div class="badges">
+              <span class="nombre">Buzz Lightyear Laser Blast</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -895,13 +893,13 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🏰</span>
-              <span class="nombre">Le Château de la Belle au Bois Dormant</span></div>
-            <div class="badges">
+              <span class="nombre">Le Château de la Belle au Bois Dormant</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -998,15 +996,15 @@
       <div class="tab-content activo" id="wds-atracciones">
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🕷️</span>
-              <span class="nombre">The Twilight Zone Tower of Terror</span></div>
-            <div class="badges">
+              <span class="nombre">The Twilight Zone Tower of Terror</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-altura">📏 1,02m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -1017,15 +1015,15 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🦸</span>
-              <span class="nombre">Avengers Assemble: Flight Force</span></div>
-            <div class="badges">
+              <span class="nombre">Avengers Assemble: Flight Force</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-altura">📏 1,20m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -1036,14 +1034,14 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🕸️</span>
-              <span class="nombre">Spider-Man W.E.B. Adventure</span></div>
-            <div class="badges">
+              <span class="nombre">Spider-Man W.E.B. Adventure</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -1054,15 +1052,15 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🎬</span>
-              <span class="nombre">Ratatouille: The Adventure</span></div>
-            <div class="badges">
+              <span class="nombre">Ratatouille: The Adventure</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-familia">Familia</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -1073,13 +1071,13 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🚗</span>
-              <span class="nombre">Cars Road Trip</span></div>
-            <div class="badges">
+              <span class="nombre">Cars Road Trip</span>
+              <div class="badges">
               <span class="badge badge-familia">Familia</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
@@ -1090,15 +1088,15 @@
 
         <div class="atraccion" onclick="toggleAtraccion(this)">
           <div class="atraccion-header">
-            <div class="atraccion-titulo"><div class="atraccion-titulo-row">
+            <div class="atraccion-titulo">
               <span class="emoji">🌊</span>
-              <span class="nombre">Crush's Coaster</span></div>
-            <div class="badges">
+              <span class="nombre">Crush's Coaster</span>
+              <div class="badges">
               <span class="badge badge-top">⭐ TOP</span>
               <span class="badge badge-altura">📏 1,07m</span>
               <span class="badge badge-pa">Premier Access</span>
             </div>
-          </div>
+            </div>
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
