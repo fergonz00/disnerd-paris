@@ -195,7 +195,7 @@
     border-radius: 1.5rem;
     overflow: hidden;
     position: relative;
-    height: 220px;
+    aspect-ratio: 1/1; height: auto;
     cursor: pointer;
     box-shadow: 0 4px 20px var(--sombra);
     transition: all 0.2s;
@@ -206,6 +206,7 @@
     transition: transform 0.4s;
   }
   .destino-card:hover img { transform: scale(1.05); }
+  .destino-card img { object-position: center center; }
   .destino-card-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(20,10,40,0.15) 0%, rgba(20,10,40,0.75) 100%);
@@ -262,13 +263,14 @@
     border-radius: 1.5rem;
     overflow: hidden;
     position: relative;
-    height: 180px;
+    aspect-ratio: 1/1;
+    height: auto;
     cursor: pointer;
     box-shadow: 0 4px 20px var(--sombra);
     transition: all 0.2s;
   }
   .parque-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
-  .parque-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .parque-card img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; transition: transform 0.4s; }
   .parque-card:hover img { transform: scale(1.05); }
   .parque-card-overlay {
     position: absolute; inset: 0;
@@ -838,7 +840,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
+            <img class="atraccion-foto" src="https://i.imgur.com/CgQFtZM.jpg" alt="Pirates of the Caribbean" loading="lazy" onerror="this.style.display='none'">
+            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
           </div>
         </div>
@@ -1856,7 +1859,8 @@
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🗼</span><div class="lugar-header-text"><h4>Torre Eiffel</h4><span class="horario">9:30–23:00 (verano hasta medianoche)</span></div></div></div>
           <div class="lugar-body">
-            <p>La dama de hierro de París, apodada así por los locales. Diseñada por Gustave Eiffel para la Exposición Universal de 1889. Es el monumento de pago más visitado del mundo. Tiene 330 metros de altura y fue la primera estructura en el mundo en superar los 200 y 300 metros.</p>
+            <img class="atraccion-foto" src="https://i.imgur.com/LbqSZLC.jpg" alt="Torre Eiffel" loading="lazy" onerror="this.style.display='none'">
+La dama de hierro de París, apodada así por los locales. Diseñada por Gustave Eiffel para la Exposición Universal de 1889. Es el monumento de pago más visitado del mundo. Tiene 330 metros de altura y fue la primera estructura en el mundo en superar los 200 y 300 metros.</p>
             <ul>
               <li><strong>1ª Planta (57m):</strong> Tiendas de souvenirs, restaurantes, cafés y exposiciones sobre la historia de la Torre.</li>
               <li><strong>2ª Planta (115m):</strong> Terraza de observación al aire libre con vistas impresionantes. También está el restaurante Jules Verne (3 estrellas Michelin).</li>
@@ -1978,7 +1982,8 @@
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">💙</span><div class="lugar-header-text"><h4>Muro del "Te Amo"</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
-            <p>Una obra de arte público compuesta por 612 baldosas azules de lava esmaltada con la frase "Te amo" escrita 311 veces en 250 idiomas. Fue creada por el artista Frédéric Baron y la calígrafa Claire Kito en el año 2000. Se ha convertido en una atracción muy popular entre las parejas de todo el mundo.</p>
+            <img class="atraccion-foto" src="https://i.imgur.com/XKinJD1.jpg" alt="Muro del "Te Amo"" loading="lazy" onerror="this.style.display='none'">
+Una obra de arte público compuesta por 612 baldosas azules de lava esmaltada con la frase "Te amo" escrita 311 veces en 250 idiomas. Fue creada por el artista Frédéric Baron y la calígrafa Claire Kito en el año 2000. Se ha convertido en una atracción muy popular entre las parejas de todo el mundo.</p>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
@@ -2116,7 +2121,8 @@
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🌿</span><div class="lugar-header-text"><h4>Jardines de Versalles</h4><span class="horario">8:00–20:30 (abr–oct) · 8:00–18:00 (nov–mar)</span></div></div></div>
           <div class="lugar-body">
-            <p>Jardines de 800 hectáreas diseñados por André Le Nôtre. Famosos por sus laberintos de arbustos, fuentes y esculturas. Acceso gratuito en temporada baja (nov–mar). En temporada alta (abr–oct) se cobra entrada los días de <strong>Grandes Aguas Musicales</strong> (martes, sábados, domingos y festivos) — €10 adicionales.</p>
+            <img class="atraccion-foto" src="https://i.imgur.com/syh1eXH.jpg" alt="Jardines de Versalles" loading="lazy" onerror="this.style.display='none'">
+Jardines de 800 hectáreas diseñados por André Le Nôtre. Famosos por sus laberintos de arbustos, fuentes y esculturas. Acceso gratuito en temporada baja (nov–mar). En temporada alta (abr–oct) se cobra entrada los días de <strong>Grandes Aguas Musicales</strong> (martes, sábados, domingos y festivos) — €10 adicionales.</p>
             <div class="tip">💡 <strong>Tip:</strong> Alquilar una bicicleta o un carrito de golf para recorrerlos — son enormes. Hay varias opciones de cafeterías y restaurantes dentro.</div>
           </div>
         </div>
