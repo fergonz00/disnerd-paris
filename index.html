@@ -192,27 +192,42 @@
     margin: 1.5rem 0;
   }
   .destino-card {
-    background: var(--blanco);
     border-radius: 1.5rem;
-    padding: 2rem 1.5rem;
-    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 180px;
     cursor: pointer;
     box-shadow: 0 4px 20px var(--sombra);
     transition: all 0.2s;
-    border: 2px solid transparent;
   }
   .destino-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
-  .destino-card.disney { border-color: var(--celeste); }
-  .destino-card.francia { border-color: var(--rosa); }
-  .destino-card .emoji { font-size: 2.8rem; display: block; margin-bottom: 0.8rem; }
+  .destino-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s;
+  }
+  .destino-card:hover img { transform: scale(1.05); }
+  .destino-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(20,10,40,0.15) 0%, rgba(20,10,40,0.75) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1rem 1.1rem;
+  }
+  .destino-card .emoji { font-size: 1.4rem; margin-bottom: 0.2rem; display: block; }
   .destino-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    margin-bottom: 0.3rem;
+    color: #fff;
+    margin-bottom: 0.15rem;
   }
-  .destino-card p { font-size: 0.82rem; color: var(--texto-suave); }
-  .destino-card .arrow { font-size: 1.2rem; color: var(--dorado); margin-top: 0.8rem; display: block; }
+  .destino-card p { font-size: 0.78rem; color: rgba(255,255,255,0.75); }
+  .destino-card .arrow {
+    position: absolute; top: 0.8rem; right: 0.8rem;
+    background: rgba(255,255,255,0.2); border-radius: 50%;
+    width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; color: #fff;
+  }
 
   /* Sección info */
   .info-grid {
@@ -244,23 +259,32 @@
     margin: 1.5rem 0;
   }
   .parque-card {
-    background: var(--blanco);
     border-radius: 1.5rem;
-    padding: 2rem 1.2rem;
-    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
     cursor: pointer;
     box-shadow: 0 4px 20px var(--sombra);
     transition: all 0.2s;
   }
   .parque-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
-  .parque-card .emoji { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+  .parque-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .parque-card:hover img { transform: scale(1.05); }
+  .parque-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(20,10,40,0.1) 0%, rgba(20,10,40,0.8) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0.9rem 1rem;
+  }
+  .parque-card .emoji { font-size: 1.3rem; display: block; margin-bottom: 0.15rem; }
   .parque-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.3rem;
+    color: #fff;
+    margin-bottom: 0.1rem;
   }
-  .parque-card p { font-size: 0.8rem; color: var(--texto-suave); }
+  .parque-card p { font-size: 0.75rem; color: rgba(255,255,255,0.75); }
 
   /* ─── SECCIÓN GENERAL ─── */
   .seccion-header {
@@ -351,6 +375,17 @@
     border-top: 1px solid var(--lavanda-light);
   }
   .atraccion.abierta .atraccion-body { display: block; }
+
+  /* Foto dentro de atraccion */
+  .atraccion-foto {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
   .atraccion-body p { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.6; margin-top: 0.7rem; }
   .atraccion-body .tip {
     background: var(--crema);
@@ -667,15 +702,21 @@
       </div>
       <div class="destinos-grid">
         <div class="destino-card disney" onclick="irA('pantalla-disney')">
-          <span class="emoji">🏰</span>
-          <h3>Disneyland París</h3>
-          <p>2 parques · Magic & Studios</p>
+          <img src="https://images.unsplash.com/photo-1535048463858-954d3d5a7768?w=500&q=80" alt="Disneyland París" loading="lazy">
+          <div class="destino-card-overlay">
+            <span class="emoji">🏰</span>
+            <h3>Disneyland París</h3>
+            <p>2 parques · Magic & Studios</p>
+          </div>
           <span class="arrow">→</span>
         </div>
         <div class="destino-card francia" onclick="irA('pantalla-francia')">
-          <span class="emoji">🇫🇷</span>
-          <h3>Guía Francia</h3>
-          <p>6 días · París & Versalles</p>
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&q=80" alt="París" loading="lazy">
+          <div class="destino-card-overlay">
+            <span class="emoji">🇫🇷</span>
+            <h3>Guía Francia</h3>
+            <p>6 días · París & Versalles</p>
+          </div>
           <span class="arrow">→</span>
         </div>
       </div>
@@ -717,14 +758,20 @@
       </div>
       <div class="parques-grid">
         <div class="parque-card" onclick="irA('pantalla-dlp')">
-          <span class="emoji">🏰</span>
-          <h3>Disneyland Park</h3>
-          <p>El parque clásico</p>
+          <img src="https://images.unsplash.com/photo-1535048463858-954d3d5a7768?w=600&q=80" alt="Disneyland Park" loading="lazy">
+          <div class="parque-card-overlay">
+            <span class="emoji">🏰</span>
+            <h3>Disneyland Park</h3>
+            <p>El parque clásico</p>
+          </div>
         </div>
         <div class="parque-card" onclick="irA('pantalla-studios')">
-          <span class="emoji">🎬</span>
-          <h3>Disney Adventure World</h3>
-          <p>Acción, Marvel, Pixar & Frozen</p>
+          <img src="https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=600&q=80" alt="Disney Adventure World" loading="lazy">
+          <div class="parque-card-overlay">
+            <span class="emoji">🎬</span>
+            <h3>Disney Adventure World</h3>
+            <p>Acción, Marvel, Pixar & Frozen</p>
+          </div>
         </div>
       </div>
     </div>
@@ -758,7 +805,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=700&q=80" alt="Big Thunder Mountain" loading="lazy" onerror="this.style.display='none'">
+Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
             <div class="tip">💡 <strong>Tip:</strong> Ir apenas abre el parque o conseguir Premier Access. Fila corta al final del día.</div>
           </div>
         </div>
@@ -776,7 +824,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>La versión europea de la Haunted Mansion. Una mansión encantada con historia de amor trágico única en el mundo. No tan oscura como parece.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=700&q=80" alt="Phantom Manor" loading="lazy" onerror="this.style.display='none'">
+La versión europea de la Haunted Mansion. Una mansión encantada con historia de amor trágico única en el mundo. No tan oscura como parece.</p>
             <div class="tip">💡 <strong>Tip:</strong> Generalmente tiene fila corta. Leer los detalles del cuento mientras esperás.</div>
           </div>
         </div>
@@ -793,7 +842,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=700&q=80" alt="Pirates of the Caribbean" loading="lazy" onerror="this.style.display='none'">
+Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
           </div>
         </div>
@@ -811,7 +861,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Montaña rusa con loop completo en un templo arqueológico. La única en todo Disney con un loop. Sacudida intensa.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80" alt="Indiana Jones et le Temple du Péril" loading="lazy" onerror="this.style.display='none'">
+Montaña rusa con loop completo en un templo arqueológico. La única en todo Disney con un loop. Sacudida intensa.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila larga casi siempre. Prioridad si les gustan las montañas rusas fuertes.</div>
           </div>
         </div>
@@ -828,7 +879,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Clásico relajante para toda la familia. Paseo en bote por países del mundo representados con muñecos animados. Perfecto para los más chicos.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&q=80" alt="It's a Small World" loading="lazy" onerror="this.style.display='none'">
+Clásico relajante para toda la familia. Paseo en bote por países del mundo representados con muñecos animados. Perfecto para los más chicos.</p>
             <div class="tip">💡 <strong>Tip:</strong> Buena opción para descansar los pies a mitad del día.</div>
           </div>
         </div>
@@ -846,7 +898,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Vuelo sobre Londres y Nunca Jamás en un barco pirata. Una de las atracciones más mágicas del parque. Siempre tiene cola larguísima.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=700&q=80" alt="Peter Pan's Flight" loading="lazy" onerror="this.style.display='none'">
+Vuelo sobre Londres y Nunca Jamás en un barco pirata. Una de las atracciones más mágicas del parque. Siempre tiene cola larguísima.</p>
             <div class="tip">💡 <strong>Tip:</strong> Vale absolutamente el Premier Access. Si no, ir a la apertura del parque.</div>
           </div>
         </div>
@@ -864,7 +917,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>La montaña rusa más extrema de todos los Disney del mundo. Lanzamiento tipo cañón a 71 km/h, 3 inversiones y recorrido parcialmente al aire libre. Temática Star Wars con nueva iluminación LED instalada en 2025. La única Space Mountain del planeta con inversiones y lanzamiento.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?w=700&q=80" alt="Star Wars Hyperspace Mountain" loading="lazy" onerror="this.style.display='none'">
+La montaña rusa más extrema de todos los Disney del mundo. Lanzamiento tipo cañón a 71 km/h, 3 inversiones y recorrido parcialmente al aire libre. Temática Star Wars con nueva iluminación LED instalada en 2025. La única Space Mountain del planeta con inversiones y lanzamiento.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila larga todo el día. Premier Access muy recomendado. Los Single Rider suelen estar disponibles — consultá en la app o en cartelería.</div>
           </div>
         </div>
@@ -881,7 +935,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80" alt="Buzz Lightyear Laser Blast" loading="lazy" onerror="this.style.display='none'">
+Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para las horas del mediodía.</div>
           </div>
         </div>
@@ -900,7 +955,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Simulador espacial con temática Star Wars. Viaje en speeder por distintos destinos del universo Star Wars con efectos 3D y movimiento. Cada viaje es diferente gracias a las combinaciones aleatorias de escenas.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=700&q=80" alt="Star Tours: The Adventures Continue" loading="lazy" onerror="this.style.display='none'">
+Simulador espacial con temática Star Wars. Viaje en speeder por distintos destinos del universo Star Wars con efectos 3D y movimiento. Cada viaje es diferente gracias a las combinaciones aleatorias de escenas.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila generalmente más corta que Hyperspace Mountain. Buena opción si tienen la altura mínima.</div>
           </div>
         </div>
@@ -918,7 +974,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Conducí tu propio auto por una autopista del futuro. Clásico de Discoveryland muy querido por los chicos. Los adultos también pueden manejar.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=700&q=80" alt="Autopia" loading="lazy" onerror="this.style.display='none'">
+Conducí tu propio auto por una autopista del futuro. Clásico de Discoveryland muy querido por los chicos. Los adultos también pueden manejar.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila larga en horario pico. Muy popular con los más chicos que quieren "manejar".</div>
           </div>
         </div>
@@ -936,7 +993,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Naves espaciales voladoras que se elevan en círculos. Los pasajeros controlan la altura. Inspirada en el sistema solar de Leonardo Da Vinci. Icónica de Discoveryland.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=700&q=80" alt="Orbitron" loading="lazy" onerror="this.style.display='none'">
+Naves espaciales voladoras que se elevan en círculos. Los pasajeros controlan la altura. Inspirada en el sistema solar de Leonardo Da Vinci. Icónica de Discoveryland.</p>
             <div class="tip">💡 <strong>Tip:</strong> Perfecta para los más chicos. Fila moderada. Se puede controlar subir o bajar desde dentro de la nave.</div>
           </div>
         </div>
@@ -953,7 +1011,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Recorrido a pie por el interior del submarino Nautilus del Capitán Nemo (20.000 Leguas de Viaje Submarino). Animatronics, efectos especiales y una atmósfera submarina única. Gratuito, sin fila larga.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=700&q=80" alt="Les Mystères du Nautilus" loading="lazy" onerror="this.style.display='none'">
+Recorrido a pie por el interior del submarino Nautilus del Capitán Nemo (20.000 Leguas de Viaje Submarino). Animatronics, efectos especiales y una atmósfera submarina única. Gratuito, sin fila larga.</p>
             <div class="tip">💡 <strong>Tip:</strong> Muy recomendado como descanso entre atracciones. No tiene fila casi nunca y el ambiente es increíble.</div>
           </div>
         </div>
@@ -970,7 +1029,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo tranquilo en bote por miniaturas de cuentos de hadas clásicos: Cenicienta, Blancanieves, Caperucita Roja y más. Perfecto para los más chicos. Relajante y encantador.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&q=80" alt="Le Pays des Contes de Fées" loading="lazy" onerror="this.style.display='none'">
+Paseo tranquilo en bote por miniaturas de cuentos de hadas clásicos: Cenicienta, Blancanieves, Caperucita Roja y más. Perfecto para los más chicos. Relajante y encantador.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila corta. Muy buena opción para el mediodía cuando los chicos necesitan un descanso.</div>
           </div>
         </div>
@@ -987,7 +1047,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Laberinto de setos interactivo ambientado en Alicia en el País de las Maravillas. Lleno de sorpresas, escaleras, toboganes y el Castillo de la Reina de Corazones al final. Los chicos lo adoran.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1611348586840-ea9872d33411?w=700&q=80" alt="Alice's Curious Labyrinth" loading="lazy" onerror="this.style.display='none'">
+Laberinto de setos interactivo ambientado en Alicia en el País de las Maravillas. Lleno de sorpresas, escaleras, toboganes y el Castillo de la Reina de Corazones al final. Los chicos lo adoran.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin fila prácticamente. Puede llevar 15-30 minutos recorrerlo completo. ¡No te pierdas el Castillo de la Reina de Corazones!</div>
           </div>
         </div>
@@ -1004,7 +1065,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Las clásicas tazas giratorias del Sombrerero Loco. Se puede controlar la velocidad de giro desde el centro de cada taza. Divertido para todas las edades.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Mad Hatter's Tea Cups" loading="lazy" onerror="this.style.display='none'">
+Las clásicas tazas giratorias del Sombrerero Loco. Se puede controlar la velocidad de giro desde el centro de cada taza. Divertido para todas las edades.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila corta. Los chicos más grandes pueden hacerlas girar muy rápido. ¡Cuidado con el mareo!</div>
           </div>
         </div>
@@ -1021,7 +1083,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Los elefantes voladores más famosos de Disney. Los pasajeros controlan la altura. Imperdible para los más chicos. Clásico atemporal de Fantasyland.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?w=700&q=80" alt="Dumbo the Flying Elephant" loading="lazy" onerror="this.style.display='none'">
+Los elefantes voladores más famosos de Disney. Los pasajeros controlan la altura. Imperdible para los más chicos. Clásico atemporal de Fantasyland.</p>
             <div class="tip">💡 <strong>Tip:</strong> Puede tener fila larga en horario pico por la popularidad con familias. Ir temprano o al final del día.</div>
           </div>
         </div>
@@ -1038,7 +1101,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El trenito del circo de Dumbo recorre la zona de Fantasyland pasando por Le Pays des Contes de Fées. Vista panorámica del parque. Perfecto para los más pequeños.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=80" alt="Casey Jr. — le Petit Train du Cirque" loading="lazy" onerror="this.style.display='none'">
+El trenito del circo de Dumbo recorre la zona de Fantasyland pasando por Le Pays des Contes de Fées. Vista panorámica del parque. Perfecto para los más pequeños.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Excelente para descansar los pies y ver el parque desde arriba.</div>
           </div>
         </div>
@@ -1056,7 +1120,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de París con final feliz. Alguna escena oscura puede asustar a los más pequeños.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700&q=80" alt="Blanche-Neige et les Sept Nains" loading="lazy" onerror="this.style.display='none'">
+Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de París con final feliz. Alguna escena oscura puede asustar a los más pequeños.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para el mediodía. Una de las atracciones de apertura original del parque en 1992.</div>
           </div>
         </div>
@@ -1073,7 +1138,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Dark ride por los momentos clave de Pinocho: la Isla del Placer, el vientre de Monstro y su viaje para convertirse en niño real. Clásico de Fantasyland con mucho detalle visual.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Les Voyages de Pinocchio" loading="lazy" onerror="this.style.display='none'">
+Dark ride por los momentos clave de Pinocho: la Isla del Placer, el vientre de Monstro y su viaje para convertirse en niño real. Clásico de Fantasyland con mucho detalle visual.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila corta la mayoría del tiempo. Muy buena opción para el mediodía junto con otras dark rides de Fantasyland.</div>
           </div>
         </div>
@@ -1090,7 +1156,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El carrusel medieval de Lanzarote, ubicado justo detrás del castillo. Caballos finamente decorados con escenas del rey Arturo. Uno de los más hermosos en cualquier parque Disney.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1558008258-3256797b43f3?w=700&q=80" alt="Le Carrousel de Lancelot" loading="lazy" onerror="this.style.display='none'">
+El carrusel medieval de Lanzarote, ubicado justo detrás del castillo. Caballos finamente decorados con escenas del rey Arturo. Uno de los más hermosos en cualquier parque Disney.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Perfecto para los más chicos y una parada fotográfica imperdible frente al castillo.</div>
           </div>
         </div>
@@ -1107,7 +1174,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>La casa del árbol de la Familia Robinson en Adventureland. Subís por escaleras entre los árboles hasta la cima, con vistas espectaculares al parque. Decoración intrincada y muy inmersiva.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=700&q=80" alt="La Cabane des Robinson" loading="lazy" onerror="this.style.display='none'">
+La casa del árbol de la Familia Robinson en Adventureland. Subís por escaleras entre los árboles hasta la cima, con vistas espectaculares al parque. Decoración intrincada y muy inmersiva.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin fila. Tomá tu tiempo para explorar todos los niveles y disfrutar las vistas desde arriba. Vale mucho la pena.</div>
           </div>
         </div>
@@ -1124,7 +1192,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Isla explorable en el corazón de Adventureland con cuevas, puentes colgantes, la Roca del Cráneo y el Tesoro de Davy Jones. No es una atracción propiamente dicha sino una zona de exploración libre que muy poca gente descubre.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=700&q=80" alt="Adventure Isle" loading="lazy" onerror="this.style.display='none'">
+Isla explorable en el corazón de Adventureland con cuevas, puentes colgantes, la Roca del Cráneo y el Tesoro de Davy Jones. No es una atracción propiamente dicha sino una zona de exploración libre que muy poca gente descubre.</p>
             <div class="tip">💡 <strong>Tip:</strong> Gratis y sin fila. Explorá las cuevas subterráneas — es fácil perderse (en el buen sentido). Una de las joyas ocultas del parque.</div>
           </div>
         </div>
@@ -1141,7 +1210,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo a pie por los pasajes de Agrabah con dioramas en miniatura de las escenas más icónicas de Aladdin. Muy detallado y completamente gratuito. Situado en Adventureland.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1548019979-e9b773b3b9e5?w=700&q=80" alt="Le Passage Enchanté d'Aladdin" loading="lazy" onerror="this.style.display='none'">
+Paseo a pie por los pasajes de Agrabah con dioramas en miniatura de las escenas más icónicas de Aladdin. Muy detallado y completamente gratuito. Situado en Adventureland.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin fila, gratis. Muy fresquito en verano. Pocos turistas lo conocen — una joya escondida de Adventureland.</div>
           </div>
         </div>
@@ -1158,7 +1228,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Tren a vapor panorámico que recorre todo el perímetro del parque con paradas en Main Street, Fantasyland y Discoveryland. Pasa por el Diorama del Gran Cañón y los dinosaurios. Perfecto para descansar los pies.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=700&q=80" alt="Disneyland Railroad" loading="lazy" onerror="this.style.display='none'">
+Tren a vapor panorámico que recorre todo el perímetro del parque con paradas en Main Street, Fantasyland y Discoveryland. Pasa por el Diorama del Gran Cañón y los dinosaurios. Perfecto para descansar los pies.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila corta. Usalo estratégicamente para moverse de un lado al otro del parque descansando. El diorama del Gran Cañón es espectacular.</div>
           </div>
         </div>
@@ -1175,7 +1246,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo en vapor por el río que rodea Big Thunder Mountain, con vistas al Lejano Oeste y nuevas escenas de animales añadidas recientemente. Muy relajante y diferente a todo lo demás.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=700&q=80" alt="Thunder Mesa Riverboat Landing" loading="lazy" onerror="this.style.display='none'">
+Paseo en vapor por el río que rodea Big Thunder Mountain, con vistas al Lejano Oeste y nuevas escenas de animales añadidas recientemente. Muy relajante y diferente a todo lo demás.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila corta. Ideal para el mediodía. Las nuevas escenas de búfalos y mapaches añadidas en 2026 son un plus.</div>
           </div>
         </div>
@@ -1192,7 +1264,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Espectáculo 4D en teatro donde Mickey Mouse dirige una orquesta mágica. Las escenas viajan por momentos icónicos de La Sirenita, Aladdin, El Rey León y Peter Pan, con efectos de agua, viento y aroma. Sala climatizada — perfecta para el mediodía.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=700&q=80" alt="Mickey et son Orchestre PhilharMagique" loading="lazy" onerror="this.style.display='none'">
+Espectáculo 4D en teatro donde Mickey Mouse dirige una orquesta mágica. Las escenas viajan por momentos icónicos de La Sirenita, Aladdin, El Rey León y Peter Pan, con efectos de agua, viento y aroma. Sala climatizada — perfecta para el mediodía.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin necesidad de Premier Access. Duración ~20 minutos. Excelente pausa para toda la familia, especialmente con calor o lluvia.</div>
           </div>
         </div>
@@ -1209,7 +1282,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El castillo icónico de Disneyland París. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=700&q=80" alt="Le Château de la Belle au Bois Dormant" loading="lazy" onerror="this.style.display='none'">
+El castillo icónico de Disneyland París. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona.</p>
             <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
           </div>
         </div>
@@ -1448,7 +1522,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Ascensor de caída libre en un hotel embrujado. Caídas aleatorias que la hacen diferente cada vez. Una de las mejores del parque.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=700&q=80" alt="The Twilight Zone Tower of Terror" loading="lazy" onerror="this.style.display='none'">
+Ascensor de caída libre en un hotel embrujado. Caídas aleatorias que la hacen diferente cada vez. Una de las mejores del parque.</p>
             <div class="tip">💡 <strong>Tip:</strong> Primer destino al abrir el parque o Premier Access. Fila larguísima todo el día.</div>
           </div>
         </div>
@@ -1467,7 +1542,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Montaña rusa de alta velocidad en el Avengers Campus. Giros, inversiones y gran velocidad. Temática Marvel muy bien lograda.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1608889453775-f3e5a0db7e50?w=700&q=80" alt="Avengers Assemble: Flight Force" loading="lazy" onerror="this.style.display='none'">
+Montaña rusa de alta velocidad en el Avengers Campus. Giros, inversiones y gran velocidad. Temática Marvel muy bien lograda.</p>
             <div class="tip">💡 <strong>Tip:</strong> Segunda parada obligada al abrir. Fila muy larga todo el día.</div>
           </div>
         </div>
@@ -1485,7 +1561,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Atracción interactiva donde el visitante usa poderes de Spider-Man para capturar robots. Similar al Toy Story Mania pero con telarañas.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1635805737707-575885ab0820?w=700&q=80" alt="Spider-Man W.E.B. Adventure" loading="lazy" onerror="this.style.display='none'">
+Atracción interactiva donde el visitante usa poderes de Spider-Man para capturar robots. Similar al Toy Story Mania pero con telarañas.</p>
             <div class="tip">💡 <strong>Tip:</strong> Buena para toda la familia. Fila moderada comparado con Tower of Terror.</div>
           </div>
         </div>
@@ -1504,7 +1581,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de París. Efecto 4D con olores, proyecciones y movimiento.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Ratatouille: The Adventure" loading="lazy" onerror="this.style.display='none'">
+Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de París. Efecto 4D con olores, proyecciones y movimiento.</p>
             <div class="tip">💡 <strong>Tip:</strong> Exclusivo de este parque en el mundo. No perdérselo bajo ningún concepto.</div>
           </div>
         </div>
@@ -1524,7 +1602,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa, Olaf y los personajes de Frozen. Inmersiva, con efectos especiales, animatronics y música. La atracción más esperada del parque.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=700&q=80" alt="Frozen Ever After" loading="lazy" onerror="this.style.display='none'">
+Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa, Olaf y los personajes de Frozen. Inmersiva, con efectos especiales, animatronics y música. La atracción más esperada del parque.</p>
             <div class="tip">💡 <strong>Tip:</strong> Muy popular — Premier Access muy recomendado o ir lo primero al abrir el World of Frozen. Fila larguísima todo el día.</div>
           </div>
         </div>
@@ -1542,7 +1621,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en Adventure Way. Gondola giratoria inspirada en Rapunzel bajo un cielo de linternas flotantes, con la canción "I See The Light". La voz original de Rapunzel (Mandy Moore) grabó los anuncios exclusivamente para esta atracción.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1519780571040-b4c1b84ed4c1?w=700&q=80" alt="Raiponce Tangled Spin" loading="lazy" onerror="this.style.display='none'">
+Nueva atracción inaugurada el 29 de marzo de 2026 en Adventure Way. Gondola giratoria inspirada en Rapunzel bajo un cielo de linternas flotantes, con la canción "I See The Light". La voz original de Rapunzel (Mandy Moore) grabó los anuncios exclusivamente para esta atracción.</p>
             <div class="tip">💡 <strong>Tip:</strong> Perfecta para los chicos y toda la familia. Fila moderada — buena opción para mitad del día.</div>
           </div>
         </div>
@@ -1559,7 +1639,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Torre de caída libre temática de Toy Story. Los soldaditos de Woody hacen descender suavemente a los pasajeros desde lo alto. Menos intensa que Tower of Terror. Worlds of Pixar.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=700&q=80" alt="Toy Soldiers Parachute Drop" loading="lazy" onerror="this.style.display='none'">
+Torre de caída libre temática de Toy Story. Los soldaditos de Woody hacen descender suavemente a los pasajeros desde lo alto. Menos intensa que Tower of Terror. Worlds of Pixar.</p>
             <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — fila mucho más corta. Buena opción para los que quieren algo de altura sin la intensidad del Tower of Terror.</div>
           </div>
         </div>
@@ -1576,7 +1657,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El perro Slinky de Toy Story te lleva en un giro en espiral. Atracción familiar suave, perfecta para los más chicos. Worlds of Pixar.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=700&q=80" alt="Slinky Dog Zigzag Spin" loading="lazy" onerror="this.style.display='none'">
+El perro Slinky de Toy Story te lleva en un giro en espiral. Atracción familiar suave, perfecta para los más chicos. Worlds of Pixar.</p>
             <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima. Ideal para los más pequeños. Fila moderada.</div>
           </div>
         </div>
@@ -1593,7 +1675,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>El auto RC de Toy Story como atracción tipo péndulo gigante. Va de un lado al otro ganando altura hasta casi 180°. Muy intensa. Worlds of Pixar. Single Rider disponible.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1608889453775-f3e5a0db7e50?w=700&q=80" alt="RC Racer" loading="lazy" onerror="this.style.display='none'">
+El auto RC de Toy Story como atracción tipo péndulo gigante. Va de un lado al otro ganando altura hasta casi 180°. Muy intensa. Worlds of Pixar. Single Rider disponible.</p>
             <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — ahorra mucho tiempo. No apta para los que sufren de mareos o vértigo.</div>
           </div>
         </div>
@@ -1610,7 +1693,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=80" alt="Cars Road Trip" loading="lazy" onerror="this.style.display='none'">
+Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo.</div>
           </div>
         </div>
@@ -1629,7 +1713,8 @@
             <span class="chevron">▼</span>
           </div>
           <div class="atraccion-body">
-            <p>Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
+            <img class="atraccion-foto" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=700&q=80" alt="Crush's Coaster" loading="lazy" onerror="this.style.display='none'">
+Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
           </div>
         </div>
@@ -1966,6 +2051,7 @@
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎡</span><div class="lugar-header-text"><h4>Moulin Rouge</h4><span class="horario">Show desde €115 · Exterior gratis</span></div></div></div>
           <div class="lugar-body">
+            <img class="atraccion-foto" src="https://i.imgur.com/Wk95KmK.jpg" alt="Moulin Rouge" loading="lazy" onerror="this.style.display='none'">
             <p>Inaugurado en 1889, es el cabaret más famoso de París. El Moulin Rouge (Molino Rojo) comenzó como un cabaret, luego se convirtió en teatro y también en cine. Actualmente ofrece una cena exquisita y un espectáculo de alta calidad con talentosos bailarines.</p>
             <div class="tip">💡 <strong>Tip:</strong> Se puede ver el edificio icónico con sus aspas rojas desde la calle sin pagar. El barrio alrededor tiene muchos bares y restaurantes animados — buena zona para cenar.</div>
           </div>
