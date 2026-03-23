@@ -190,6 +190,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 1.5rem 0;
+    align-items: stretch;
   }
   .destino-card {
     border-radius: 1.5rem;
@@ -258,6 +259,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 1.5rem 0;
+    align-items: stretch;
   }
   .parque-card {
     border-radius: 1.5rem;
@@ -268,7 +270,7 @@
     transition: all 0.2s;
   }
   .parque-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--sombra-hover); }
-  .parque-card img { width: 100%; height: 200px; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s; }
+  .parque-card img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s; }
   .parque-card:hover img { transform: scale(1.05); }
   .parque-card-overlay {
     position: absolute; inset: 0;
