@@ -675,6 +675,60 @@
   .msg-ok { color: #2d6a4f; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; }
   .msg-err { color: #c0657a; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; }
 
+  /* ─── CIERRE CÁLIDO ─── */
+  .cierre-calido {
+    background: linear-gradient(135deg, var(--celeste-light) 0%, var(--lavanda-light) 50%, var(--rosa-light) 100%);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--sombra);
+  }
+  .cierre-calido h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--texto);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+  .cierre-calido p {
+    font-size: 0.92rem;
+    color: var(--texto);
+    line-height: 1.6;
+    margin-bottom: 1.1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .cierre-calido .contacto {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cierre-calido .contacto a {
+    color: var(--dorado);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 700;
+    background: rgba(255,255,255,0.6);
+    padding: 0.55rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.2s;
+  }
+  .cierre-calido .contacto a:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-1px);
+  }
+  .cierre-calido .firma {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--dorado);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
   /* Responsive */
   @media (max-width: 400px) {
     .destinos-grid, .parques-grid, .info-grid { grid-template-columns: 1fr; }
@@ -763,10 +817,14 @@
           <p>Metro, RER y tipos de tickets</p>
         </div>
       </div>
-      <div style="text-align:center; margin-top:1.5rem; padding-bottom:1rem;">
-        <a href="https://wa.me/541132924274" style="color:var(--dorado); font-size:0.88rem; text-decoration:none;">📱 Escribime por WhatsApp</a>
-        &nbsp;·&nbsp;
-        <a href="https://instagram.com/disnerd.sofi" style="color:var(--dorado); font-size:0.88rem; text-decoration:none;">📸 @disnerd.sofi</a>
+      <div class="cierre-calido">
+        <h3>¡Have a magical day! ✨</h3>
+        <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
+        <div class="contacto">
+          <a href="https://wa.me/541132924274">📱 WhatsApp</a>
+          <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
+        </div>
+        <div class="firma">— Sofi ✦</div>
       </div>
     </div>
 
@@ -1516,6 +1574,15 @@
           <div class="tip">💡 <strong>Dato extra:</strong> Si querés un café en mano, no va a poder ser dentro del parque. Por una cuestión de preservar la cultura francesa y no invadir con la "Yankee" no hay Starbucks dentro del parque. Pero sí hay en <strong>Disney Village</strong>.</div>
         </div>
       </div>
+      <div class="cierre-calido">
+        <h3>¡Have a magical day! ✨</h3>
+        <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
+        <div class="contacto">
+          <a href="https://wa.me/541132924274">📱 WhatsApp</a>
+          <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
+        </div>
+        <div class="firma">— Sofi ✦</div>
+      </div>
     </div>
 
     <!-- ── WALT DISNEY STUDIOS / DISNEY ADVENTURE WORLD ── -->
@@ -1836,6 +1903,15 @@
           <div class="tip">💡 <strong>Tip:</strong> Aunque sea en su propio hotel, se recomienda hacer reserva. Las cenas son temprano (19 - 19.30 por ejemplo).</div>
         </div>
       </div>
+      <div class="cierre-calido">
+        <h3>¡Have a magical day! ✨</h3>
+        <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
+        <div class="contacto">
+          <a href="https://wa.me/541132924274">📱 WhatsApp</a>
+          <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
+        </div>
+        <div class="firma">— Sofi ✦</div>
+      </div>
     </div>
 
     <!-- ── GUÍA FRANCIA ── -->
@@ -2072,9 +2148,18 @@
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎨</span><div class="lugar-header-text"><h4>Rue Lepic</h4><span class="horario">Todo el día</span></div></div></div>
+          <div class="lugar-body">
+            <p>Una de las calles más encantadoras de Montmartre, llena de tiendas, cafés y restaurantes con arquitectura típica parisina. Paseá por ella disfrutando cada rincón.</p>
+            <p>En el <strong>n°54</strong> se encuentra el edificio donde vivió <strong>Van Gogh</strong> con su hermano Theo entre 1886 y 1888.</p>
+            <p>También fue escenario de varias escenas de la película <strong>"El fabuloso destino de Amélie Poulain"</strong> — el almacén Collignon donde Amélie hacía las compras está justo en esta calle.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Caminala despacio hasta llegar al Café des Deux Moulins. La calle es empinada pero el recorrido es parte del encanto.</div>
+          </div>
+        </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">☕</span><div class="lugar-header-text"><h4>Café des Deux Moulins</h4><span class="horario">Ver horarios</span></div></div></div>
           <div class="lugar-body">
-            <p>El café fue escenario de la película "El fabuloso destino de Amélie Poulain". Además de bocadillos y cafés, sirve comidas tradicionales parisinas. Vale la pena hacer una parada para tomar un café o sacar una foto. Se llega paseando por la Rue Lepic, donde en el n°54 se encuentra el edificio donde vivió Van Gogh con su hermano entre 1886 y 1888.</p>
+            <p>El café fue escenario principal de la película "El fabuloso destino de Amélie Poulain" — ahí trabajaba Amélie como camarera. Además de bocadillos y cafés, sirve comidas tradicionales parisinas. Vale la pena hacer una parada para tomar un café o sacar una foto.</p>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
@@ -2269,6 +2354,23 @@
             <div class="tip">💡 Reservar en <a href="https://www.museepicassoparis.fr/es" target="_blank" style="color:var(--dorado)">museepicassoparis.fr</a>. El edificio (Hôtel Salé) es también una obra de arte en sí mismo.</div>
           </div>
         </div>
+        <div class="lugar-card" onclick="toggleLugar(this)">
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏛️</span><div class="lugar-header-text"><h4>Hôtel de Ville</h4><span class="horario">Exterior todo el día · Gratuito</span></div></div></div>
+          <div class="lugar-body">
+            <p>El ayuntamiento de París — uno de los edificios más impresionantes y emblemáticos de la ciudad. Su arquitectura neorrenacentista, con esculturas de 136 personajes famosos de la historia francesa en la fachada, lo convierte en una parada obligada.</p>
+            <p>La plaza frente al edificio es un punto de encuentro popular: en verano tiene eventos y pantallas gigantes, en invierno se instala una <strong>pista de patinaje sobre hielo</strong> al aire libre.</p>
+            <div class="tip">💡 <strong>Tip:</strong> De noche se ilumina y queda espectacular. Buena última parada del día antes de cruzar el Sena o volver al hotel.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cierre-calido">
+        <h3>¡Gracias por viajar conmigo! ✨</h3>
+        <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
+        <div class="contacto">
+          <a href="https://wa.me/541132924274">📱 WhatsApp</a>
+          <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
+        </div>
+        <div class="firma">— Sofi ✦</div>
       </div>
     </div>
 
