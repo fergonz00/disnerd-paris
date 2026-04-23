@@ -552,6 +552,29 @@
     line-height: 1.7;
   }
   .transporte-card ul { padding-left: 1.2rem; }
+  .transporte-card .tip, .estrategia-card .tip {
+    background: var(--crema);
+    border-left: 3px solid var(--dorado);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--texto);
+  }
+
+  /* ─── CAFÉ TIP ─── */
+  .cafe-tip {
+    background: linear-gradient(135deg, #fff5e8 0%, #fdf0db 100%);
+    border-left: 3px solid #c9a96e;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--texto);
+  }
+  .cafe-tip strong { color: #8a6b3a; }
 
   /* ─── BOTÓN VOLVER ─── */
   .btn-volver {
@@ -1995,6 +2018,31 @@
           <h4>🚕 Taxi / Uber / Bolt</h4>
           <p>Uber y Bolt funcionan muy bien en París. Para grupos puede ser más conveniente que el metro. Uber a Disneyland desde el centro sale aproximadamente €50-70 según el tráfico.</p>
         </div>
+        <div class="transporte-card">
+          <h4>☕ Cafés recomendados en París</h4>
+          <p>Sofi seleccionó estos cafés según lo que busques. A lo largo del itinerario vas a ver el ícono <strong>☕</strong> cada vez que estés cerca de uno.</p>
+          <p style="margin-top:0.7rem"><strong>🌿 Estética + vibe:</strong></p>
+          <ul>
+            <li><strong>Saint Pearl</strong> — Marais (cerca de Rue Vieille du Temple · Día 6)</li>
+            <li><strong>Boot Café</strong> — Marais, fachada verde icónica (Día 6)</li>
+          </ul>
+          <p style="margin-top:0.7rem"><strong>☕ Café posta, nivel experto:</strong></p>
+          <ul>
+            <li><strong>Substance</strong> — Distrito 17</li>
+            <li><strong>Motors</strong> — Saint-Germain (Día 4)</li>
+          </ul>
+          <p style="margin-top:0.7rem"><strong>📸 Contenido Pinterest:</strong></p>
+          <ul>
+            <li><strong>Jōhō</strong> — Distrito 10 (café japonés, cerca de Gare de l'Est)</li>
+            <li><strong>The Coffee</strong> — varias sucursales (Lafayette Día 2, Marais Día 6)</li>
+          </ul>
+          <p style="margin-top:0.7rem"><strong>🥐 París clásico:</strong></p>
+          <ul>
+            <li><strong>Café de Flore</strong> — Saint-Germain (Día 4)</li>
+            <li><strong>Les Deux Magots</strong> — Saint-Germain (Día 4)</li>
+          </ul>
+          <div class="tip">💡 <strong>Tip:</strong> Flore y Deux Magots son los dos cafés históricos más famosos de París — frecuentados por Sartre, Simone de Beauvoir, Hemingway y Picasso. Los precios son altos pero vale la experiencia.</div>
+        </div>
       </div>
 
       <div class="dia-content" id="dia-1">
@@ -2102,26 +2150,32 @@
           <div style="font-size:0.85rem; color:var(--texto-suave);">Jardín de las Tullerías · Palais Royal · Louvre · Ópera Garnier · Galeries Lafayette · Place Vendôme</div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🌸</span><div class="lugar-header-text"><h4>Jardín de las Tullerías</h4><span class="horario">7:00–21:00</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🌸</span><div class="lugar-header-text"><h4>Jardín de las Tullerías</h4><span class="horario">7:00–21:00 · Gratuito</span></div></div></div>
           <div class="lugar-body">
-            <p>Creados en el siglo XVI por orden de Catalina de Médici. Diseñados por el mismo arquitecto de los jardines de Versalles, cuentan con senderos simétricos, fuentes y parterres de flores. El Palacio de las Tullerías ya no existe — fue destruido en un incendio en 1871 — pero el jardín se mantiene como una de las principales atracciones turísticas de París.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Hay sillas de jardín en las que cualquiera puede sentarse. Tomarse un café o comer algo en el jardín antes de entrar al Louvre.</div>
+            <p>Creados en 1564 por <strong>Catalina de Médici</strong> como jardines del Palacio de las Tullerías. Un siglo después, <strong>André Le Nôtre</strong> —el mismo arquitecto de los jardines de Versalles— los rediseñó con senderos simétricos, fuentes y parterres geométricos que se convirtieron en modelo del jardín francés clásico.</p>
+            <p>El Palacio de las Tullerías ya no existe: fue incendiado por la Comuna de París en 1871 y sus ruinas finalmente demolidas. Hoy dentro del jardín están el <strong>Musée de l'Orangerie</strong> (con los Nenúfares de Monet) y el <strong>Jeu de Paume</strong> (fotografía contemporánea).</p>
+            <p><strong>🎬 En la pantalla grande:</strong> varias escenas de <strong>"Medianoche en París"</strong> de Woody Allen, "Marie Antoinette" de Sofia Coppola, y "Charade" con Audrey Hepburn y Cary Grant (1963).</p>
+            <div class="tip">💡 <strong>Tip:</strong> Hay sillas verdes de jardín en las que cualquiera puede sentarse gratis. Tomarse un café o un croissant con vista al Louvre antes de entrar es una experiencia parisina clásica.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏛️</span><div class="lugar-header-text"><h4>Palais Royal y Jardín</h4><span class="horario">Todo el día</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏛️</span><div class="lugar-header-text"><h4>Palais Royal y Jardín</h4><span class="horario">7:30–22:30 · Gratuito</span></div></div></div>
           <div class="lugar-body">
-            <p>Construido en el siglo XVII, sirvió como residencia real. Hoy es un importante centro cultural y sus alrededores son conocidos por tiendas de alta costura, joyerías y restaurantes.</p>
-            <p>El lado sur del jardín alberga las famosas <strong>Colonnes de Buren</strong>: 260 columnas de diferentes alturas rayadas en blanco y negro que generan opiniones encontradas, pero se han convertido en un objetivo fotográfico para muchos visitantes e influencers.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Ideal para sacar fotos creativas con las columnas de Buren. El jardín central con sus fuentes es perfecto para un descanso tranquilo.</div>
+            <p>Construido en 1633 para el <strong>Cardenal Richelieu</strong> (el mismo villano histórico de <em>Los Tres Mosqueteros</em> de Dumas), fue luego residencia del joven Luis XIV antes de mudarse al Louvre.</p>
+            <p>Un dato histórico fascinante: el <strong>12 de julio de 1789</strong>, en estos jardines, <strong>Camille Desmoulins</strong> se paró sobre una mesa y dio el discurso que encendió la <strong>Revolución Francesa</strong> — dos días antes de la Toma de la Bastilla. Hoy, alrededor del jardín funcionan la <strong>Comédie Française</strong>, el Ministerio de Cultura y boutiques exclusivas.</p>
+            <p>El lado sur alberga las famosas <strong>Colonnes de Buren</strong>: 260 columnas de mármol rayadas blanco y negro, instaladas por Daniel Buren en 1986. Fue una obra polémica — hoy es de las más fotografiadas de París.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> "The Devil Wears Prada", "Midnight in Paris", y locación favorita de fashion films y editoriales de moda.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Ideal para sacar fotos creativas con las columnas de Buren. El jardín central con sus fuentes circulares es perfecto para un descanso.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎨</span><div class="lugar-header-text"><h4>Museo del Louvre</h4><span class="horario">9:00–18:00 · Mié y Vie hasta 21:00 · Cerrado martes</span></div></div></div>
           <div class="lugar-body">
-            <p>Uno de los museos más grandes y famosos del mundo. Originalmente construido como un castillo en el siglo XII, fue palacio real en el siglo XVI y se convirtió en museo en 1793. Alberga obras desde la prehistoria hasta el siglo XXI, incluyendo la <strong>Mona Lisa</strong> de Leonardo Da Vinci, la <strong>Venus de Milo</strong>, la <strong>Victoria de Samotracia</strong> y la Libertad Guiando al Pueblo de Delacroix. Se entra por la icónica Pirámide de Vidrio.</p>
+            <p>El museo más visitado del mundo (9 millones al año). Comenzó como un <strong>castillo medieval en 1190</strong> bajo Felipe II Augusto, se transformó en palacio renacentista con Francisco I (que trajo a Leonardo Da Vinci a Francia con la Mona Lisa bajo el brazo), y se convirtió en museo público en 1793 durante la Revolución — los bienes de la realeza ahora pertenecían al pueblo.</p>
+            <p>La <strong>Pirámide de Vidrio</strong> de I.M. Pei (1989) fue polémica cuando se construyó pero hoy es tan icónica como el resto del edificio. Alberga <strong>35.000 obras expuestas</strong> (de 380.000 en total): la <strong>Mona Lisa</strong> de Leonardo, la <strong>Venus de Milo</strong>, la <strong>Victoria de Samotracia</strong>, el Código de Hammurabi, y "La Libertad guiando al pueblo" de Delacroix.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> icónica escena inicial de <strong>"El Código Da Vinci"</strong> (Dan Brown → película con Tom Hanks). También <strong>"Funny Face"</strong> con Audrey Hepburn, "Bande à Part" de Godard con la famosa carrera de 9:43 minutos cruzando todo el museo, y muchas más.</p>
             <p><strong>Precios 2026:</strong> €22 (residentes europeos) / €32 (resto). Gratuito menores de 18 y europeos menores de 26. También gratuito el 14 de julio y el primer viernes de mes a partir de las 18:00 (excepto julio y agosto). Incluso con entrada gratuita hay que reservar franja horaria online.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Reservar en <a href="https://ticket.louvre.fr/es" target="_blank" style="color:var(--dorado)">ticket.louvre.fr</a>. Los miércoles y viernes hasta las 21h hay mucho menos gente. Al entrar, ir directo a la Mona Lisa.</div>
+            <div class="tip">💡 <strong>Tip:</strong> Reservar en <a href="https://ticket.louvre.fr/es" target="_blank" style="color:var(--dorado)">ticket.louvre.fr</a>. Los miércoles y viernes hasta las 21h hay mucho menos gente. Al entrar, ir directo a la Mona Lisa (sector Denon, 1er piso). Tomarlo con calma — es imposible ver todo, elegí 3-4 "must see".</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
@@ -2134,29 +2188,41 @@
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Iglesia de Saint-Eustache</h4><span class="horario">Entrada gratuita</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Iglesia de Saint-Eustache</h4><span class="horario">Lun–Vie 9:30–19:00 · Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
-            <p>Construida entre 1532 y 1632, restaurada en 1840. Fue allí donde Luis XIV recibió su primera comunión y Mozart eligió que fuera el lugar del funeral de su madre. Su nombre es en honor a Santo Eustaquio, un general de la antigua Roma que se convirtió al cristianismo.</p>
+            <p>Construida entre 1532 y 1632 (restaurada en 1840), Saint-Eustache es una de las iglesias más importantes de París — una mezcla única de arquitectura <strong>gótica tardía</strong> por fuera y <strong>renacentista</strong> por dentro. Su nombre rinde homenaje a Santo Eustaquio, un general romano convertido al cristianismo.</p>
+            <p>Acá pasaron cosas grandes: <strong>Luis XIV</strong> recibió su primera comunión en 1649, <strong>Mozart</strong> eligió este lugar para el funeral de su madre en 1778, y <strong>Molière</strong> fue bautizado aquí. También está enterrado <strong>Jean-Baptiste Colbert</strong>, el ministro de finanzas de Luis XIV.</p>
+            <p>Tiene uno de los <strong>órganos más grandes de Francia</strong> (8.000 tubos). Queda en el corazón del antiguo mercado de París, Les Halles, hoy una zona de compras y restaurantes.</p>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎭</span><div class="lugar-header-text"><h4>Ópera Garnier</h4><span class="horario">Entrada paga</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎭</span><div class="lugar-header-text"><h4>Ópera Garnier</h4><span class="horario">10:00–17:00 · Entrada paga</span></div></div></div>
           <div class="lugar-body">
-            <p>Recibe su nombre del arquitecto Charles Garnier, quien la diseñó ganando un concurso en el que participaron más de 170 arquitectos. Construida en el siglo XIX por orden de Napoleón III. En ella se realizan óperas, ballets y grandes espectáculos de renombre internacional. Es mencionada en la novela "El Fantasma de la Ópera".</p>
+            <p>Obra maestra del estilo <strong>Segundo Imperio</strong>, encargada por Napoleón III como parte de la gran renovación de París de Haussmann. Construida entre 1861 y 1875 por <strong>Charles Garnier</strong>, quien ganó el concurso compitiendo con más de 170 arquitectos — tenía 35 años y era un desconocido cuando ganó.</p>
+            <p>Su interior es espectacular: <strong>Gran Escalera de mármol</strong>, el majestuoso <strong>Gran Foyer</strong> dorado, y un techo pintado por <strong>Marc Chagall</strong> en 1964 con escenas de óperas famosas. El salón principal tiene la araña de cristal más grande del mundo (6 toneladas).</p>
+            <p><strong>🎬 En la pantalla grande:</strong> inspiración directa de <strong>"El Fantasma de la Ópera"</strong> de Gastón Leroux (1910). El libro habla de un "lago subterráneo" — y sí, existe de verdad: la napa freática inundó la cimentación durante la construcción, así que lo usan como reservorio. Los bomberos de París practican natación ahí. Adaptaciones famosas: la película de 2004 con Gerard Butler y el musical de Andrew Lloyd Webber.</p>
+            <p><strong>Precio:</strong> €15 visita libre / €22 con audioguía. Gratuito menores de 12.</p>
+            <div class="tip">💡 <strong>Tip:</strong> La visita vale 100% la pena, el interior deja sin palabras. Reservar en <a href="https://www.operadeparis.fr" target="_blank" style="color:var(--dorado)">operadeparis.fr</a>.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏬</span><div class="lugar-header-text"><h4>Galeries Lafayette</h4><span class="horario">Entrada gratuita · Lun–Sáb 9:30–20:30</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏬</span><div class="lugar-header-text"><h4>Galeries Lafayette</h4><span class="horario">Lun–Sáb 9:30–20:30 · Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
-            <p>Una de las tiendas por departamentos más famosas del mundo. Cuenta con gran variedad de productos de las marcas más reconocidas, y también un piso con marcas más accesibles y promociones.</p>
-            <p>La entrada es abierta al público y gratuita. Aunque no tengas intención de comprar, vale la pena entrar: tiene una cúpula de vidrio que se extiende por varios pisos y el último piso tiene una <strong>terraza panorámica gratuita con vista increíble de París</strong>.</p>
-            <div class="tip">💡 <strong>Tip:</strong> No te vayas sin subir a la terraza del último piso — es una de las mejores vistas de París y es completamente gratis.</div>
+            <p>Fundada en 1894 por <strong>Théophile Bader</strong>, Galeries Lafayette es una de las tiendas por departamentos más famosas del mundo. Su joya es la <strong>cúpula de vitrales Art Nouveau</strong> de 33 metros de altura, terminada en 1912, que se extiende sobre 7 pisos de tiendas de las marcas más top del mundo.</p>
+            <p>Gratuita para entrar (aun sin comprar nada). Tiene desde las marcas más caras hasta un piso con marcas accesibles y promos. Su <strong>terraza panorámica en la cima es gratuita</strong> y ofrece una de las mejores vistas de París — con la Torre Eiffel, el Sacré-Cœur y la Ópera a la vista.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> aparece en "Paris, Je t'aime" y "Midnight in Paris". Sede de desfiles de moda históricos.</p>
+            <div class="tip">💡 <strong>Tip:</strong> No te vayas sin subir a la terraza del último piso — es una de las mejores vistas de París y es completamente gratis. Aprovechá para tomar fotos al atardecer.</div>
+            <div class="cafe-tip">☕ <strong>Café cerca — The Coffee (Haussmann):</strong> sucursal junto a Galeries Lafayette. Opción Pinterest para un break rápido.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">💎</span><div class="lugar-header-text"><h4>Place Vendôme</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
-            <p>Histórica e icónica plaza a pocos pasos de la Ópera Garnier. Famosa por su impresionante arquitectura y por la Columna Vendôme — una torre de piedra que se eleva en el centro de la plaza, erigida en honor a la victoria de Napoleón en la batalla de Austerlitz en 1805, decorada con figuras en relieve.</p>
+            <p>Diseñada por <strong>Jules Hardouin-Mansart</strong> en 1699 (el mismo arquitecto de Versalles y Los Inválidos), es una de las plazas más elegantes del mundo. Originalmente construida en honor a <strong>Luis XIV</strong>, hoy es sinónimo de lujo: acá están las joyerías más caras del planeta — <strong>Cartier, Van Cleef & Arpels, Chaumet, Chanel Joyería, Boucheron</strong>.</p>
+            <p>En el centro: la <strong>Columna Vendôme</strong> (44 m de altura), erigida por Napoleón en 1810 y hecha con el bronce de 1.200 cañones rusos y austríacos capturados en la <strong>Batalla de Austerlitz</strong> (1805). En la cima hay una estatua de Napoleón vestido de César. La columna fue derribada por la Comuna de París en 1871 y reconstruida poco después.</p>
+            <p>En el n°15 está el <strong>Hôtel Ritz</strong>: donde vivió <strong>Coco Chanel por 37 años</strong> (en la Suite que hoy lleva su nombre), donde Ernest Hemingway "liberó" el bar durante la Segunda Guerra, y desde donde salió <strong>Lady Di</strong> la noche de su fatal accidente en 1997.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> "Coco Avant Chanel" con Audrey Tautou, escenas de "Midnight in Paris", "Marie Antoinette" y muchas más.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Aunque las tiendas parezcan inaccesibles, entrar a mirar es gratis y nadie te mira mal. El Bar Hemingway del Ritz (abierto al público con reserva) es una experiencia.</div>
           </div>
         </div>
       </div>
@@ -2297,6 +2363,11 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Abadía de Saint-Germain-des-Prés</h4><span class="horario">Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             <p>Considerada la iglesia más antigua de París, se fundó en el siglo VI. Su nombre rinde homenaje al obispo Germano quien consagró la iglesia en el año 558 y fue enterrado en la cripta. Se le atribuyeron varios milagros en vida y después de su muerte.</p>
+            <div class="cafe-tip">☕ <strong>3 cafés imperdibles en esta zona:</strong><br>
+              · <strong>Café de Flore</strong> — París clásico, frecuentado por Sartre y Hemingway<br>
+              · <strong>Les Deux Magots</strong> — París clásico, histórico de intelectuales y artistas<br>
+              · <strong>Motors</strong> — para los que buscan café posta nivel experto
+            </div>
           </div>
         </div>
       </div>
@@ -2389,6 +2460,11 @@
           <div class="lugar-body">
             <p>Famosa por sus tiendas de moda, boutiques, cafés y restaurantes. Es una calle estrecha con edificios históricos y una atmósfera encantadora que atrae tanto a locales como a visitantes que desean explorar el corazón del barrio Marais.</p>
             <div class="tip">💡 <strong>Tip:</strong> Las tiendas del Marais suelen abrir los domingos a diferencia del resto de París. Ideal para el último día de compras.</div>
+            <div class="cafe-tip">☕ <strong>3 cafés imperdibles en el Marais:</strong><br>
+              · <strong>Saint Pearl</strong> — estética + vibe Pinterest, uno de los más instagrameables<br>
+              · <strong>Boot Café</strong> — fachada verde icónica, minúsculo y con muchísimo encanto<br>
+              · <strong>The Coffee (Marais)</strong> — Pinterest, buena opción para un break rápido
+            </div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
