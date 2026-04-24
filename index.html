@@ -456,13 +456,28 @@
   .estrategia-card ul { padding-left: 1.2rem; }
 
   /* ─── GUÍA FRANCIA ─── */
+  .dias-nav-wrapper {
+    position: relative;
+    margin: 1rem 0;
+  }
+  .dias-nav-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--crema) 80%);
+    pointer-events: none;
+    border-radius: 0 1rem 1rem 0;
+  }
   .dias-nav {
     display: flex;
     gap: 0.5rem;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
-    margin: 1rem 0;
+    padding: 0.25rem 1.5rem 0.5rem 0.25rem;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
   .dias-nav::-webkit-scrollbar { display: none; }
   .dia-btn {
@@ -1966,15 +1981,17 @@
         <h2>🇫🇷 Guía Francia</h2>
         <p>París día a día · Transporte · Tips</p>
       </div>
-      <div class="dias-nav">
-        <button class="dia-btn activo" onclick="cambiarDia(this,'dia-transporte')">🚇 Transporte</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-1')">Día 1</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-2')">Día 2</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-3')">Día 3</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-4')">Día 4</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-5')">Día 5</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-6')">Día 6</button>
-        <button class="dia-btn" onclick="cambiarDia(this,'dia-recomendaciones')">✨ Recomendaciones</button>
+      <div class="dias-nav-wrapper">
+        <div class="dias-nav">
+          <button class="dia-btn activo" onclick="cambiarDia(this,'dia-transporte')">🚇 Transporte</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-recomendaciones')">✨ Recomendaciones</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-1')">Día 1</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-2')">Día 2</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-3')">Día 3</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-4')">Día 4</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-5')">Día 5</button>
+          <button class="dia-btn" onclick="cambiarDia(this,'dia-6')">Día 6</button>
+        </div>
       </div>
 
       <!-- Transporte -->
