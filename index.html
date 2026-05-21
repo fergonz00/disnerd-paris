@@ -389,6 +389,7 @@
   .badge-sr { background: var(--celeste-light); color: #4080a0; }
   .badge-top { background: #fff3cd; color: #a07000; }
   .badge-familia { background: #d4edda; color: #2d6a4f; }
+  .badge-personajes { background: #ffe0ec; color: #c01070; }
   .chevron { font-size: 0.9rem; color: var(--texto-suave); transition: transform 0.2s; }
   .atraccion.abierta .chevron { transform: rotate(180deg); }
   .atraccion-body {
@@ -1567,60 +1568,163 @@
         <div class="estrategia-card">
           <h4>☕ Desayuno</h4>
           <p>Siempre es en el hotel. Es buffet. No requiere reserva. Si contrataste el plan de comidas ya lo tendrás pago y sino podrías acercarte a pagarlo allí en el momento.</p>
-          <p>Con personajes pueden reservar en Plaza Gardens (Disneyland Park).</p>
+          <p>Con personajes pueden reservar en <strong>Plaza Gardens</strong> (Disneyland Park).</p>
           <div class="tip">💡 <strong>Tip:</strong> Reservas se pueden hacer a partir de 12 meses antes por hospedarte dentro de Disney.</div>
         </div>
-        <div class="estrategia-card">
-          <h4>🍽️ Almuerzo</h4>
-          <p><strong>Disneyland Park:</strong></p>
-          <ul>
-            <li>Silver Spur</li>
-            <li>Blue Lagoon Restaurant ⭐ — dentro de Pirates of the Caribbean, con vista a la atracción</li>
-            <li>Captain's Jack ⭐</li>
-            <li>Agrabah Cafe</li>
-            <li>Plaza Gardens</li>
-            <li>Walt's — An American Restaurant ⭐</li>
-            <li>Royal Banquet ⭐</li>
-            <li>Auberge de Cendrillon (con princesas) ⭐</li>
-          </ul>
-          <p style="margin-top:0.6rem"><strong>Disney Adventure World:</strong></p>
-          <ul>
-            <li>Chez Rémy ⭐</li>
-            <li>PYM Kitchen ⭐</li>
-          </ul>
+
+        <h4 style="margin:1.2rem 0 0.6rem; color:var(--lavanda-fuerte);">🍽️ Restaurantes con reserva — Disneyland Park</h4>
+        <p style="font-size:0.85rem; color:var(--texto-suave); margin-bottom:0.8rem;">⭐ marca los favoritos de Sofi. Reservar con la mayor anticipación posible — los más buscados se llenan rápido.</p>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🤠</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Silver Spur Steakhouse</span>
+                <div class="badges"></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/silver-spur.jpg" alt="Silver Spur Steakhouse" loading="lazy" onerror="this.style.display='none'">
+            <p>Steakhouse en Frontierland con ambientación de saloon del Far West. Carnes a la parrilla y costillas. Pesado pero rico — ideal para una cena fuerte después del parque.</p>
+          </div>
         </div>
-        <div class="estrategia-card">
-          <h4>🌙 Cena</h4>
-          <p>(Aunque sea en su propio hotel, se recomienda hacer reserva). Los mismos que en el almuerzo, solo que la cena es temprana (19 - 19.30 por ejemplo)</p>
-          <p><strong>Disneyland Park:</strong></p>
-          <ul>
-            <li>Plaza Gardens (con personajes) ⭐</li>
-            <li>Auberge de Cendrillon (con princesas)</li>
-          </ul>
-          <p style="margin-top:0.6rem"><strong>Hotel New York:</strong></p>
-          <ul>
-            <li>Manhattan restaurant</li>
-            <li>Downtown restaurant</li>
-          </ul>
-          <p style="margin-top:0.6rem"><strong>Hotel Newport Bay Club:</strong></p>
-          <ul><li>Cape Cod</li></ul>
-          <p style="margin-top:0.6rem"><strong>Hotel Sequoia:</strong></p>
-          <ul><li>Hunter's Grill</li></ul>
-          <p style="margin-top:0.6rem"><strong>Hotel Cheyenne:</strong></p>
-          <ul><li>Chuck Wagon Cafe</li></ul>
-          <p style="margin-top:0.6rem"><strong>Hotel Santa Fe:</strong></p>
-          <ul><li>La Cantina</li></ul>
-          <p style="margin-top:0.6rem"><strong>Disney Village:</strong></p>
-          <ul>
-            <li>Annette's (entra en la pensión pero no requiere reserva)</li>
-            <li>The Steakhouse</li>
-          </ul>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🏴‍☠️</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Blue Lagoon Restaurant</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/blue-lagoon.jpg" alt="Blue Lagoon Restaurant" loading="lazy" onerror="this.style.display='none'">
+            <p>Está literalmente DENTRO de la atracción Pirates of the Caribbean — comés con vista a los botes que pasan por adentro de la atracción, bajo un cielo estrellado tropical. Cocina caribeña con pescados, mariscos y opciones más simples para chicos. Es de las experiencias más mágicas de Disneyland Paris.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Reservar con muchísima anticipación — uno de los más codiciados del parque.</div>
+          </div>
         </div>
-        <div class="estrategia-card">
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">⚓</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Captain Jack's — Restaurant des Pirates</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/captains-jack.jpg" alt="Captain Jack's" loading="lazy" onerror="this.style.display='none'">
+            <p>En Adventureland, con ambientación de taberna pirata caribeña. Cocina del Caribe con toques cajun, mariscos y carnes especiadas. Menos icónico que Blue Lagoon pero igual de temático y suele ser más fácil de reservar.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🧞</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Agrabah Café</span>
+                <div class="badges"></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/agrabah-cafe.jpg" alt="Agrabah Café" loading="lazy" onerror="this.style.display='none'">
+            <p>Buffet en Adventureland con sabores del norte de África y Medio Oriente — cuscús, tagines, falafels, kebabs. Ambientación inspirada en Aladdin. Buena opción si querés probar algo distinto al menú americano del resto del parque.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🌸</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Plaza Gardens Restaurant</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span><span class="badge badge-personajes">Con personajes</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/plaza-gardens.jpg" alt="Plaza Gardens Restaurant" loading="lazy" onerror="this.style.display='none'">
+            <p>Buffet en un salón estilo invernadero al lado del castillo, sobre Main Street. Mickey, Minnie y amigos pasan mesa por mesa para saludar y sacarse fotos — tanto en desayuno como en cena. Cocina internacional variada. Una de las experiencias más buscadas del parque.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Reservar con muchos meses de anticipación — es de los character dinings más populares de Paris.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🎩</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Walt's — An American Restaurant</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/walts.jpg" alt="Walt's — An American Restaurant" loading="lazy" onerror="this.style.display='none'">
+            <p>Restaurante temático dedicado a la vida de Walt Disney, sobre Main Street. Cada salón está decorado homenajeando una etapa de su carrera — Kansas City, Hollywood, los parques. Cocina norteamericana fina (steaks, costillas, salmón). Considerado uno de los más especiales y elegantes del parque.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">👑</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Royal Banquet</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/royal-banquet.jpg" alt="Royal Banquet" loading="lazy" onerror="this.style.display='none'">
+            <p>Buffet en el castillo de la Bella Durmiente, en Fantasyland. Ambientación de banquete medieval majestuoso con vitrales, candelabros y techos altísimos. Cocina internacional. Una opción imponente para comer adentro del castillo más icónico del parque.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">👸</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Auberge de Cendrillon</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span><span class="badge badge-personajes">Con princesas</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/auberge-cendrillon.jpg" alt="Auberge de Cendrillon" loading="lazy" onerror="this.style.display='none'">
+            <p>Cena con princesas Disney en una posada medieval ambientada en el cuento de Cenicienta. Las princesas (Cenicienta, Ariel, Bella, Aurora, Rapunzel — rota la lista) pasan mesa por mesa para saludar y sacar fotos. Cocina francesa adaptada para chicos. Imperdible si vas con peques.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Es de los restaurantes más difíciles de reservar — apuntá a los 12 meses de antelación.</div>
+          </div>
+        </div>
+
+        <div class="estrategia-card" style="margin-top:1.2rem;">
           <h4>🍬 Snacks & datos útiles</h4>
           <p><strong>Mickey Beignet ⭐</strong> — probalo sí o sí, es un snack exclusivo de Disneyland Paris. Unos buñuelos con forma de Mickey y azúcar.</p>
           <p><strong>Souvenirs:</strong> caminá por Main Street hasta el final. A la derecha vas a encontrar un puestito donde venden pochocleras y también champagne (¡el vasito se lo quedan!).</p>
           <div class="tip">💡 <strong>Dato extra:</strong> Si querés un café en mano, no va a poder ser dentro del parque. Por una cuestión de preservar la cultura francesa y no invadir con la "Yankee" no hay Starbucks dentro del parque. Pero sí hay en <strong>Disney Village</strong>.</div>
+        </div>
+
+        <div class="estrategia-card">
+          <h4>🏨 Para cenar fuera del parque</h4>
+          <p>Cada hotel Disney tiene su propio restaurante (Manhattan y Downtown en Hotel New York, Cape Cod en Newport Bay, Hunter's Grill en Sequoia Lodge, Chuck Wagon en Cheyenne, La Cantina en Santa Fe). Y en <strong>Disney Village</strong> está Annette's Diner y The Steakhouse.</p>
+          <p style="margin-top:0.5rem;">Si querés que arme la reserva o necesitás recomendaciones más detalladas, preguntame por WhatsApp.</p>
         </div>
       </div>
       <div class="cierre-calido">
@@ -1943,24 +2047,76 @@
 
       <!-- Comer WDS -->
       <div class="tab-content" id="wds-comer">
-        <div class="estrategia-card">
-          <h4>🍽️ Almuerzo — Walt Disney Studios</h4>
-          <ul>
-            <li>Chez Rémy ⭐</li>
-            <li>PYM Kitchen ⭐</li>
-          </ul>
-          <p style="margin-top:0.5rem">Bistrot Chez Rémy es el restaurante temático de Ratatouille — el más especial del parque. Reservar con antelación desde la app.</p>
+        <h4 style="margin:0.2rem 0 0.6rem; color:var(--lavanda-fuerte);">🍽️ Restaurantes con reserva — Disney Adventure World</h4>
+        <p style="font-size:0.85rem; color:var(--texto-suave); margin-bottom:0.8rem;">⭐ marca los favoritos de Sofi. Cenas temprano (19 - 19:30). Reservar antes desde la app.</p>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🐀</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Bistrot Chez Rémy</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/chez-remy.jpg" alt="Bistrot Chez Rémy" loading="lazy" onerror="this.style.display='none'">
+            <p>El restaurante temático de Ratatouille — y uno de los más mágicos de todo Disney. Toda la decoración (sillas en forma de tapa de botella, mesas armadas con platos enormes, vajilla XL) está sobredimensionada para que te sientas del tamaño de Rémy. Cocina francesa simple y rica: confit de canard, steak frites, ratatouille, postres clásicos. Imperdible.</p>
+            <div class="tip">💡 <strong>Tip:</strong> El más buscado del parque — reservar con muchísima anticipación.</div>
+          </div>
         </div>
-        <div class="estrategia-card">
-          <h4>🌙 Cena — Disney Adventure World</h4>
-          <ul>
-            <li>Bistrot Chez Rémy ⭐</li>
-            <li>The Regal View Restaurant</li>
-            <li>PYM Kitchen ⭐</li>
-            <li>Stark Factory</li>
-          </ul>
-          <p style="margin-top:0.5rem">En el World of Frozen (abierto desde marzo 2026) hay nuevas opciones de comida temáticas.</p>
-          <div class="tip">💡 <strong>Tip:</strong> Aunque sea en su propio hotel, se recomienda hacer reserva. Las cenas son temprano (19 - 19.30 por ejemplo).</div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🐜</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">PYM Kitchen</span>
+                <div class="badges"><span class="badge badge-top">⭐ Pick de Sofi</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/pym-kitchen.jpg" alt="PYM Kitchen" loading="lazy" onerror="this.style.display='none'">
+            <p>Buffet del Avengers Campus inspirado en los experimentos de Ant-Man con las Pym Particles: porciones gigantes y mini conviven en el mismo buffet — sándwiches XXL, ñoquis del tamaño de pelotas de tenis, miniaturas de postres. Muy divertido visualmente y rico para chicos y grandes.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🦾</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Stark Factory</span>
+                <div class="badges"></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/stark-factory.jpg" alt="Stark Factory" loading="lazy" onerror="this.style.display='none'">
+            <p>Pizzería italiana en el Avengers Campus, ambientada como la fábrica industrial de Tony Stark. Pizza al horno, pasta y postres italianos. Buena opción más casual dentro del área Marvel.</p>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">❄️</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">The Regal View Restaurant</span>
+                <div class="badges"></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/regal-view.jpg" alt="The Regal View Restaurant" loading="lazy" onerror="this.style.display='none'">
+            <p>Restaurante panorámico dentro del World of Frozen, abierto desde marzo 2026 con la apertura de la nueva área. Cocina nórdica inspirada en Arendelle, con vista al castillo y al pueblo de Frozen. Opción nueva y muy buscada.</p>
+          </div>
         </div>
       </div>
       <div class="cierre-calido">
