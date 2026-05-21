@@ -392,6 +392,12 @@
   .badge-personajes { background: #ffe0ec; color: #c01070; }
   .badge-show { background: #e8d5ff; color: #6020a0; }
 
+  /* TIERRAS (acordeón por tierra) */
+  .tierra-cat { background: linear-gradient(135deg, var(--celeste-light), var(--lavanda-light)); }
+  .tierra-cat > .atraccion-header { padding: 0.85rem 1rem; }
+  .tierra-cat > .atraccion-body { background: var(--blanco); padding: 0.6rem 0.4rem 0.4rem; }
+  .tierra-cat > .atraccion-body .atraccion { margin: 0.3rem 0; box-shadow: none; border: 1px solid var(--lavanda-light); }
+
   /* ALTURAS */
   .altura-row { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--lavanda-light); gap: 0.75rem; }
   .altura-row:last-child { border-bottom: none; }
@@ -926,502 +932,538 @@
 
       <!-- Atracciones DLP -->
       <div class="tab-content activo" id="dlp-atracciones">
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚀</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Big Thunder Mountain</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🏛️ Main Street, U.S.A.</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(1)</span>
           </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/V4blLgg.jpg" alt="Big Thunder Mountain" loading="lazy" onerror="this.style.display='none'">
-            <p>Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Ir apenas abre el parque o conseguir Premier Access. Fila corta al final del día.</div>
-          </div>
+          <span class="chevron">▼</span>
         </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">👻</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Phantom Manor</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/9ZbcwqI.jpg" alt="Phantom Manor" loading="lazy" onerror="this.style.display='none'">
-            <p>La versión europea de la Haunted Mansion. Una mansión encantada con historia de amor trágico única en el mundo. No tan oscura como parece.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Generalmente tiene fila corta. ¡No olvidar bajar a ver la Dragona bajo el castillo!</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌊</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Pirates of the Caribbean</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/ES6b5Nb.jpg" alt="Pirates of the Caribbean" loading="lazy" onerror="this.style.display='none'">
-            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de Paris es la más grande del mundo con una pequeña caída al inicio.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚂</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Indiana Jones et le Temple du Péril</span>
-                <div class="badges"><span class="badge badge-altura">📏 1,40m</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/XexprO8.jpg" alt="Indiana Jones et le Temple du Péril" loading="lazy" onerror="this.style.display='none'">
-            <p>Montaña rusa con loop completo en un templo arqueológico. La única en todo Disney con un loop. Sacudida intensa.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila larga casi siempre. Prioridad si les gustan las montañas rusas fuertes.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐘</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">It's a Small World</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/36xeyWP.jpg" alt="It's a Small World" loading="lazy" onerror="this.style.display='none'">
-            <p>Clásico relajante para toda la familia. Paseo en bote por países del mundo representados con muñecos animados. Perfecto para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Buena opción para descansar los pies a mitad del día.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🧝</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Peter Pan's Flight</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/G8KYiq1.jpg" alt="Peter Pan's Flight" loading="lazy" onerror="this.style.display='none'">
-            <p>Vuelo sobre Londres y Nunca Jamás en un barco pirata. Una de las atracciones más mágicas del parque. Siempre tiene cola larguísima.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Vale absolutamente el Premier Access. Si no, ir a la apertura del parque.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌌</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Star Wars Hyperspace Mountain</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/CZ3fNhB.jpg" alt="Star Wars Hyperspace Mountain" loading="lazy" onerror="this.style.display='none'">
-            <p>La montaña rusa más extrema de todos los Disney del mundo. Lanzamiento tipo cañón a 71 km/h, 3 inversiones y recorrido parcialmente al aire libre. Temática Star Wars con nueva iluminación LED 2025.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila larga todo el día. Premier Access muy recomendado. Single Rider disponible — consultá en la app.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎪</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Buzz Lightyear Laser Blast</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/bqKVxXp.jpg" alt="Buzz Lightyear Laser Blast" loading="lazy" onerror="this.style.display='none'">
-            <p>Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para las horas del mediodía.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚀</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Star Tours: The Adventures Continue</span>
-                <div class="badges"><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/oQNFWqP.jpg" alt="Star Tours: The Adventures Continue" loading="lazy" onerror="this.style.display='none'">
-            <p>Simulador espacial con temática Star Wars. Viaje en speeder por distintos destinos del universo Star Wars con efectos 3D y movimiento. Cada viaje es diferente.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila generalmente más corta que Hyperspace Mountain. Buena opción si tienen la altura mínima.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚗</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Autopia</span>
-                <div class="badges"><span class="badge badge-altura">📏 0,81m acompañado</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/mDOg5fx.jpg" alt="Autopia" loading="lazy" onerror="this.style.display='none'">
-            <p>Conducí tu propio auto por una autopista del futuro. Clásico de Discoveryland muy querido por los chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila larga en horario pico. Muy popular con los más chicos que quieren "manejar".</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🔭</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Orbitron</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/iPjr2by.jpg" alt="Orbitron" loading="lazy" onerror="this.style.display='none'">
-            <p>Naves espaciales voladoras que se elevan en círculos. Los pasajeros controlan la altura. Inspirada en el sistema solar de Leonardo Da Vinci.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Perfecta para los más chicos. Fila moderada. Se puede controlar subir o bajar desde dentro.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐟</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Les Mystères du Nautilus</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/4auDXMF.jpg" alt="Les Mystères du Nautilus" loading="lazy" onerror="this.style.display='none'">
-            <p>Recorrido a pie por el interior del submarino Nautilus del Capitán Nemo. Animatronics, efectos especiales y atmósfera submarina única. Gratuito, sin fila larga.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Muy recomendado como descanso entre atracciones. No tiene fila casi nunca.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏰</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Le Pays des Contes de Fées</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/LIiU8ne.jpg" alt="Le Pays des Contes de Fées" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo tranquilo en bote por miniaturas de cuentos de hadas clásicos: Cenicienta, Blancanieves, Caperucita Roja y más. Perfecto para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta. Muy buena opción para el mediodía cuando los chicos necesitan un descanso.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎪</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Alice's Curious Labyrinth</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/1hjoYa6.jpg" alt="Alice's Curious Labyrinth" loading="lazy" onerror="this.style.display='none'">
-            <p>Laberinto de setos interactivo ambientado en Alicia en el País de las Maravillas. Lleno de sorpresas, escaleras, toboganes y el Castillo de la Reina de Corazones al final.</p>
-            <div class="tip">💡 <strong>Tip:</strong> ¡Sin fila y gratis! Puede llevar 15-30 minutos recorrerlo completo.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎩</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Mad Hatter's Tea Cups</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/AKEghWX.jpg" alt="Mad Hatter's Tea Cups" loading="lazy" onerror="this.style.display='none'">
-            <p>Las clásicas tazas giratorias del Sombrerero Loco. Se puede controlar la velocidad de giro desde el centro de cada taza.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta. Los chicos más grandes pueden hacerlas girar muy rápido. ¡Cuidado con el mareo!</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐘</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Dumbo the Flying Elephant</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/NJcftkL.jpg" alt="Dumbo the Flying Elephant" loading="lazy" onerror="this.style.display='none'">
-            <p>Los elefantes voladores más famosos de Disney. Los pasajeros controlan la altura. Imperdible para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Puede tener fila larga en horario pico. Ir temprano o al final del día.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎠</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Casey Jr. — le Petit Train du Cirque</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/VGUBquK.jpg" alt="Casey Jr. — le Petit Train du Cirque" loading="lazy" onerror="this.style.display='none'">
-            <p>El trenito del circo de Dumbo recorre la zona de Fantasyland pasando por Le Pays des Contes de Fées. Vista panorámica del parque.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Excelente para descansar los pies y ver el parque desde arriba.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">👸</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Blanche-Neige et les Sept Nains</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/JMaKFst.jpg" alt="Blanche-Neige et les Sept Nains" loading="lazy" onerror="this.style.display='none'">
-            <p>Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de Paris con final feliz.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para el mediodía. Una de las atracciones de apertura original del parque en 1992.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎭</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Les Voyages de Pinocchio</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/jPwe7yd.jpg" alt="Les Voyages de Pinocchio" loading="lazy" onerror="this.style.display='none'">
-            <p>Dark ride por los momentos clave de Pinocho: la Isla del Placer, el vientre de Monstro y su viaje para convertirse en niño real.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta la mayoría del tiempo. Muy buena opción para el mediodía.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏇</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Le Carrousel de Lancelot</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/tMdBWxA.jpg" alt="Le Carrousel de Lancelot" loading="lazy" onerror="this.style.display='none'">
-            <p>El carrusel medieval de Lancelot, ubicado justo detrás del castillo. Caballos finamente decorados con escenas del rey Arturo.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Perfecto para los más chicos y una parada fotográfica imperdible frente al castillo.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌴</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">La Cabane des Robinson</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/8XDo0Cs.jpg" alt="La Cabane des Robinson" loading="lazy" onerror="this.style.display='none'">
-            <p>La casa del árbol de la Familia Robinson en Adventureland. Subís por escaleras entre los árboles hasta la cima, con vistas espectaculares al parque.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin fila. Tomá tu tiempo para explorar todos los niveles y disfrutar las vistas desde arriba.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">💀</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Adventure Isle</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/mP8a3yX.jpg" alt="Adventure Isle" loading="lazy" onerror="this.style.display='none'">
-            <p>Isla explorable en el corazón de Adventureland con cuevas, puentes colgantes, la Roca del Cráneo y el Tesoro de Davy Jones.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Gratis y sin fila. Explorá las cuevas subterráneas — es fácil perderse (en el buen sentido). Una de las joyas ocultas del parque.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🕌</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Le Passage Enchanté d'Aladdin</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/jgOldGX.jpg" alt="Le Passage Enchanté d'Aladdin" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo a pie por los pasajes de Agrabah con dioramas en miniatura de las escenas más icónicas de Aladdin. Muy detallado y completamente gratuito.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin fila, gratis. Muy fresquito en verano. Pocos turistas lo conocen — una joya escondida de Adventureland.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚂</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Disneyland Railroad</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/awKvY6G.jpg" alt="Disneyland Railroad" loading="lazy" onerror="this.style.display='none'">
-            <p>Tren a vapor panorámico que recorre todo el perímetro del parque con paradas en Main Street, Fantasyland y Discoveryland. Pasa por el Diorama del Gran Cañón.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta. Usalo estratégicamente para moverse de un lado al otro del parque descansando.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">⛵</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Thunder Mesa Riverboat Landing</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/EKqM98x.jpg" alt="Thunder Mesa Riverboat Landing" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo en vapor por el río que rodea Big Thunder Mountain, con vistas al Lejano Oeste y nuevas escenas de animales añadidas en 2026.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila corta. Ideal para el mediodía. Las nuevas escenas de búfalos y mapaches son un plus.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎶</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Mickey et son Orchestre PhilharMagique</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/eQyUFM8.jpg" alt="Mickey et son Orchestre PhilharMagique" loading="lazy" onerror="this.style.display='none'">
-            <p>Espectáculo 4D en teatro donde Mickey Mouse dirige una orquesta mágica. Las escenas viajan por momentos icónicos de La Sirenita, Aladdin, El Rey León y Peter Pan, con efectos de agua, viento y aroma. Sala climatizada.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin necesidad de Premier Access. Duración ~20 minutos. Excelente pausa para toda la familia, especialmente con calor o lluvia.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏰</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Le Château de la Belle au Bois Dormant</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/D4jwLmx.jpg" alt="Le Château de la Belle au Bois Dormant" loading="lazy" onerror="this.style.display='none'">
-            <p>El castillo icónico de Disneyland Paris. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona animatrónica única en todos los Disney del mundo.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🦁</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Rhythms of The Pride Lands — Lion King</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/pride-lands.jpg" alt="Rhythms of The Pride Lands" loading="lazy" onerror="this.style.display='none'">
-            <p>Show musical de ~30 minutos inspirado en El Rey León en uno de los teatros más grandes de Disneyland Paris. Acróbatas, bailarines, cantantes en vivo, tambores africanos y fuego. La música suena en zulú, swahili y francés con la potencia de una versión teatral. Para mí es un imperdible.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Desde la app oficial se puede reservar asiento — conviene hacerlo apenas se abre la ventana del día. Si no reservás, llegá 20 minutos antes.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎩</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Mickey and the Magician</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/mickey-magician.jpg" alt="Mickey and the Magician" loading="lazy" onerror="this.style.display='none'">
-            <p>Show en teatro de ~25 minutos donde Mickey aprende magia con el aprendiz de Yensid (el hechicero de Fantasía) y va invocando personajes de Disney en escena: Bella, Aladdin, Rapunzel, Elsa y más. Canciones en vivo, vestuario espectacular y efectos clásicos de teatro. Pensado para toda la familia.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Sin reserva, llegá 15-20 minutos antes.</div>
-          </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚂</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Disneyland Railroad</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/awKvY6G.jpg" alt="Disneyland Railroad" loading="lazy" onerror="this.style.display='none'">
+                      <p>Tren a vapor panorámico que recorre todo el perímetro del parque con paradas en Main Street, Fantasyland y Discoveryland. Pasa por el Diorama del Gran Cañón.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila corta. Usalo estratégicamente para moverse de un lado al otro del parque descansando.</div>
+                    </div>
+                  </div>
         </div>
       </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🤠 Frontierland</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(4)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚀</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Big Thunder Mountain</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/V4blLgg.jpg" alt="Big Thunder Mountain" loading="lazy" onerror="this.style.display='none'">
+                      <p>Una montaña rusa en una mina de oro encantada a través del Viejo Oeste. Curvas cerradas, subidas y bajadas con vista al lago.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Ir apenas abre el parque o conseguir Premier Access. Fila corta al final del día.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">👻</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Phantom Manor</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/9ZbcwqI.jpg" alt="Phantom Manor" loading="lazy" onerror="this.style.display='none'">
+                      <p>La versión europea de la Haunted Mansion. Una mansión encantada con historia de amor trágico única en el mundo. No tan oscura como parece.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Generalmente tiene fila corta. ¡No olvidar bajar a ver la Dragona bajo el castillo!</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">⛵</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Thunder Mesa Riverboat Landing</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/EKqM98x.jpg" alt="Thunder Mesa Riverboat Landing" loading="lazy" onerror="this.style.display='none'">
+                      <p>Paseo en vapor por el río que rodea Big Thunder Mountain, con vistas al Lejano Oeste y nuevas escenas de animales añadidas en 2026.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila corta. Ideal para el mediodía. Las nuevas escenas de búfalos y mapaches son un plus.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🦁</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Rhythms of The Pride Lands — Lion King</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/pride-lands.jpg" alt="Rhythms of The Pride Lands" loading="lazy" onerror="this.style.display='none'">
+                      <p>Show musical de ~30 minutos inspirado en El Rey León en uno de los teatros más grandes de Disneyland Paris. Acróbatas, bailarines, cantantes en vivo, tambores africanos y fuego. La música suena en zulú, swahili y francés con la potencia de una versión teatral. Para mí es un imperdible.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Desde la app oficial se puede reservar asiento — conviene hacerlo apenas se abre la ventana del día. Si no reservás, llegá 20 minutos antes.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🌍 Adventureland</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(5)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌊</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Pirates of the Caribbean</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/ES6b5Nb.jpg" alt="Pirates of the Caribbean" loading="lazy" onerror="this.style.display='none'">
+                      <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de Paris es la más grande del mundo con una pequeña caída al inicio.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚂</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Indiana Jones et le Temple du Péril</span>
+                          <div class="badges"><span class="badge badge-altura">📏 1,40m</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/XexprO8.jpg" alt="Indiana Jones et le Temple du Péril" loading="lazy" onerror="this.style.display='none'">
+                      <p>Montaña rusa con loop completo en un templo arqueológico. La única en todo Disney con un loop. Sacudida intensa.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila larga casi siempre. Prioridad si les gustan las montañas rusas fuertes.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">💀</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Adventure Isle</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/mP8a3yX.jpg" alt="Adventure Isle" loading="lazy" onerror="this.style.display='none'">
+                      <p>Isla explorable en el corazón de Adventureland con cuevas, puentes colgantes, la Roca del Cráneo y el Tesoro de Davy Jones.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Gratis y sin fila. Explorá las cuevas subterráneas — es fácil perderse (en el buen sentido). Una de las joyas ocultas del parque.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌴</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">La Cabane des Robinson</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/8XDo0Cs.jpg" alt="La Cabane des Robinson" loading="lazy" onerror="this.style.display='none'">
+                      <p>La casa del árbol de la Familia Robinson en Adventureland. Subís por escaleras entre los árboles hasta la cima, con vistas espectaculares al parque.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin fila. Tomá tu tiempo para explorar todos los niveles y disfrutar las vistas desde arriba.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🕌</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Le Passage Enchanté d'Aladdin</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/jgOldGX.jpg" alt="Le Passage Enchanté d'Aladdin" loading="lazy" onerror="this.style.display='none'">
+                      <p>Paseo a pie por los pasajes de Agrabah con dioramas en miniatura de las escenas más icónicas de Aladdin. Muy detallado y completamente gratuito.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin fila, gratis. Muy fresquito en verano. Pocos turistas lo conocen — una joya escondida de Adventureland.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🏰 Fantasyland</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(12)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🏰</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Le Château de la Belle au Bois Dormant</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/D4jwLmx.jpg" alt="Le Château de la Belle au Bois Dormant" loading="lazy" onerror="this.style.display='none'">
+                      <p>El castillo icónico de Disneyland Paris. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona animatrónica única en todos los Disney del mundo.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🐘</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">It's a Small World</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/36xeyWP.jpg" alt="It's a Small World" loading="lazy" onerror="this.style.display='none'">
+                      <p>Clásico relajante para toda la familia. Paseo en bote por países del mundo representados con muñecos animados. Perfecto para los más chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Buena opción para descansar los pies a mitad del día.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🧝</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Peter Pan's Flight</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/G8KYiq1.jpg" alt="Peter Pan's Flight" loading="lazy" onerror="this.style.display='none'">
+                      <p>Vuelo sobre Londres y Nunca Jamás en un barco pirata. Una de las atracciones más mágicas del parque. Siempre tiene cola larguísima.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Vale absolutamente el Premier Access. Si no, ir a la apertura del parque.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🏰</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Le Pays des Contes de Fées</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/LIiU8ne.jpg" alt="Le Pays des Contes de Fées" loading="lazy" onerror="this.style.display='none'">
+                      <p>Paseo tranquilo en bote por miniaturas de cuentos de hadas clásicos: Cenicienta, Blancanieves, Caperucita Roja y más. Perfecto para los más chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila corta. Muy buena opción para el mediodía cuando los chicos necesitan un descanso.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎪</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Alice's Curious Labyrinth</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/1hjoYa6.jpg" alt="Alice's Curious Labyrinth" loading="lazy" onerror="this.style.display='none'">
+                      <p>Laberinto de setos interactivo ambientado en Alicia en el País de las Maravillas. Lleno de sorpresas, escaleras, toboganes y el Castillo de la Reina de Corazones al final.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> ¡Sin fila y gratis! Puede llevar 15-30 minutos recorrerlo completo.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎩</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Mad Hatter's Tea Cups</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/AKEghWX.jpg" alt="Mad Hatter's Tea Cups" loading="lazy" onerror="this.style.display='none'">
+                      <p>Las clásicas tazas giratorias del Sombrerero Loco. Se puede controlar la velocidad de giro desde el centro de cada taza.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila corta. Los chicos más grandes pueden hacerlas girar muy rápido. ¡Cuidado con el mareo!</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🐘</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Dumbo the Flying Elephant</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/NJcftkL.jpg" alt="Dumbo the Flying Elephant" loading="lazy" onerror="this.style.display='none'">
+                      <p>Los elefantes voladores más famosos de Disney. Los pasajeros controlan la altura. Imperdible para los más chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Puede tener fila larga en horario pico. Ir temprano o al final del día.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎠</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Casey Jr. — le Petit Train du Cirque</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/VGUBquK.jpg" alt="Casey Jr. — le Petit Train du Cirque" loading="lazy" onerror="this.style.display='none'">
+                      <p>El trenito del circo de Dumbo recorre la zona de Fantasyland pasando por Le Pays des Contes de Fées. Vista panorámica del parque.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Excelente para descansar los pies y ver el parque desde arriba.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">👸</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Blanche-Neige et les Sept Nains</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/JMaKFst.jpg" alt="Blanche-Neige et les Sept Nains" loading="lazy" onerror="this.style.display='none'">
+                      <p>Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de Paris con final feliz.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para el mediodía. Una de las atracciones de apertura original del parque en 1992.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎭</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Les Voyages de Pinocchio</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/jPwe7yd.jpg" alt="Les Voyages de Pinocchio" loading="lazy" onerror="this.style.display='none'">
+                      <p>Dark ride por los momentos clave de Pinocho: la Isla del Placer, el vientre de Monstro y su viaje para convertirse en niño real.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila corta la mayoría del tiempo. Muy buena opción para el mediodía.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🏇</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Le Carrousel de Lancelot</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/tMdBWxA.jpg" alt="Le Carrousel de Lancelot" loading="lazy" onerror="this.style.display='none'">
+                      <p>El carrusel medieval de Lancelot, ubicado justo detrás del castillo. Caballos finamente decorados con escenas del rey Arturo.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Perfecto para los más chicos y una parada fotográfica imperdible frente al castillo.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎩</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Mickey and the Magician</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/mickey-magician.jpg" alt="Mickey and the Magician" loading="lazy" onerror="this.style.display='none'">
+                      <p>Show en teatro de ~25 minutos donde Mickey aprende magia con el aprendiz de Yensid (el hechicero de Fantasía) y va invocando personajes de Disney en escena: Bella, Aladdin, Rapunzel, Elsa y más. Canciones en vivo, vestuario espectacular y efectos clásicos de teatro. Pensado para toda la familia.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Sin reserva, llegá 15-20 minutos antes.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🚀 Discoveryland</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(6)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌌</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Star Wars Hyperspace Mountain</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/CZ3fNhB.jpg" alt="Star Wars Hyperspace Mountain" loading="lazy" onerror="this.style.display='none'">
+                      <p>La montaña rusa más extrema de todos los Disney del mundo. Lanzamiento tipo cañón a 71 km/h, 3 inversiones y recorrido parcialmente al aire libre. Temática Star Wars con nueva iluminación LED 2025.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila larga todo el día. Premier Access muy recomendado. Single Rider disponible — consultá en la app.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎪</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Buzz Lightyear Laser Blast</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/bqKVxXp.jpg" alt="Buzz Lightyear Laser Blast" loading="lazy" onerror="this.style.display='none'">
+                      <p>Juego interactivo en el que el visitante dispara con un láser a blancos para ganar puntos. Divertido para todas las edades.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para las horas del mediodía.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚀</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Star Tours: The Adventures Continue</span>
+                          <div class="badges"><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/oQNFWqP.jpg" alt="Star Tours: The Adventures Continue" loading="lazy" onerror="this.style.display='none'">
+                      <p>Simulador espacial con temática Star Wars. Viaje en speeder por distintos destinos del universo Star Wars con efectos 3D y movimiento. Cada viaje es diferente.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila generalmente más corta que Hyperspace Mountain. Buena opción si tienen la altura mínima.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚗</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Autopia</span>
+                          <div class="badges"><span class="badge badge-altura">📏 0,81m acompañado</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/mDOg5fx.jpg" alt="Autopia" loading="lazy" onerror="this.style.display='none'">
+                      <p>Conducí tu propio auto por una autopista del futuro. Clásico de Discoveryland muy querido por los chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila larga en horario pico. Muy popular con los más chicos que quieren "manejar".</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🔭</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Orbitron</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/iPjr2by.jpg" alt="Orbitron" loading="lazy" onerror="this.style.display='none'">
+                      <p>Naves espaciales voladoras que se elevan en círculos. Los pasajeros controlan la altura. Inspirada en el sistema solar de Leonardo Da Vinci.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Perfecta para los más chicos. Fila moderada. Se puede controlar subir o bajar desde dentro.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🐟</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Les Mystères du Nautilus</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/4auDXMF.jpg" alt="Les Mystères du Nautilus" loading="lazy" onerror="this.style.display='none'">
+                      <p>Recorrido a pie por el interior del submarino Nautilus del Capitán Nemo. Animatronics, efectos especiales y atmósfera submarina única. Gratuito, sin fila larga.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Muy recomendado como descanso entre atracciones. No tiene fila casi nunca.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div>
       <!-- Shows DLP -->
       <div class="tab-content" id="dlp-shows">
         <div class="estrategia-card" style="margin-bottom:0.8rem">
@@ -1699,265 +1741,345 @@
 
       <!-- Atracciones WDS -->
       <div class="tab-content activo" id="wds-atracciones">
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🕷️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">The Twilight Zone Tower of Terror</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">❄️ World of Frozen</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(2)</span>
           </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/DYn30s5.jpg" alt="The Twilight Zone Tower of Terror" loading="lazy" onerror="this.style.display='none'">
-            <p>Ascensor de caída libre en un hotel embrujado. Caídas aleatorias que la hacen diferente cada vez. Una de las mejores del parque.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Primer destino al abrir el parque o Premier Access. Fila larguísima todo el día.</div>
-          </div>
+          <span class="chevron">▼</span>
         </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🦸</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Avengers Assemble: Flight Force</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/1MTNIoz.jpg" alt="Avengers Assemble: Flight Force" loading="lazy" onerror="this.style.display='none'">
-            <p>Montaña rusa de alta velocidad en el Avengers Campus. Giros, inversiones y gran velocidad. Temática Marvel muy bien lograda.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Segunda parada obligada al abrir. Fila muy larga todo el día.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🕸️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Spider-Man W.E.B. Adventure</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/qzG09TB.jpg" alt="Spider-Man W.E.B. Adventure" loading="lazy" onerror="this.style.display='none'">
-            <p>Atracción interactiva donde el visitante usa poderes de Spider-Man para capturar robots. Similar al Toy Story Mania pero con telarañas.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Buena para toda la familia. Fila moderada comparado con Tower of Terror.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎬</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Ratatouille: The Adventure</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/9DqaEw5.jpg" alt="Ratatouille: The Adventure" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de Paris. Efecto 4D con olores, proyecciones y movimiento.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Exclusivo de este parque en el mundo. No perdérselo bajo ningún concepto.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">❄️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Frozen Ever After</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/spj6wRI.jpg" alt="Frozen Ever After" loading="lazy" onerror="this.style.display='none'">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa, Olaf y los personajes de Frozen.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Muy popular — Premier Access muy recomendado o ir lo primero al abrir el World of Frozen.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌟</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Raiponce Tangled Spin</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/2ylI6RB.jpg" alt="Raiponce Tangled Spin" loading="lazy" onerror="this.style.display='none'">
-            <p>Nueva atracción inaugurada el 29 de marzo de 2026 en Adventure Way. Góndola giratoria inspirada en Rapunzel bajo un cielo de linternas flotantes.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Perfecta para los chicos y toda la familia. Fila moderada — buena opción para mitad del día.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🪖</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Toy Soldiers Parachute Drop</span>
-                <div class="badges"><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-sr">Single Rider</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/6VlQZvs.jpg" alt="Toy Soldiers Parachute Drop" loading="lazy" onerror="this.style.display='none'">
-            <p>Torre de caída libre temática de Toy Story. Los soldaditos de Woody hacen descender suavemente a los pasajeros desde lo alto.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — fila mucho más corta. Buena opción para los que quieren algo de altura sin la intensidad del Tower of Terror.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐕</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Slinky Dog Zigzag Spin</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/u5CWONj.jpg" alt="Slinky Dog Zigzag Spin" loading="lazy" onerror="this.style.display='none'">
-            <p>El perro Slinky de Toy Story te lleva en un giro en espiral. Atracción familiar suave, perfecta para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima. Ideal para los más pequeños. Fila moderada.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏎️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">RC Racer</span>
-                <div class="badges"><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-sr">Single Rider</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/Ibfo9m6.jpg" alt="RC Racer" loading="lazy" onerror="this.style.display='none'">
-            <p>El auto RC de Toy Story como atracción tipo péndulo gigante. Va de un lado al otro ganando altura hasta casi 180°. Muy intensa.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — ahorra mucho tiempo. No apta para los que sufren de mareos o vértigo.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🚗</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Cars Road Trip</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/cd5w7E3.jpg" alt="Cars Road Trip" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏁</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Cars Quatre Roues Rallye</span>
-                <div class="badges"><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/cars-quatre-roues.jpg" alt="Cars Quatre Roues Rallye" loading="lazy" onerror="this.style.display='none'">
-            <p>Las tazas versión Cars. Los autos giran en círculos sobre una pista con forma de neumático. Perfecta para los más chicos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima. Fila corta — buena opción al mediodía.</div>
-          </div>
-        </div>
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌊</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Crush's Coaster</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,07m</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="https://i.imgur.com/jDKbojP.jpg" alt="Crush's Coaster" loading="lazy" onerror="this.style.display='none'">
-            <p>Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌈</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Pixar Together</span>
-                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/pixar-together.jpg" alt="Pixar Together" loading="lazy" onerror="this.style.display='none'">
-            <p>Espectáculo musical con personajes de las películas de Pixar — Woody, Buzz, Joy, Sadness, Sulley, Edna Mode, Miguel y más. Canciones en vivo de Toy Story, Intensa-Mente, Los Increíbles, Monsters Inc., Up y Coco. Producción reciente con varias funciones durante el día.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Sin reserva. Buena pausa entre rides — chequeá horarios en la app.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">👶</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Disney Junior Dream Factory</span>
-                <div class="badges"><span class="badge badge-show">🎭 Show</span><span class="badge badge-familia">Familia</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/disney-junior.jpg" alt="Disney Junior Dream Factory" loading="lazy" onerror="this.style.display='none'">
-            <p>Show pensado para los más chicos con personajes de Disney Junior — Mickey & Friends Funhouse, Vampirina, Spidey, Doc McStuffins. Canciones, juegos y momentos interactivos con burbujas y serpentinas para que los nenes se levanten, bailen y participen.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Ideal si viajás con peques que ven Disney Junior. Varias funciones por día.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">❄️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">A Celebration in Arendelle</span>
-                <div class="badges"><span class="badge badge-show">🎭 Show</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/arendelle-celebration.jpg" alt="A Celebration in Arendelle" loading="lazy" onerror="this.style.display='none'">
-            <p>Espectáculo diurno sobre el lago del World of Frozen, el área nueva de Disney Adventure World abierta en marzo 2026. Anna, Elsa, Kristoff, Sven y Olaf cantan los temas de Frozen sobre una plataforma flotante con el castillo y el pueblo de Arendelle de fondo. Varias funciones durante el día.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Mejor verla del lado contrario al sol para fotos. La zona se llena bien antes — sumate 20-30 minutos antes.</div>
-          </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">❄️</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Frozen Ever After</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/spj6wRI.jpg" alt="Frozen Ever After" loading="lazy" onerror="this.style.display='none'">
+                      <p>Nueva atracción inaugurada el 29 de marzo de 2026 en el World of Frozen. Paseo en barco por el reino de Arendelle con Anna, Elsa, Olaf y los personajes de Frozen.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Muy popular — Premier Access muy recomendado o ir lo primero al abrir el World of Frozen.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">❄️</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">A Celebration in Arendelle</span>
+                          <div class="badges"><span class="badge badge-show">🎭 Show</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/arendelle-celebration.jpg" alt="A Celebration in Arendelle" loading="lazy" onerror="this.style.display='none'">
+                      <p>Espectáculo diurno sobre el lago del World of Frozen, el área nueva de Disney Adventure World abierta en marzo 2026. Anna, Elsa, Kristoff, Sven y Olaf cantan los temas de Frozen sobre una plataforma flotante con el castillo y el pueblo de Arendelle de fondo. Varias funciones durante el día.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Mejor verla del lado contrario al sol para fotos. La zona se llena bien antes — sumate 20-30 minutos antes.</div>
+                    </div>
+                  </div>
         </div>
       </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">⚡ Avengers Campus</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(2)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🦸</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Avengers Assemble: Flight Force</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/1MTNIoz.jpg" alt="Avengers Assemble: Flight Force" loading="lazy" onerror="this.style.display='none'">
+                      <p>Montaña rusa de alta velocidad en el Avengers Campus. Giros, inversiones y gran velocidad. Temática Marvel muy bien lograda.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Segunda parada obligada al abrir. Fila muy larga todo el día.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🕸️</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Spider-Man W.E.B. Adventure</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/qzG09TB.jpg" alt="Spider-Man W.E.B. Adventure" loading="lazy" onerror="this.style.display='none'">
+                      <p>Atracción interactiva donde el visitante usa poderes de Spider-Man para capturar robots. Similar al Toy Story Mania pero con telarañas.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Buena para toda la familia. Fila moderada comparado con Tower of Terror.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🎬 World of Pixar</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(8)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎬</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Ratatouille: The Adventure</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/9DqaEw5.jpg" alt="Ratatouille: The Adventure" loading="lazy" onerror="this.style.display='none'">
+                      <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de Paris. Efecto 4D con olores, proyecciones y movimiento.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Exclusivo de este parque en el mundo. No perdérselo bajo ningún concepto.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌊</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Crush's Coaster</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,07m</span><span class="badge badge-pa">Premier Access</span><span class="badge badge-sr">Single Rider</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/jDKbojP.jpg" alt="Crush's Coaster" loading="lazy" onerror="this.style.display='none'">
+                      <p>Montaña rusa giratoria que recorre el fondo del mar de Buscando a Nemo. Las vagonetas giran aleatoriamente. Muy divertida y adrenalínica.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🐕</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Slinky Dog Zigzag Spin</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/u5CWONj.jpg" alt="Slinky Dog Zigzag Spin" loading="lazy" onerror="this.style.display='none'">
+                      <p>El perro Slinky de Toy Story te lleva en un giro en espiral. Atracción familiar suave, perfecta para los más chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima. Ideal para los más pequeños. Fila moderada.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🪖</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Toy Soldiers Parachute Drop</span>
+                          <div class="badges"><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-sr">Single Rider</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/6VlQZvs.jpg" alt="Toy Soldiers Parachute Drop" loading="lazy" onerror="this.style.display='none'">
+                      <p>Torre de caída libre temática de Toy Story. Los soldaditos de Woody hacen descender suavemente a los pasajeros desde lo alto.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — fila mucho más corta. Buena opción para los que quieren algo de altura sin la intensidad del Tower of Terror.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🏎️</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">RC Racer</span>
+                          <div class="badges"><span class="badge badge-altura">📏 1,20m</span><span class="badge badge-sr">Single Rider</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/Ibfo9m6.jpg" alt="RC Racer" loading="lazy" onerror="this.style.display='none'">
+                      <p>El auto RC de Toy Story como atracción tipo péndulo gigante. Va de un lado al otro ganando altura hasta casi 180°. Muy intensa.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Single Rider disponible — ahorra mucho tiempo. No apta para los que sufren de mareos o vértigo.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🚗</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Cars Road Trip</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/cd5w7E3.jpg" alt="Cars Road Trip" loading="lazy" onerror="this.style.display='none'">
+                      <p>Paseo tranquilo por Ruta 66 con los personajes de Cars. Muy disfrutable para los chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Buena para después del almuerzo.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🏁</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Cars Quatre Roues Rallye</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/cars-quatre-roues.jpg" alt="Cars Quatre Roues Rallye" loading="lazy" onerror="this.style.display='none'">
+                      <p>Las tazas versión Cars. Los autos giran en círculos sobre una pista con forma de neumático. Perfecta para los más chicos.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin altura mínima. Fila corta — buena opción al mediodía.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌈</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Pixar Together</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/pixar-together.jpg" alt="Pixar Together" loading="lazy" onerror="this.style.display='none'">
+                      <p>Espectáculo musical con personajes de las películas de Pixar — Woody, Buzz, Joy, Sadness, Sulley, Edna Mode, Miguel y más. Canciones en vivo de Toy Story, Intensa-Mente, Los Increíbles, Monsters Inc., Up y Coco. Producción reciente con varias funciones durante el día.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin reserva. Buena pausa entre rides — chequeá horarios en la app.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🌟 Adventure Way</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(1)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🌟</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Raiponce Tangled Spin</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/2ylI6RB.jpg" alt="Raiponce Tangled Spin" loading="lazy" onerror="this.style.display='none'">
+                      <p>Nueva atracción inaugurada el 29 de marzo de 2026 en Adventure Way. Góndola giratoria inspirada en Rapunzel bajo un cielo de linternas flotantes.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Perfecta para los chicos y toda la familia. Fila moderada — buena opción para mitad del día.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🎭 Production Courtyard</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(2)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🕷️</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">The Twilight Zone Tower of Terror</span>
+                          <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-altura">📏 1,02m</span><span class="badge badge-pa">Premier Access</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/DYn30s5.jpg" alt="The Twilight Zone Tower of Terror" loading="lazy" onerror="this.style.display='none'">
+                      <p>Ascensor de caída libre en un hotel embrujado. Caídas aleatorias que la hacen diferente cada vez. Una de las mejores del parque.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Primer destino al abrir el parque o Premier Access. Fila larguísima todo el día.</div>
+                    </div>
+                  </div>
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">👶</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Disney Junior Dream Factory</span>
+                          <div class="badges"><span class="badge badge-show">🎭 Show</span><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="fotos/disney-junior.jpg" alt="Disney Junior Dream Factory" loading="lazy" onerror="this.style.display='none'">
+                      <p>Show pensado para los más chicos con personajes de Disney Junior — Mickey & Friends Funhouse, Vampirina, Spidey, Doc McStuffins. Canciones, juegos y momentos interactivos con burbujas y serpentinas para que los nenes se levanten, bailen y participen.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Ideal si viajás con peques que ven Disney Junior. Varias funciones por día.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="atraccion parque-cat tierra-cat" style="margin-bottom:0.6rem">
+        <div class="atraccion-header" onclick="toggleTierra(this)" style="cursor:pointer">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex:1">
+            <span style="font-weight:700;font-size:0.95rem">🎞️ Animation Courtyard</span>
+            <span style="font-size:0.78rem;color:var(--texto-suave);font-weight:500">(1)</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="atraccion-body">
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+                    <div class="atraccion-header">
+                      <div class="atraccion-titulo">
+                        <span class="emoji">🎶</span>
+                        <div class="atraccion-titulo-inner">
+                          <span class="nombre">Mickey et son Orchestre PhilharMagique</span>
+                          <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                        </div>
+                      </div>
+                      <span class="chevron">▼</span>
+                    </div>
+                    <div class="atraccion-body">
+                      <img class="atraccion-foto" src="https://i.imgur.com/eQyUFM8.jpg" alt="Mickey et son Orchestre PhilharMagique" loading="lazy" onerror="this.style.display='none'">
+                      <p>Espectáculo 4D en teatro donde Mickey Mouse dirige una orquesta mágica. Las escenas viajan por momentos icónicos de La Sirenita, Aladdin, El Rey León y Peter Pan, con efectos de agua, viento y aroma. Sala climatizada.</p>
+                      <div class="tip">💡 <strong>Tip:</strong> Sin necesidad de Premier Access. Duración ~20 minutos. Excelente pausa para toda la familia, especialmente con calor o lluvia.</div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div>
       <!-- Shows WDS -->
       <div class="tab-content" id="wds-shows">
         <div class="estrategia-card" style="margin-bottom:0.8rem">
@@ -2923,11 +3045,16 @@
   // ─── TOGGLE ATRACCIONES ─────────────────────────────
   function toggleAtraccion(el){
     const yaAbierta = el.classList.contains('abierta');
-    // Cerrar todas las atracciones abiertas en el mismo tab
+    // Cerrar todas las atracciones abiertas en el mismo tab. Los .parque-cat
+    // (acordeones de tierra) NO se cierran al abrir una atraccion adentro.
     const tab = el.closest('.tab-content');
-    if(tab) tab.querySelectorAll('.atraccion.abierta').forEach(a => a.classList.remove('abierta'));
-    // Si no estaba abierta, abrirla; si estaba abierta, quedó cerrada
+    if(tab) tab.querySelectorAll('.atraccion.abierta:not(.parque-cat)').forEach(a => a.classList.remove('abierta'));
     if(!yaAbierta) el.classList.add('abierta');
+  }
+
+  // ─── TOGGLE TIERRAS (accordion por tierra) ──────────
+  function toggleTierra(headerEl){
+    headerEl.parentElement.classList.toggle('abierta');
   }
 
   // ─── TOGGLE LUGARES ─────────────────────────────────
