@@ -393,9 +393,6 @@
   .badge-show { background: #e8d5ff; color: #6020a0; }
 
   /* ALTURAS */
-  .sim-input-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
-  .sim-input-row input { flex: 1; min-width: 130px; padding: 0.7rem; border-radius: 0.7rem; border: 1.5px solid var(--lavanda); font-family: 'Nunito', sans-serif; font-size: 0.95rem; }
-  .btn-simulador { padding: 0.7rem 1.2rem; background: linear-gradient(135deg, var(--celeste), var(--lavanda)); border: none; border-radius: 0.7rem; font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--texto); cursor: pointer; }
   .altura-row { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--lavanda-light); gap: 0.75rem; }
   .altura-row:last-child { border-bottom: none; }
   .altura-nombre { font-size: 0.88rem; font-weight: 500; color: var(--texto); line-height: 1.3; }
@@ -1667,17 +1664,7 @@
       <!-- Alturas DLP -->
       <div class="tab-content" id="dlp-alturas">
         <div class="estrategia-card">
-          <h4>📏 Simulador de altura — Disneyland Park</h4>
-          <p style="font-size:0.85rem;color:var(--texto-suave);margin-bottom:0.8rem">Ingresá la altura de tu hijo/a y te decimos a qué atracciones puede subirse.</p>
-          <div class="sim-input-row">
-            <input type="number" id="dlp-sim-h" placeholder="Altura en cm" min="60" max="180" onkeydown="if(event.key==='Enter') runSimulador('dlp')">
-            <span style="font-size:0.85rem;color:var(--texto-suave)">cm</span>
-            <button class="btn-simulador" onclick="runSimulador('dlp')">Probar</button>
-          </div>
-          <div id="dlp-sim-results"></div>
-        </div>
-        <div class="estrategia-card">
-          <h4>🎢 Atracciones con altura mínima — Disneyland Park</h4>
+          <h4>📏 Atracciones con altura mínima — Disneyland Park</h4>
           <div id="dlp-alturas-tabla"></div>
           <p style="font-size:0.78rem;color:var(--texto-suave);margin-top:0.8rem;font-style:italic">El resto de las atracciones (Pirates, Phantom Manor, Peter Pan, It's a Small World, Dumbo, las tazas, Alice Labyrinth, Le Pays des Contes de Fées, Buzz Lightyear, Orbitron) <strong>no tienen altura mínima</strong>.</p>
         </div>
@@ -2104,17 +2091,7 @@
       <!-- Alturas WDS / DAW -->
       <div class="tab-content" id="wds-alturas">
         <div class="estrategia-card">
-          <h4>📏 Simulador de altura — Disney Adventure World</h4>
-          <p style="font-size:0.85rem;color:var(--texto-suave);margin-bottom:0.8rem">Ingresá la altura de tu hijo/a y te decimos a qué atracciones puede subirse.</p>
-          <div class="sim-input-row">
-            <input type="number" id="wds-sim-h" placeholder="Altura en cm" min="60" max="180" onkeydown="if(event.key==='Enter') runSimulador('wds')">
-            <span style="font-size:0.85rem;color:var(--texto-suave)">cm</span>
-            <button class="btn-simulador" onclick="runSimulador('wds')">Probar</button>
-          </div>
-          <div id="wds-sim-results"></div>
-        </div>
-        <div class="estrategia-card">
-          <h4>🎢 Atracciones con altura mínima — Disney Adventure World</h4>
+          <h4>📏 Atracciones con altura mínima — Disney Adventure World</h4>
           <div id="wds-alturas-tabla"></div>
           <p style="font-size:0.78rem;color:var(--texto-suave);margin-top:0.8rem;font-style:italic">El resto de las atracciones (Ratatouille, Spider-Man W.E.B. Adventure, Cars Quatre Roues Rallye, Cars Road Trip, Slinky Dog Zigzag Spin, Frozen Ever After) <strong>no tienen altura mínima</strong>.</p>
         </div>
@@ -2999,34 +2976,6 @@
       const nota = a.nota ? ` <span style="font-size:0.74rem;color:var(--texto-suave);font-weight:400">(${a.nota})</span>` : '';
       return `<div class="altura-row"><div class="altura-nombre">${a.name}${nota}</div><div class="altura-cm ${_alturaClass(a.cm)}">${a.cm} cm</div></div>`;
     }).join('');
-  }
-  function runSimulador(park){
-    const data = ALTURAS[park];
-    const input = document.getElementById(park + '-sim-h');
-    const results = document.getElementById(park + '-sim-results');
-    if(!data || !input || !results) return;
-    const h = parseFloat(input.value);
-    if(!h || h < 60 || h > 180){
-      results.innerHTML = '<p style="font-size:0.85rem;color:#c0657a;margin-top:0.4rem">Ingresá una altura válida entre 60 y 180 cm.</p>';
-      return;
-    }
-    const puede   = data.attrs.filter(a => h >= a.cm).sort((a, b) => b.cm - a.cm);
-    const noPuede = data.attrs.filter(a => h <  a.cm).sort((a, b) => a.cm - b.cm);
-    let r = `<p style="font-size:0.92rem;margin:0.4rem 0 0.6rem"><strong>Con ${h} cm en ${data.label}:</strong></p>`;
-    if(puede.length){
-      r += `<p style="font-size:0.85rem;color:#2d6a4f;font-weight:700;margin-bottom:0.2rem">✅ Puede subirse (${puede.length}):</p>`;
-      r += puede.map(a => `<div class="altura-row"><div class="altura-nombre">${a.name}</div><div class="altura-cm bajo">${a.cm} cm</div></div>`).join('');
-    }
-    if(noPuede.length){
-      r += `<p style="font-size:0.85rem;color:#c0657a;font-weight:700;margin:0.8rem 0 0.2rem">❌ Todavía no llega (${noPuede.length}):</p>`;
-      r += noPuede.map(a => {
-        const faltan = a.cm - h;
-        return `<div class="altura-row"><div class="altura-nombre">${a.name}</div><div class="altura-cm alto">${a.cm} cm <span style="font-size:0.72rem;font-weight:400">(faltan ${faltan.toFixed(1)})</span></div></div>`;
-      }).join('');
-    } else {
-      r += `<p style="font-size:0.92rem;color:#2d6a4f;margin-top:0.6rem">🎉 ¡Puede subirse a todas las atracciones del parque!</p>`;
-    }
-    results.innerHTML = r;
   }
   // Pintar tablas al cargar
   document.addEventListener('DOMContentLoaded', () => {
