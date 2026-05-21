@@ -4,8 +4,8 @@
   "description": "Tu guía completa para Disneyland Paris y Francia",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#daeef7",
-  "theme_color": "#daeef7",
+  "background_color": "#fae0e8",
+  "theme_color": "#fae0e8",
   "orientation": "portrait",
   "icons": [
     {
