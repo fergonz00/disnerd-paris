@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disnerd París</title>
+<title>Disnerd Paris</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -391,6 +391,18 @@
   .badge-familia { background: #d4edda; color: #2d6a4f; }
   .badge-personajes { background: #ffe0ec; color: #c01070; }
   .badge-show { background: #e8d5ff; color: #6020a0; }
+
+  /* ALTURAS */
+  .sim-input-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
+  .sim-input-row input { flex: 1; min-width: 130px; padding: 0.7rem; border-radius: 0.7rem; border: 1.5px solid var(--lavanda); font-family: 'Nunito', sans-serif; font-size: 0.95rem; }
+  .btn-simulador { padding: 0.7rem 1.2rem; background: linear-gradient(135deg, var(--celeste), var(--lavanda)); border: none; border-radius: 0.7rem; font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--texto); cursor: pointer; }
+  .altura-row { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--lavanda-light); gap: 0.75rem; }
+  .altura-row:last-child { border-bottom: none; }
+  .altura-nombre { font-size: 0.88rem; font-weight: 500; color: var(--texto); line-height: 1.3; }
+  .altura-cm { font-size: 0.88rem; font-weight: 700; white-space: nowrap; padding: 0.25rem 0.65rem; border-radius: 0.6rem; }
+  .altura-cm.bajo { background: #d4edda; color: #2d6a4f; }
+  .altura-cm.medio { background: #fff3cd; color: #a07000; }
+  .altura-cm.alto { background: #ffe0d4; color: #c0657a; }
   .chevron { font-size: 0.9rem; color: var(--texto-suave); transition: transform 0.2s; }
   .atraccion.abierta .chevron { transform: rotate(180deg); }
   .atraccion-body {
@@ -785,7 +797,7 @@
   <div class="login-card">
     <div class="login-estrella">✦ Disnerd Sofi ✦</div>
     <span class="login-emoji">🗼</span>
-    <div class="login-titulo">Guía<br>París</div>
+    <div class="login-titulo">Guía<br>Paris</div>
     <div class="login-subtitulo">tu guía mágica de viaje</div>
     <input class="login-input" type="text" id="login-usuario" placeholder="Usuario" autocomplete="username">
     <input class="login-input" type="password" id="login-clave" placeholder="Contraseña" autocomplete="current-password">
@@ -800,7 +812,7 @@
 <div id="app">
   <!-- Header -->
   <div class="header">
-    <div class="header-logo">Disnerd <span>París</span></div>
+    <div class="header-logo">Disnerd <span>Paris</span></div>
     <div class="header-usuario">
       <span id="header-nombre">Hola!</span>
       <button class="btn-salir" onclick="salir()">Salir</button>
@@ -813,14 +825,14 @@
     <div class="pantalla activa" id="pantalla-inicio">
       <div class="bienvenida-header">
         <h1>¡Hola amores! 🥐</h1>
-        <p>Prepárense para vivir la magia con un estilo único. En París la fantasía se mezcla con la elegancia europea: los detalles son más delicados, la arquitectura imponente, los espacios pensados para caminar sin apuro. Disneyland París no es solo subirse a atracciones — es disfrutar del recorrido, la música, los paisajes (a veces hasta nieve!) y la comida. ¿Sabías que hay una dragona debajo del castillo? Salúdenla por mí. ¡Empecemos!</p>
+        <p>Prepárense para vivir la magia con un estilo único. En Paris la fantasía se mezcla con la elegancia europea: los detalles son más delicados, la arquitectura imponente, los espacios pensados para caminar sin apuro. Disneyland Paris no es solo subirse a atracciones — es disfrutar del recorrido, la música, los paisajes (a veces hasta nieve!) y la comida. ¿Sabías que hay una dragona debajo del castillo? Salúdenla por mí. ¡Empecemos!</p>
       </div>
       <div class="destinos-grid">
         <div class="destino-card disney" onclick="irA('pantalla-disney')">
-          <img src="https://i.imgur.com/cAtIjCz.jpg" alt="Disneyland París" loading="lazy">
+          <img src="https://i.imgur.com/cAtIjCz.jpg" alt="Disneyland Paris" loading="lazy">
           <div class="destino-card-overlay">
             <span class="emoji">🏰</span>
-            <h3>Disneyland París</h3>
+            <h3>Disneyland Paris</h3>
             <p>2 parques · Magic & Studios</p>
           </div>
           <span class="arrow">→</span>
@@ -830,7 +842,7 @@
           <div class="destino-card-overlay">
             <span class="emoji">🇫🇷</span>
             <h3>Guía Francia</h3>
-            <p>6 días · París & Versalles</p>
+            <p>6 días · Paris & Versalles</p>
           </div>
           <span class="arrow">→</span>
         </div>
@@ -849,7 +861,7 @@
         <div class="info-card">
           <span class="ico">🗺️</span>
           <h4>Itinerarios</h4>
-          <p>Día a día por París y alrededores</p>
+          <p>Día a día por Paris y alrededores</p>
         </div>
         <div class="info-card">
           <span class="ico">🚇</span>
@@ -869,7 +881,7 @@
           <a href="https://wa.me/541132924274">📱 WhatsApp</a>
           <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
         </div>
-        <div class="firma">— Sofi ✦</div>
+        <div class="firma">— Sofi</div>
       </div>
     </div>
 
@@ -877,7 +889,7 @@
     <div class="pantalla" id="pantalla-disney">
       <button class="btn-volver" onclick="irA('pantalla-inicio')">← Volver</button>
       <div class="seccion-header">
-        <h2>🏰 Disneyland París</h2>
+        <h2>🏰 Disneyland Paris</h2>
         <p>Elegí el parque que querés ver</p>
       </div>
       <div class="parques-grid">
@@ -912,6 +924,7 @@
         <button class="tab" onclick="cambiarTab(this,'dlp-shows')">🎭 Shows</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-estrategia')">💡 Estrategia</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-comer')">🍽️ Comer</button>
+        <button class="tab" onclick="cambiarTab(this,'dlp-alturas')">📏 Alturas</button>
       </div>
 
       <!-- Atracciones DLP -->
@@ -963,7 +976,7 @@
           </div>
           <div class="atraccion-body">
             <img class="atraccion-foto" src="https://i.imgur.com/ES6b5Nb.jpg" alt="Pirates of the Caribbean" loading="lazy" onerror="this.style.display='none'">
-            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de París es la más grande del mundo con una pequeña caída al inicio.</p>
+            <p>Clásico imperdible. Paseo en bote por escenas de piratas. La versión de Paris es la más grande del mundo con una pequeña caída al inicio.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila generalmente fluida. Ir al mediodía cuando todos están comiendo.</div>
           </div>
         </div>
@@ -1218,7 +1231,7 @@
           </div>
           <div class="atraccion-body">
             <img class="atraccion-foto" src="https://i.imgur.com/JMaKFst.jpg" alt="Blanche-Neige et les Sept Nains" loading="lazy" onerror="this.style.display='none'">
-            <p>Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de París con final feliz.</p>
+            <p>Dark ride clásico por los bosques y la mina de Blancanieves y los siete enanitos. Versión única de Paris con final feliz.</p>
             <div class="tip">💡 <strong>Tip:</strong> Fila moderada. Ideal para el mediodía. Una de las atracciones de apertura original del parque en 1992.</div>
           </div>
         </div>
@@ -1371,7 +1384,7 @@
           </div>
           <div class="atraccion-body">
             <img class="atraccion-foto" src="https://i.imgur.com/D4jwLmx.jpg" alt="Le Château de la Belle au Bois Dormant" loading="lazy" onerror="this.style.display='none'">
-            <p>El castillo icónico de Disneyland París. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona animatrónica única en todos los Disney del mundo.</p>
+            <p>El castillo icónico de Disneyland Paris. Se puede entrar y subir a ver tapices de la historia de La Bella Durmiente. Abajo hay una dragona animatrónica única en todos los Disney del mundo.</p>
             <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
           </div>
         </div>
@@ -1389,7 +1402,7 @@
           </div>
           <div class="atraccion-body">
             <img class="atraccion-foto" src="fotos/pride-lands.jpg" alt="Rhythms of The Pride Lands" loading="lazy" onerror="this.style.display='none'">
-            <p>Show musical de ~30 minutos inspirado en El Rey León en uno de los teatros más grandes de Disneyland París. Acróbatas, bailarines, cantantes en vivo, tambores africanos y fuego. La música suena en zulú, swahili y francés con la potencia de una versión teatral. Sofi lo marca como imperdible.</p>
+            <p>Show musical de ~30 minutos inspirado en El Rey León en uno de los teatros más grandes de Disneyland Paris. Acróbatas, bailarines, cantantes en vivo, tambores africanos y fuego. La música suena en zulú, swahili y francés con la potencia de una versión teatral. Sofi lo marca como imperdible.</p>
             <div class="tip">💡 <strong>Tip:</strong> Desde la app oficial se puede reservar asiento — conviene hacerlo apenas se abre la ventana del día. Si no reservás, llegá 20 minutos antes.</div>
           </div>
         </div>
@@ -1650,6 +1663,26 @@
           <p style="margin-top:0.5rem;">Si querés que arme la reserva o necesitás recomendaciones más detalladas, preguntame por WhatsApp.</p>
         </div>
       </div>
+
+      <!-- Alturas DLP -->
+      <div class="tab-content" id="dlp-alturas">
+        <div class="estrategia-card">
+          <h4>📏 Simulador de altura — Disneyland Park</h4>
+          <p style="font-size:0.85rem;color:var(--texto-suave);margin-bottom:0.8rem">Ingresá la altura de tu hijo/a y te decimos a qué atracciones puede subirse.</p>
+          <div class="sim-input-row">
+            <input type="number" id="dlp-sim-h" placeholder="Altura en cm" min="60" max="180" onkeydown="if(event.key==='Enter') runSimulador('dlp')">
+            <span style="font-size:0.85rem;color:var(--texto-suave)">cm</span>
+            <button class="btn-simulador" onclick="runSimulador('dlp')">Probar</button>
+          </div>
+          <div id="dlp-sim-results"></div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🎢 Atracciones con altura mínima — Disneyland Park</h4>
+          <div id="dlp-alturas-tabla"></div>
+          <p style="font-size:0.78rem;color:var(--texto-suave);margin-top:0.8rem;font-style:italic">El resto de las atracciones (Pirates, Phantom Manor, Peter Pan, It's a Small World, Dumbo, las tazas, Alice Labyrinth, Le Pays des Contes de Fées, Buzz Lightyear, Orbitron) <strong>no tienen altura mínima</strong>.</p>
+        </div>
+      </div>
+
       <div class="cierre-calido">
         <h3>¡Have a magical day! ✨</h3>
         <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
@@ -1657,7 +1690,7 @@
           <a href="https://wa.me/541132924274">📱 WhatsApp</a>
           <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
         </div>
-        <div class="firma">— Sofi ✦</div>
+        <div class="firma">— Sofi</div>
       </div>
     </div>
 
@@ -1674,6 +1707,7 @@
         <button class="tab" onclick="cambiarTab(this,'wds-shows')">🎭 Shows</button>
         <button class="tab" onclick="cambiarTab(this,'wds-estrategia')">💡 Estrategia</button>
         <button class="tab" onclick="cambiarTab(this,'wds-comer')">🍽️ Comer</button>
+        <button class="tab" onclick="cambiarTab(this,'wds-alturas')">📏 Alturas</button>
       </div>
 
       <!-- Atracciones WDS -->
@@ -1742,7 +1776,7 @@
           </div>
           <div class="atraccion-body">
             <img class="atraccion-foto" src="https://i.imgur.com/9DqaEw5.jpg" alt="Ratatouille: The Adventure" loading="lazy" onerror="this.style.display='none'">
-            <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de París. Efecto 4D con olores, proyecciones y movimiento.</p>
+            <p>Paseo en el que el visitante se convierte en ratón y recorre el restaurante Gusteau. Exclusivo de Paris. Efecto 4D con olores, proyecciones y movimiento.</p>
             <div class="tip">💡 <strong>Tip:</strong> Exclusivo de este parque en el mundo. No perdérselo bajo ningún concepto.</div>
           </div>
         </div>
@@ -2066,6 +2100,26 @@
           </div>
         </div>
       </div>
+
+      <!-- Alturas WDS / DAW -->
+      <div class="tab-content" id="wds-alturas">
+        <div class="estrategia-card">
+          <h4>📏 Simulador de altura — Disney Adventure World</h4>
+          <p style="font-size:0.85rem;color:var(--texto-suave);margin-bottom:0.8rem">Ingresá la altura de tu hijo/a y te decimos a qué atracciones puede subirse.</p>
+          <div class="sim-input-row">
+            <input type="number" id="wds-sim-h" placeholder="Altura en cm" min="60" max="180" onkeydown="if(event.key==='Enter') runSimulador('wds')">
+            <span style="font-size:0.85rem;color:var(--texto-suave)">cm</span>
+            <button class="btn-simulador" onclick="runSimulador('wds')">Probar</button>
+          </div>
+          <div id="wds-sim-results"></div>
+        </div>
+        <div class="estrategia-card">
+          <h4>🎢 Atracciones con altura mínima — Disney Adventure World</h4>
+          <div id="wds-alturas-tabla"></div>
+          <p style="font-size:0.78rem;color:var(--texto-suave);margin-top:0.8rem;font-style:italic">El resto de las atracciones (Ratatouille, Spider-Man W.E.B. Adventure, Cars Quatre Roues Rallye, Cars Road Trip, Slinky Dog Zigzag Spin, Frozen Ever After) <strong>no tienen altura mínima</strong>.</p>
+        </div>
+      </div>
+
       <div class="cierre-calido">
         <h3>¡Have a magical day! ✨</h3>
         <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
@@ -2073,7 +2127,7 @@
           <a href="https://wa.me/541132924274">📱 WhatsApp</a>
           <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
         </div>
-        <div class="firma">— Sofi ✦</div>
+        <div class="firma">— Sofi</div>
       </div>
     </div>
 
@@ -2082,7 +2136,7 @@
       <button class="btn-volver" onclick="irA('pantalla-inicio')">← Volver</button>
       <div class="seccion-header">
         <h2>🇫🇷 Guía Francia</h2>
-        <p>París día a día · Transporte · Tips</p>
+        <p>Paris día a día · Transporte · Tips</p>
       </div>
       <div class="dias-nav-wrapper">
         <div class="dias-nav">
@@ -2100,8 +2154,8 @@
       <!-- Transporte -->
       <div class="dia-content activo" id="dia-transporte">
         <div class="transporte-card">
-          <h4>🚇 Metro de París</h4>
-          <p>La red de metro cubre prácticamente toda la ciudad con 16 líneas. Tomar el metro es la forma más práctica de moverse por París. Opera de 5:30 a 1:00 (viernes y sábados hasta las 2:15).</p>
+          <h4>🚇 Metro de Paris</h4>
+          <p>La red de metro cubre prácticamente toda la ciudad con 16 líneas. Tomar el metro es la forma más práctica de moverse por Paris. Opera de 5:30 a 1:00 (viernes y sábados hasta las 2:15).</p>
         </div>
         <div class="transporte-card">
           <h4>🎫 Ticket Metro-Train-RER (billete individual)</h4>
@@ -2118,13 +2172,13 @@
         </div>
         <div class="transporte-card">
           <h4>🗓️ Navigo Découverte (pase semanal)</h4>
-          <p>Pases semanales o mensuales válidos para uso ilimitado en cualquier transporte público de París. Podés adquirirlos en el mostrador de cualquier estación autorizada y es necesario presentar una foto 3x4 para pegarla en la tarjeta, por lo tanto la tarjeta es de uso personal.</p>
-          <p>El problema del Navigo semanal es que la semana siempre comienza el lunes y termina el domingo, es decir, si comenzás a usar tu tarjeta el lunes o el miércoles, expirará el domingo de todos modos. Por lo tanto, la tarjeta no compensa si llegás a París al final de la semana, ya que tendrías que comprar una nueva tarjeta el lunes.</p>
-          <p><strong>Precios 2026:</strong> La tarjeta cuesta 5€ y viene vacía. La recarga del pase semanal para las zonas 1 a 5 (incluyendo Disneyland, aeropuertos y Versalles) cuesta 30,60€. En total, son 35,60€ para usarla libremente durante una semana en París.</p>
+          <p>Pases semanales o mensuales válidos para uso ilimitado en cualquier transporte público de Paris. Podés adquirirlos en el mostrador de cualquier estación autorizada y es necesario presentar una foto 3x4 para pegarla en la tarjeta, por lo tanto la tarjeta es de uso personal.</p>
+          <p>El problema del Navigo semanal es que la semana siempre comienza el lunes y termina el domingo, es decir, si comenzás a usar tu tarjeta el lunes o el miércoles, expirará el domingo de todos modos. Por lo tanto, la tarjeta no compensa si llegás a Paris al final de la semana, ya que tendrías que comprar una nueva tarjeta el lunes.</p>
+          <p><strong>Precios 2026:</strong> La tarjeta cuesta 5€ y viene vacía. La recarga del pase semanal para las zonas 1 a 5 (incluyendo Disneyland, aeropuertos y Versalles) cuesta 30,60€. En total, son 35,60€ para usarla libremente durante una semana en Paris.</p>
         </div>
         <div class="transporte-card">
           <h4>🗺️ Paris Visite</h4>
-          <p>Es un pase individual e ilimitado para cualquier transporte público de París. Podés adquirirlos en las estaciones de metro, RER o en las oficinas de información turística de París. En 2026 existe una sola versión que cubre todas las zonas (1 a 5), incluyendo aeropuertos, Versalles y Disneyland:</p>
+          <p>Es un pase individual e ilimitado para cualquier transporte público de Paris. Podés adquirirlos en las estaciones de metro, RER o en las oficinas de información turística de Paris. En 2026 existe una sola versión que cubre todas las zonas (1 a 5), incluyendo aeropuertos, Versalles y Disneyland:</p>
           <ul>
             <li><strong>1 día:</strong> 30,60€ · <strong>2 días:</strong> 45,40€ · <strong>3 días:</strong> 63,80€ · <strong>5 días:</strong> 78,00€</li>
             <li>Niños de 4 a 9 años: 50% de descuento en todos los casos.</li>
@@ -2137,7 +2191,7 @@
         </div>
         <div class="transporte-card">
           <h4>🚕 Taxi / Uber / Bolt</h4>
-          <p>Uber y Bolt funcionan muy bien en París. Para grupos puede ser más conveniente que el metro. Uber a Disneyland desde el centro sale aproximadamente €50-70 según el tráfico.</p>
+          <p>Uber y Bolt funcionan muy bien en Paris. Para grupos puede ser más conveniente que el metro. Uber a Disneyland desde el centro sale aproximadamente €50-70 según el tráfico.</p>
         </div>
       </div>
 
@@ -2153,8 +2207,8 @@
             
             <img class="atraccion-foto" src="fotos/pont-bir-hakeim.jpg" alt="Pont Bir-Hakeim" loading="lazy" onerror="this.style.display='none'"><p>Inaugurado en 1905 y diseñado por Jean Camille Formigé, este puente de dos niveles es una obra maestra del hierro y la arquitectura Belle Époque. El nivel superior lo atraviesa la línea 6 del metro, y el inferior es para peatones y autos.</p>
             <p>Su nombre rinde homenaje a la <strong>Batalla de Bir Hakeim</strong> (Libia, 1942), donde fuerzas francesas libres resistieron durante 15 días a las tropas de Rommel.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> la escena más icónica de <strong>"Inception"</strong> (2010) de Christopher Nolan — donde Leonardo DiCaprio y Elliot Page doblan París sobre sí misma — se filmó en este puente. También aparece en "El último tango en París" (1972) y en "Misión Imposible: Fallout".</p>
-            <div class="tip">💡 <strong>Cómo llegar:</strong> Línea 6 del metro, estación "Bir-Hakeim". Desde allí continuá caminando hacia la Torre con el Sena a tu derecha — la vista desde el puente es de las mejores de París.</div>
+            <p><strong>🎬 En la pantalla grande:</strong> la escena más icónica de <strong>"Inception"</strong> (2010) de Christopher Nolan — donde Leonardo DiCaprio y Elliot Page doblan Paris sobre sí misma — se filmó en este puente. También aparece en "El último tango en Paris" (1972) y en "Misión Imposible: Fallout".</p>
+            <div class="tip">💡 <strong>Cómo llegar:</strong> Línea 6 del metro, estación "Bir-Hakeim". Desde allí continuá caminando hacia la Torre con el Sena a tu derecha — la vista desde el puente es de las mejores de Paris.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
@@ -2163,7 +2217,7 @@
             
             <img class="atraccion-foto" src="fotos/trocadero.jpg" alt="Trocadéro" loading="lazy" onerror="this.style.display='none'"><p>La <strong>Place du Trocadéro</strong> y el imponente <strong>Palais de Chaillot</strong> fueron construidos para la Exposición Universal de 1937. Desde sus terrazas tenés la vista frontal más famosa de la Torre Eiffel — justo al otro lado del Sena.</p>
             <p>El Palais de Chaillot alberga cuatro museos (Arquitectura, Marina, Hombre y Teatro Nacional) y sus fuentes dan un espectáculo visual único. Desde aquí se tomó la famosa foto de Hitler frente a la Torre Eiffel en 1940.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> escenarios de <strong>"Medianoche en París"</strong> de Woody Allen, "Sex and the City 2", "The Devil Wears Prada" y el icónico cierre de "Nikita" de Luc Besson. También fue locación de varias películas de James Bond.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> escenarios de <strong>"Medianoche en Paris"</strong> de Woody Allen, "Sex and the City 2", "The Devil Wears Prada" y el icónico cierre de "Nikita" de Luc Besson. También fue locación de varias películas de James Bond.</p>
             <div class="tip">💡 <strong>Tip:</strong> La foto perfecta es a las 7-8 am (sin gente) o al atardecer. Hay puestos de crepés y snacks para desayunar con la Torre de fondo.</div>
           </div>
         </div>
@@ -2179,7 +2233,7 @@
               <li><strong>2ª Planta (115 m):</strong> mejor vista panorámica y el restaurante Jules Verne (3 estrellas Michelin, reserva con meses)</li>
               <li><strong>3ª Planta — Cima (276 m):</strong> solo en ascensor panorámico. Bar de champagne y reconstrucción del apartamento de Eiffel</li>
             </ul>
-            <p><strong>🎬 En la pantalla grande:</strong> Ratatouille de Pixar (2007) la muestra constantemente. Anastasia (1997) de Don Bluth la convierte en el cierre mágico con el "Paris Holds the Key". También aparece en "An American in Paris" (1951), "Mission Impossible" y prácticamente cualquier film ambientado en París.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> Ratatouille de Pixar (2007) la muestra constantemente. Anastasia (1997) de Don Bluth la convierte en el cierre mágico con el "Paris Holds the Key". También aparece en "An American in Paris" (1951), "Mission Impossible" y prácticamente cualquier film ambientado en Paris.</p>
             <p><strong>Precios 2026:</strong> desde €14,80 (2° piso) hasta €36,70 (cima) para adultos. Menores de 4 años gratis. Cierra el 14 de julio.</p>
             <div class="tip">💡 <strong>Tip:</strong> Comprar tickets con hasta 60 días de anticipación en <a href="https://ticket.toureiffel.paris/es" target="_blank" style="color:var(--dorado)">ticket.toureiffel.paris</a>. Se agotan rápido. Sin ticket la cola puede ser de 2-3 horas.</div>
           </div>
@@ -2188,9 +2242,9 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🌳</span><div class="lugar-header-text"><h4>Champ de Mars</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/champ-de-mars.jpg" alt="Champ de Mars" loading="lazy" onerror="this.style.display='none'"><p>Una explanada verde de más de 24 hectáreas a los pies de la Torre Eiffel. Su nombre viene de <strong>Marte, dios romano de la guerra</strong>, porque fue durante siglos el campo de entrenamiento militar de la Escuela Militar de París — el lugar donde Napoleón Bonaparte recibió su formación.</p>
+            <img class="atraccion-foto" src="fotos/champ-de-mars.jpg" alt="Champ de Mars" loading="lazy" onerror="this.style.display='none'"><p>Una explanada verde de más de 24 hectáreas a los pies de la Torre Eiffel. Su nombre viene de <strong>Marte, dios romano de la guerra</strong>, porque fue durante siglos el campo de entrenamiento militar de la Escuela Militar de Paris — el lugar donde Napoleón Bonaparte recibió su formación.</p>
             <p>Aquí se celebraron las grandes <strong>Exposiciones Universales</strong> del siglo XIX (incluida la de 1889 que dio a luz a la Torre) y eventos revolucionarios como la Fiesta de la Federación en 1790.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> el final de <strong>"Medianoche en París"</strong> de Woody Allen se filma en este parque. También aparece en "Ratatouille" y en casi toda peli romántica de París.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> el final de <strong>"Medianoche en Paris"</strong> de Woody Allen se filma en este parque. También aparece en "Ratatouille" y en casi toda peli romántica de Paris.</p>
             <div class="tip">💡 <strong>Tip:</strong> Comprá algo en una boulangerie (La Boulangerie Julien o Eric Kayser) y sentate en el pasto con vista a la Torre. Experiencia parisina auténtica. Ideal para esperar el atardecer.</div>
           </div>
         </div>
@@ -2199,7 +2253,7 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/palais-de-tokyo.jpg" alt="Palais de Tokyo" loading="lazy" onerror="this.style.display='none'"><p>Construido para la Exposición Internacional de 1937, este edificio Art Déco es desde 2002 uno de los <strong>centros de arte contemporáneo más grandes de Europa</strong>. A diferencia de los museos clásicos, no tiene colección permanente — solo exhibiciones temporales, instalaciones inmersivas y performances.</p>
-            <p>Su horario extendido hasta medianoche lo hace único: es el museo que cierra más tarde de París. Dentro funciona <strong>Monsieur Bleu</strong>, uno de los restaurantes con mejor vista al Sena y la Torre Eiffel (reserva obligatoria para cenar).</p>
+            <p>Su horario extendido hasta medianoche lo hace único: es el museo que cierra más tarde de Paris. Dentro funciona <strong>Monsieur Bleu</strong>, uno de los restaurantes con mejor vista al Sena y la Torre Eiffel (reserva obligatoria para cenar).</p>
             <p><strong>Precio:</strong> €12 adultos. Gratuito menores de 18.</p>
             <div class="tip">💡 <strong>Tip:</strong> Si te gusta el arte contemporáneo es imperdible. Si preferís arte clásico, seguí hacia el Arco de Triunfo y guardá el Palais de Tokyo para otro momento.</div>
           </div>
@@ -2224,7 +2278,7 @@
             <p>Tiene unos 2 km de largo y 70 m de ancho, y conecta la <strong>Place de la Concorde</strong> (donde fue guillotinada María Antonieta en 1793) con el Arco de Triunfo. El Tour de France termina aquí cada julio, y el 14 de julio se hace el gran desfile militar.</p>
             <p>A lo largo encontrás tiendas de lujo (Louis Vuitton, Cartier, Dior), flagship stores (Disney Store, Sephora gigante, Nike), cines históricos, el <strong>Grand Palais</strong> y el <strong>Petit Palais</strong>.</p>
             <p><strong>🎬 En la pantalla grande:</strong> "Funny Face" (1957) con Audrey Hepburn bailando en los Campos Elíseos, y la película animada <strong>Ratatouille</strong> los muestra desde el aire varias veces.</p>
-            <div class="tip">💡 <strong>Tip Ladurée:</strong> no te vayas de París sin probar los macarons de <strong>Ladurée</strong> — la tienda original está acá, fundada en 1862 e inventora del macaron moderno. Un macaron cuesta ~€2,50. También ofrecen tés y desayunos de época.</div>
+            <div class="tip">💡 <strong>Tip Ladurée:</strong> no te vayas de Paris sin probar los macarons de <strong>Ladurée</strong> — la tienda original está acá, fundada en 1862 e inventora del macaron moderno. Un macaron cuesta ~€2,50. También ofrecen tés y desayunos de época.</div>
             <div class="tip">🏰 <strong>Para Disnerds:</strong> hay una <strong>Disney Store</strong> flagship en los Champs Élysées (n°44) — uno de los merch shops de Disney más grandes de Europa. Merece la visita sí o sí.</div>
           </div>
         </div>
@@ -2233,7 +2287,7 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/juego-de-luces.jpg" alt="Juego de luces nocturno" loading="lazy" onerror="this.style.display='none'"><p>Desde 1985 la Torre Eiffel tiene iluminación dorada permanente al caer la noche. Pero en el año 2000, para celebrar el cambio de milenio, se agregó un segundo espectáculo: <strong>20.000 bombillas blancas que titilan durante 5 minutos al inicio de cada hora</strong>, desde el anochecer hasta las 23:00.</p>
-            <p>La iluminación fue tan exitosa que la dejaron permanente. Creada por Pierre Bideau, es hoy un símbolo propio de París.</p>
+            <p>La iluminación fue tan exitosa que la dejaron permanente. Creada por Pierre Bideau, es hoy un símbolo propio de Paris.</p>
             <p><strong>🕐 ¿A qué hora empieza a titilar?</strong> Depende de cuándo anochece:</p>
             <ul>
               <li><strong>Verano (jun–ago):</strong> primera titilada a las <strong>22:00</strong></li>
@@ -2257,8 +2311,8 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/jardin-tullerias.jpg" alt="Jardín de las Tullerías" loading="lazy" onerror="this.style.display='none'"><p>Creados en 1564 por <strong>Catalina de Médici</strong> como jardines del Palacio de las Tullerías. Un siglo después, <strong>André Le Nôtre</strong> —el mismo arquitecto de los jardines de Versalles— los rediseñó con senderos simétricos, fuentes y parterres geométricos que se convirtieron en modelo del jardín francés clásico.</p>
-            <p>El Palacio de las Tullerías ya no existe: fue incendiado por la Comuna de París en 1871 y sus ruinas finalmente demolidas. Hoy dentro del jardín están el <strong>Musée de l'Orangerie</strong> (con los Nenúfares de Monet) y el <strong>Jeu de Paume</strong> (fotografía contemporánea).</p>
-            <p><strong>🎬 En la pantalla grande:</strong> varias escenas de <strong>"Medianoche en París"</strong> de Woody Allen, "Marie Antoinette" de Sofia Coppola, y "Charade" con Audrey Hepburn y Cary Grant (1963).</p>
+            <p>El Palacio de las Tullerías ya no existe: fue incendiado por la Comuna de Paris en 1871 y sus ruinas finalmente demolidas. Hoy dentro del jardín están el <strong>Musée de l'Orangerie</strong> (con los Nenúfares de Monet) y el <strong>Jeu de Paume</strong> (fotografía contemporánea).</p>
+            <p><strong>🎬 En la pantalla grande:</strong> varias escenas de <strong>"Medianoche en Paris"</strong> de Woody Allen, "Marie Antoinette" de Sofia Coppola, y "Charade" con Audrey Hepburn y Cary Grant (1963).</p>
             <div class="tip">💡 <strong>Tip:</strong> Hay sillas verdes de jardín en las que cualquiera puede sentarse gratis. Tomarse un café o un croissant con vista al Louvre antes de entrar es una experiencia parisina clásica.</div>
           </div>
         </div>
@@ -2277,7 +2331,7 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/jardin-palais-royal.jpg" alt="Jardín del Palais Royal" loading="lazy" onerror="this.style.display='none'"><p>La fachada del palacio cuenta con una serie de <strong>arcadas</strong> que albergan tiendas y galerías comerciales. En el centro del complejo se encuentra un gran jardín con <strong>fuentes circulares y esculturas</strong>, donde podés disfrutar de un paseo tranquilo o sentarte en uno de los bancos a apreciar la vista.</p>
-            <p>El lado sur del jardín alberga las famosas <strong>Colonnes de Buren</strong>: 260 columnas de mármol rayadas blanco y negro de distintas alturas, instaladas por Daniel Buren en 1986. Fue una obra polémica por el contraste con la arquitectura clásica del palacio — hoy es de las más fotografiadas de París, objetivo favorito de fotógrafos e influencers.</p>
+            <p>El lado sur del jardín alberga las famosas <strong>Colonnes de Buren</strong>: 260 columnas de mármol rayadas blanco y negro de distintas alturas, instaladas por Daniel Buren en 1986. Fue una obra polémica por el contraste con la arquitectura clásica del palacio — hoy es de las más fotografiadas de Paris, objetivo favorito de fotógrafos e influencers.</p>
             <div class="tip">💡 <strong>Tip:</strong> Ideal para sacar fotos creativas con las columnas de Buren. El jardín central con sus fuentes circulares es perfecto para un descanso entre paradas del día.</div>
           </div>
         </div>
@@ -2296,7 +2350,7 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🌉</span><div class="lugar-header-text"><h4>Pont des Arts</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/pont-des-arts.jpg" alt="Pont des Arts" loading="lazy" onerror="this.style.display='none'"><p>Justo al salir del Louvre por la salida del Sena, cruzás este puente peatonal — el más romántico de París. Inaugurado en 1804 por orden de Napoleón, fue el <strong>primer puente de hierro</strong> de la ciudad. Une el Louvre con el Instituto de Francia.</p>
+            <img class="atraccion-foto" src="fotos/pont-des-arts.jpg" alt="Pont des Arts" loading="lazy" onerror="this.style.display='none'"><p>Justo al salir del Louvre por la salida del Sena, cruzás este puente peatonal — el más romántico de Paris. Inaugurado en 1804 por orden de Napoleón, fue el <strong>primer puente de hierro</strong> de la ciudad. Une el Louvre con el Instituto de Francia.</p>
             <p>Durante años se hizo famoso por los <strong>"candados del amor"</strong> que las parejas colgaban de sus rejas — llegaron a pesar más de 45 toneladas y las autoridades tuvieron que retirarlos en 2015 para proteger la estructura.</p>
             <p><strong>🎬 En la pantalla grande:</strong> escena icónica de <strong>"Amélie"</strong> (2001) cuando hace saltar piedras en el Sena. También aparece en "Midnight in Paris" y "Now You See Me 2".</p>
             <div class="tip">💡 <strong>Tip:</strong> Parada natural de 10-15 minutos al salir del Louvre antes de seguir hacia Saint-Eustache. Las mejores fotos son al atardecer con la Île de la Cité de fondo.</div>
@@ -2306,18 +2360,18 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Iglesia de Saint-Eustache</h4><span class="horario">Lun–Vie 9:30–19:00 · Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/saint-eustache.jpg" alt="Iglesia de Saint-Eustache" loading="lazy" onerror="this.style.display='none'"><p>Construida entre 1532 y 1632 (restaurada en 1840), Saint-Eustache es una de las iglesias más importantes de París — una mezcla única de arquitectura <strong>gótica tardía</strong> por fuera y <strong>renacentista</strong> por dentro. Su nombre rinde homenaje a Santo Eustaquio, un general romano convertido al cristianismo.</p>
+            <img class="atraccion-foto" src="fotos/saint-eustache.jpg" alt="Iglesia de Saint-Eustache" loading="lazy" onerror="this.style.display='none'"><p>Construida entre 1532 y 1632 (restaurada en 1840), Saint-Eustache es una de las iglesias más importantes de Paris — una mezcla única de arquitectura <strong>gótica tardía</strong> por fuera y <strong>renacentista</strong> por dentro. Su nombre rinde homenaje a Santo Eustaquio, un general romano convertido al cristianismo.</p>
             <p>Acá pasaron cosas grandes: <strong>Luis XIV</strong> recibió su primera comunión en 1649, <strong>Mozart</strong> eligió este lugar para el funeral de su madre en 1778, y <strong>Molière</strong> fue bautizado aquí. También está enterrado <strong>Jean-Baptiste Colbert</strong>, el ministro de finanzas de Luis XIV.</p>
-            <p>Tiene uno de los <strong>órganos más grandes de Francia</strong> (8.000 tubos). Queda en el corazón del antiguo mercado de París, Les Halles, hoy una zona de compras y restaurantes.</p>
+            <p>Tiene uno de los <strong>órganos más grandes de Francia</strong> (8.000 tubos). Queda en el corazón del antiguo mercado de Paris, Les Halles, hoy una zona de compras y restaurantes.</p>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎭</span><div class="lugar-header-text"><h4>Ópera Garnier</h4><span class="horario">10:00–17:00 · Entrada paga</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/opera-garnier.jpg" alt="Ópera Garnier" loading="lazy" onerror="this.style.display='none'"><p>Obra maestra del estilo <strong>Segundo Imperio</strong>, encargada por Napoleón III como parte de la gran renovación de París de Haussmann. Construida entre 1861 y 1875 por <strong>Charles Garnier</strong>, quien ganó el concurso compitiendo con más de 170 arquitectos — tenía 35 años y era un desconocido cuando ganó.</p>
+            <img class="atraccion-foto" src="fotos/opera-garnier.jpg" alt="Ópera Garnier" loading="lazy" onerror="this.style.display='none'"><p>Obra maestra del estilo <strong>Segundo Imperio</strong>, encargada por Napoleón III como parte de la gran renovación de Paris de Haussmann. Construida entre 1861 y 1875 por <strong>Charles Garnier</strong>, quien ganó el concurso compitiendo con más de 170 arquitectos — tenía 35 años y era un desconocido cuando ganó.</p>
             <p>Su interior es espectacular: <strong>Gran Escalera de mármol</strong>, el majestuoso <strong>Gran Foyer</strong> dorado, y un techo pintado por <strong>Marc Chagall</strong> en 1964 con escenas de óperas famosas. El salón principal tiene la araña de cristal más grande del mundo (6 toneladas).</p>
-            <p><strong>🎬 En la pantalla grande:</strong> inspiración directa de <strong>"El Fantasma de la Ópera"</strong> de Gastón Leroux (1910). El libro habla de un "lago subterráneo" — y sí, existe de verdad: la napa freática inundó la cimentación durante la construcción, así que lo usan como reservorio. Los bomberos de París practican natación ahí. Adaptaciones famosas: la película de 2004 con Gerard Butler y el musical de Andrew Lloyd Webber.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> inspiración directa de <strong>"El Fantasma de la Ópera"</strong> de Gastón Leroux (1910). El libro habla de un "lago subterráneo" — y sí, existe de verdad: la napa freática inundó la cimentación durante la construcción, así que lo usan como reservorio. Los bomberos de Paris practican natación ahí. Adaptaciones famosas: la película de 2004 con Gerard Butler y el musical de Andrew Lloyd Webber.</p>
             <p><strong>Precio:</strong> €15 visita libre / €22 con audioguía. Gratuito menores de 12.</p>
             <div class="tip">💡 <strong>Tip:</strong> La visita vale 100% la pena, el interior deja sin palabras. Reservar en <a href="https://www.operadeparis.fr" target="_blank" style="color:var(--dorado)">operadeparis.fr</a>.</div>
           </div>
@@ -2327,9 +2381,9 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/galeries-lafayette.jpg" alt="Galeries Lafayette" loading="lazy" onerror="this.style.display='none'"><p>Fundada en 1894 por <strong>Théophile Bader</strong>, Galeries Lafayette es una de las tiendas por departamentos más famosas del mundo. Su joya es la <strong>cúpula de vitrales Art Nouveau</strong> de 33 metros de altura, terminada en 1912, que se extiende sobre 7 pisos de tiendas de las marcas más top del mundo.</p>
-            <p>Gratuita para entrar (aun sin comprar nada). Tiene desde las marcas más caras hasta un piso con marcas accesibles y promos. Su <strong>terraza panorámica en la cima es gratuita</strong> y ofrece una de las mejores vistas de París — con la Torre Eiffel, el Sacré-Cœur y la Ópera a la vista.</p>
+            <p>Gratuita para entrar (aun sin comprar nada). Tiene desde las marcas más caras hasta un piso con marcas accesibles y promos. Su <strong>terraza panorámica en la cima es gratuita</strong> y ofrece una de las mejores vistas de Paris — con la Torre Eiffel, el Sacré-Cœur y la Ópera a la vista.</p>
             <p><strong>🎬 En la pantalla grande:</strong> aparece en "Paris, Je t'aime" y "Midnight in Paris". Sede de desfiles de moda históricos.</p>
-            <div class="tip">💡 <strong>Tip:</strong> No te vayas sin subir a la terraza del último piso — es una de las mejores vistas de París y es completamente gratis. Aprovechá para tomar fotos al atardecer.</div>
+            <div class="tip">💡 <strong>Tip:</strong> No te vayas sin subir a la terraza del último piso — es una de las mejores vistas de Paris y es completamente gratis. Aprovechá para tomar fotos al atardecer.</div>
             <div class="cafe-tip">☕ <strong>Café cerca — The Coffee (Haussmann):</strong> sucursal junto a Galeries Lafayette. Opción Pinterest para un break rápido.</div>
           </div>
         </div>
@@ -2338,7 +2392,7 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/place-vendome.jpg" alt="Place Vendôme" loading="lazy" onerror="this.style.display='none'"><p>Diseñada por <strong>Jules Hardouin-Mansart</strong> en 1699 (el mismo arquitecto de Versalles y Los Inválidos), es una de las plazas más elegantes del mundo. Originalmente construida en honor a <strong>Luis XIV</strong>, hoy es sinónimo de lujo: acá están las joyerías más caras del planeta — <strong>Cartier, Van Cleef & Arpels, Chaumet, Chanel Joyería, Boucheron</strong>.</p>
-            <p>En el centro: la <strong>Columna Vendôme</strong> (44 m de altura), erigida por Napoleón en 1810 y hecha con el bronce de 1.200 cañones rusos y austríacos capturados en la <strong>Batalla de Austerlitz</strong> (1805). En la cima hay una estatua de Napoleón vestido de César. La columna fue derribada por la Comuna de París en 1871 y reconstruida poco después.</p>
+            <p>En el centro: la <strong>Columna Vendôme</strong> (44 m de altura), erigida por Napoleón en 1810 y hecha con el bronce de 1.200 cañones rusos y austríacos capturados en la <strong>Batalla de Austerlitz</strong> (1805). En la cima hay una estatua de Napoleón vestido de César. La columna fue derribada por la Comuna de Paris en 1871 y reconstruida poco después.</p>
             <p>En el n°15 está el <strong>Hôtel Ritz</strong>: donde vivió <strong>Coco Chanel por 37 años</strong> (en la Suite que hoy lleva su nombre), donde Ernest Hemingway "liberó" el bar durante la Segunda Guerra, y desde donde salió <strong>Lady Di</strong> la noche de su fatal accidente en 1997.</p>
             <p><strong>🎬 En la pantalla grande:</strong> "Coco Avant Chanel" con Audrey Tautou, escenas de "Midnight in Paris", "Marie Antoinette" y muchas más.</p>
             <div class="tip">💡 <strong>Tip:</strong> Aunque las tiendas parezcan inaccesibles, entrar a mirar es gratis y nadie te mira mal. El Bar Hemingway del Ritz (abierto al público con reserva) es una experiencia.</div>
@@ -2361,7 +2415,7 @@
           <div class="lugar-body">
             <img class="atraccion-foto" src="https://i.imgur.com/XKinJD1.jpg" alt="Muro del "Te Amo"" loading="lazy" onerror="this.style.display='none'">
             <p>Una obra de arte público compuesta por <strong>612 baldosas azules de lava esmaltada</strong> con la frase "Te amo" escrita <strong>311 veces en 250 idiomas</strong>. Fue creada por el artista Frédéric Baron —que pasó años recolectando "te amo" de gente de todo el mundo— y la calígrafa Claire Kito, e inaugurada el <strong>14 de febrero del 2000</strong> (Día de San Valentín, obvio).</p>
-            <p>Las pequeñas manchas rojas simbolizan pedazos de un corazón roto: la idea es que el "Te amo" los puede volver a unir. Es uno de los lugares más románticos de París.</p>
+            <p>Las pequeñas manchas rojas simbolizan pedazos de un corazón roto: la idea es que el "Te amo" los puede volver a unir. Es uno de los lugares más románticos de Paris.</p>
             <div class="tip">💡 <strong>Tip:</strong> Tratá de encontrar el "te amo" en español y en todos los idiomas que te interesen. Queda en la <strong>Place des Abbesses</strong>, pegado al pequeño parque Jehan Rictus.</div>
           </div>
         </div>
@@ -2369,20 +2423,20 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Basílica del Sacré-Cœur</h4><span class="horario">6:00–22:30 · Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/sacre-coeur.jpg" alt="Basílica del Sacré-Cœur" loading="lazy" onerror="this.style.display='none'"><p>La <strong>Basílica del Sagrado Corazón</strong> es el segundo punto más alto de París después de la Torre Eiffel. Fue construida como <strong>acto de penitencia nacional</strong> tras la humillante derrota francesa en la guerra franco-prusiana (1870) y los horrores de la Comuna de París (1871) — buscaba bendecir la ciudad herida.</p>
-            <p>Su construcción comenzó en 1875 y llevó <strong>40 años completarla</strong> (consagrada en 1919). Su estilo <strong>romano-bizantino</strong> es inusual en Francia, donde predomina el gótico. La <strong>cúpula de 80 m</strong> ofrece una vista panorámica de 360º de París. Dentro alberga el <strong>mosaico más grande de Francia</strong> (475 m², de Luc-Olivier Merson) y una tradición de <strong>oración perpetua 24/7</strong> que no se ha interrumpido desde 1885.</p>
+            <img class="atraccion-foto" src="fotos/sacre-coeur.jpg" alt="Basílica del Sacré-Cœur" loading="lazy" onerror="this.style.display='none'"><p>La <strong>Basílica del Sagrado Corazón</strong> es el segundo punto más alto de Paris después de la Torre Eiffel. Fue construida como <strong>acto de penitencia nacional</strong> tras la humillante derrota francesa en la guerra franco-prusiana (1870) y los horrores de la Comuna de Paris (1871) — buscaba bendecir la ciudad herida.</p>
+            <p>Su construcción comenzó en 1875 y llevó <strong>40 años completarla</strong> (consagrada en 1919). Su estilo <strong>romano-bizantino</strong> es inusual en Francia, donde predomina el gótico. La <strong>cúpula de 80 m</strong> ofrece una vista panorámica de 360º de Paris. Dentro alberga el <strong>mosaico más grande de Francia</strong> (475 m², de Luc-Olivier Merson) y una tradición de <strong>oración perpetua 24/7</strong> que no se ha interrumpido desde 1885.</p>
             <p>Su piedra travertino de Château-Landon <strong>libera calcita cuando llueve</strong> — por eso Sacré-Cœur siempre se ve blanca, incluso con el paso del tiempo.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> escena icónica de <strong>"Amélie"</strong> (2001), "Medianoche en París" y "El Jorobado de Notre Dame" de 1997 tiene algunas panorámicas inspiradas en este tipo de arquitectura blanca en altura.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Subir a pie por las escalinatas para la experiencia completa. Llegar temprano para la mejor luz y menos gente. La vista desde las escalinatas al atardecer con París entero a tus pies es mágica.</div>
+            <p><strong>🎬 En la pantalla grande:</strong> escena icónica de <strong>"Amélie"</strong> (2001), "Medianoche en Paris" y "El Jorobado de Notre Dame" de 1997 tiene algunas panorámicas inspiradas en este tipo de arquitectura blanca en altura.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Subir a pie por las escalinatas para la experiencia completa. Llegar temprano para la mejor luz y menos gente. La vista desde las escalinatas al atardecer con Paris entero a tus pies es mágica.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🖼️</span><div class="lugar-header-text"><h4>Place du Tertre</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/place-du-tertre.jpg" alt="Place du Tertre" loading="lazy" onerror="this.style.display='none'"><p>Fue el <strong>centro del antiguo pueblo de Montmartre</strong> antes de que París lo absorbiera en 1860. A principios del siglo XX fue refugio de los artistas que cambiaron el arte moderno: <strong>Picasso, Van Gogh, Utrillo, Modigliani, Toulouse-Lautrec, Renoir, Dalí</strong> — todos pasaron por acá.</p>
+            <img class="atraccion-foto" src="fotos/place-du-tertre.jpg" alt="Place du Tertre" loading="lazy" onerror="this.style.display='none'"><p>Fue el <strong>centro del antiguo pueblo de Montmartre</strong> antes de que Paris lo absorbiera en 1860. A principios del siglo XX fue refugio de los artistas que cambiaron el arte moderno: <strong>Picasso, Van Gogh, Utrillo, Modigliani, Toulouse-Lautrec, Renoir, Dalí</strong> — todos pasaron por acá.</p>
             <p>Hoy los <strong>140 artistas</strong> que trabajan en la plaza forman un gremio regulado (hay lista de espera para conseguir un puesto). Son pintores, caricaturistas y retratistas que mantienen viva la tradición bohemia del barrio.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> aparece en <strong>"Amélie"</strong>, en biopics de Van Gogh y en decenas de películas románticas ambientadas en París.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> aparece en <strong>"Amélie"</strong>, en biopics de Van Gogh y en decenas de películas románticas ambientadas en Paris.</p>
             <div class="tip">💡 <strong>Tip:</strong> Ir temprano a la mañana para verla casi vacía. Los retratos cuestan entre €20–50 según el artista. Sentarse con un café y simplemente mirar el movimiento: esa es la experiencia.</div>
           </div>
         </div>
@@ -2390,7 +2444,7 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🎠</span><div class="lugar-header-text"><h4>Le Moulin de la Galette</h4><span class="horario">Hoy funciona como restaurante</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/moulin-galette.jpg" alt="Le Moulin de la Galette" loading="lazy" onerror="this.style.display='none'"><p>Uno de los últimos <strong>30 molinos de viento</strong> que cubrían la colina de Montmartre en el siglo XIX (cuando el barrio era zona agrícola, no parte de París). En 1830 se convirtió en un cabaret popular donde el pueblo bailaba y tomaba galettes (tortitas) los domingos.</p>
+            <img class="atraccion-foto" src="fotos/moulin-galette.jpg" alt="Le Moulin de la Galette" loading="lazy" onerror="this.style.display='none'"><p>Uno de los últimos <strong>30 molinos de viento</strong> que cubrían la colina de Montmartre en el siglo XIX (cuando el barrio era zona agrícola, no parte de Paris). En 1830 se convirtió en un cabaret popular donde el pueblo bailaba y tomaba galettes (tortitas) los domingos.</p>
             <p>Mundialmente famoso por ser el tema de la icónica obra <strong>"Baile en el Moulin de la Galette"</strong> de Renoir (1876), una de las piezas más importantes del impresionismo francés — hoy exhibida en el <strong>Musée d'Orsay</strong>. También lo pintaron Van Gogh y Toulouse-Lautrec, capturando la vida de la Belle Époque.</p>
             <p>Hoy funciona como restaurante/brasserie tradicional con las aspas del molino aún girando.</p>
             <div class="tip">💡 <strong>Dato:</strong> Solo quedan <strong>dos molinos originales</strong> en Montmartre: éste y el Moulin Radet. Por eso toda la zona se llama así.</div>
@@ -2435,7 +2489,7 @@
           <div style="font-size:0.85rem; color:var(--texto-suave);">Sainte-Chapelle · Notre Dame · Panteón · Catacumbas · Luxemburgo · Saint-Sulpice</div>
         </div>
         <div style="background:#fff3cd; border-radius:1rem; padding:0.9rem 1rem; margin-bottom:0.8rem; font-size:0.85rem; color:var(--texto);">
-          🏰 <strong>El día Disnerdo por excelencia:</strong> Este día visitamos 2 locaciones históricas en la industria Disney — la Catedral de Notre Dame (escenario de "El Jorobado de Notre Dame", 1997) y las Catacumbas de París (donde en la peli se situaba la Corte de los Milagros). <em>Dato: dos de las tres gárgolas amigas de Quasimodo rinden homenaje al autor de la obra llamándose "Victor" y "Hugo".</em>
+          🏰 <strong>El día Disnerdo por excelencia:</strong> Este día visitamos 2 locaciones históricas en la industria Disney — la Catedral de Notre Dame (escenario de "El Jorobado de Notre Dame", 1997) y las Catacumbas de Paris (donde en la peli se situaba la Corte de los Milagros). <em>Dato: dos de las tres gárgolas amigas de Quasimodo rinden homenaje al autor de la obra llamándose "Victor" y "Hugo".</em>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">💎</span><div class="lugar-header-text"><h4>Sainte-Chapelle</h4><span class="horario">9:00–19:00 (abr–sep) · 9:00–17:00 (oct–mar)</span></div></div></div>
@@ -2453,13 +2507,13 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Catedral de Notre Dame</h4><span class="horario">Lun–Vie 7:50–19:00 · Gratis</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/notre-dame.jpg" alt="Catedral de Notre Dame" loading="lazy" onerror="this.style.display='none'"><p>Una de las catedrales góticas más hermosas e icónicas del mundo. Su construcción demoró <strong>más de 180 años</strong> (1163–1345). Acá se coronó <strong>Napoleón Bonaparte</strong> como emperador en 1804, se beatificó a <strong>Juana de Arco</strong> en 1909, y fue donde los parisinos celebraron la Liberación de París en 1944.</p>
-            <p><strong>La salvó un libro.</strong> A principios del siglo XIX estaba tan deteriorada que iban a demolerla. Entonces Víctor Hugo publicó <strong>"Nuestra Señora de París"</strong> (1831) y la novela causó tal conmoción nacional que el gobierno la restauró con <strong>Viollet-le-Duc</strong>, quien agregó las icónicas gárgolas y la aguja — esa que cayó en el incendio. Sin el libro, no habría catedral.</p>
+            <img class="atraccion-foto" src="fotos/notre-dame.jpg" alt="Catedral de Notre Dame" loading="lazy" onerror="this.style.display='none'"><p>Una de las catedrales góticas más hermosas e icónicas del mundo. Su construcción demoró <strong>más de 180 años</strong> (1163–1345). Acá se coronó <strong>Napoleón Bonaparte</strong> como emperador en 1804, se beatificó a <strong>Juana de Arco</strong> en 1909, y fue donde los parisinos celebraron la Liberación de Paris en 1944.</p>
+            <p><strong>La salvó un libro.</strong> A principios del siglo XIX estaba tan deteriorada que iban a demolerla. Entonces Víctor Hugo publicó <strong>"Nuestra Señora de Paris"</strong> (1831) y la novela causó tal conmoción nacional que el gobierno la restauró con <strong>Viollet-le-Duc</strong>, quien agregó las icónicas gárgolas y la aguja — esa que cayó en el incendio. Sin el libro, no habría catedral.</p>
             <p><strong>🏰 ¡Para Disnerds! Notre Dame es escenario de "El Jorobado de Notre Dame"</strong> (Disney, 1996) — la segunda adaptación de la novela de Hugo después de la de 1939 con Charles Laughton. En la película animada, <strong>las gárgolas amigas de Quasimodo se llaman Victor, Hugo y Laverne</strong> — directo homenaje al autor. La escena "Heaven's Light / Hellfire" transcurre en las torres que ahora podés visitar.</p>
             <p>El <strong>incendio del 15 de abril de 2019</strong> destruyó la aguja y gran parte del techo. Tras <strong>5 años de restauración</strong>, Notre Dame <strong>reabrió en diciembre de 2024</strong> con el interior completamente renovado. La aguja fue reconstruida idéntica a la original de Viollet-le-Duc.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> además del Disney, aparece en "Before Sunset" (2004) de Richard Linklater, "Medianoche en París" y muchas más.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> además del Disney, aparece en "Before Sunset" (2004) de Richard Linklater, "Medianoche en Paris" y muchas más.</p>
             <p><strong>Torres:</strong> reabrieron en septiembre 2025 con recorrido renovado. 424 escalones hasta los 69m. Precio: €16. Solo venta online. Gratuito menores de 18 y europeos menores de 26.</p>
-            <div class="tip">💡 <strong>Tip Disnerdo:</strong> subí a las torres sí o sí — es donde Quasimodo vivía y donde está la icónica gárgola llamada "Le Stryge" (la que aparece apoyando la cabeza en las manos mirando París). Reservá torres en <a href="https://www.tours-notre-dame-de-paris.fr/es" target="_blank" style="color:var(--dorado)">tours-notre-dame-de-paris.fr</a>.</div>
+            <div class="tip">💡 <strong>Tip Disnerdo:</strong> subí a las torres sí o sí — es donde Quasimodo vivía y donde está la icónica gárgola llamada "Le Stryge" (la que aparece apoyando la cabeza en las manos mirando Paris). Reservá torres en <a href="https://www.tours-notre-dame-de-paris.fr/es" target="_blank" style="color:var(--dorado)">tours-notre-dame-de-paris.fr</a>.</div>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
@@ -2468,7 +2522,7 @@
             
             <img class="atraccion-foto" src="fotos/ile-saint-louis.jpg" alt="Île Saint-Louis" loading="lazy" onerror="this.style.display='none'"><p>La isla hermana de la Île de la Cité (la de Notre Dame). Más pequeña, tranquila y con arquitectura <strong>intacta del siglo XVII</strong>: hôtels particuliers, balcones de hierro forjado y calles empedradas. Acá vivió <strong>Charles Baudelaire</strong> cuando escribió "Las flores del mal".</p>
             <p>Su joya culinaria: <strong>Berthillon</strong>, fundada en 1954 por Raymond Berthillon — considerada por muchos la mejor heladería del mundo. Sabores míticos: chocolate amargo, violeta, manzana verde, castaña.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> escenas de "Medianoche en París" y "Amélie" transcurren bordeando el Sena desde esta isla.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> escenas de "Medianoche en Paris" y "Amélie" transcurren bordeando el Sena desde esta isla.</p>
             <div class="tip">💡 <strong>Tip:</strong> Berthillon tiene varios distribuidores en la isla además de su local original (31 rue Saint-Louis en l'Île). Comelo caminando por las orillas del Sena con vista a Notre Dame.</div>
           </div>
         </div>
@@ -2479,18 +2533,18 @@
             <img class="atraccion-foto" src="fotos/panteon.jpg" alt="Panteón" loading="lazy" onerror="this.style.display='none'"><p>Originalmente una iglesia que <strong>Luis XV</strong> prometió construir si se recuperaba de una grave enfermedad (1744). Se terminó en 1790 — y fue justo entonces cuando la <strong>Revolución Francesa</strong> la secularizó y la convirtió en <strong>mausoleo de los grandes hombres de la Patria</strong>. La frase "Aux Grands Hommes La Patrie Reconnaissante" sigue grabada en la fachada.</p>
             <p>En la cripta descansan: <strong>Voltaire, Rousseau, Víctor Hugo, Émile Zola, Alexandre Dumas, Marie Curie</strong> (primera mujer inhumada por sus propios méritos, 1995), Jean Moulin (héroe de la Resistencia). Cada incorporación es un evento nacional.</p>
             <p>Dato imperdible: aquí <strong>Léon Foucault</strong> demostró públicamente en 1851 que <strong>la Tierra gira</strong> con su famoso péndulo — el mismo que hoy cuelga de la cúpula y sigue oscilando visiblemente.</p>
-            <p>La fachada está inspirada en el Panteón de Roma. La cúpula (83 m) ofrece vista panorámica de París — fue el primer mirador alto de la ciudad.</p>
+            <p>La fachada está inspirada en el Panteón de Roma. La cúpula (83 m) ofrece vista panorámica de Paris — fue el primer mirador alto de la ciudad.</p>
             <p><strong>Precio:</strong> €13 adultos. Gratuito menores de 18 y europeos menores de 26.</p>
           </div>
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
-          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">💀</span><div class="lugar-header-text"><h4>Catacumbas de París</h4><span class="horario">Entrada paga · Reservar online</span></div></div></div>
+          <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">💀</span><div class="lugar-header-text"><h4>Catacumbas de Paris</h4><span class="horario">Entrada paga · Reservar online</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/catacumbas.jpg" alt="Catacumbas de París" loading="lazy" onerror="this.style.display='none'"><p>Una <strong>red subterránea de 200 km</strong> de antiguas canteras de piedra caliza —las mismas con las que se construyó Notre Dame, el Louvre y media París—. A fines del <strong>siglo XVIII</strong> los cementerios urbanos estaban colapsados y contaminaban la ciudad; se trasladaron los restos a las canteras abandonadas y así nacieron las Catacumbas.</p>
+            <img class="atraccion-foto" src="fotos/catacumbas.jpg" alt="Catacumbas de Paris" loading="lazy" onerror="this.style.display='none'"><p>Una <strong>red subterránea de 200 km</strong> de antiguas canteras de piedra caliza —las mismas con las que se construyó Notre Dame, el Louvre y media Paris—. A fines del <strong>siglo XVIII</strong> los cementerios urbanos estaban colapsados y contaminaban la ciudad; se trasladaron los restos a las canteras abandonadas y así nacieron las Catacumbas.</p>
             <p>Contienen los restos de <strong>6 millones de personas</strong> — incluyendo víctimas de la peste negra medieval y de los guillotinados de la Revolución Francesa (Robespierre entre ellos). Oficialmente abrieron al público en 1809.</p>
             <p>La visita baja <strong>130 escalones</strong> (20 metros bajo tierra) y recorre <strong>1,5 km</strong> de galerías con paredes forradas de huesos — eso es solo el 0,5% del total. El resto está sellado al público.</p>
-            <p><strong>🏰 Dato Disnerdo:</strong> en <strong>"El Jorobado de Notre Dame"</strong> (Disney, 1996), las Catacumbas son el escenario de la <strong>Corte de los Milagros</strong>, refugio de los gitanos marginales donde se refugia Esmeralda. En la historia real, "la Corte de los Milagros" era el nombre que recibían los barrios pobres de París —Víctor Hugo los usó como inspiración para "Les Misérables" y "Nuestra Señora de París"—.</p>
+            <p><strong>🏰 Dato Disnerdo:</strong> en <strong>"El Jorobado de Notre Dame"</strong> (Disney, 1996), las Catacumbas son el escenario de la <strong>Corte de los Milagros</strong>, refugio de los gitanos marginales donde se refugia Esmeralda. En la historia real, "la Corte de los Milagros" era el nombre que recibían los barrios pobres de Paris —Víctor Hugo los usó como inspiración para "Les Misérables" y "Nuestra Señora de Paris"—.</p>
             <p><strong>🎬 En la pantalla grande:</strong> "As Above, So Below" (2014), película de terror ambientada acá. También se mencionan en "Les Misérables" (los túneles por donde huye Jean Valjean).</p>
             <div class="tip">💡 <strong>Tip:</strong> Reservar con mucha anticipación en <a href="https://www.catacombes.paris.fr" target="_blank" style="color:var(--dorado)">catacombes.paris.fr</a>. No apto para claustrofóbicos. Llevá abrigo: abajo hace 14°C siempre.</div>
           </div>
@@ -2499,9 +2553,9 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Iglesia Saint-Étienne-du-Mont</h4><span class="horario">Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/saint-etienne.jpg" alt="Iglesia Saint-Étienne-du-Mont" loading="lazy" onerror="this.style.display='none'"><p>Construida entre <strong>1492 y 1626</strong>, combina gótico flamígero y renacentista en una mezcla única. Contiene la tumba de <strong>Santa Genoveva</strong>, patrona de París (la que según la leyenda salvó a la ciudad de los hunos de Atila en el 451).</p>
-            <p>Tesoros históricos adentro: el <strong>único jubé (rood screen) preservado de París</strong> — el resto fueron destruidos durante la Contrarreforma. También están enterrados <strong>Blaise Pascal</strong> (matemático y filósofo) y <strong>Jean Racine</strong> (dramaturgo). Luis XIV recibió su primera comunión acá.</p>
-            <p><strong>🎬 Escena icónica de cine:</strong> las escalinatas de la entrada son el <strong>"portal" mágico</strong> de <strong>"Medianoche en París"</strong> de Woody Allen — el lugar donde Gil (Owen Wilson) espera cada noche a las 12 en punto para viajar en el tiempo a los años '20 y encontrarse con Hemingway, Fitzgerald, Picasso, Dalí... Escena imperdible para cinéfilos.</p>
+            <img class="atraccion-foto" src="fotos/saint-etienne.jpg" alt="Iglesia Saint-Étienne-du-Mont" loading="lazy" onerror="this.style.display='none'"><p>Construida entre <strong>1492 y 1626</strong>, combina gótico flamígero y renacentista en una mezcla única. Contiene la tumba de <strong>Santa Genoveva</strong>, patrona de Paris (la que según la leyenda salvó a la ciudad de los hunos de Atila en el 451).</p>
+            <p>Tesoros históricos adentro: el <strong>único jubé (rood screen) preservado de Paris</strong> — el resto fueron destruidos durante la Contrarreforma. También están enterrados <strong>Blaise Pascal</strong> (matemático y filósofo) y <strong>Jean Racine</strong> (dramaturgo). Luis XIV recibió su primera comunión acá.</p>
+            <p><strong>🎬 Escena icónica de cine:</strong> las escalinatas de la entrada son el <strong>"portal" mágico</strong> de <strong>"Medianoche en Paris"</strong> de Woody Allen — el lugar donde Gil (Owen Wilson) espera cada noche a las 12 en punto para viajar en el tiempo a los años '20 y encontrarse con Hemingway, Fitzgerald, Picasso, Dalí... Escena imperdible para cinéfilos.</p>
             <div class="tip">💡 <strong>Tip:</strong> Parate en las escaleras y tomate una foto como Gil — es un ritual obligado. La iglesia queda justo detrás del Panteón.</div>
           </div>
         </div>
@@ -2512,7 +2566,7 @@
             <img class="atraccion-foto" src="fotos/luxemburgo.jpg" alt="Palacio y Jardines de Luxemburgo" loading="lazy" onerror="this.style.display='none'"><p>Construido entre 1612 y 1631 por orden de <strong>María de Médici</strong> (madre de Luis XIII, viuda de Enrique IV) — italiana de nacimiento, mandó a construir un palacio inspirado en el <strong>Palacio Pitti de Florencia</strong>, su ciudad natal, para sentirse en casa.</p>
             <p>Pasó por muchas manos: durante la Revolución Francesa fue <strong>prisión</strong> (el pintor Jacques-Louis David estuvo encerrado acá), y durante la Segunda Guerra Mundial fue <strong>cuartel general de la Luftwaffe nazi</strong>. Hoy es la sede del <strong>Senado francés</strong>.</p>
             <p>Los <strong>Jardines de Luxemburgo</strong> (25 hectáreas) son uno de los espacios más queridos de los parisinos. Tenés las <strong>estatuas de las 20 reinas de Francia</strong> rodeando el estanque central, la hermosa <strong>Fuente de Medici</strong> de estilo italiano, senderos de pony para chicos, y el famoso estanque donde alquilan veleros de juguete desde 1927.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> "Before Sunset" (2004) — Julie Delpy y Ethan Hawke caminan por acá. "Sabrina" con Audrey Hepburn. "Medianoche en París". Los jardines son casi un personaje en sí mismos en cine francés.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> "Before Sunset" (2004) — Julie Delpy y Ethan Hawke caminan por acá. "Sabrina" con Audrey Hepburn. "Medianoche en Paris". Los jardines son casi un personaje en sí mismos en cine francés.</p>
             <div class="tip">💡 <strong>Tip:</strong> Alquilá un velero de juguete en el estanque (tradición desde hace casi 100 años). Perfecto para descansar después de tanta iglesia y museo. Barrio universitario con cafés y librerías.</div>
           </div>
         </div>
@@ -2520,7 +2574,7 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Iglesia de Saint-Sulpice</h4><span class="horario">Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/saint-sulpice.jpg" alt="Iglesia de Saint-Sulpice" loading="lazy" onerror="this.style.display='none'"><p>La <strong>segunda iglesia más grande de París</strong> después de Notre Dame — ¡llevó 224 años construirla! (1646-1870). Obra maestra del barroco francés con una fachada curiosamente asimétrica: sus dos torres tienen alturas diferentes porque el proyecto se interrumpió con la Revolución.</p>
+            <img class="atraccion-foto" src="fotos/saint-sulpice.jpg" alt="Iglesia de Saint-Sulpice" loading="lazy" onerror="this.style.display='none'"><p>La <strong>segunda iglesia más grande de Paris</strong> después de Notre Dame — ¡llevó 224 años construirla! (1646-1870). Obra maestra del barroco francés con una fachada curiosamente asimétrica: sus dos torres tienen alturas diferentes porque el proyecto se interrumpió con la Revolución.</p>
             <p>Tesoros dentro: <strong>cuatro grandes frescos de Eugène Delacroix</strong> en la Capilla de los Santos Ángeles; uno de los <strong>órganos más grandes del mundo</strong> (7.000 tubos, 1781); y el famoso <strong>gnomon astronómico</strong> (1714) — una línea de bronce en el piso con un obelisco que servía para calcular la fecha exacta de Pascua marcando el solsticio.</p>
             <p>Personajes bautizados/casados/enterrados aquí: el <strong>Marqués de Sade</strong> (bautizado), <strong>Víctor Hugo</strong> (casado) y <strong>Charles Baudelaire</strong> (bautizado).</p>
             <p><strong>🎬 ¡En la pantalla grande!</strong> Escena icónica de <strong>"El Código Da Vinci"</strong> (2006) con Tom Hanks: el albino Silas busca "la clave de la rosa" en el gnomon de bronce. La película de Dan Brown es lo que volvió mundialmente famosa a esta iglesia.</p>
@@ -2530,10 +2584,10 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Abadía de Saint-Germain-des-Prés</h4><span class="horario">Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/saint-germain.jpg" alt="Abadía de Saint-Germain-des-Prés" loading="lazy" onerror="this.style.display='none'"><p>Considerada la iglesia más antigua de París, se fundó en el siglo VI. Su nombre rinde homenaje al obispo Germano quien consagró la iglesia en el año 558 y fue enterrado en la cripta. Se le atribuyeron varios milagros en vida y después de su muerte.</p>
+            <img class="atraccion-foto" src="fotos/saint-germain.jpg" alt="Abadía de Saint-Germain-des-Prés" loading="lazy" onerror="this.style.display='none'"><p>Considerada la iglesia más antigua de Paris, se fundó en el siglo VI. Su nombre rinde homenaje al obispo Germano quien consagró la iglesia en el año 558 y fue enterrado en la cripta. Se le atribuyeron varios milagros en vida y después de su muerte.</p>
             <div class="cafe-tip">☕ <strong>3 cafés imperdibles en esta zona:</strong><br>
-              · <strong>Café de Flore</strong> — París clásico, frecuentado por Sartre y Hemingway<br>
-              · <strong>Les Deux Magots</strong> — París clásico, histórico de intelectuales y artistas<br>
+              · <strong>Café de Flore</strong> — Paris clásico, frecuentado por Sartre y Hemingway<br>
+              · <strong>Les Deux Magots</strong> — Paris clásico, histórico de intelectuales y artistas<br>
               · <strong>Motors</strong> — para los que buscan café posta nivel experto
             </div>
           </div>
@@ -2553,8 +2607,8 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">👑</span><div class="lugar-header-text"><h4>Palacio de Versalles</h4><span class="horario">Mar–Dom 9:00–18:30 (nov–mar hasta 17:30) · Cerrado lunes</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/versalles-palacio.jpg" alt="Palacio de Versalles" loading="lazy" onerror="this.style.display='none'"><p>El palacio más lujoso del mundo, a 20 km del centro de París. Comenzó siendo un <strong>modesto pabellón de caza de Luis XIII</strong> (1623), pero su hijo <strong>Luis XIV — el Rey Sol</strong> — lo transformó en la residencia real a partir de 1682. En su apogeo, trabajaron simultáneamente <strong>hasta 36.000 obreros</strong> en la construcción.</p>
-            <p>Tiene <strong>2.300 habitaciones, 67 escaleras</strong> y albergó a la corte francesa durante 107 años. Su construcción fue tan cara que hundió las finanzas de Francia — una de las causas lejanas de la Revolución. El <strong>5-6 de octubre de 1789</strong>, una multitud furiosa marchó desde París y obligó a la familia real a abandonarlo para siempre. Nunca más fue residencia.</p>
+            <img class="atraccion-foto" src="fotos/versalles-palacio.jpg" alt="Palacio de Versalles" loading="lazy" onerror="this.style.display='none'"><p>El palacio más lujoso del mundo, a 20 km del centro de Paris. Comenzó siendo un <strong>modesto pabellón de caza de Luis XIII</strong> (1623), pero su hijo <strong>Luis XIV — el Rey Sol</strong> — lo transformó en la residencia real a partir de 1682. En su apogeo, trabajaron simultáneamente <strong>hasta 36.000 obreros</strong> en la construcción.</p>
+            <p>Tiene <strong>2.300 habitaciones, 67 escaleras</strong> y albergó a la corte francesa durante 107 años. Su construcción fue tan cara que hundió las finanzas de Francia — una de las causas lejanas de la Revolución. El <strong>5-6 de octubre de 1789</strong>, una multitud furiosa marchó desde Paris y obligó a la familia real a abandonarlo para siempre. Nunca más fue residencia.</p>
             <p>Acá se firmó el <strong>Tratado de Versalles</strong> (28 de junio de 1919) que puso fin a la Primera Guerra Mundial — no casualmente, en la misma Galería de los Espejos donde 48 años antes se había proclamado el Imperio Alemán tras derrotar a Francia.</p>
             <p><strong>Imperdibles dentro:</strong></p>
             <ul>
@@ -2611,7 +2665,7 @@
           <div style="font-size:0.85rem; color:var(--texto-suave);">Plaza Bastilla · Place des Vosges · Notre Dame del Marais · Rue des Rosiers · Museo Picasso</div>
         </div>
         <div style="background:var(--rosa-light); border-radius:1rem; padding:0.9rem 1rem; margin-bottom:0.8rem; font-size:0.85rem; color:var(--texto);">
-          <strong>Cómo llegar:</strong> Tomar la línea 1 del metro y bajar en la estación "Bastille". Al salir estarás en la Plaza de la Bastilla y podés continuar el resto del itinerario a pie. El Marais es uno de los barrios más de moda de París — calles estrechas empedradas llenas de boutiques, galerías de arte, cafés y bistros, con arquitectura de los siglos XVI y XVII.
+          <strong>Cómo llegar:</strong> Tomar la línea 1 del metro y bajar en la estación "Bastille". Al salir estarás en la Plaza de la Bastilla y podés continuar el resto del itinerario a pie. El Marais es uno de los barrios más de moda de Paris — calles estrechas empedradas llenas de boutiques, galerías de arte, cafés y bistros, con arquitectura de los siglos XVI y XVII.
         </div>
         <div class="lugar-card" onclick="toggleLugar(this)">
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🗽</span><div class="lugar-header-text"><h4>Plaza de la Bastilla</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
@@ -2628,7 +2682,7 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏛️</span><div class="lugar-header-text"><h4>Place des Vosges</h4><span class="horario">Todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/place-vosges.jpg" alt="Place des Vosges" loading="lazy" onerror="this.style.display='none'"><p>La <strong>primera plaza planificada de París</strong> y una de las más bellas del mundo. Construida entre 1605 y 1612 por orden de <strong>Enrique IV</strong> (quien fue asesinado en 1610 sin verla terminada). Su diseño marcó un hito: 36 pabellones idénticos de <strong>ladrillo rojo y piedra blanca</strong>, galerías con arcadas a nivel de calle, y un enorme jardín central cuadrado.</p>
+            <img class="atraccion-foto" src="fotos/place-vosges.jpg" alt="Place des Vosges" loading="lazy" onerror="this.style.display='none'"><p>La <strong>primera plaza planificada de Paris</strong> y una de las más bellas del mundo. Construida entre 1605 y 1612 por orden de <strong>Enrique IV</strong> (quien fue asesinado en 1610 sin verla terminada). Su diseño marcó un hito: 36 pabellones idénticos de <strong>ladrillo rojo y piedra blanca</strong>, galerías con arcadas a nivel de calle, y un enorme jardín central cuadrado.</p>
             <p>Fue sede de torneos de caballería durante el siglo XVII — en uno de ellos, en <strong>1559, el rey Enrique II murió</strong> cuando una astilla de lanza le atravesó el ojo. Se llamaba "Place Royale" hasta 1800, cuando Napoleón la renombró en honor al departamento de los Vosgos, el primero en pagar sus impuestos al nuevo régimen.</p>
             <p><strong>Residentes ilustres:</strong></p>
             <ul>
@@ -2637,7 +2691,7 @@
               <li><strong>Madame de Sévigné</strong> (famosa escritora del siglo XVII)</li>
               <li><strong>Isadora Duncan</strong>, <strong>Georges Simenon</strong> (creador del Comisario Maigret)</li>
             </ul>
-            <p><strong>🎬 En la pantalla grande:</strong> varias escenas de <strong>"Medianoche en París"</strong> la usan como fondo romántico parisino.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> varias escenas de <strong>"Medianoche en Paris"</strong> la usan como fondo romántico parisino.</p>
             <div class="tip">💡 <strong>Tip:</strong> La <strong>Casa-Museo de Víctor Hugo</strong> en el n°6 tiene entrada gratuita. Sentate en el jardín central bajo los tilos a descansar y observar la arquitectura perfectamente simétrica.</div>
           </div>
         </div>
@@ -2655,7 +2709,7 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">⛪</span><div class="lugar-header-text"><h4>Parroquia Saint-Paul Saint-Louis</h4><span class="horario">Entrada gratuita</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/saint-paul.jpg" alt="Parroquia Saint-Paul Saint-Louis" loading="lazy" onerror="this.style.display='none'"><p>Construida entre <strong>1627 y 1641</strong> por arquitectos jesuitas bajo Luis XIII. Fue la <strong>primera iglesia de París con cúpula</strong>, marcando el inicio del <strong>barroco jesuita</strong> en Francia. Su diseño inspiró a muchas iglesias posteriores.</p>
+            <img class="atraccion-foto" src="fotos/saint-paul.jpg" alt="Parroquia Saint-Paul Saint-Louis" loading="lazy" onerror="this.style.display='none'"><p>Construida entre <strong>1627 y 1641</strong> por arquitectos jesuitas bajo Luis XIII. Fue la <strong>primera iglesia de Paris con cúpula</strong>, marcando el inicio del <strong>barroco jesuita</strong> en Francia. Su diseño inspiró a muchas iglesias posteriores.</p>
             <p>Tesoro histórico macabro: los <strong>corazones embalsamados de Luis XIII y Luis XIV</strong> se guardaron en esta iglesia, en relicarios de plata — hasta que durante la <strong>Revolución Francesa</strong> fueron saqueados y destruidos, perdiéndose para siempre (algunas fuentes dicen que los artistas los usaron para preparar pinturas al óleo — una leyenda siniestra).</p>
             <p>Dentro tiene una obra famosa: <strong>"Cristo en el Huerto de los Olivos"</strong> de <strong>Eugène Delacroix</strong> (1827), regalo de Luis Felipe. La pila de agua bendita en la entrada fue donada por el mismísimo <strong>Víctor Hugo</strong> en memoria de su hija Léopoldine, muerta joven.</p>
           </div>
@@ -2664,8 +2718,8 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🥙</span><div class="lugar-header-text"><h4>Rue des Rosiers — Barrio Judío</h4><span class="horario">Todo el día</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/rue-rosiers.jpg" alt="Rue des Rosiers" loading="lazy" onerror="this.style.display='none'"><p>El corazón del antiguo <strong>Pletzl</strong> — el barrio judío histórico de París, con presencia continua desde la <strong>Edad Media (siglo XI)</strong>. Mezcla de comunidades <strong>ashkenazi</strong> (de Europa del Este) y <strong>sefaradí</strong> (de España/Norte de África).</p>
-            <p>Durante la ocupación nazi, muchísimos judíos fueron deportados desde acá — placas conmemorativas recuerdan a los ausentes. Después de la guerra, el barrio renació y hoy es uno de los polos culturales y gastronómicos más vivos de París. También se superpone con el <strong>barrio LGBT+</strong> del Marais.</p>
+            <img class="atraccion-foto" src="fotos/rue-rosiers.jpg" alt="Rue des Rosiers" loading="lazy" onerror="this.style.display='none'"><p>El corazón del antiguo <strong>Pletzl</strong> — el barrio judío histórico de Paris, con presencia continua desde la <strong>Edad Media (siglo XI)</strong>. Mezcla de comunidades <strong>ashkenazi</strong> (de Europa del Este) y <strong>sefaradí</strong> (de España/Norte de África).</p>
+            <p>Durante la ocupación nazi, muchísimos judíos fueron deportados desde acá — placas conmemorativas recuerdan a los ausentes. Después de la guerra, el barrio renació y hoy es uno de los polos culturales y gastronómicos más vivos de Paris. También se superpone con el <strong>barrio LGBT+</strong> del Marais.</p>
             <p><strong>Imperdibles:</strong></p>
             <ul>
               <li><strong>L'As du Fallafel</strong> (n°34) — el falafel más famoso del mundo, ganador de estrellas internacionales</li>
@@ -2680,8 +2734,8 @@
           <div class="lugar-body">
             
             <img class="atraccion-foto" src="fotos/vieille-du-temple.jpg" alt="Rue Vieille du Temple" loading="lazy" onerror="this.style.display='none'"><p>Una de las <strong>calles más antiguas del Marais</strong>, con origen medieval. Su nombre viene del antiguo <strong>Temple</strong> — la sede parisina de los caballeros templarios, disuelta por Felipe el Hermoso en 1312 en una purga violenta que quemó a los templarios en la hoguera.</p>
-            <p>Hoy es una de las calles más cool de París: boutiques independientes de moda, concept stores, galerías de arte, cafés especialidad. Perfecta para comprar cosas distintas (no las típicas marcas de los Champs-Élysées). El barrio tiene una mezcla única entre arquitectura preservada del siglo XVII y vida moderna hipster.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Las tiendas del Marais son de las pocas en París que <strong>abren los domingos</strong> (la mayoría del resto de la ciudad cierra). Ideal para el último día de compras.</div>
+            <p>Hoy es una de las calles más cool de Paris: boutiques independientes de moda, concept stores, galerías de arte, cafés especialidad. Perfecta para comprar cosas distintas (no las típicas marcas de los Champs-Élysées). El barrio tiene una mezcla única entre arquitectura preservada del siglo XVII y vida moderna hipster.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Las tiendas del Marais son de las pocas en Paris que <strong>abren los domingos</strong> (la mayoría del resto de la ciudad cierra). Ideal para el último día de compras.</div>
             <div class="cafe-tip">☕ <strong>3 cafés imperdibles en el Marais:</strong><br>
               · <strong>Saint Pearl</strong> — estética + vibe Pinterest, uno de los más instagrameables<br>
               · <strong>Boot Café</strong> — fachada verde icónica, minúsculo y con muchísimo encanto<br>
@@ -2705,7 +2759,7 @@
             <img class="atraccion-foto" src="fotos/museo-picasso.jpg" alt="Museo Picasso" loading="lazy" onerror="this.style.display='none'"><p>El museo más importante del mundo dedicado a <strong>Pablo Picasso</strong>. Alberga <strong>más de 5.000 obras</strong>: pinturas, esculturas, grabados, dibujos, cerámicas — cubriendo toda su carrera desde los primeros dibujos de infancia hasta sus últimas piezas. Incluye también la <strong>colección personal de Picasso</strong>: obras de Cézanne, Renoir, Matisse, Degas y Rousseau que él coleccionaba.</p>
             <p>Dato curioso: la colección llegó al Estado francés como pago de los <strong>impuestos de sucesión</strong> de los herederos de Picasso (1979) — en Francia se permite pagar impuestos con obras de arte.</p>
             <p>El edificio es una joya en sí mismo: el <strong>Hôtel Salé</strong>, una mansión barroca de 1659 construida por <strong>Pierre Aubert</strong>. El apodo "Salé" (salado) viene de que el dueño se enriqueció recaudando el impuesto a la sal.</p>
-            <p><strong>🎬 En la pantalla grande:</strong> Picasso aparece brevemente en <strong>"Medianoche en París"</strong> cuando Gil viaja en el tiempo. La película "Surviving Picasso" (1996) lo retrata.</p>
+            <p><strong>🎬 En la pantalla grande:</strong> Picasso aparece brevemente en <strong>"Medianoche en Paris"</strong> cuando Gil viaja en el tiempo. La película "Surviving Picasso" (1996) lo retrata.</p>
             <p><strong>⚠️ Nota:</strong> El <strong>Centre Pompidou</strong> (el otro gran museo de arte moderno del Marais) está cerrado por renovación <strong>hasta 2030</strong>. El Picasso es tu mejor opción hasta entonces.</p>
             <p><strong>Precio:</strong> €14 entrada general. Gratuito menores de 18 y europeos menores de 26.</p>
             <div class="tip">💡 Reservar en <a href="https://www.museepicassoparis.fr/es" target="_blank" style="color:var(--dorado)">museepicassoparis.fr</a>. El edificio (Hôtel Salé) es también una obra de arte en sí mismo — incluso si Picasso no te vuela la cabeza, la arquitectura vale la entrada.</div>
@@ -2715,10 +2769,10 @@
           <div class="lugar-header"><div class="lugar-header-left"><span class="emoji">🏛️</span><div class="lugar-header-text"><h4>Hôtel de Ville</h4><span class="horario">Exterior todo el día · Gratuito</span></div></div></div>
           <div class="lugar-body">
             
-            <img class="atraccion-foto" src="fotos/hotel-de-ville.jpg" alt="Hôtel de Ville" loading="lazy" onerror="this.style.display='none'"><p>El <strong>ayuntamiento de París</strong>. La administración municipal funciona en este lugar desde <strong>1357</strong>, cuando el preboste Étienne Marcel compró la "Maison aux Piliers" (Casa de los Pilares). El edificio actual es de <strong>1874-1882</strong>, reconstruido tras ser quemado en el incendio de la <strong>Comuna de París</strong> (1871). Estilo <strong>neorrenacentista</strong>, inspirado en los castillos del Loira.</p>
-            <p>La fachada tiene <strong>136 esculturas</strong> de personajes famosos de la historia francesa. Durante la <strong>Liberación de París</strong> (25 de agosto de 1944), <strong>Charles de Gaulle</strong> pronunció desde este balcón su célebre discurso: <em>"¡París! ¡París ultrajada! ¡París rota! ¡París martirizada! Pero... ¡París liberada!"</em>.</p>
+            <img class="atraccion-foto" src="fotos/hotel-de-ville.jpg" alt="Hôtel de Ville" loading="lazy" onerror="this.style.display='none'"><p>El <strong>ayuntamiento de Paris</strong>. La administración municipal funciona en este lugar desde <strong>1357</strong>, cuando el preboste Étienne Marcel compró la "Maison aux Piliers" (Casa de los Pilares). El edificio actual es de <strong>1874-1882</strong>, reconstruido tras ser quemado en el incendio de la <strong>Comuna de Paris</strong> (1871). Estilo <strong>neorrenacentista</strong>, inspirado en los castillos del Loira.</p>
+            <p>La fachada tiene <strong>136 esculturas</strong> de personajes famosos de la historia francesa. Durante la <strong>Liberación de Paris</strong> (25 de agosto de 1944), <strong>Charles de Gaulle</strong> pronunció desde este balcón su célebre discurso: <em>"¡Paris! ¡Paris ultrajada! ¡Paris rota! ¡Paris martirizada! Pero... ¡Paris liberada!"</em>.</p>
             <p>La plaza frente al edificio es un punto de encuentro popular: en verano tiene eventos, pantallas gigantes (Tour de France, JJOO, Mundial de fútbol), en <strong>invierno</strong> (diciembre a febrero) se instala una famosa <strong>pista de patinaje sobre hielo</strong> al aire libre — totalmente gratis, solo alquilás los patines.</p>
-            <p><strong>🎬 Foto icónica:</strong> <em>"Le Baiser de l'Hôtel de Ville"</em> (1950) de <strong>Robert Doisneau</strong> — la foto de la pareja besándose en primer plano frente al edificio, una de las imágenes más famosas de París en todo el mundo.</p>
+            <p><strong>🎬 Foto icónica:</strong> <em>"Le Baiser de l'Hôtel de Ville"</em> (1950) de <strong>Robert Doisneau</strong> — la foto de la pareja besándose en primer plano frente al edificio, una de las imágenes más famosas de Paris en todo el mundo.</p>
             <div class="tip">💡 <strong>Tip:</strong> De noche se ilumina y queda espectacular. Buena última parada del día antes de cruzar el Sena o volver al hotel.</div>
           </div>
         </div>
@@ -2733,7 +2787,7 @@
         </div>
 
         <div class="transporte-card">
-          <h4>☕ Cafés recomendados en París</h4>
+          <h4>☕ Cafés recomendados en Paris</h4>
           <p>Sofi seleccionó estos cafés según lo que busques. A lo largo del itinerario vas a ver el ícono <strong>☕</strong> cada vez que estés cerca de uno.</p>
           <p style="margin-top:0.9rem"><strong>🌿 Estética + vibe:</strong></p>
           <ul>
@@ -2750,12 +2804,12 @@
             <li><strong>Jōhō</strong> — Distrito 10 (café japonés, cerca de Gare de l'Est)</li>
             <li><strong>The Coffee</strong> — varias sucursales (Lafayette Día 2, Marais Día 6)</li>
           </ul>
-          <p style="margin-top:0.7rem"><strong>🥐 París clásico:</strong></p>
+          <p style="margin-top:0.7rem"><strong>🥐 Paris clásico:</strong></p>
           <ul>
             <li><strong>Café de Flore</strong> — Saint-Germain (Día 4)</li>
             <li><strong>Les Deux Magots</strong> — Saint-Germain (Día 4)</li>
           </ul>
-          <div class="tip">💡 <strong>Tip:</strong> Flore y Deux Magots son los dos cafés históricos más famosos de París — frecuentados por Sartre, Simone de Beauvoir, Hemingway y Picasso. Los precios son altos pero vale la experiencia.</div>
+          <div class="tip">💡 <strong>Tip:</strong> Flore y Deux Magots son los dos cafés históricos más famosos de Paris — frecuentados por Sartre, Simone de Beauvoir, Hemingway y Picasso. Los precios son altos pero vale la experiencia.</div>
         </div>
       </div>
 
@@ -2766,7 +2820,7 @@
           <a href="https://wa.me/541132924274">📱 WhatsApp</a>
           <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
         </div>
-        <div class="firma">— Sofi ✦</div>
+        <div class="firma">— Sofi</div>
       </div>
     </div>
 
@@ -2907,6 +2961,78 @@
     if(dia) dia.querySelectorAll('.lugar-card.abierto').forEach(l => l.classList.remove('abierto'));
     if(!yaAbierto) el.classList.add('abierto');
   }
+
+  // ─── ALTURAS (SIMULADOR + TABLA) ────────────────────
+  const ALTURAS = {
+    dlp: {
+      label: 'Disneyland Park',
+      attrs: [
+        { name: 'Indiana Jones et le Temple du Péril', cm: 140 },
+        { name: 'Star Wars Hyperspace Mountain',        cm: 120 },
+        { name: 'Big Thunder Mountain',                 cm: 102 },
+        { name: 'Star Tours: The Adventures Continue',  cm: 102 },
+        { name: 'Autopia',                              cm: 81,  nota: 'acompañado por adulto' },
+      ],
+    },
+    wds: {
+      label: 'Disney Adventure World',
+      attrs: [
+        { name: 'Avengers Assemble: Flight Force',       cm: 120 },
+        { name: 'RC Racer',                              cm: 120 },
+        { name: "Crush's Coaster",                       cm: 107 },
+        { name: 'The Twilight Zone Tower of Terror',     cm: 102 },
+        { name: 'Toy Soldiers Parachute Drop',           cm: 102 },
+      ],
+    },
+  };
+  function _alturaClass(cm){
+    if(cm >= 120) return 'alto';
+    if(cm >= 100) return 'medio';
+    return 'bajo';
+  }
+  function renderAlturas(park){
+    const data = ALTURAS[park];
+    const cont = document.getElementById(park + '-alturas-tabla');
+    if(!data || !cont) return;
+    const sorted = [...data.attrs].sort((a, b) => b.cm - a.cm);
+    cont.innerHTML = sorted.map(a => {
+      const nota = a.nota ? ` <span style="font-size:0.74rem;color:var(--texto-suave);font-weight:400">(${a.nota})</span>` : '';
+      return `<div class="altura-row"><div class="altura-nombre">${a.name}${nota}</div><div class="altura-cm ${_alturaClass(a.cm)}">${a.cm} cm</div></div>`;
+    }).join('');
+  }
+  function runSimulador(park){
+    const data = ALTURAS[park];
+    const input = document.getElementById(park + '-sim-h');
+    const results = document.getElementById(park + '-sim-results');
+    if(!data || !input || !results) return;
+    const h = parseFloat(input.value);
+    if(!h || h < 60 || h > 180){
+      results.innerHTML = '<p style="font-size:0.85rem;color:#c0657a;margin-top:0.4rem">Ingresá una altura válida entre 60 y 180 cm.</p>';
+      return;
+    }
+    const puede   = data.attrs.filter(a => h >= a.cm).sort((a, b) => b.cm - a.cm);
+    const noPuede = data.attrs.filter(a => h <  a.cm).sort((a, b) => a.cm - b.cm);
+    let r = `<p style="font-size:0.92rem;margin:0.4rem 0 0.6rem"><strong>Con ${h} cm en ${data.label}:</strong></p>`;
+    if(puede.length){
+      r += `<p style="font-size:0.85rem;color:#2d6a4f;font-weight:700;margin-bottom:0.2rem">✅ Puede subirse (${puede.length}):</p>`;
+      r += puede.map(a => `<div class="altura-row"><div class="altura-nombre">${a.name}</div><div class="altura-cm bajo">${a.cm} cm</div></div>`).join('');
+    }
+    if(noPuede.length){
+      r += `<p style="font-size:0.85rem;color:#c0657a;font-weight:700;margin:0.8rem 0 0.2rem">❌ Todavía no llega (${noPuede.length}):</p>`;
+      r += noPuede.map(a => {
+        const faltan = a.cm - h;
+        return `<div class="altura-row"><div class="altura-nombre">${a.name}</div><div class="altura-cm alto">${a.cm} cm <span style="font-size:0.72rem;font-weight:400">(faltan ${faltan.toFixed(1)})</span></div></div>`;
+      }).join('');
+    } else {
+      r += `<p style="font-size:0.92rem;color:#2d6a4f;margin-top:0.6rem">🎉 ¡Puede subirse a todas las atracciones del parque!</p>`;
+    }
+    results.innerHTML = r;
+  }
+  // Pintar tablas al cargar
+  document.addEventListener('DOMContentLoaded', () => {
+    renderAlturas('dlp');
+    renderAlturas('wds');
+  });
 
   // ─── PANEL SOFI ─────────────────────────────────────
   async function cargarClientes(){
