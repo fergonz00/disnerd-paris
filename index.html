@@ -390,6 +390,7 @@
   .badge-top { background: #fff3cd; color: #a07000; }
   .badge-familia { background: #d4edda; color: #2d6a4f; }
   .badge-personajes { background: #ffe0ec; color: #c01070; }
+  .badge-show { background: #e8d5ff; color: #6020a0; }
   .chevron { font-size: 0.9rem; color: var(--texto-suave); transition: transform 0.2s; }
   .atraccion.abierta .chevron { transform: rotate(180deg); }
   .atraccion-body {
@@ -1374,6 +1375,42 @@
             <div class="tip">💡 <strong>Tip:</strong> Bajar al sótano a ver la Dragona. ¡Es única en todos los Disney del mundo!</div>
           </div>
         </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🦁</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Rhythms of The Pride Lands — Lion King</span>
+                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/pride-lands.jpg" alt="Rhythms of The Pride Lands" loading="lazy" onerror="this.style.display='none'">
+            <p>Show musical de ~30 minutos inspirado en El Rey León en uno de los teatros más grandes de Disneyland París. Acróbatas, bailarines, cantantes en vivo, tambores africanos y fuego. La música suena en zulú, swahili y francés con la potencia de una versión teatral. Sofi lo marca como imperdible.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Desde la app oficial se puede reservar asiento — conviene hacerlo apenas se abre la ventana del día. Si no reservás, llegá 20 minutos antes.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🎩</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Mickey and the Magician</span>
+                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/mickey-magician.jpg" alt="Mickey and the Magician" loading="lazy" onerror="this.style.display='none'">
+            <p>Show en teatro de ~25 minutos donde Mickey aprende magia con el aprendiz de Yensid (el hechicero de Fantasía) y va invocando personajes de Disney en escena: Bella, Aladdin, Rapunzel, Elsa y más. Canciones en vivo, vestuario espectacular y efectos clásicos de teatro. Pensado para toda la familia.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Sin reserva, llegá 15-20 minutos antes.</div>
+          </div>
+        </div>
       </div>
       <!-- Shows DLP -->
       <div class="tab-content" id="dlp-shows">
@@ -1385,20 +1422,6 @@
           <div>
             <h4>Disney Stars on Parade (Desfile)</h4>
             <p>Desfile diurno con todos los personajes principales de Disney. Carrozas temáticas por Main Street U.S.A. Casi siempre a las 16:30 — consultá en la app el día de tu visita.</p>
-          </div>
-        </div>
-        <div class="show-card">
-          <span class="emoji">🌅</span>
-          <div>
-            <h4>Rhythms of The Pride Lands · Lion King ⭐</h4>
-            <p>Show permanente en el teatro más grande de Disneyland París (~30 min). Acrobacias, fuego, música africana en vivo y bailarines. Se puede reservar asiento desde la app oficial — muy recomendado porque el teatro se llena rápido.</p>
-          </div>
-        </div>
-        <div class="show-card">
-          <span class="emoji">🎩</span>
-          <div>
-            <h4>Mickey and The Magician ⭐</h4>
-            <p>Show en teatro con Mickey como mago invocando a los personajes de Disney. Música en vivo, efectos especiales y bailarines. Muchas funciones durante el día.</p>
           </div>
         </div>
         <div class="show-card">
@@ -1965,6 +1988,60 @@
             <div class="tip">💡 <strong>Tip:</strong> Fila larguísima siempre. Premier Access muy recomendado.</div>
           </div>
         </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">🌈</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Pixar Together</span>
+                <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/pixar-together.jpg" alt="Pixar Together" loading="lazy" onerror="this.style.display='none'">
+            <p>Espectáculo musical con personajes de las películas de Pixar — Woody, Buzz, Joy, Sadness, Sulley, Edna Mode, Miguel y más. Canciones en vivo de Toy Story, Intensa-Mente, Los Increíbles, Monsters Inc., Up y Coco. Producción reciente con varias funciones durante el día.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Sin reserva. Buena pausa entre rides — chequeá horarios en la app.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">👶</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">Disney Junior Dream Factory</span>
+                <div class="badges"><span class="badge badge-show">🎭 Show</span><span class="badge badge-familia">Familia</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/disney-junior.jpg" alt="Disney Junior Dream Factory" loading="lazy" onerror="this.style.display='none'">
+            <p>Show pensado para los más chicos con personajes de Disney Junior — Mickey & Friends Funhouse, Vampirina, Spidey, Doc McStuffins. Canciones, juegos y momentos interactivos con burbujas y serpentinas para que los nenes se levanten, bailen y participen.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Ideal si viajás con peques que ven Disney Junior. Varias funciones por día.</div>
+          </div>
+        </div>
+
+        <div class="atraccion" onclick="toggleAtraccion(this)">
+          <div class="atraccion-header">
+            <div class="atraccion-titulo">
+              <span class="emoji">❄️</span>
+              <div class="atraccion-titulo-inner">
+                <span class="nombre">A Celebration in Arendelle</span>
+                <div class="badges"><span class="badge badge-show">🎭 Show</span></div>
+              </div>
+            </div>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="atraccion-body">
+            <img class="atraccion-foto" src="fotos/arendelle-celebration.jpg" alt="A Celebration in Arendelle" loading="lazy" onerror="this.style.display='none'">
+            <p>Espectáculo diurno sobre el lago del World of Frozen, el área nueva de Disney Adventure World abierta en marzo 2026. Anna, Elsa, Kristoff, Sven y Olaf cantan los temas de Frozen sobre una plataforma flotante con el castillo y el pueblo de Arendelle de fondo. Varias funciones durante el día.</p>
+            <div class="tip">💡 <strong>Tip:</strong> Mejor verla del lado contrario al sol para fotos. La zona se llena bien antes — sumate 20-30 minutos antes.</div>
+          </div>
+        </div>
       </div>
       <!-- Shows WDS -->
       <div class="tab-content" id="wds-shows">
@@ -1972,31 +2049,10 @@
           <p>¡Los horarios tanto de los shows nocturnos como de los espectáculos musicales y los desfiles aparecen más cercana la fecha de viaje en la app! Además de los shows nocturnos (tengan en cuenta que son tarde por la noche) y el desfile en Disneyland (Siempre tiene 2 horarios) que para mí son un MUST denle prioridad a ver estos musicales:</p>
         </div>
         <div class="show-card">
-          <span class="emoji">🎬</span>
-          <div>
-            <h4>Pixar Together ⭐</h4>
-            <p>Espectáculo musical con personajes y canciones de las películas de Pixar. Muchas funciones durante el día.</p>
-          </div>
-        </div>
-        <div class="show-card">
           <span class="emoji">🦸</span>
           <div>
             <h4>Avengers: Power the Night</h4>
-            <p>Espectáculo nocturno en el Avengers Campus con proyecciones, drones y efectos especiales. Gran cierre del día en Studios.</p>
-          </div>
-        </div>
-        <div class="show-card">
-          <span class="emoji">🎬</span>
-          <div>
-            <h4>Disney Junior Dream Factory</h4>
-            <p>Show musical para los más chicos con personajes de Disney Junior. Ideal para familias con niños pequeños.</p>
-          </div>
-        </div>
-        <div class="show-card">
-          <span class="emoji">❄️</span>
-          <div>
-            <h4>A Celebration in Arendelle</h4>
-            <p>Espectáculo del World of Frozen sobre el lago principal con Anna, Elsa, Olaf y los personajes de Frozen. Varios horarios durante el día.</p>
+            <p>Espectáculo nocturno en el Avengers Campus con proyecciones, drones y efectos especiales. Gran cierre del día en Disney Adventure World.</p>
           </div>
         </div>
         <div class="show-card">
