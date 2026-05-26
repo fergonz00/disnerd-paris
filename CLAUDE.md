@@ -3,6 +3,22 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
+## 📌 Dónde quedamos — última sesión: 2026-05-26
+
+**Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. `index.html` ~3485 líneas, HTML balanceado, 0 caracteres basura. 64 atracciones (`.atraccion` == `.chevron`). 70 fotos en `/fotos/`.
+
+**Lo último que hicimos (corregimos 3 errores de contenido que marcó Sofi, conciliados con fuentes oficiales):**
+1. **Personajes en hoteles** → son en el **lobby de cada hotel** (mañana ~8-11h, gratis, según temática), NO en el restaurante. Generalizado en Estrategia DLP→Check-in con lista por hotel.
+2. **Chuck Wagon Café** (Restaurants) → saqué el badge "Personajes a la mañana" + tip aclara que es el lobby del Cheyenne (Woody/Jessie), no el buffet.
+3. **World of Frozen** (Estrategia DAW) → solo **Olaf** es animatronic. **"Rúna" NO es animatronic**, es un peluche de troll bebé que se "adopta" en la tienda Fjord View (~€75, agotado a may-2026). La saqué.
+   - Commits: `0bdcb91` (contenido) + `17fa57f` (esta doc).
+
+**Decisiones tomadas:**
+- ❌ **Alturas estilo Orlando DESCARTADO** (input de altura → qué pueden subir): son pocas atracciones, no tiene sentido. La tab Alturas actual (tabla) queda como está.
+- ✅ "Runa" resuelto (era confusión de Sofi).
+
+**Próximo paso / pendiente abierto:** esperar que Sofi mande más data para ampliar la solapa ✨ Recomendaciones (shopping, restaurantes no-Disney, tips de moda). No hay nada urgente en curso.
+
 ## Recursos
 
 | | |
