@@ -67,13 +67,13 @@ Bottom nav: Inicio · Disney · Francia · Panel (oculto si no sos Sofi).
 
 **Estrategia DLP** (actualizada según PDF 21-may): Big Thunder + Hyperspace en early access. **Pirates/Indiana/Phantom Manor están CERRADAS en early access** — encarar al horario oficial. Fantasyland al final.
 
-**Estrategia DAW** (actualizada según PDF 21-may): **ARRANCAR POR CRUSH COASTER** (no Frozen). Disclaimer: si menores no quieren, adultos van por Single Rider o Premier Access. Después Frozen Ever After + tiempo en la land (Anna/Elsa con **fila virtual**, Olaf y **Runa** aparecen cuando quieren). Después Ratatouille → Avengers → Tower → Toy Story → Cars.
+**Estrategia DAW** (actualizada según PDF 21-may): **ARRANCAR POR CRUSH COASTER** (no Frozen). Disclaimer: si menores no quieren, adultos van por Single Rider o Premier Access. Después Frozen Ever After + tiempo en la land (Anna/Elsa con **fila virtual**; **Olaf** es el animatronic que camina libre y habla — aparece cuando quiere). Después Ratatouille → Avengers → Tower → Toy Story → Cars. **OJO:** "Rúna" NO es animatronic — es un peluche interactivo de troll bebé que se "adopta" en la tienda Fjord View (~€75, agotado a may-2026). No confundir.
 
 **Tipos de filas** (card rediseñada): 3 tipos visualmente diferenciados — Standby / Premier Access ONE (se compra en parque desde la app) / Single Rider. Tip al final sobre Premier Access Ultimate.
 
 **Magic Pass** (nuevo en Check-in): tickets virtuales QR únicos por persona en la app Disneyland Paris + Apple Wallet. Disponible 7 días antes. Se escanea en molinetes. Reemplaza tarjeta física.
 
-**Encuentros con personajes en hoteles 8-11am** (Woody en Cheyenne).
+**Encuentros con personajes en el LOBBY de cada hotel** (mañana ~8-11h, gratis, según temática del hotel — NO en el restaurante): Cheyenne→Woody/Jessie · Sequoia→Mickey/Goofy/Chip&Dale guardabosques · Santa Fe→Rayo McQueen · Newport Bay→Donald/Daisy · Disneyland Hotel→princesas.
 
 **Transporte privado:** Leo Jasso Tours WhatsApp `+33 7 43 55 22 40` (de parte de Sofi Disnerd).
 
@@ -82,7 +82,7 @@ Bottom nav: Inicio · Disney · Francia · Panel (oculto si no sos Sofi).
 Total: **20 restaurantes** con `data-zona`:
 - **DLP (8)**: Plaza Gardens (👨‍👩‍👧 personajes), Auberge de Cendrillon (👸 princesas), Blue Lagoon, Walt's ⭐, Silver Spur, Captain Jack ⭐, Agrabah Café, Royal Banquet
 - **DAW (4)**: Bistrot Chez Rémy ⭐, The Regal View ⭐, PYM Kitchen, Stark Factory
-- **Hoteles (6)**: Manhattan ⭐, Downtown (Hotel NY) · Cape Cod (Newport Bay) · Hunter's Grill (Sequoia) · Chuck Wagon Café (Cheyenne, 👨‍👩‍👧 personajes Toy Story am) · La Cantina (Santa Fe)
+- **Hoteles (6)**: Manhattan ⭐, Downtown (Hotel NY) · Cape Cod (Newport Bay) · Hunter's Grill (Sequoia) · Chuck Wagon Café (Cheyenne — el resto NO tiene personajes; los encuentros son en el lobby del hotel) · La Cantina (Santa Fe)
 - **Disney Village (2)**: Annette's Diner · The Steakhouse
 
 Snacks/datos útiles (Mickey Beignet, no Starbucks dentro del parque) quedan en la pestaña Comer DLP.
@@ -141,10 +141,11 @@ Se pueden releer con MCP `mcp__claude_ai_Google_Drive__read_file_content` usando
 
 ## Pendientes / próximos pasos
 
-1. **Alturas** — replicar la sección de Orlando: input de alturas de los hijos + por cada parque (DLP / DAW) mostrar qué atracciones pueden subir y cuáles no, según altura mínima. Estructura similar a la de Orlando, solo cambian las atracciones.
-2. **Recomendaciones** — ampliar con más categorías cuando Sofi mande data (shopping, restaurantes no-Disney, tips de moda, etc).
-3. Verificar nombre **"Runa"** del animatronic de Frozen (Sofi lo mencionó en su PDF — confirmar si es el nombre oficial del nuevo animatronic o si se refiere a Sven).
-4. Revisar visualmente cada pantalla en el navegador después de cambios grandes.
+1. **Recomendaciones** — ampliar con más categorías cuando Sofi mande data (shopping, restaurantes no-Disney, tips de moda, etc).
+2. Revisar visualmente cada pantalla en el navegador después de cambios grandes.
+
+**Descartado:** Alturas estilo Orlando (input de altura → qué pueden subir). Decisión del usuario 26-may: son pocas atracciones, no tiene sentido. La tab Alturas actual (tabla) queda como está.
+**Resuelto 26-may:** "Runa" era confusión de Sofi — es peluche, no animatronic (ver arriba).
 
 ## ⚠️ Regla importante para shows/atracciones
 
