@@ -414,6 +414,45 @@
   .badge-personajes { background: #ffe0ec; color: #c01070; }
   .badge-show { background: #e8d5ff; color: #6020a0; }
 
+  /* ─── FILTROS RESTAURANTS ─── */
+  .resto-filtros {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.4rem 0 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .resto-filtros::-webkit-scrollbar { display: none; }
+  .resto-filtro {
+    flex-shrink: 0;
+    padding: 0.55rem 1.1rem;
+    border-radius: 1.5rem;
+    border: 1.5px solid var(--celeste);
+    background: white;
+    color: var(--lavanda-fuerte);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .resto-filtro.activo {
+    background: var(--lavanda-fuerte);
+    color: white;
+    border-color: var(--lavanda-fuerte);
+  }
+  .resto-zona-label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin: 1.4rem 0 0.6rem;
+    font-weight: 700;
+  }
+  .resto-zona-label:first-child { margin-top: 0.4rem; }
+  .parque-card.full-width { grid-column: 1 / -1; aspect-ratio: 16 / 6; }
+
   /* TIERRAS (subtítulo estilo Orlando — agrupa, no colapsa) */
   .section-label { font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--texto-suave); margin-bottom: 0.8rem; margin-top: 1.5rem; font-weight: 700; }
   .section-label:first-child { margin-top: 0.4rem; }
@@ -938,6 +977,14 @@
             <p>Acción, Marvel, Pixar & Frozen</p>
           </div>
         </div>
+        <div class="parque-card full-width" onclick="irA('pantalla-restaurants')">
+          <img src="fotos/chez-remy.jpg" alt="Restaurants" loading="lazy" onerror="this.style.display='none'">
+          <div class="parque-card-overlay">
+            <span class="emoji">🍽️</span>
+            <h3>Restaurants</h3>
+            <p>Parques · Hoteles · Disney Village</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1326,25 +1373,7 @@
                   <div class="tip">💡 <strong>Tip:</strong> Sin fila casi nunca. Perfecto para los más chicos y una parada fotográfica imperdible frente al castillo.</div>
                 </div>
               </div>
-      <div class="atraccion" onclick="toggleAtraccion(this)">
-                <div class="atraccion-header">
-                  <div class="atraccion-titulo">
-                    <span class="emoji">🎩</span>
-                    <div class="atraccion-titulo-inner">
-                      <span class="nombre">Mickey and the Magician</span>
-                      <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
-                    </div>
-                  </div>
-                  <span class="chevron">▼</span>
-                </div>
-                <div class="atraccion-body">
-                  <img class="atraccion-foto" src="fotos/mickey-magician.jpg" alt="Mickey and the Magician" loading="lazy" onerror="this.style.display='none'">
-                  <p>Show en teatro de ~25 minutos donde Mickey aprende magia con el aprendiz de Yensid (el hechicero de Fantasía) y va invocando personajes de Disney en escena: Bella, Aladdin, Rapunzel, Elsa y más. Canciones en vivo, vestuario espectacular y efectos clásicos de teatro. Pensado para toda la familia.</p>
-                  <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Sin reserva, llegá 15-20 minutos antes.</div>
-                </div>
-              </div>
 
-      
       <div class="section-label">🚀 Discoveryland</div>
       <div class="atraccion" onclick="toggleAtraccion(this)">
                 <div class="atraccion-header">
@@ -1448,6 +1477,23 @@
                   <div class="tip">💡 <strong>Tip:</strong> Muy recomendado como descanso entre atracciones. No tiene fila casi nunca.</div>
                 </div>
               </div>
+      <div class="atraccion" onclick="toggleAtraccion(this)">
+                <div class="atraccion-header">
+                  <div class="atraccion-titulo">
+                    <span class="emoji">🎶</span>
+                    <div class="atraccion-titulo-inner">
+                      <span class="nombre">Mickey et son Orchestre PhilharMagique</span>
+                      <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                    </div>
+                  </div>
+                  <span class="chevron">▼</span>
+                </div>
+                <div class="atraccion-body">
+                  <img class="atraccion-foto" src="fotos/mickey-philharmagique.jpg" alt="Mickey et son Orchestre PhilharMagique" loading="lazy" onerror="this.style.display='none'">
+                  <p>Espectáculo 4D en el <strong>Discoveryland Theatre</strong> donde Donald viaja por momentos icónicos de pelis Disney (La Sirenita, Aladdin, El Rey León, Peter Pan y Coco) tratando de recuperar la varita mágica de Mickey. Pantalla 3D de las más grandes del mundo, con efectos de agua, viento y aroma. Sala climatizada.</p>
+                  <div class="tip">💡 <strong>Tip:</strong> Duración ~12 minutos. Sin necesidad de Premier Access. Excelente pausa para toda la familia, especialmente con calor o lluvia.</div>
+                </div>
+              </div>
 
     </div>
       <!-- Shows DLP -->
@@ -1484,6 +1530,18 @@
         </div>
 
         <div class="estrategia-card">
+          <h4>📲 Magic Pass — tickets virtuales</h4>
+          <p>Los tickets ya no son físicos: ahora son <strong>virtuales en la app Disneyland Paris</strong>. Cada persona del grupo tiene su propio <strong>código QR único</strong> — ese es el Magic Pass, y es lo que escanean en los molinetes de entrada a los parques.</p>
+          <p>El Magic Pass contiene <strong>todo</strong>: las entradas a los parques, los meal vouchers (si tenés plan de comidas) y el acceso al estacionamiento.</p>
+          <ul>
+            <li><strong>Disponible desde 7 días antes</strong> de tu llegada, directo en la app y también en Apple Wallet.</li>
+            <li>Si reservaste con menos de 3 días de anticipación, se activa en la recepción del hotel el día que llegás.</li>
+            <li>Podés ir directo a los molinetes de los parques sin pasar antes por el hotel.</li>
+          </ul>
+          <div class="tip">💡 <strong>Tip:</strong> Tenelo cargado en el celular antes de salir del hotel y guardalo en Apple Wallet / Google Wallet para tenerlo a mano sin abrir la app cada vez.</div>
+        </div>
+
+        <div class="estrategia-card">
           <h4>✨ Estrategia para maximizar tu early access en Disneyland</h4>
           <p>Vamos a empezar por <strong>Big Thunder Mountain</strong> — mi preferida y una de las más demandadas. Seguido de:</p>
           <ul>
@@ -1510,15 +1568,25 @@
         </div>
 
         <div class="estrategia-card">
-          <h4>🔄 Filas Single Rider</h4>
-          <p>Es una fila alternativa <strong>gratis</strong> que por suerte casi todas las atracciones tienen — en la que si no les importa no saber dónde van a ir ubicados ni con quién les tocará al lado, va a ser su mejor aliada.</p>
-          <p>Cuando lleguen a la atracción van a ver que hay 3 tipos de filas:</p>
-          <ul>
-            <li><strong>Standard</strong> (la normal)</li>
-            <li><strong>Premier Pass</strong> (la del fast pass pago)</li>
-            <li><strong>Single Rider</strong></li>
-          </ul>
-          <p>Se mandan por esta última y cuando estén por abordar al juego el Cast Member los ubica donde necesite para que la atracción no salga incompleta. ¡Ganamos todos!</p>
+          <h4>🎟️ Tipos de filas</h4>
+          <p>Cuando lleguen a una atracción se van a encontrar con <strong>3 tipos de filas</strong>. Saber moverse entre ellas es la diferencia entre hacer 5 atracciones o 12 en un día.</p>
+
+          <div style="background:#f8f4ff;border-radius:0.6rem;padding:0.8rem;margin:0.8rem 0;">
+            <p style="margin:0;"><strong>1️⃣ Fila Standby (la normal)</strong></p>
+            <p style="margin:0.3rem 0 0;font-size:0.9rem;">Es la fila gratuita y tradicional. Esperás tu turno. En atracciones top del parque puede ser de 60-120 minutos en horarios pico.</p>
+          </div>
+
+          <div style="background:#fef4e8;border-radius:0.6rem;padding:0.8rem;margin:0.8rem 0;">
+            <p style="margin:0;"><strong>2️⃣ Premier Access ONE</strong> 💎</p>
+            <p style="margin:0.3rem 0 0;font-size:0.9rem;">Fila rápida <strong>paga</strong> que se compra <strong>dentro del parque</strong> desde la app, atracción por atracción. Las más económicas salen ~€5 por persona, las más demandadas ~€13. Se pueden reservar hasta <strong>12 atracciones por día</strong> y máximo 3 veces la misma. <strong>Mi favorita para no pagar Ultimate y igual ahorrar tiempo donde más duele.</strong></p>
+          </div>
+
+          <div style="background:#eef9f0;border-radius:0.6rem;padding:0.8rem;margin:0.8rem 0;">
+            <p style="margin:0;"><strong>3️⃣ Single Rider</strong> 🔄</p>
+            <p style="margin:0.3rem 0 0;font-size:0.9rem;">Fila alternativa <strong>gratis</strong> que casi todas las atracciones top tienen. La hacen todos juntos pero a la hora de subir al juego el Cast Member los separa para rellenar los espacios vacíos. Si no les importa no ir al lado, es <strong>su mejor aliada</strong>.</p>
+          </div>
+
+          <div class="tip">💡 <strong>Premier Access Ultimate:</strong> existe una tercera opción más cara que se compra 7 días antes desde la app — te da acceso rápido a un combo de atracciones top el día que vos elijas. Sale más caro pero te ahorra muchísimo tiempo. Consultame si te conviene según tu itinerario.</div>
         </div>
       </div>
 
@@ -1531,148 +1599,9 @@
           <div class="tip">💡 <strong>Tip:</strong> Reservas se pueden hacer a partir de 12 meses antes por hospedarte dentro de Disney.</div>
         </div>
 
-        <h4 style="margin:1.2rem 0 0.6rem; color:var(--lavanda-fuerte);">🍽️ Restaurantes con reserva — Disneyland Park</h4>
-        <p style="font-size:0.85rem; color:var(--texto-suave); margin-bottom:0.8rem;">⭐ marca mis favoritos. Reservar con la mayor anticipación posible — los más buscados se llenan rápido.</p>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🤠</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Silver Spur Steakhouse</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/silver-spur.jpg" alt="Silver Spur Steakhouse" loading="lazy" onerror="this.style.display='none'">
-            <p>Steakhouse en Frontierland con ambientación de saloon del Far West. Carnes a la parrilla y costillas. Pesado pero rico — ideal para una cena fuerte después del parque.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🏴‍☠️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Blue Lagoon Restaurant</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/blue-lagoon.jpg" alt="Blue Lagoon Restaurant" loading="lazy" onerror="this.style.display='none'">
-            <p>Está literalmente DENTRO de la atracción Pirates of the Caribbean — comés con vista a los botes que pasan por adentro de la atracción, bajo un cielo estrellado tropical. Cocina caribeña con pescados, mariscos y opciones más simples para chicos. Es de las experiencias más mágicas de Disneyland Paris.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Reservar con muchísima anticipación — uno de los más codiciados del parque.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">⚓</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Captain Jack</span>
-                <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/captains-jack.jpg" alt="Captain Jack's" loading="lazy" onerror="this.style.display='none'">
-            <p>En Adventureland, con ambientación de taberna pirata caribeña. Cocina del Caribe con toques cajun, mariscos y carnes especiadas. Menos icónico que Blue Lagoon pero igual de temático y suele ser más fácil de reservar.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🧞</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Agrabah Café</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/agrabah-cafe.jpg" alt="Agrabah Café" loading="lazy" onerror="this.style.display='none'">
-            <p>Buffet en Adventureland con sabores del norte de África y Medio Oriente — cuscús, tagines, falafels, kebabs. Ambientación inspirada en Aladdin. Buena opción si querés probar algo distinto al menú americano del resto del parque.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🌸</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Plaza Gardens Restaurant</span>
-                <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span><span class="badge badge-personajes">Con personajes</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/plaza-gardens.jpg" alt="Plaza Gardens Restaurant" loading="lazy" onerror="this.style.display='none'">
-            <p>Buffet en un salón estilo invernadero al lado del castillo, sobre Main Street. Mickey, Minnie y amigos pasan mesa por mesa para saludar y sacarse fotos — tanto en desayuno como en cena. Cocina internacional variada. Una de las experiencias más buscadas del parque.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Reservar con muchos meses de anticipación — es de los character dinings más populares de Paris.</div>
-            <div class="tip" style="background:#fff3cd;color:#a07000;"><strong>⚠️ Importante:</strong> si compraste el plan de comidas, este restaurante NO está 100% incluido — pagás un diferencial de <strong>aproximadamente USD 60 por persona</strong> en el lugar.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🎩</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Walt's — An American Restaurant</span>
-                <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/walts.jpg" alt="Walt's — An American Restaurant" loading="lazy" onerror="this.style.display='none'">
-            <p>Restaurante temático dedicado a la vida de Walt Disney, sobre Main Street. Cada salón está decorado homenajeando una etapa de su carrera — Kansas City, Hollywood, los parques. Cocina norteamericana fina (steaks, costillas, salmón). Considerado uno de los más especiales y elegantes del parque.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">👑</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Royal Banquet</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/royal-banquet.jpg" alt="Royal Banquet" loading="lazy" onerror="this.style.display='none'">
-            <p>Buffet en el castillo de la Bella Durmiente, en Fantasyland. Ambientación de banquete medieval majestuoso con vitrales, candelabros y techos altísimos. Cocina internacional. Una opción imponente para comer adentro del castillo más icónico del parque.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">👸</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Auberge de Cendrillon</span>
-                <div class="badges"><span class="badge badge-personajes">Con princesas</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/auberge-cendrillon.jpg" alt="Auberge de Cendrillon" loading="lazy" onerror="this.style.display='none'">
-            <p>Cena con princesas Disney en una posada medieval ambientada en el cuento de Cenicienta. Las princesas (Cenicienta, Ariel, Bella, Aurora, Rapunzel — rota la lista) pasan mesa por mesa para saludar y sacar fotos. Cocina francesa adaptada para chicos. Imperdible si vas con peques.</p>
-            <div class="tip">💡 <strong>Tip:</strong> Es de los restaurantes más difíciles de reservar — apuntá a los 12 meses de antelación.</div>
-            <div class="tip" style="background:#fff3cd;color:#a07000;"><strong>⚠️ Importante:</strong> si compraste el plan de comidas, este restaurante NO está 100% incluido — pagás un diferencial de <strong>aproximadamente USD 60 por persona</strong> en el lugar.</div>
-          </div>
+        <div class="estrategia-card" style="background:linear-gradient(135deg,var(--lavanda-claro),var(--rosa-claro));cursor:pointer;text-align:center;" onclick="irA('pantalla-restaurants')">
+          <h4 style="margin-bottom:0.3rem;">🍽️ Ver todos los restaurants →</h4>
+          <p style="margin:0;">Disneyland Park · Adventure World · Hoteles · Disney Village — todo en una sola pantalla con filtros.</p>
         </div>
 
         <div class="estrategia-card" style="margin-top:1.2rem;">
@@ -1680,12 +1609,6 @@
           <p><strong>Mickey Beignet ⭐</strong> — probalo sí o sí, es un snack exclusivo de Disneyland Paris. Unos buñuelos con forma de Mickey y azúcar.</p>
           <p><strong>Souvenirs:</strong> caminá por Main Street hasta el final. A la derecha vas a encontrar un puestito donde venden pochocleras y también champagne (¡el vasito se lo quedan!).</p>
           <div class="tip">💡 <strong>Dato extra:</strong> Si querés un café en mano, no va a poder ser dentro del parque. Por una cuestión de preservar la cultura francesa y no invadir con la "Yankee" no hay Starbucks dentro del parque. Pero sí hay en <strong>Disney Village</strong>.</div>
-        </div>
-
-        <div class="estrategia-card">
-          <h4>🏨 Para cenar fuera del parque</h4>
-          <p>Cada hotel Disney tiene su propio restaurante (Manhattan y Downtown en Hotel New York, Cape Cod en Newport Bay, Hunter's Grill en Sequoia Lodge, Chuck Wagon en Cheyenne, La Cantina en Santa Fe). Y en <strong>Disney Village</strong> está Annette's Diner y The Steakhouse.</p>
-          <p style="margin-top:0.5rem;">Si querés que arme la reserva o necesitás recomendaciones más detalladas, preguntame por WhatsApp.</p>
         </div>
       </div>
 
@@ -1982,40 +1905,38 @@
       <div class="atraccion" onclick="toggleAtraccion(this)">
                 <div class="atraccion-header">
                   <div class="atraccion-titulo">
-                    <span class="emoji">👶</span>
+                    <span class="emoji">🎀</span>
                     <div class="atraccion-titulo-inner">
-                      <span class="nombre">Disney Junior Dream Factory</span>
+                      <span class="nombre">Minnie's Dream Factory</span>
                       <div class="badges"><span class="badge badge-show">🎭 Show</span><span class="badge badge-familia">Familia</span></div>
                     </div>
                   </div>
                   <span class="chevron">▼</span>
                 </div>
                 <div class="atraccion-body">
-                  <img class="atraccion-foto" src="fotos/disney-junior.jpg" alt="Disney Junior Dream Factory" loading="lazy" onerror="this.style.display='none'">
-                  <p>Show pensado para los más chicos con personajes de Disney Junior — Mickey & Friends Funhouse, Vampirina, Spidey, Doc McStuffins. Canciones, juegos y momentos interactivos con burbujas y serpentinas para que los nenes se levanten, bailen y participen.</p>
-                  <div class="tip">💡 <strong>Tip:</strong> Ideal si viajás con peques que ven Disney Junior. Varias funciones por día.</div>
+                  <img class="atraccion-foto" src="fotos/minnies-dream-factory.jpg" alt="Minnie's Dream Factory" loading="lazy" onerror="this.style.display='none'">
+                  <p>Show interactivo en el Studio D que debutó en febrero de 2026 reemplazando al viejo Disney Junior. <strong>Minnie</strong> es la directora de la fábrica de sueños y lidera la aventura junto a <strong>Donald, Daisy y Chip & Dale</strong>. Canciones nuevas, vestuario rediseñado, escenografía con luces vibrantes y momentos para que los nenes participen.</p>
+                  <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Llegá 10-15 minutos antes para conseguir un buen lugar adelante.</div>
                 </div>
               </div>
-
-      
-      <div class="section-label">🎞️ Animation Courtyard</div>
       <div class="atraccion" onclick="toggleAtraccion(this)">
                 <div class="atraccion-header">
                   <div class="atraccion-titulo">
-                    <span class="emoji">🎶</span>
+                    <span class="emoji">🎩</span>
                     <div class="atraccion-titulo-inner">
-                      <span class="nombre">Mickey et son Orchestre PhilharMagique</span>
-                      <div class="badges"><span class="badge badge-familia">Familia</span></div>
+                      <span class="nombre">Mickey and the Magician</span>
+                      <div class="badges"><span class="badge badge-top">⭐ TOP</span><span class="badge badge-show">🎭 Show</span></div>
                     </div>
                   </div>
                   <span class="chevron">▼</span>
                 </div>
                 <div class="atraccion-body">
-                  <img class="atraccion-foto" src="https://i.imgur.com/eQyUFM8.jpg" alt="Mickey et son Orchestre PhilharMagique" loading="lazy" onerror="this.style.display='none'">
-                  <p>Espectáculo 4D en teatro donde Mickey Mouse dirige una orquesta mágica. Las escenas viajan por momentos icónicos de La Sirenita, Aladdin, El Rey León y Peter Pan, con efectos de agua, viento y aroma. Sala climatizada.</p>
-                  <div class="tip">💡 <strong>Tip:</strong> Sin necesidad de Premier Access. Duración ~20 minutos. Excelente pausa para toda la familia, especialmente con calor o lluvia.</div>
+                  <img class="atraccion-foto" src="fotos/mickey-magician.jpg" alt="Mickey and the Magician" loading="lazy" onerror="this.style.display='none'">
+                  <p>Show estrella del <strong>Studio Theater</strong> de Disney Adventure World. ~25 minutos donde Mickey aprende magia con el aprendiz de Yensid (el hechicero de Fantasía) y va invocando personajes de Disney en escena: Bella, Aladdin, Rapunzel, Elsa y más. Canciones en vivo, vestuario espectacular y efectos clásicos de teatro. Pensado para toda la familia.</p>
+                  <div class="tip">💡 <strong>Tip:</strong> Varias funciones por día — chequeá horarios en la app. Sin reserva, llegá 15-20 minutos antes.</div>
                 </div>
               </div>
+
 
     </div>
       <!-- Shows WDS -->
@@ -2075,76 +1996,9 @@
 
       <!-- Comer WDS -->
       <div class="tab-content" id="wds-comer">
-        <h4 style="margin:0.2rem 0 0.6rem; color:var(--lavanda-fuerte);">🍽️ Restaurantes con reserva — Disney Adventure World</h4>
-        <p style="font-size:0.85rem; color:var(--texto-suave); margin-bottom:0.8rem;">⭐ marca mis favoritos. Cenas temprano (19 - 19:30). Reservar antes desde la app.</p>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐀</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Bistrot Chez Rémy</span>
-                <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/chez-remy.jpg" alt="Bistrot Chez Rémy" loading="lazy" onerror="this.style.display='none'">
-            <p>El restaurante temático de Ratatouille — y uno de los más mágicos de todo Disney. Toda la decoración (sillas en forma de tapa de botella, mesas armadas con platos enormes, vajilla XL) está sobredimensionada para que te sientas del tamaño de Rémy. Cocina francesa simple y rica: confit de canard, steak frites, ratatouille, postres clásicos. Imperdible.</p>
-            <div class="tip">💡 <strong>Tip:</strong> El más buscado del parque — reservar con muchísima anticipación.</div>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🐜</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">PYM Kitchen</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/pym-kitchen.jpg" alt="PYM Kitchen" loading="lazy" onerror="this.style.display='none'">
-            <p>Buffet del Avengers Campus inspirado en los experimentos de Ant-Man con las Pym Particles: porciones gigantes y mini conviven en el mismo buffet — sándwiches XXL, ñoquis del tamaño de pelotas de tenis, miniaturas de postres. Muy divertido visualmente y rico para chicos y grandes.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">🦾</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">Stark Factory</span>
-                <div class="badges"></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/stark-factory.jpg" alt="Stark Factory" loading="lazy" onerror="this.style.display='none'">
-            <p>Pizzería italiana en el Avengers Campus, ambientada como la fábrica industrial de Tony Stark. Pizza al horno, pasta y postres italianos. Buena opción más casual dentro del área Marvel.</p>
-          </div>
-        </div>
-
-        <div class="atraccion" onclick="toggleAtraccion(this)">
-          <div class="atraccion-header">
-            <div class="atraccion-titulo">
-              <span class="emoji">❄️</span>
-              <div class="atraccion-titulo-inner">
-                <span class="nombre">The Regal View Restaurant</span>
-                <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
-              </div>
-            </div>
-            <span class="chevron">▼</span>
-          </div>
-          <div class="atraccion-body">
-            <img class="atraccion-foto" src="fotos/regal-view.jpg" alt="The Regal View Restaurant" loading="lazy" onerror="this.style.display='none'">
-            <p>Restaurante panorámico dentro del World of Frozen, abierto desde marzo 2026 con la apertura de la nueva área. Cocina nórdica inspirada en Arendelle, con vista al castillo y al pueblo de Frozen. Opción nueva y muy buscada.</p>
-          </div>
+        <div class="estrategia-card" style="background:linear-gradient(135deg,var(--lavanda-claro),var(--rosa-claro));cursor:pointer;text-align:center;" onclick="irA('pantalla-restaurants')">
+          <h4 style="margin-bottom:0.3rem;">🍽️ Ver todos los restaurants →</h4>
+          <p style="margin:0;">Adventure World · Disneyland Park · Hoteles · Disney Village — todo en una sola pantalla con filtros.</p>
         </div>
       </div>
 
@@ -2160,6 +2014,407 @@
       <div class="cierre-calido">
         <h3>¡Have a magical day! ✨</h3>
         <p>Escribime por WhatsApp cuantas veces quieras. Preguntame todo — no importa el día, no importa el horario. ¡Siempre a la orden!</p>
+        <div class="contacto">
+          <a href="https://wa.me/541132924274">📱 WhatsApp</a>
+          <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
+        </div>
+        <div class="firma">— Sofi</div>
+      </div>
+    </div>
+
+    <!-- ── RESTAURANTS (unificada con filtros) ── -->
+    <div class="pantalla" id="pantalla-restaurants">
+      <button class="btn-volver" onclick="irA('pantalla-disney')">← Volver</button>
+      <div class="seccion-header">
+        <h2>🍽️ Restaurants</h2>
+        <p>Parques · Hoteles · Disney Village</p>
+      </div>
+
+      <p style="text-align:center; font-size:0.85rem; color:var(--texto-suave); margin:-0.5rem 0 1rem;">⭐ marca mis favoritos · <span class="badge badge-personajes" style="display:inline-block;padding:0.15rem 0.5rem;border-radius:0.4rem;font-size:0.7rem;">Con personajes</span> = vienen a saludar a la mesa</p>
+
+      <div class="resto-filtros">
+        <button class="resto-filtro activo" onclick="filtrarRestos(this,'todos')">Todos</button>
+        <button class="resto-filtro" onclick="filtrarRestos(this,'dlp')">🏰 Disneyland Park</button>
+        <button class="resto-filtro" onclick="filtrarRestos(this,'daw')">🎬 Adventure World</button>
+        <button class="resto-filtro" onclick="filtrarRestos(this,'hoteles')">🏨 Hoteles</button>
+        <button class="resto-filtro" onclick="filtrarRestos(this,'village')">🎪 Disney Village</button>
+      </div>
+
+      <div class="tab-content activo" id="restos-grid">
+
+        <!-- ─── DISNEYLAND PARK ─── -->
+        <div class="resto-zona-group" data-zona="dlp">
+          <div class="resto-zona-label">🏰 Disneyland Park</div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🌸</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Plaza Gardens Restaurant</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span><span class="badge badge-personajes">Con personajes</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/plaza-gardens.jpg" alt="Plaza Gardens Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet en un salón estilo invernadero al lado del castillo, sobre Main Street. Mickey, Minnie y amigos pasan mesa por mesa para saludar y sacarse fotos — tanto en desayuno como en cena. Cocina internacional variada. Una de las experiencias más buscadas del parque.</p>
+              <div class="tip">💡 <strong>Tip:</strong> Reservar con muchos meses de anticipación — es de los character dinings más populares de Paris.</div>
+              <div class="tip" style="background:#fff3cd;color:#a07000;"><strong>⚠️ Importante:</strong> si compraste el plan de comidas, este restaurante NO está 100% incluido — pagás un diferencial de <strong>aproximadamente USD 60 por persona</strong> en el lugar.</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">👸</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Auberge de Cendrillon</span>
+                  <div class="badges"><span class="badge badge-personajes">Con princesas</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/auberge-cendrillon.jpg" alt="Auberge de Cendrillon" loading="lazy" onerror="this.style.display='none'">
+              <p>Cena con princesas Disney en una posada medieval ambientada en el cuento de Cenicienta. Las princesas (Cenicienta, Ariel, Bella, Aurora, Rapunzel — rota la lista) pasan mesa por mesa para saludar y sacar fotos. Cocina francesa adaptada para chicos. Imperdible si vas con peques.</p>
+              <div class="tip">💡 <strong>Tip:</strong> Es de los restaurantes más difíciles de reservar — apuntá a los 12 meses de antelación.</div>
+              <div class="tip" style="background:#fff3cd;color:#a07000;"><strong>⚠️ Importante:</strong> si compraste el plan de comidas, este restaurante NO está 100% incluido — pagás un diferencial de <strong>aproximadamente USD 60 por persona</strong> en el lugar.</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🏴‍☠️</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Blue Lagoon Restaurant</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/blue-lagoon.jpg" alt="Blue Lagoon Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Está literalmente DENTRO de la atracción Pirates of the Caribbean — comés con vista a los botes que pasan por adentro de la atracción, bajo un cielo estrellado tropical. Cocina caribeña con pescados, mariscos y opciones más simples para chicos. Es de las experiencias más mágicas de Disneyland Paris.</p>
+              <div class="tip">💡 <strong>Tip:</strong> Reservar con muchísima anticipación — uno de los más codiciados del parque.</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🎩</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Walt's — An American Restaurant</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/walts.jpg" alt="Walt's — An American Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Restaurante temático dedicado a la vida de Walt Disney, sobre Main Street. Cada salón está decorado homenajeando una etapa de su carrera — Kansas City, Hollywood, los parques. Cocina norteamericana fina (steaks, costillas, salmón). Considerado uno de los más especiales y elegantes del parque.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🤠</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Silver Spur Steakhouse</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/silver-spur.jpg" alt="Silver Spur Steakhouse" loading="lazy" onerror="this.style.display='none'">
+              <p>Steakhouse en Frontierland con ambientación de saloon del Far West. Carnes a la parrilla y costillas. Pesado pero rico — ideal para una cena fuerte después del parque.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">⚓</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Captain Jack</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/captains-jack.jpg" alt="Captain Jack's" loading="lazy" onerror="this.style.display='none'">
+              <p>En Adventureland, con ambientación de taberna pirata caribeña. Cocina del Caribe con toques cajun, mariscos y carnes especiadas. Menos icónico que Blue Lagoon pero igual de temático y suele ser más fácil de reservar.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🧞</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Agrabah Café</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/agrabah-cafe.jpg" alt="Agrabah Café" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet en Adventureland con sabores del norte de África y Medio Oriente — cuscús, tagines, falafels, kebabs. Ambientación inspirada en Aladdin. Buena opción si querés probar algo distinto al menú americano del resto del parque.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">👑</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Royal Banquet</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/royal-banquet.jpg" alt="Royal Banquet" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet en el castillo de la Bella Durmiente, en Fantasyland. Ambientación de banquete medieval majestuoso con vitrales, candelabros y techos altísimos. Cocina internacional. Una opción imponente para comer adentro del castillo más icónico del parque.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── DISNEY ADVENTURE WORLD ─── -->
+        <div class="resto-zona-group" data-zona="daw">
+          <div class="resto-zona-label">🎬 Disney Adventure World</div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🐀</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Bistrot Chez Rémy</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/chez-remy.jpg" alt="Bistrot Chez Rémy" loading="lazy" onerror="this.style.display='none'">
+              <p>El restaurante temático de Ratatouille — y uno de los más mágicos de todo Disney. Toda la decoración (sillas en forma de tapa de botella, mesas armadas con platos enormes, vajilla XL) está sobredimensionada para que te sientas del tamaño de Rémy. Cocina francesa simple y rica: confit de canard, steak frites, ratatouille, postres clásicos. Imperdible.</p>
+              <div class="tip">💡 <strong>Tip:</strong> El más buscado del parque — reservar con muchísima anticipación.</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">❄️</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">The Regal View Restaurant</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/regal-view.jpg" alt="The Regal View Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Restaurante panorámico dentro del World of Frozen, abierto desde marzo 2026 con la apertura de la nueva área. Cocina nórdica inspirada en Arendelle, con vista al castillo y al pueblo de Frozen. Opción nueva y muy buscada.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🐜</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">PYM Kitchen</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/pym-kitchen.jpg" alt="PYM Kitchen" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del Avengers Campus inspirado en los experimentos de Ant-Man con las Pym Particles: porciones gigantes y mini conviven en el mismo buffet — sándwiches XXL, ñoquis del tamaño de pelotas de tenis, miniaturas de postres. Muy divertido visualmente y rico para chicos y grandes.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🦾</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Stark Factory</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/stark-factory.jpg" alt="Stark Factory" loading="lazy" onerror="this.style.display='none'">
+              <p>Pizzería italiana en el Avengers Campus, ambientada como la fábrica industrial de Tony Stark. Pizza al horno, pasta y postres italianos. Buena opción más casual dentro del área Marvel.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── HOTELES DISNEY ─── -->
+        <div class="resto-zona-group" data-zona="hoteles">
+          <div class="resto-zona-label">🏨 Hoteles Disney</div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🦸</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Manhattan Restaurant</span>
+                  <div class="badges"><span class="badge badge-top">⭐ Mi favorito</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/manhattan.jpg" alt="Manhattan Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Restaurante gourmet del <strong>Hotel New York – The Art of Marvel</strong>. Ambientación elegante neoyorquina con piezas de arte Marvel originales en las paredes. Cocina italo-americana refinada (pastas frescas, carnes, pescados). Solo cena. La opción más sofisticada de los hoteles Disney.</p>
+              <div class="tip">💡 <strong>Tip:</strong> Reservar con anticipación, sobre todo si no te alojás en el Hotel New York.</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🗽</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Downtown Restaurant</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/downtown.jpg" alt="Downtown Restaurant" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del <strong>Hotel New York – The Art of Marvel</strong>, abierto para desayuno y cena. Ambientación moderna inspirada en el downtown neoyorquino con detalles de arte Marvel. Buffet internacional variado con estaciones en vivo. Opción cómoda y rica para huéspedes del hotel.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🦞</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Cape Cod</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/cape-cod.jpg" alt="Cape Cod" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del <strong>Newport Bay Club</strong>, con temática de Nueva Inglaterra costera. Especialidad en mariscos y langosta, con vistas al "lago" del hotel. Ambientación náutica relajada en azul y blanco. Desayuno y cena.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🪵</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Hunter's Grill</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/hunters-grill.jpg" alt="Hunter's Grill" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del <strong>Sequoia Lodge</strong> con ambientación de cabaña de montaña norteamericana — madera, piedra y chimenea. Especialidad en asados a la parrilla, carnes y pescados ahumados. Cocina rústica abundante. Mi recomendado si te hospedás en el Sequoia.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🤠</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Chuck Wagon Café</span>
+                  <div class="badges"><span class="badge badge-personajes">Personajes a la mañana</span></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/chuck-wagon.jpg" alt="Chuck Wagon Café" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del <strong>Hotel Cheyenne</strong> con temática de Lejano Oeste — el comedor está ambientado como un pueblo del Wild West con carromatos. Cocina americana casual: BBQ, hamburguesas, ensaladas. Ideal con peques.</p>
+              <div class="tip">💡 <strong>Tip:</strong> A la mañana entre 8 y 11 hs hay encuentros con personajes Toy Story en el lobby del hotel (Woody, Jessie). ¡Una de las mejores experiencias gratuitas si te hospedás acá!</div>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🌵</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">La Cantina</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/la-cantina.jpg" alt="La Cantina" loading="lazy" onerror="this.style.display='none'">
+              <p>Buffet del <strong>Hotel Santa Fe</strong>, con temática Cars (Radiator Springs). Cocina tex-mex casual y abundante: tacos, fajitas, burritos, nachos. La opción más económica entre los hoteles Disney y muy bien valorada por familias.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── DISNEY VILLAGE ─── -->
+        <div class="resto-zona-group" data-zona="village">
+          <div class="resto-zona-label">🎪 Disney Village</div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🍔</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">Annette's Diner</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/annettes-diner.jpg" alt="Annette's Diner" loading="lazy" onerror="this.style.display='none'">
+              <p>Diner americano años 50 en pleno <strong>Disney Village</strong> — neones, jukebox, camareras en patines. Hamburguesas, milkshakes, hot dogs y postres XL. Entra en el plan de comidas pero <strong>no requiere reserva</strong>. Plan B perfecto si no conseguiste mesa en los parques.</p>
+            </div>
+          </div>
+
+          <div class="atraccion" onclick="toggleAtraccion(this)">
+            <div class="atraccion-header">
+              <div class="atraccion-titulo">
+                <span class="emoji">🥩</span>
+                <div class="atraccion-titulo-inner">
+                  <span class="nombre">The Steakhouse</span>
+                  <div class="badges"></div>
+                </div>
+              </div>
+              <span class="chevron">▼</span>
+            </div>
+            <div class="atraccion-body">
+              <img class="atraccion-foto" src="fotos/the-steakhouse.jpg" alt="The Steakhouse" loading="lazy" onerror="this.style.display='none'">
+              <p>Steakhouse premium en <strong>Disney Village</strong> con ambientación industrial inspirada en los mataderos de Chicago de principios del 1900. Carnes de calidad a la parrilla, ribeye, costillas, vinos. Buena opción para una cena fuerte fuera de los parques.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cierre-calido">
+        <h3>¿Te ayudo a reservar?</h3>
+        <p>Las reservas se hacen desde la app oficial de Disneyland Paris. Si tenés dudas sobre cuál elegir según las edades de tus peques, escribime — armamos juntos el cronograma.</p>
         <div class="contacto">
           <a href="https://wa.me/541132924274">📱 WhatsApp</a>
           <a href="https://instagram.com/disnerd.sofi">📸 @disnerd.sofi</a>
@@ -2978,6 +3233,17 @@
     padre.querySelectorAll('.dia-content').forEach(d => d.classList.remove('activo'));
     btn.classList.add('activo');
     document.getElementById(contenidoId).classList.add('activo');
+  }
+
+  // ─── FILTROS RESTAURANTS ────────────────────────────
+  function filtrarRestos(btn, zona){
+    document.querySelectorAll('.resto-filtro').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+    document.querySelectorAll('.resto-zona-group').forEach(g => {
+      g.style.display = (zona === 'todos' || g.dataset.zona === zona) ? '' : 'none';
+    });
+    document.querySelectorAll('#restos-grid .atraccion.abierta').forEach(a => a.classList.remove('abierta'));
+    window.scrollTo(0,0);
   }
 
   // ─── TOGGLE ATRACCIONES ─────────────────────────────
