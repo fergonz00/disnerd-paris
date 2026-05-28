@@ -3,9 +3,17 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-05-26
+## 📌 Dónde quedamos — última sesión: 2026-05-28
 
-**Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. `index.html` ~3485 líneas, HTML balanceado, 0 caracteres basura. 64 atracciones (`.atraccion` == `.chevron`). 70 fotos en `/fotos/`.
+**Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. `index.html` ~3500 líneas, HTML balanceado.
+
+**Última sesión (2026-05-28):** Sofi pasó data de **escapada a Alsacia (Colmar + Strasbourg)** — agregada a la solapa ✨ Recomendaciones como card nueva debajo de los cafés (commits `e2ec20a` + `b11a1a9` + `990ddb9`).
+- Colmar: texto **tal cual lo escribió Sofi**, solo capitalicé "La Bella y la Bestia" + "Bella". No agregué dato extra (la "Fuente de Bella" / Bartholdi se sacó a pedido de Fer — su voz manda, ver feedback memory `feedback-conciliar-sofi`).
+- Strasbourg: texto de Sofi + agregados factuales aprobados (catedral gótica con **332 escalones**, **La Petite France** con casas entramadas s.XVI).
+- 2 tips separados al final: uno de transporte (TGV 2h 20min a Strasbourg + 30 min a Colmar), otro de itinerario (1 día = Strasbourg / 1 noche = dormir Strasbourg + Colmar al volver).
+
+**Estado anterior (2026-05-26):**
+Working tree limpio. 64 atracciones (`.atraccion` == `.chevron`). 70 fotos en `/fotos/`.
 
 **Lo último que hicimos (corregimos 3 errores de contenido que marcó Sofi, conciliados con fuentes oficiales):**
 1. **Personajes en hoteles** → son en el **lobby de cada hotel** (mañana ~8-11h, gratis, según temática), NO en el restaurante. Generalizado en Estrategia DLP→Check-in con lista por hotel.
@@ -17,7 +25,7 @@ Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona client
 - ❌ **Alturas estilo Orlando DESCARTADO** (input de altura → qué pueden subir): son pocas atracciones, no tiene sentido. La tab Alturas actual (tabla) queda como está.
 - ✅ "Runa" resuelto (era confusión de Sofi).
 
-**Próximo paso / pendiente abierto:** esperar que Sofi mande más data para ampliar la solapa ✨ Recomendaciones (shopping, restaurantes no-Disney, tips de moda). No hay nada urgente en curso.
+**Próximo paso / pendiente abierto:** esperar que Sofi mande más data para ampliar la solapa ✨ Recomendaciones (shopping, restaurantes no-Disney, tips de moda). Ya tiene cafés + escapada a Alsacia. No hay nada urgente en curso.
 
 ## Recursos
 
@@ -116,13 +124,20 @@ Snacks/datos útiles (Mickey Beignet, no Starbucks dentro del parque) quedan en 
 **Referencias Disney explícitas:** El Jorobado de Notre Dame en Día 4 (gárgolas Victor/Hugo/Laverne, Corte de los Milagros en Catacumbas), La Bella y la Bestia inspirada en Galería de los Espejos de Versalles, Disney Store flagship en Champs-Élysées.
 
 ### Solapa ✨ Recomendaciones (entre Transporte y Día 1)
-Cafés curados por Sofi, agrupados por vibe:
+
+**Card 1 — Cafés** (curados por Sofi, agrupados por vibe):
 - **Estética + vibe:** Saint Pearl, Boot Café (Marais · Día 6)
 - **Café posta nivel experto:** Substance, Motors (Saint-Germain · Día 4)
 - **Contenido Pinterest:** Jōhō, The Coffee (varios)
 - **París clásico:** Café de Flore, Les Deux Magots (Saint-Germain · Día 4)
 
 Los cafés que encajan geográficamente aparecen con un `.cafe-tip` (ícono ☕ dorado) dentro de los lugares del día correspondiente.
+
+**Card 2 — Escapada Alsacia** (agregada 28-may-2026):
+- Intro de Colmar + Strasbourg, sugerencia de quedarse una noche.
+- Colmar: texto de Sofi tal cual (peli Bella y Bestia, pueblo que inspiró la aldea).
+- Strasbourg: texto de Sofi + agregados factuales (catedral gótica con 332 escalones, La Petite France).
+- 2 tips: cómo llegar (TGV 2h 20min Paris→Strasbourg + 30 min tren regional a Colmar) e itinerario (1 día = Strasbourg / 1 noche = dormir Strasbourg + Colmar antes de volver).
 
 ## Cierre cálido
 Cada pantalla principal (Inicio, DLP, DAW, Francia) termina con la card `.cierre-calido` con gradiente celeste→lavanda→rosa, mensaje de Sofi y botones WhatsApp + Instagram.
