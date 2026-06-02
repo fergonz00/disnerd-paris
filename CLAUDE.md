@@ -3,11 +3,20 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-05-28
+## 📌 Dónde quedamos — última sesión: 2026-06-02
 
-**Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. `index.html` ~3500 líneas, HTML balanceado.
+**Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. HTML balanceado (validado: div/span/p/li OK, 64 chevron = 64 atraccion).
 
-**Última sesión (2026-05-28):** Sofi pasó data de **escapada a Alsacia (Colmar + Strasbourg)** — agregada a la solapa ✨ Recomendaciones como card nueva debajo de los cafés (commits `e2ec20a` + `b11a1a9` + `990ddb9`).
+**Última sesión (2026-06-02):** Sofi pasó data nueva por audio + 1 foto del Drive. 2 agregados (conciliados con fuentes oficiales):
+1. **Souvenirs del World of Frozen** — card nueva en Estrategia DAW, justo después de la card "Después de Crush... World of Frozen":
+   - 🫙 **Tarrito de miniaturas (~€35)** en la tienda **Fjord View**: lo llenás vos de una pared de mini figuritas de Frozen. (Verificado: es el "Make Your Own Mini Figurine Collection Jar".)
+   - 💌 **Postal internacional (~€8, 3 versiones)**: en la caja le ponen sello internacional, la escribís y la dejás en el buzón internacional.
+   - Son los 2 souvenirs más buscados de la zona. La bullet de "shops" ahora apunta a esta card.
+2. **Brindis viral de champagne** (te quedás el vaso, ~€20, en carritos por todo el parque) — agregado en **Comer DLP** y **Comer DAW**. Copa **celeste** en DAW (World of Frozen 🩵), **dorada** en DLP. Foto `fotos/brindis-paris.jpg` (la celeste, frente a la estatua Partners de DAW) puesta en **ambas** guías; en Comer DLP con aclaración de que ahí la copa es **dorada**.
+- Commits: `c0e3e9c` (souvenirs + brindis) + `2914392` (foto en DLP).
+- **Pendiente menor:** si Sofi manda la foto de la copa **dorada** de DLP, reemplazarla en Comer DLP.
+
+**Sesión anterior (2026-05-28):** Sofi pasó data de **escapada a Alsacia (Colmar + Strasbourg)** — agregada a la solapa ✨ Recomendaciones como card nueva debajo de los cafés (commits `e2ec20a` + `b11a1a9` + `990ddb9`).
 - Colmar: texto **tal cual lo escribió Sofi**, solo capitalicé "La Bella y la Bestia" + "Bella". No agregué dato extra (la "Fuente de Bella" / Bartholdi se sacó a pedido de Fer — su voz manda, ver feedback memory `feedback-conciliar-sofi`).
 - Strasbourg: texto de Sofi + agregados factuales aprobados (catedral gótica con **332 escalones**, **La Petite France** con casas entramadas s.XVI).
 - 2 tips separados al final: uno de transporte (TGV 2h 20min a Strasbourg + 30 min a Colmar), otro de itinerario (1 día = Strasbourg / 1 noche = dormir Strasbourg + Colmar al volver).
