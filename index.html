@@ -325,10 +325,9 @@
     display: flex;
     gap: 0.45rem;
     margin: 1rem 0;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    /* Envuelven en vez de scrollear: el scroll horizontal tenia la barra oculta,
+       asi que la ultima solapa se cortaba sin ninguna pista de que habia mas. */
+    flex-wrap: wrap;
     padding: 2px 2px 6px;
     margin-left: -2px;
     margin-right: -2px;
@@ -420,10 +419,9 @@
   .resto-filtros {
     display: flex;
     gap: 0.5rem;
-    overflow-x: auto;
+    /* Mismo motivo que .tabs: "Disney Village" era el ultimo chip y se cortaba. */
+    flex-wrap: wrap;
     padding: 0.4rem 0 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
   }
   .resto-filtros::-webkit-scrollbar { display: none; }
   .resto-filtro {
@@ -998,15 +996,15 @@
         <p>Atracciones · Shows · Estrategia</p>
       </div>
       <div class="tabs">
-        <button class="tab activo" onclick="cambiarTab(this,'dlp-atracciones')">🎢 Atracciones</button>
+        <button class="tab activo" onclick="cambiarTab(this,'dlp-estrategia')">💡 Estrategia</button>
+        <button class="tab" onclick="cambiarTab(this,'dlp-atracciones')">🎢 Atracciones</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-shows')">🎭 Shows</button>
-        <button class="tab" onclick="cambiarTab(this,'dlp-estrategia')">💡 Estrategia</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-comer')">🍽️ Comer</button>
         <button class="tab" onclick="cambiarTab(this,'dlp-alturas')">📏 Alturas</button>
       </div>
 
       <!-- Atracciones DLP -->
-      <div class="tab-content activo" id="dlp-atracciones">
+      <div class="tab-content" id="dlp-atracciones">
       
       <div class="section-label">🏛️ Main Street, U.S.A.</div>
       <div class="atraccion" onclick="toggleAtraccion(this)">
@@ -1547,7 +1545,7 @@
       </div>
 
       <!-- Estrategia DLP -->
-      <div class="tab-content" id="dlp-estrategia">
+      <div class="tab-content activo" id="dlp-estrategia">
         <div class="estrategia-card">
           <h4>🥐 Check-in</h4>
           <p>¡La aventura comienza al llegar a tu hotel Disney!</p>
@@ -1677,15 +1675,15 @@
         <p style="font-size:0.78rem; color:var(--texto-suave); margin-top:0.3rem;">Antes conocido como Walt Disney Studios Park — renombrado el 29 de marzo de 2026 con la apertura del World of Frozen</p>
       </div>
       <div class="tabs">
-        <button class="tab activo" onclick="cambiarTab(this,'wds-atracciones')">🎢 Atracciones</button>
+        <button class="tab activo" onclick="cambiarTab(this,'wds-estrategia')">💡 Estrategia</button>
+        <button class="tab" onclick="cambiarTab(this,'wds-atracciones')">🎢 Atracciones</button>
         <button class="tab" onclick="cambiarTab(this,'wds-shows')">🎭 Shows</button>
-        <button class="tab" onclick="cambiarTab(this,'wds-estrategia')">💡 Estrategia</button>
         <button class="tab" onclick="cambiarTab(this,'wds-comer')">🍽️ Comer</button>
         <button class="tab" onclick="cambiarTab(this,'wds-alturas')">📏 Alturas</button>
       </div>
 
       <!-- Atracciones WDS -->
-      <div class="tab-content activo" id="wds-atracciones">
+      <div class="tab-content" id="wds-atracciones">
       
       <div class="section-label">❄️ World of Frozen</div>
       <div class="atraccion" onclick="toggleAtraccion(this)">
@@ -2094,7 +2092,7 @@
       </div>
 
       <!-- Estrategia WDS -->
-      <div class="tab-content" id="wds-estrategia">
+      <div class="tab-content activo" id="wds-estrategia">
         <div class="estrategia-card">
           <h4>✨ Estrategia para maximizar tu early access en Disney Adventure World</h4>
           <p>Vamos a arrancar por la joyita del parque:</p>
@@ -3406,6 +3404,31 @@
     btn.classList.add('activo');
     document.getElementById(contenidoId).classList.add('activo');
   }
+
+  // ─── MAPA INTERACTIVO ────────────────────────────────
+  // Registro de mapas, mismo patron que Orlando: agregar un parque aca hace
+  // aparecer su solapa "🗺️ Mapa" entre Shows y Comer, sola. Mientras este vacio
+  // no se dibuja ninguna solapa — los viajeros no ven una pantalla en blanco.
+  const MAPAS = {};
+
+  const PARQUES_CON_TABS = [['dlp','pantalla-dlp'], ['wds','pantalla-studios']];
+
+  function montarSolapasMapa(){
+    PARQUES_CON_TABS.forEach(([pid, pantalla]) => {
+      if(!MAPAS[pid]) return;
+      const cont = document.getElementById(pantalla);
+      if(!cont || cont.querySelector(`[data-tab-mapa="${pid}"]`)) return;   // ya montada
+      const shows = cont.querySelector(`.tab[onclick*="${pid}-shows"]`);
+      if(!shows) return;
+      const btn = document.createElement('button');
+      btn.className = 'tab';
+      btn.dataset.tabMapa = pid;
+      btn.textContent = '🗺️ Mapa';
+      btn.onclick = () => cambiarTab(btn, `${pid}-mapa`);
+      shows.after(btn);
+    });
+  }
+  montarSolapasMapa();
 
   // ─── DÍAS FRANCIA ────────────────────────────────────
   function cambiarDia(btn, contenidoId){
