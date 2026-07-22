@@ -1,0 +1,1950 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-31T22:37:44Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 258856843,
+  "lat": 48.8707952,
+  "lon": 2.7791228,
+  "tags": {
+    "name": "Disneyland Railroad Main Street Station",
+    "public_transport": "station",
+    "railway": "station",
+    "ref:FR:STIF": "412814",
+    "source": "STIF - 12/2016",
+    "tourism": "attraction",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/main-street-usa/attractions/disneyland-railroad.xhtml",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856858,
+  "lat": 48.8701941,
+  "lon": 2.7721388,
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77700",
+    "addr:street": "Frontierland",
+    "name": "Disneyland Railroad Frontierland Depot",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "survey",
+    "tourism": "attraction",
+    "train": "yes",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/frontierland/attractions/disneyland-railroad.xhtml",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856870,
+  "lat": 48.8746234,
+  "lon": 2.7735731,
+  "tags": {
+    "name": "Disneyland Railroad Fantasyland Station",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "survey",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856876,
+  "lat": 48.8747210,
+  "lon": 2.7794141,
+  "tags": {
+    "name": "Disneyland Railroad Discoveryland Station",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 905816849,
+  "lat": 48.8730526,
+  "lon": 2.7757734,
+  "tags": {
+    "name": "La Tanière du Dragon",
+    "name:en": "Dragon's Lair",
+    "source": "survey",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/la-taniere-du-dragon/",
+    "wheelchair": "yes",
+    "wikidata": "Q28126673"
+  }
+},
+{
+  "type": "node",
+  "id": 905816888,
+  "lat": 48.8744900,
+  "lon": 2.7744865,
+  "tags": {
+    "attraction": "maze",
+    "name": "Alice's Curious Labyrinth",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/alices-curious-labyrinth/",
+    "wheelchair": "limited",
+    "wikidata": "Q2836495",
+    "wikipedia": "fr:Alice's Curious Labyrinth"
+  }
+},
+{
+  "type": "node",
+  "id": 905816995,
+  "lat": 48.8735115,
+  "lon": 2.7778416,
+  "tags": {
+    "attraction": "dark_ride",
+    "duration": "00:04:30",
+    "name": "Buzz Lightyear Laser Blast",
+    "old:wikipedia": "Visionarium",
+    "old_name": "Visionarium",
+    "source": "survey;knowledge",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/buzz-lightyear-laser-blast/",
+    "wheelchair": "yes",
+    "wikidata": "Q2916664",
+    "wikipedia": "fr:Buzz Lightyear's Astro Blasters"
+  }
+},
+{
+  "type": "node",
+  "id": 1011446599,
+  "lat": 48.8712737,
+  "lon": 2.7745166,
+  "tags": {
+    "attraction": "roller_coaster",
+    "duration": "00:03:40",
+    "name": "Big Thunder Mountain",
+    "source": "survey",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/big-thunder-mountain/",
+    "wheelchair": "limited",
+    "wikidata": "Q859406"
+  }
+},
+{
+  "type": "node",
+  "id": 1012678087,
+  "lat": 48.8753427,
+  "lon": 2.7746950,
+  "tags": {
+    "attraction": "amusement_ride",
+    "name": "Le Pays des Contes de Fées, présenté par Vittel",
+    "name:de": "Le Pays des Contes de Fées, präsentiert von Vittel",
+    "name:en": "Le Pays des Contes de Fées, presented by Vittel",
+    "name:es": "Le Pays des Contes de Fées, presentado por Vittel",
+    "name:fr": "Le Pays des Contes de Fées, présenté par Vittel",
+    "source": "survey",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/le-pays-des-contes-de-fees/",
+    "wheelchair": "limited",
+    "wikidata": "Q3499909",
+    "wikipedia": "fr:Storybook Land Canal#Parc Disneyland Paris"
+  }
+},
+{
+  "type": "node",
+  "id": 1012694152,
+  "lat": 48.8753865,
+  "lon": 2.7741758,
+  "tags": {
+    "attraction": "roller_coaster",
+    "duration": "00:01:30",
+    "name": "Casey Jr. – le Petit Train du Cirque",
+    "source": "survey",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/casey-jr-le-petit-train-du-cirque/",
+    "wheelchair": "limited",
+    "wikidata": "Q2521960",
+    "wikipedia": "fr:Casey Jr Circus Train#Disneyland Paris"
+  }
+},
+{
+  "type": "node",
+  "id": 2596961709,
+  "lat": 48.8732478,
+  "lon": 2.7759372,
+  "tags": {
+    "attraction": "show",
+    "fee": "no",
+    "name": "La Galerie de la Belle au Bois Dormant",
+    "opening_hours": "Mo-Su,PH 08:30-20:15",
+    "source": "survey",
+    "tourism": "gallery",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/la-galerie-de-la-belle-au-bois-dormant/",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2905581667,
+  "lat": 48.8670380,
+  "lon": 2.7764714,
+  "tags": {
+    "name": "Rex",
+    "source": "knowledge;bing calé",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 2932069973,
+  "lat": 48.8710741,
+  "lon": 2.7788412,
+  "tags": {
+    "name": "Town Square",
+    "network": "Horse-Drawn Streetcars",
+    "public_transport": "stop_position",
+    "railway": "tram_stop",
+    "tourism": "attraction",
+    "tram": "yes",
+    "website": "https://www.disneylandparis.fr/parcs-et-activites/attractions/parc-disneyland/horse-drawn-streetcars.html"
+  }
+},
+{
+  "type": "node",
+  "id": 2999825244,
+  "lat": 48.8709089,
+  "lon": 2.7784603,
+  "tags": {
+    "name": "Main Street Vehicles",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/parcs-et-activites/attractions/parc-disneyland/main-street-vehicles.html"
+  }
+},
+{
+  "type": "node",
+  "id": 3065584403,
+  "lat": 48.8738905,
+  "lon": 2.7755609,
+  "tags": {
+    "addr:postcode": "77700",
+    "name": "Le Haricot magique",
+    "name:en": "The Beanstalk",
+    "name:fr": "le Haricot magique",
+    "natural": "tree",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4232097203,
+  "lat": 48.8728254,
+  "lon": 2.7768023,
+  "tags": {
+    "name": "Central Plaza",
+    "network": "Horse-Drawn Streetcars",
+    "public_transport": "stop_position",
+    "railway": "tram_stop",
+    "tourism": "attraction",
+    "tram": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5041144695,
+  "lat": 48.8744859,
+  "lon": 2.7798537,
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77777",
+    "addr:street": "Avenue Blanche Neige",
+    "name": "Mickey's PhilharMagic",
+    "name:en": "Mickey's PhilharMagic",
+    "name:fr": "Mickey et son Orchestre PhilharMagique",
+    "tourism": "attraction",
+    "website": "https://www.chroniquedisney.fr/parc/2018-mickey-orchestre-philharmagique.htm",
+    "wikidata": "Q1858262",
+    "wikipedia": "fr:Mickey's PhilharMagic"
+  }
+},
+{
+  "type": "node",
+  "id": 9418185128,
+  "lat": 48.8664721,
+  "lon": 2.7747913,
+  "tags": {
+    "attraction": "amusement_ride",
+    "name": "Cars ROAD TRIP",
+    "wheelchair": "yes",
+    "wikidata": "Q124745277",
+    "wikipedia": "fr:Cars Road Trip"
+  }
+},
+{
+  "type": "node",
+  "id": 9860326519,
+  "lat": 48.8653129,
+  "lon": 2.7795633,
+  "tags": {
+    "name": "F.R.I.D.A.Y.",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10235737797,
+  "lat": 48.8670825,
+  "lon": 2.7736520,
+  "tags": {
+    "material": "metal",
+    "name": "Tour à Fioul",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10237776187,
+  "lat": 48.8671940,
+  "lon": 2.7744580,
+  "tags": {
+    "material": "metal",
+    "name": "Le plus grand écrou du monde",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10237776191,
+  "lat": 48.8681647,
+  "lon": 2.7738109,
+  "tags": {
+    "name": "Copper Canyon Trafic Maze",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10237776192,
+  "lat": 48.8680771,
+  "lon": 2.7738654,
+  "tags": {
+    "name": "The Ghost Garage",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10238931122,
+  "lat": 48.8681291,
+  "lon": 2.7725473,
+  "tags": {
+    "name": "Cars-tastrophe Canyon",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10242998367,
+  "lat": 48.8678136,
+  "lon": 2.7742947,
+  "tags": {
+    "name": "Road Map",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11251453535,
+  "lat": 48.8740720,
+  "lon": 2.7792857,
+  "tags": {
+    "alt_name": "Space Mountain",
+    "attraction": "roller_coaster",
+    "duration": "00:02:18",
+    "name": "Star Wars Hyperspace Mountain",
+    "operator": "Euro Disney",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/space-mountain-mission-2/",
+    "wheelchair": "no",
+    "wikidata": "Q125670165",
+    "wikipedia": "fr:Space Mountain (Disneyland Paris)"
+  }
+},
+{
+  "type": "node",
+  "id": 11251510637,
+  "lat": 48.8734612,
+  "lon": 2.7795955,
+  "tags": {
+    "attraction": "expo",
+    "description": "Attraction d'après le film « Vingt Mille Lieues sous les Mers » (1954)",
+    "name": "Les Mystères du Nautilus",
+    "source": "Cadastre. Mise à jour : 2009; recalage bing",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/les-mysteres-du-nautilus/",
+    "wheelchair": "yes",
+    "wikidata": "Q3234087",
+    "wikipedia": "fr:Les Mystères du Nautilus"
+  }
+},
+{
+  "type": "node",
+  "id": 11263162318,
+  "lat": 48.8681109,
+  "lon": 2.7778898,
+  "tags": {
+    "alt_name": "Studio No5",
+    "attraction": "roller_coaster",
+    "duration": "00:02:20",
+    "name": "Crush's Coaster",
+    "source": "survey;BDOrtho IGN 2016",
+    "website:en": "http://www.disneylandparis.fr/attractions/parc-walt-disney-studios/crushs-coaster/",
+    "wheelchair": "no",
+    "wikidata": "Q1142089",
+    "wikipedia": "fr:Crush's Coaster"
+  }
+},
+{
+  "type": "node",
+  "id": 11276030959,
+  "lat": 48.8682805,
+  "lon": 2.7783643,
+  "tags": {
+    "attraction": "amusement_ride",
+    "capacity": "64",
+    "duration": "00:01:30",
+    "name": "Les Tapis Volants - Flying Carpets Over Agrabah®",
+    "source": "knowledge;bing calé",
+    "website": "https://www.disneylandparis.fr/attractions/parc-walt-disney-studios/les-tapis-volants-flying-carpets-over-agrabah/",
+    "wheelchair": "no",
+    "wikidata": "Q2744001",
+    "wikipedia": "fr:Tapis Volants d'Aladdin"
+  }
+},
+{
+  "type": "node",
+  "id": 11308499084,
+  "lat": 48.8748532,
+  "lon": 2.7760706,
+  "tags": {
+    "attraction": "dark_ride",
+    "duration": "00:10:00",
+    "name": "\"it's a small world\"",
+    "operator": "Euro DIsney Associés S.A.S.",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/its-a-small-world/",
+    "wikidata": "Q285105",
+    "wikipedia": "fr:It's a Small World"
+  }
+},
+{
+  "type": "node",
+  "id": 11309964890,
+  "lat": 48.8749098,
+  "lon": 2.7790507,
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77777",
+    "addr:street": "Avenue Blanche Neige",
+    "attraction": "amusement_ride",
+    "construction": "yes",
+    "duration": "00:04:30",
+    "name": "Star Tours : L'Aventure Continue",
+    "name:en": "Star Tours: The Adventures Continue*",
+    "name:es": "Star Tours: La Aventura continúa*",
+    "name:fr": "Star Tours : L'Aventure Continue",
+    "source": "Cadastre. Mise à jour : 2009;bing;survey",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/star-tours/",
+    "wikidata": "Q3496988",
+    "wikipedia": "fr:Star Tours: The Adventures Continue"
+  }
+},
+{
+  "type": "node",
+  "id": 11309964892,
+  "lat": 48.8744600,
+  "lon": 2.7737718,
+  "tags": {
+    "amenity": "theatre",
+    "attraction": "show",
+    "name": "Meet Mickey Mouse",
+    "name:en": "Meet Mickey Mouse",
+    "name:fr": "Rencontre avec Mickey Mouse",
+    "old_name": "Fantasy Festival Stage",
+    "source": "survey",
+    "tourism": "attraction",
+    "wall": "no",
+    "website": "https://www.disneylandparis.fr/boutiques/parc-disneyland/meet-mickey-photographs/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971759,
+  "lat": 48.8727322,
+  "lon": 2.7730287,
+  "tags": {
+    "name": "Pirate Lookout",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971760,
+  "lat": 48.8725063,
+  "lon": 2.7737763,
+  "tags": {
+    "name": "Le Ventre de la Terre",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971761,
+  "lat": 48.8728315,
+  "lon": 2.7726214,
+  "tags": {
+    "name": "Pegleg Point",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971762,
+  "lat": 48.8726092,
+  "lon": 2.7734659,
+  "tags": {
+    "name": "Rocher-Qui-Bascule",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971764,
+  "lat": 48.8727610,
+  "lon": 2.7731443,
+  "tags": {
+    "name": "Bottomless Pit",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11551971765,
+  "lat": 48.8727871,
+  "lon": 2.7732506,
+  "tags": {
+    "attraction": "maze",
+    "name": "Dead Man's Maze"
+  }
+},
+{
+  "type": "node",
+  "id": 11554182410,
+  "lat": 48.8730406,
+  "lon": 2.7734870,
+  "tags": {
+    "name": "Skull Rock",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 11807670770,
+  "lat": 48.8663286,
+  "lon": 2.7797811,
+  "tags": {
+    "name": "Gateway Portal",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12537370910,
+  "lat": 48.8727645,
+  "lon": 2.7730053,
+  "tags": {
+    "name": "Spyglass Hill",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12544309283,
+  "lat": 48.8710386,
+  "lon": 2.7788760,
+  "tags": {
+    "name": "Horse-Drawn Streetcars",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12593786581,
+  "lat": 48.8655063,
+  "lon": 2.7793052,
+  "tags": {
+    "name": "Doctor Strange: Mystery of the Mystics!",
+    "name:en": "Doctor Strange: Mystery of the Mystics!",
+    "name:fr": "Doctor Strange : Mystères Mystiques",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12593786582,
+  "lat": 48.8674986,
+  "lon": 2.7781470,
+  "tags": {
+    "name": "Animation Academy",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12593786585,
+  "lat": 48.8677512,
+  "lon": 2.7775691,
+  "tags": {
+    "name": "Rencontre avec Jessie ou ses amis",
+    "name:en": "Meet Jessie or her friends",
+    "name:es": "Encuentro con Jessie o amigos",
+    "name:fr": "Rencontre avec Jessie ou ses amis",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12661684287,
+  "lat": 48.8748237,
+  "lon": 2.7760908,
+  "tags": {
+    "attraction": "amusement_ride",
+    "wikidata": "Q285105"
+  }
+},
+{
+  "type": "node",
+  "id": 13444981714,
+  "lat": 48.8651721,
+  "lon": 2.7750893,
+  "tags": {
+    "addr:street": "Adventure Way",
+    "attraction": "show",
+    "description": "Nightly Disney & Pixar spectacular at Adventure Way. Features a quest with fireworks, water screen projections, drone displays, and a unique lake panorama.",
+    "description:fr": "Assistez à un spectacle nocturne unique qui illumine Adventure Way. Rejoignez les héros Disney dans un voyage captivant rythmé par des feux d’artifice éblouissants, des écrans d’eau, des drones aquatiques et un panorama inédit sur le lac.",
+    "name": "Disney Cascade of Lights",
+    "operator": "Euro Disney Associés S.A.S.",
+    "show": "nighttime",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.com/en-int/entertainment/disney-adventure-world/disney-cascade-of-lights"
+  }
+},
+{
+  "type": "node",
+  "id": 13546774400,
+  "lat": 48.8644596,
+  "lon": 2.7735272,
+  "tags": {
+    "addr:place": "World of Frozen",
+    "attraction": "show",
+    "description": "Experience A Celebration in Arendelle, a joyous, never-before-seen show in Arendelle Bay. Join the people of Arendelle, including Elsa, Anna, Olaf and Kristoff as they come together for a magical moment that brings their cherished traditions to life.",
+    "description:fr": "Assistez à Célébration à Arendelle, un spectacle festif inédit sur la Baie d’Arendelle. Rejoignez les habitants du royaume, dont Elsa, Anna, Olaf et Kristoff, alors qu’ils se rassemblent pour un moment magique autour de leurs traditions les plus chères.",
+    "name": "Snowflower Festival",
+    "operator": "Euro Disney Associés S.A.S.",
+    "show": "daytime",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.com/en-int/destinations/disney-adventure-world/world-of-frozen"
+  }
+},
+{
+  "type": "way",
+  "id": 26625259,
+  "center": {
+    "lat": 48.8725940,
+    "lon": 2.7733173
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Adventure Isle",
+    "source": "survey;knowledge",
+    "tourism": "attraction",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/adventureland/attractions/adventure-isle.xhtml",
+    "wikidata": "Q2074173",
+    "wikipedia": "fr:Adventure Isle"
+  }
+},
+{
+  "type": "way",
+  "id": 40362832,
+  "center": {
+    "lat": 48.8720798,
+    "lon": 2.7718493
+  },
+  "tags": {
+    "addr:city": "Chessy",
+    "addr:place": "Adventureland",
+    "addr:postcode": "77700",
+    "attraction": "roller_coaster",
+    "name": "Indiana Jones™ and the Temple of Peril",
+    "name:en": "Indiana Jones™ and the Temple of Peril",
+    "name:fr": "Indiana Jones™ et le Temple du Péril",
+    "operator": "Euro Disney Associés S.A.S.",
+    "size": "140",
+    "source": "survey;local knowledge;aerial imagery;osm notes",
+    "website": "https://www.disneylandparis.com/fr-fr/attractions/parc-disneyland/indiana-jones-et-le-temple-du-peril/",
+    "wheelchair": "no",
+    "wikidata": "Q1571282",
+    "wikipedia": "fr:Indiana Jones et le Temple du Péril"
+  }
+},
+{
+  "type": "way",
+  "id": 49734660,
+  "center": {
+    "lat": 48.8676418,
+    "lon": 2.7805393
+  },
+  "tags": {
+    "building": "yes",
+    "building:colour": "#d9dad2",
+    "height": "33",
+    "man_made": "water_tower",
+    "min_height": "12",
+    "name": "Earffel Tower",
+    "name:en": "Earffel Tower",
+    "name:fr": "Château d'Eaureilles",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 51547889,
+  "center": {
+    "lat": 48.8668267,
+    "lon": 2.7764206
+  },
+  "tags": {
+    "attraction": "roller_coaster",
+    "name": "RC Racer",
+    "source": "knowledge;bing calé",
+    "wheelchair": "no",
+    "wikidata": "Q1108603",
+    "wikipedia": "fr:RC Racer"
+  }
+},
+{
+  "type": "way",
+  "id": 51551435,
+  "center": {
+    "lat": 48.8739935,
+    "lon": 2.7745846
+  },
+  "tags": {
+    "attraction": "carousel",
+    "name": "Dumbo the Flying Elephant",
+    "source": "yahoo;survey",
+    "tourism": "attraction",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/fantasyland/attractions/dumbo-the-flying-elephant.xhtml",
+    "wikidata": "Q964565",
+    "wikipedia": "fr:Dumbo the Flying Elephant"
+  }
+},
+{
+  "type": "way",
+  "id": 52027319,
+  "center": {
+    "lat": 48.8676887,
+    "lon": 2.7780413
+  },
+  "tags": {
+    "attraction": "amusement_ride",
+    "duration": "00:01:30",
+    "name": "Cars Quatre Roues Rallye",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-walt-disney-studios/cars-quatre-roues-rallye/",
+    "wikidata": "Q2474524",
+    "wikipedia": "fr:Cars Quatre Roues Rallye"
+  }
+},
+{
+  "type": "way",
+  "id": 54032696,
+  "center": {
+    "lat": 48.8729093,
+    "lon": 2.7737363
+  },
+  "tags": {
+    "area": "yes",
+    "building": "yes",
+    "name": "Pirate Galleon",
+    "name:en": "Pirate Galleon",
+    "name:fr": "Le Galion des Pirates",
+    "source": "Yahoo;survey",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 60629116,
+  "center": {
+    "lat": 48.8702766,
+    "lon": 2.7751740
+  },
+  "tags": {
+    "area": "no",
+    "attraction": "boat_ride",
+    "duration": "00:12:00",
+    "name": "Thunder Mesa Riverboat Landing",
+    "oneway": "yes",
+    "route": "ferry",
+    "source": "survey;knowledge;bing 2017",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/thunder-mesa-riverboat-landing/",
+    "wikidata": "Q661060",
+    "wikipedia": "fr:Rivers of America"
+  }
+},
+{
+  "type": "way",
+  "id": 78038327,
+  "center": {
+    "lat": 48.8673720,
+    "lon": 2.7782124
+  },
+  "tags": {
+    "amenity": "theatre",
+    "attraction": "show",
+    "building": "yes",
+    "name": "Animation Celebration",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+    "website": "https://www.disneylandparis.fr/attractions/parc-walt-disney-studios/art-of-disney-animation/",
+    "wheelchair": "yes",
+    "wikidata": "Q4797232"
+  }
+},
+{
+  "type": "way",
+  "id": 78038406,
+  "center": {
+    "lat": 48.8698352,
+    "lon": 2.7774229
+  },
+  "tags": {
+    "area": "yes",
+    "building": "yes",
+    "name": "Grand Canyon Diorama",
+    "source": "Cadastre. Mise à jour : 2010;survey",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "way",
+  "id": 78038415,
+  "center": {
+    "lat": 48.8744043,
+    "lon": 2.7751649
+  },
+  "tags": {
+    "alt_name:en": "Alice's Tea Party",
+    "alt_name:fr": "Les Tasses",
+    "attraction": "amusement_ride",
+    "building": "roof",
+    "duration": "00:01:30",
+    "layer": "1",
+    "name": "Mad Hatter's Tea Cups",
+    "roof:colour": "#447C9F",
+    "roof:shape": "dome",
+    "source": "Cadastre. Mise à jour : 2010;survey",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/mad-hatters-tea-cups/",
+    "wikidata": "Q2611856",
+    "wikipedia": "fr:Mad Tea Party"
+  }
+},
+{
+  "type": "way",
+  "id": 78038896,
+  "center": {
+    "lat": 48.8682093,
+    "lon": 2.7786297
+  },
+  "tags": {
+    "attraction": "fastpass",
+    "building": "yes",
+    "fastpass": "Flying Carpets Over Agrabah",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010"
+  }
+},
+{
+  "type": "way",
+  "id": 91449008,
+  "center": {
+    "lat": 48.8728201,
+    "lon": 2.7731585
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Ben Gunn's Cave",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 102346965,
+  "center": {
+    "lat": 48.8738522,
+    "lon": 2.7787466
+  },
+  "tags": {
+    "attraction": "fastpass",
+    "building": "roof",
+    "fastpass": "Space Mountain: Mission 2",
+    "layer": "1",
+    "wall": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 159671422,
+  "center": {
+    "lat": 48.8748635,
+    "lon": 2.7754844
+  },
+  "tags": {
+    "attraction": "show",
+    "building": "yes",
+    "description": "1992-16/08/2008 World Chorus",
+    "name": "Princess Pavilion",
+    "name:en": "Princess Pavilion",
+    "name:fr": "Pavillon des Princesses",
+    "old_name": "World Chorus",
+    "source": "survey",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/pavillon-des-princesses/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 188317918,
+  "center": {
+    "lat": 48.8755318,
+    "lon": 2.7748507
+  },
+  "tags": {
+    "area": "no",
+    "attraction": "tow_boat_ride",
+    "foot": "yes",
+    "line": "yes",
+    "motor_vehicle": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 204210418,
+  "center": {
+    "lat": 48.8732336,
+    "lon": 2.7789262
+  },
+  "tags": {
+    "attraction": "amusement_ride",
+    "building": "yes",
+    "name": "Autopia",
+    "official_name": "Autopia, présenté par Avis",
+    "official_name:de": "Autopia, präsentiert von Avis",
+    "official_name:en": "Autopia, presented by Avis",
+    "official_name:es": "Autopia, presentado por Avis",
+    "official_name:fr": "Autopia, présenté par Avis",
+    "wikidata": "Q2193497",
+    "wikipedia": "fr:Autopia"
+  }
+},
+{
+  "type": "way",
+  "id": 205732748,
+  "center": {
+    "lat": 48.8701147,
+    "lon": 2.7814781
+  },
+  "tags": {
+    "addr:postcode": "77700",
+    "alt_name": "DLP",
+    "branch": "Paris",
+    "branch:en": "Paris",
+    "brand": "Disney Parks",
+    "brand:en": "Disney Parks",
+    "name": "Disneyland Paris",
+    "name:ja": "ディズニーランド・パリ",
+    "name:zh": "巴黎迪士尼乐园",
+    "old_name": "Euro Disneyland",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "operator": "Walt Disney Company by Euro Disney S.C.A.",
+    "tourism": "theme_park",
+    "website": "http://www.disneylandparis.com",
+    "wheelchair": "yes",
+    "wikidata": "Q206521",
+    "wikipedia": "fr:Disneyland Paris"
+  }
+},
+{
+  "type": "way",
+  "id": 205734843,
+  "center": {
+    "lat": 48.8654083,
+    "lon": 2.7763570
+  },
+  "tags": {
+    "branch": "Disney Adventure World",
+    "brand": "Disney Parks",
+    "brand:en": "Disney Parks",
+    "name": "Disney Adventure World",
+    "operator": "Euro Disney SCA/The Walt Disney Company",
+    "tourism": "theme_park",
+    "website": "https://www.disneylandparis.com/en-int/destinations/disney-adventure-world/",
+    "wikidata": "Q764906",
+    "wikipedia": "fr:Disney Adventure World"
+  }
+},
+{
+  "type": "way",
+  "id": 296527341,
+  "center": {
+    "lat": 48.8733353,
+    "lon": 2.7758123
+  },
+  "tags": {
+    "area": "yes",
+    "barrier": "kerb",
+    "highway": "footway",
+    "name": "Excalibur",
+    "source": "survey/Apple Map;recalage BDOrtho IGN 2018",
+    "surface": "paving_stones",
+    "tourism": "attraction",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 296573532,
+  "center": {
+    "lat": 48.8735632,
+    "lon": 2.7783838
+  },
+  "tags": {
+    "attraction": "amusement_ride",
+    "duration": "00:01:30",
+    "name": "Orbitron®",
+    "name:fr": "Orbitron",
+    "source": "survey",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/orbitron/",
+    "wikidata": "Q2776790",
+    "wikipedia": "fr:Orbitron"
+  }
+},
+{
+  "type": "way",
+  "id": 302301688,
+  "center": {
+    "lat": 48.8737390,
+    "lon": 2.7753723
+  },
+  "tags": {
+    "attraction": "carousel",
+    "building": "yes",
+    "building:levels": "2",
+    "duration": "00:01:30;00:02:00;00:02:30;",
+    "name": "Le Carrousel de Lancelot",
+    "roof:colour": "#E0B0FF",
+    "roof:shape": "cone",
+    "source": "Cadastre. Mise à jour : 2010;recalage bing;survey",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/le-carrousel-de-lancelot/",
+    "wheelchair": "limited",
+    "wikidata": "Q2940343",
+    "wikipedia": "fr:Carrousel des parcs Disney#Disneyland Paris"
+  }
+},
+{
+  "type": "way",
+  "id": 395168218,
+  "center": {
+    "lat": 48.8677325,
+    "lon": 2.7757210
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168219,
+  "center": {
+    "lat": 48.8677220,
+    "lon": 2.7756836
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168220,
+  "center": {
+    "lat": 48.8677116,
+    "lon": 2.7756467
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168221,
+  "center": {
+    "lat": 48.8678648,
+    "lon": 2.7760844
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168222,
+  "center": {
+    "lat": 48.8679350,
+    "lon": 2.7759876
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168223,
+  "center": {
+    "lat": 48.8678293,
+    "lon": 2.7760447
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168224,
+  "center": {
+    "lat": 48.8679064,
+    "lon": 2.7760402
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168225,
+  "center": {
+    "lat": 48.8678939,
+    "lon": 2.7760478
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168226,
+  "center": {
+    "lat": 48.8678375,
+    "lon": 2.7759365
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168227,
+  "center": {
+    "lat": 48.8678379,
+    "lon": 2.7759811
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168228,
+  "center": {
+    "lat": 48.8679493,
+    "lon": 2.7756764
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 395168229,
+  "center": {
+    "lat": 48.8680445,
+    "lon": 2.7756754
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "oneway": "yes",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 555005100,
+  "center": {
+    "lat": 48.8738367,
+    "lon": 2.7725169
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "indoor": "yes",
+    "layer": "1",
+    "manufacturer": "Intamin Amusement Rides",
+    "name": "Pirates of the Caribbean",
+    "oneway": "yes",
+    "tunnel": "yes",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 555315790,
+  "center": {
+    "lat": 48.8737568,
+    "lon": 2.7737456
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "suspended",
+    "fee": "no",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "name": "Peter Pan's Flight",
+    "oneway": "-1"
+  }
+},
+{
+  "type": "way",
+  "id": 555537381,
+  "center": {
+    "lat": 48.8701984,
+    "lon": 2.7772596
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "omnimover",
+    "fee": "no",
+    "indoor": "yes",
+    "level": "-2",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "manufacturer:wikidata": "Q546697",
+    "omnimover": "yes",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 555537392,
+  "center": {
+    "lat": 48.8736095,
+    "lon": 2.7774671
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "indoor": "yes",
+    "name": "Buzz Lightyear Laser Blast",
+    "omnimover": "yes",
+    "oneway": "yes",
+    "park_ride": "track"
+  }
+},
+{
+  "type": "way",
+  "id": 775180147,
+  "center": {
+    "lat": 48.8722918,
+    "lon": 2.7760543
+  },
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77777",
+    "alt_name": "DLP",
+    "branch": "Disneyland Paris",
+    "branch:en": "Disneyland Paris",
+    "brand": "Disney Parks",
+    "brand:en": "Disney Parks",
+    "check_date": "2024-08-04",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "internet_access:ssid": "Disneyland Paris",
+    "name": "Parc Disneyland",
+    "name:en": "Disneyland Park",
+    "name:ja": "ディズニーランドパリ",
+    "name:zh": "迪士尼乐园",
+    "old_name": "Euro Disneyland",
+    "operator": "Euro Disney SCA",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+33 1 60 30 60 53",
+    "source": "survey;local knowledge",
+    "tourism": "theme_park",
+    "website": "https://www.disneylandparis.com/",
+    "website:en": "https://www.disneylandparis.com/en-int/",
+    "website:fr": "https://www.disneylandparis.com/fr-fr/destinations/parc-disneyland/",
+    "wheelchair": "yes",
+    "wikidata": "Q2313567",
+    "wikipedia": "fr:Parc Disneyland (Paris)",
+    "wikipedia:en": "Disneyland_Park_(Paris)"
+  }
+},
+{
+  "type": "way",
+  "id": 1086799532,
+  "center": {
+    "lat": 48.8639528,
+    "lon": 2.7729866
+  },
+  "tags": {
+    "attraction": "log_flume",
+    "building": "yes",
+    "check_date": "2026-02-05",
+    "fee": "no",
+    "layer": "1",
+    "name": "Frozen Ever After",
+    "opening_date": "2026-03-29",
+    "wikidata": "Q20164536",
+    "wikipedia:fr": "Frozen Ever After"
+  }
+},
+{
+  "type": "way",
+  "id": 1151087818,
+  "center": {
+    "lat": 48.8652794,
+    "lon": 2.7792350
+  },
+  "tags": {
+    "area": "yes",
+    "building:levels": "1",
+    "name": "Avengers Quinjet",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1181614030,
+  "center": {
+    "lat": 48.8742212,
+    "lon": 2.7721656
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "indoor": "yes",
+    "layer": "2",
+    "manufacturer": "Intamin Amusement Rides",
+    "oneway": "yes",
+    "tunnel": "yes",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 1212131784,
+  "center": {
+    "lat": 48.8692589,
+    "lon": 2.7742613
+  },
+  "tags": {
+    "area": "no",
+    "attraction": "boat_ride",
+    "name": "Thunder Mesa Riverboat Landing",
+    "oneway": "yes",
+    "route": "ferry",
+    "source": "survey;knowledge;bing 2017",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/thunder-mesa-riverboat-landing/",
+    "wikidata": "Q661060",
+    "wikipedia": "fr:Rivers of America"
+  }
+},
+{
+  "type": "way",
+  "id": 1223755258,
+  "center": {
+    "lat": 48.8703370,
+    "lon": 2.7772270
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building": "yes",
+    "dark_ride": "omnimover",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "name": "Phantom Manor",
+    "wikidata": "Q2710077",
+    "wikipedia": "fr:Phantom Manor"
+  }
+},
+{
+  "type": "way",
+  "id": 1224802967,
+  "center": {
+    "lat": 48.8711319,
+    "lon": 2.7764191
+  },
+  "tags": {
+    "area": "yes",
+    "building:part": "yes",
+    "name": "Thunder Mesa Riverboat Landing",
+    "tourism": "attraction",
+    "wikidata": "Q3319611",
+    "wikipedia": "fr:Thunder Mesa Riverboat Landing"
+  }
+},
+{
+  "type": "way",
+  "id": 1224807682,
+  "center": {
+    "lat": 48.8714968,
+    "lon": 2.7755260
+  },
+  "tags": {
+    "area": "yes",
+    "building:part": "yes",
+    "name": "Rustler Roundup Shootin' Gallery",
+    "tourism": "attraction",
+    "wikidata": "Q3453570",
+    "wikipedia": "fr:Rustler Roundup Shootin' Gallery"
+  }
+},
+{
+  "type": "way",
+  "id": 1230887898,
+  "center": {
+    "lat": 48.8723327,
+    "lon": 2.7737198
+  },
+  "tags": {
+    "area": "yes",
+    "name": "La Cabane des Robinson",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.com/attractions/parc-disneyland/la-cabane-des-robinson/",
+    "wikidata": "Q3506650",
+    "wikipedia": "fr:La Cabane des Robinson"
+  }
+},
+{
+  "type": "way",
+  "id": 1234456621,
+  "center": {
+    "lat": 48.8724481,
+    "lon": 2.7754963
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Le Passage Enchanté d'Aladdin",
+    "tourism": "attraction",
+    "wikidata": "Q2262939",
+    "wikipedia": "fr:Le Passage enchanté d'Aladdin"
+  }
+},
+{
+  "type": "way",
+  "id": 1237114453,
+  "center": {
+    "lat": 48.8740589,
+    "lon": 2.7722065
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "indoor": "yes",
+    "layer": "1",
+    "manufacturer": "Intamin Amusement Rides",
+    "oneway": "yes",
+    "tunnel": "yes",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 1237114454,
+  "center": {
+    "lat": 48.8744406,
+    "lon": 2.7720426
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "indoor": "yes",
+    "layer": "1",
+    "manufacturer": "Intamin Amusement Rides",
+    "oneway": "yes",
+    "tunnel": "yes",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 1243661105,
+  "center": {
+    "lat": 48.8740493,
+    "lon": 2.7722848
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building": "yes",
+    "layer": "1",
+    "name": "Pirates of the Caribbean",
+    "website": "https://www.disneylandparis.com/attractions/parc-disneyland/pirates-of-the-caribbean/",
+    "website:en": "https://www.disneylandparis.com/en-en/attractions/parc-disneyland/pirates-of-the-caribbean/",
+    "website:fr": "https://www.disneylandparis.com/fr-fr/attractions/parc-disneyland/pirates-of-the-caribbean/",
+    "wikidata": "Q1713564",
+    "wikipedia": "fr:Pirates of the Caribbean"
+  }
+},
+{
+  "type": "way",
+  "id": 1267201555,
+  "center": {
+    "lat": 48.8732854,
+    "lon": 2.7753076
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building:part": "yes",
+    "duration": "00:02:00",
+    "name": "Blanche-Neige et les Sept Nains®",
+    "wikidata": "Q3487196",
+    "wikipedia": "fr:Snow White's Enchanted Wish"
+  }
+},
+{
+  "type": "way",
+  "id": 1267201556,
+  "center": {
+    "lat": 48.8733717,
+    "lon": 2.7750174
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building:part": "yes",
+    "duration": "00:03:30",
+    "name": "Les Voyages de Pinocchio",
+    "wikidata": "Q3388788",
+    "wikipedia": "fr:Pinocchio's Daring Journey"
+  }
+},
+{
+  "type": "way",
+  "id": 1269067918,
+  "center": {
+    "lat": 48.8680317,
+    "lon": 2.7754198
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V."
+  }
+},
+{
+  "type": "way",
+  "id": 1269067919,
+  "center": {
+    "lat": 48.8680030,
+    "lon": 2.7753431
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V."
+  }
+},
+{
+  "type": "way",
+  "id": 1269067920,
+  "center": {
+    "lat": 48.8679799,
+    "lon": 2.7754445
+  },
+  "tags": {
+    "attraction": "dark_ride",
+    "dark_ride": "trackless",
+    "indoor": "yes",
+    "manufacturer": "Vekoma Rides Manufacturing B.V."
+  }
+},
+{
+  "type": "way",
+  "id": 1269073076,
+  "center": {
+    "lat": 48.8679621,
+    "lon": 2.7757085
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building": "yes",
+    "building:part": "yes",
+    "dark_ride": "trackless",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "name": "Ratatouille : L'Aventure totalement toquée de Rémy",
+    "wikidata": "Q7295489",
+    "wikipedia": "fr:Ratatouille : L'Aventure totalement toquée de Rémy"
+  }
+},
+{
+  "type": "way",
+  "id": 1269081340,
+  "center": {
+    "lat": 48.8671086,
+    "lon": 2.7767451
+  },
+  "tags": {
+    "attraction": "amusement_ride",
+    "name": "Slinky® Dog Zigzag Spin",
+    "wikidata": "Q3486711",
+    "wikipedia": "fr:Slinky Dog Zig-Zag Spin"
+  }
+},
+{
+  "type": "way",
+  "id": 1271483949,
+  "center": {
+    "lat": 48.8671193,
+    "lon": 2.7774178
+  },
+  "tags": {
+    "attraction": "drop_tower",
+    "building": "tower",
+    "name": "Toy Soldiers Parachute Drop",
+    "wikidata": "Q1108580",
+    "wikipedia": "fr:Toy Soldiers Parachute Drop"
+  }
+},
+{
+  "type": "way",
+  "id": 1271516009,
+  "center": {
+    "lat": 48.8645107,
+    "lon": 2.7799485
+  },
+  "tags": {
+    "attraction": "roller_coaster",
+    "name": "Avengers Assemble: Flight Force",
+    "wikidata": "Q111708685",
+    "wikipedia": "fr:Avengers Assemble: Flight Force"
+  }
+},
+{
+  "type": "way",
+  "id": 1271516013,
+  "center": {
+    "lat": 48.8659506,
+    "lon": 2.7790933
+  },
+  "tags": {
+    "area": "yes",
+    "building:part": "yes",
+    "name": "Spider-Man W.E.B. Adventure",
+    "tourism": "attraction",
+    "wikidata": "Q85802593",
+    "wikipedia": "fr:Web Slingers: A Spider-Man Adventure"
+  }
+},
+{
+  "type": "way",
+  "id": 1271516015,
+  "center": {
+    "lat": 48.8652916,
+    "lon": 2.7788374
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Hero Training Center",
+    "tourism": "attraction",
+    "wikipedia": "fr:Hero Training Center"
+  }
+},
+{
+  "type": "way",
+  "id": 1294761769,
+  "center": {
+    "lat": 48.8694089,
+    "lon": 2.7734792
+  },
+  "tags": {
+    "area": "no",
+    "attraction": "boat_ride",
+    "covered": "yes",
+    "name": "Thunder Mesa Riverboat Landing",
+    "oneway": "yes",
+    "route": "ferry",
+    "source": "survey;knowledge;bing 2017",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/thunder-mesa-riverboat-landing/",
+    "wikidata": "Q661060",
+    "wikipedia": "fr:Rivers of America"
+  }
+},
+{
+  "type": "way",
+  "id": 1338725879,
+  "center": {
+    "lat": 48.8662563,
+    "lon": 2.7764368
+  },
+  "tags": {
+    "attraction": "amusement_ride",
+    "building": "yes",
+    "name": "Raiponce Tangled Spin",
+    "name:en": "Rapunzel Tangled Spin",
+    "name:fr": "Raiponce Tangled Spin"
+  }
+},
+{
+  "type": "way",
+  "id": 1355437020,
+  "center": {
+    "lat": 48.8714416,
+    "lon": 2.7774838
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Statue of Liberty Tableau",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1356532182,
+  "center": {
+    "lat": 48.8737897,
+    "lon": 2.7737526
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "dark_ride",
+    "building": "yes",
+    "dark_ride": "suspended",
+    "manufacturer": "Vekoma Rides Manufacturing B.V.",
+    "name": "Peter Pan's Flight",
+    "wikidata": "Q2916451",
+    "wikipedia": "fr:Peter Pan's Flight"
+  }
+},
+{
+  "type": "way",
+  "id": 1359852391,
+  "center": {
+    "lat": 48.8731805,
+    "lon": 2.7760143
+  },
+  "tags": {
+    "area": "yes",
+    "height": "164",
+    "name": "Château de la Belle au bois dormant",
+    "name:en": "Sleeping Beauty Castle",
+    "tourism": "attraction",
+    "wheelchair": "yes",
+    "wikidata": "Q2746222",
+    "wikipedia": "fr:Château de la Belle au bois dormant"
+  }
+},
+{
+  "type": "way",
+  "id": 1361666414,
+  "center": {
+    "lat": 48.8752176,
+    "lon": 2.7760729
+  },
+  "tags": {
+    "attraction": "log_flume",
+    "indoor": "yes",
+    "oneway": "yes",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 1469626864,
+  "center": {
+    "lat": 48.8681619,
+    "lon": 2.7791611
+  },
+  "tags": {
+    "amenity": "theatre",
+    "attraction": "show",
+    "building:part": "yes",
+    "capacity": "1100",
+    "name": "Animagique Theater",
+    "source": "knowledge;bing calé",
+    "tourism": "attraction",
+    "website:en": "http://parks.disneylandparis.co.uk/walt-disney-studios-park/lots/toon-studio/attractions/animagique.xhtml",
+    "wheelchair": "yes",
+    "wikidata": "Q2849992",
+    "wikipedia": "fr:Animagique"
+  }
+},
+{
+  "type": "way",
+  "id": 1469626865,
+  "center": {
+    "lat": 48.8672824,
+    "lon": 2.7802149
+  },
+  "tags": {
+    "amenity": "theatre",
+    "attraction": "show",
+    "building:part": "yes",
+    "name": "Studio Theater",
+    "roof:shape": "round",
+    "source": "survey",
+    "website:en": "http://parks.disneylandparis.co.uk/walt-disney-studios-park/lots/production-courtyard/attractions/cinemagique.xhtml",
+    "wheelchair": "no",
+    "wikidata": "Q2973072",
+    "wikipedia": "fr:Cinémagique"
+  }
+},
+{
+  "type": "way",
+  "id": 1469626867,
+  "center": {
+    "lat": 48.8664262,
+    "lon": 2.7786377
+  },
+  "tags": {
+    "addr:housename": "Hollywood Tower Hotel Show Building",
+    "attraction": "drop_tower",
+    "building:part": "yes",
+    "name": "The Twilight Zone Tower of Terror",
+    "wikidata": "Q1776103",
+    "wikipedia": "fr:The Twilight Zone Tower of Terror"
+  }
+},
+{
+  "type": "way",
+  "id": 1475108870,
+  "center": {
+    "lat": 48.8656819,
+    "lon": 2.7739512
+  },
+  "tags": {
+    "area": "yes",
+    "building": "yes",
+    "name": "Rencontre avec Mickey Mouse",
+    "name:fr": "Meet Mickey Mouse",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1485420825,
+  "center": {
+    "lat": 48.8642376,
+    "lon": 2.7730293
+  },
+  "tags": {
+    "area": "yes",
+    "building:part": "yes",
+    "name": "Rencontre Royale",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "relation",
+  "id": 3084842,
+  "center": {
+    "lat": 48.8719695,
+    "lon": 2.7759322
+  },
+  "tags": {
+    "attraction": "train",
+    "duration": "00:30:00",
+    "name": "Disneyland Railroad",
+    "operator": "Disney Parks and Resorts",
+    "route": "train",
+    "type": "route",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/disneyland-railroad/",
+    "wikidata": "Q2192677",
+    "wikipedia": "fr:Disneyland Railroad (Paris)"
+  }
+}
+
+  ]
+}

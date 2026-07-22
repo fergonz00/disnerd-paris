@@ -1,0 +1,353 @@
+[
+ {
+  "pid": "dlp",
+  "tierra": "🏛️ Main Street, U.S.A.",
+  "nombre": "Disneyland Railroad",
+  "lat": 48.8719695,
+  "lon": 2.7759322,
+  "osm": "Disneyland Railroad",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🤠 Frontierland",
+  "nombre": "Big Thunder Mountain",
+  "lat": 48.8712737,
+  "lon": 2.7745166,
+  "osm": "Big Thunder Mountain",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🤠 Frontierland",
+  "nombre": "Phantom Manor",
+  "lat": 48.870337,
+  "lon": 2.777227,
+  "osm": "Phantom Manor",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🤠 Frontierland",
+  "nombre": "Thunder Mesa Riverboat Landing",
+  "lat": 48.8702766,
+  "lon": 2.775174,
+  "osm": "Thunder Mesa Riverboat Landing",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🌍 Adventureland",
+  "nombre": "Pirates of the Caribbean",
+  "lat": 48.8738367,
+  "lon": 2.7725169,
+  "osm": "Pirates of the Caribbean",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🌍 Adventureland",
+  "nombre": "Indiana Jones et le Temple du Péril",
+  "lat": 48.8720798,
+  "lon": 2.7718493,
+  "osm": "Indiana Jones™ and the Temple of Peril",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🌍 Adventureland",
+  "nombre": "Adventure Isle",
+  "lat": 48.872594,
+  "lon": 2.7733173,
+  "osm": "Adventure Isle",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🌍 Adventureland",
+  "nombre": "La Cabane des Robinson",
+  "lat": 48.8723327,
+  "lon": 2.7737198,
+  "osm": "La Cabane des Robinson",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🌍 Adventureland",
+  "nombre": "Le Passage Enchanté d'Aladdin",
+  "lat": 48.8724481,
+  "lon": 2.7754963,
+  "osm": "Le Passage Enchanté d'Aladdin",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Le Château de la Belle au Bois Dormant",
+  "lat": 48.8731805,
+  "lon": 2.7760143,
+  "osm": "Château de la Belle au bois dormant",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "It's a Small World",
+  "lat": 48.8748532,
+  "lon": 2.7760706,
+  "osm": "\"it's a small world\"",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Peter Pan's Flight",
+  "lat": 48.8737568,
+  "lon": 2.7737456,
+  "osm": "Peter Pan's Flight",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Le Pays des Contes de Fées",
+  "lat": 48.8753427,
+  "lon": 2.774695,
+  "osm": "Le Pays des Contes de Fées, présenté par Vittel",
+  "tipo": "parcial"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Alice's Curious Labyrinth",
+  "lat": 48.87449,
+  "lon": 2.7744865,
+  "osm": "Alice's Curious Labyrinth",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Mad Hatter's Tea Cups",
+  "lat": 48.8744043,
+  "lon": 2.7751649,
+  "osm": "Mad Hatter's Tea Cups",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Dumbo the Flying Elephant",
+  "lat": 48.8739935,
+  "lon": 2.7745846,
+  "osm": "Dumbo the Flying Elephant",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Casey Jr. — le Petit Train du Cirque",
+  "lat": 48.8753865,
+  "lon": 2.7741758,
+  "osm": "Casey Jr. – le Petit Train du Cirque",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Blanche-Neige et les Sept Nains",
+  "lat": 48.8732854,
+  "lon": 2.7753076,
+  "osm": "Blanche-Neige et les Sept Nains®",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Les Voyages de Pinocchio",
+  "lat": 48.8733717,
+  "lon": 2.7750174,
+  "osm": "Les Voyages de Pinocchio",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🏰 Fantasyland",
+  "nombre": "Le Carrousel de Lancelot",
+  "lat": 48.873739,
+  "lon": 2.7753723,
+  "osm": "Le Carrousel de Lancelot",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Star Wars Hyperspace Mountain",
+  "lat": 48.874072,
+  "lon": 2.7792857,
+  "osm": "Star Wars Hyperspace Mountain",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Buzz Lightyear Laser Blast",
+  "lat": 48.8735115,
+  "lon": 2.7778416,
+  "osm": "Buzz Lightyear Laser Blast",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Star Tours: The Adventures Continue",
+  "lat": 48.8749098,
+  "lon": 2.7790507,
+  "osm": "Star Tours : L'Aventure Continue",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Autopia",
+  "lat": 48.8732336,
+  "lon": 2.7789262,
+  "osm": "Autopia",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Orbitron",
+  "lat": 48.8735632,
+  "lon": 2.7783838,
+  "osm": "Orbitron®",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Les Mystères du Nautilus",
+  "lat": 48.8734612,
+  "lon": 2.7795955,
+  "osm": "Les Mystères du Nautilus",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "🚀 Discoveryland",
+  "nombre": "Mickey et son Orchestre PhilharMagique",
+  "lat": 48.8744859,
+  "lon": 2.7798537,
+  "osm": "Mickey's PhilharMagic",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "❄️ World of Frozen",
+  "nombre": "Frozen Ever After",
+  "lat": 48.8639528,
+  "lon": 2.7729866,
+  "osm": "Frozen Ever After",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "⚡ Avengers Campus",
+  "nombre": "Avengers Assemble: Flight Force",
+  "lat": 48.8645107,
+  "lon": 2.7799485,
+  "osm": "Avengers Assemble: Flight Force",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "⚡ Avengers Campus",
+  "nombre": "Spider-Man W.E.B. Adventure",
+  "lat": 48.8659506,
+  "lon": 2.7790933,
+  "osm": "Spider-Man W.E.B. Adventure",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Ratatouille: The Adventure",
+  "lat": 48.8679621,
+  "lon": 2.7757085,
+  "osm": "Ratatouille : L'Aventure totalement toquée de Rémy",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Crush's Coaster",
+  "lat": 48.8681109,
+  "lon": 2.7778898,
+  "osm": "Crush's Coaster",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Slinky Dog Zigzag Spin",
+  "lat": 48.8671086,
+  "lon": 2.7767451,
+  "osm": "Slinky® Dog Zigzag Spin",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Toy Soldiers Parachute Drop",
+  "lat": 48.8671193,
+  "lon": 2.7774178,
+  "osm": "Toy Soldiers Parachute Drop",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "RC Racer",
+  "lat": 48.8668267,
+  "lon": 2.7764206,
+  "osm": "RC Racer",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Cars Road Trip",
+  "lat": 48.8664721,
+  "lon": 2.7747913,
+  "osm": "Cars ROAD TRIP",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎬 World of Pixar",
+  "nombre": "Cars Quatre Roues Rallye",
+  "lat": 48.8676887,
+  "lon": 2.7780413,
+  "osm": "Cars Quatre Roues Rallye",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🌟 Adventure Way",
+  "nombre": "Raiponce Tangled Spin",
+  "lat": 48.8662563,
+  "lon": 2.7764368,
+  "osm": "Raiponce Tangled Spin",
+  "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "🎭 Production Courtyard",
+  "nombre": "The Twilight Zone Tower of Terror",
+  "lat": 48.8664262,
+  "lon": 2.7786377,
+  "osm": "The Twilight Zone Tower of Terror",
+  "tipo": "exacto"
+ }
+]
