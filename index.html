@@ -3478,6 +3478,7 @@
 
   // ─── NAVEGACIÓN ─────────────────────────────────────
   function irA(id){
+    if(id !== 'pantalla-dlp' && id !== 'pantalla-studios') window._volverEstrat = null;
     document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
     document.getElementById(id).classList.add('activa');
     window.scrollTo(0,0);
@@ -3497,9 +3498,13 @@
     document.getElementById(contenidoId).classList.add('activo');
     // el mapa se dibuja recien cuando se abre su solapa, no al cargar la app
     // El mapa se dibuja al abrir su solapa. Se redibuja al cambiar de parque
-    // porque los IDs del SVG (mapa-svg, mapa-zoomlayer) son unicos, como en Orlando.
+    // porque los IDs del SVG son unicos por parque.
     const mm = /^(dlp|wds)-mapa$/.exec(contenidoId);
     if(mm){ const p = mm[1] === 'wds' ? 'daw' : 'dlp'; if(_mapaPid !== p) renderMapa(p); }
+    // Equivalente al volverDelMapa() de Orlando: salir del mapa borra el "de donde
+    // vine". Sin esto el boton "Volver a la estrategia" quedaba pegado y aparecia
+    // aunque hubieras entrado al mapa por la solapa, no desde la estrategia.
+    else window._volverEstrat = null;
   }
 
   // ─── MAPA INTERACTIVO ────────────────────────────────
@@ -3867,7 +3872,16 @@
   function _estratFichas(pid){
     if(_idxEstrat[pid]) return _idxEstrat[pid];
     const M = MAPAS[pid], out = [];
-    if(M) fichas(pid).forEach(f => { if(M.pins[f.nombre]) out.push({ f, k: _normRef(f.nombre) }); });
+    if(M){
+      fichas(pid).forEach(f => {
+        if(M.pins[f.nombre]) out.push({ f, tipo: 'atr', k: _normRef(f.nombre) });
+      });
+      // los lugares para comer tambien enganchan, como en Orlando
+      Object.keys(M.food).forEach(n => {
+        const f = fichaResto(n);
+        if(f) out.push({ f, tipo: 'rest', k: _normRef(n) });
+      });
+    }
     _idxEstrat[pid] = out;
     return out;
   }
@@ -3880,10 +3894,13 @@
     _estratFichas(pid).forEach(x => {
       if(x.k && (x.k === k || x.k.includes(k) || k.includes(x.k))){
         const d = Math.abs(x.k.length - k.length);
-        if(d < dif){ dif = d; mejor = x.f; }
+        if(d < dif){ dif = d; mejor = x; }
       }
     });
     return mejor;
+  }
+  function _fichaPorNombre(pid, nombre, tipo){
+    return tipo === 'rest' ? fichaResto(nombre) : fichaDe(pid, nombre);
   }
   // recorre los items li de la solapa Estrategia y hace clickeables los que resuelven
   function montarEstrategia(){
@@ -3893,11 +3910,12 @@
       let n = 0;
       cont.querySelectorAll('li').forEach(li => {
         if(li.querySelector('.estrat-ic')) return;
-        const f = _estratResolver(pid, li.textContent);
-        if(!f) return;
+        const x = _estratResolver(pid, li.textContent);
+        if(!x) return;
         li.classList.add('estrat-link');
-        li.dataset.ficha = f.nombre;
-        li.onclick = () => estratFicha(pid, f.nombre, li);
+        li.dataset.ficha = x.f.nombre;
+        li.dataset.tipo = x.tipo;
+        li.onclick = () => estratFicha(pid, x.f.nombre, li, x.tipo);
         li.insertAdjacentHTML('beforeend', '<span class="estrat-ic">🗺️</span>');
         n++;
       });
@@ -3906,29 +3924,32 @@
   }
 
   // abre/cierra la ficha debajo del ítem, con el botón "ver en el mapa"
-  function estratFicha(pid, nombre, li){
+  function estratFicha(pid, nombre, li, tipo){
     const sig = li.nextElementSibling;
     if(sig && sig.classList.contains('estrat-ficha')){ sig.remove(); li.classList.remove('abierta'); return; }
     document.querySelectorAll('.estrat-ficha').forEach(e => e.remove());
     document.querySelectorAll('.estrat-link.abierta').forEach(e => e.classList.remove('abierta'));
-    const f = fichaDe(pid, nombre); if(!f) return;
+    const f = _fichaPorNombre(pid, nombre, tipo); if(!f) return;
     const foto = f.img ? `<img src="${f.img}" loading="lazy" onerror="this.style.display='none'">` : '';
     const corta = f.desc.length > 210 ? f.desc.slice(0, 210).replace(/\s+\S*$/, '') + '…' : f.desc;
     const card = document.createElement('li');
     card.className = 'estrat-ficha';
     card.dataset.n = nombre;
+    card.dataset.tipo = tipo || 'atr';
     card.innerHTML = `${foto}<div class="ef-body"><strong>${f.nombre}</strong><p>${corta}</p>
-      <button class="ef-mapa" onclick="estratAlMapa('${pid}', this.closest('.estrat-ficha').dataset.n)">🗺️ Ver en el mapa</button></div>`;
+      <button class="ef-mapa" onclick="estratAlMapa('${pid}', this.closest('.estrat-ficha').dataset.n, this.closest('.estrat-ficha').dataset.tipo)">🗺️ Ver en el mapa</button></div>`;
     li.after(card); li.classList.add('abierta');
   }
   // va al mapa con esa ficha abierta y aislada; recuerda de dónde vino
-  function estratAlMapa(pid, nombre){
+  function estratAlMapa(pid, nombre, tipo){
     const d = _dom(pid);
     const btn = document.querySelector(`#${PANTALLA_DE[pid]} [data-tab-mapa]`);
     if(btn) cambiarTab(btn, d + '-mapa');
     window._volverEstrat = pid;
     window._mapaSolo = nombre;              // se setea ANTES para que la ficha muestre el aviso
-    if(_capa[pid] === 'rest') mapaCapa('atr');
+    // si el item es un lugar para comer, se cambia a esa capa (igual que Orlando)
+    const quiere = tipo === 'rest' ? 'rest' : 'atr';
+    if(_capa[pid] !== quiere) mapaCapa(quiere);
     mapaSel(nombre);
     _mapaSoloPins(nombre);
     document.getElementById(d + '-mapa').scrollIntoView({ block: 'start' });
