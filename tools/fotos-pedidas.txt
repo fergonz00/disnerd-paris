@@ -1,0 +1,158 @@
+FOTOS QUE HAY QUE CAMBIAR O AGREGAR  ---  App Disney Paris
+========================================================================
+
+DONDE GUARDARLAS:  C:\proyectos\App Disney Paris\fotos\
+EL NOMBRE TIENE QUE SER EXACTO, con los guiones incluidos. Si lo cambias, la
+app no la encuentra y la ficha queda sin foto.
+
+Si lo que bajaste es .png o .webp: NO alcanza con renombrarlo a .jpg. Dejalo
+como esta y avisame, que yo lo convierto.
+
+------------------------------------------------------------------------
+GRUPO 1 - VERTICALES: quedan gigantes, ocupan media pantalla del celular
+------------------------------------------------------------------------
+BUSCAR HORIZONTALES (apaisadas). En Google Imagenes:
+   Herramientas -> Relacion de aspecto -> Panoramica
+Ideal 1600x1000 o parecido.
+
+[ ] saint-sulpice.jpg
+      que es    : Iglesia de Saint-Sulpice
+      donde sale: Guia Francia
+      problema  : ocupa 513px de alto en el celular (330x495)  + ADEMAS ESTA BORROSA
+      buscar    : Saint-Sulpice church Paris facade
+
+[ ] saint-germain.jpg
+      que es    : Abadía de Saint-Germain-des-Prés
+      donde sale: Guia Francia
+      problema  : ocupa 513px de alto en el celular (3754x5631)
+      buscar    : Saint-Germain-des-Pres abbey exterior
+
+[ ] bastilla.jpg
+      que es    : Plaza de la Bastilla
+      donde sale: Guia Francia
+      problema  : ocupa 487px de alto en el celular (719x1024)  + ADEMAS ESTA BORROSA
+      buscar    : Place de la Bastille aerial
+
+[ ] torre-eiffel.jpg
+      que es    : Torre Eiffel
+      donde sale: Guia Francia
+      problema  : ocupa 456px de alto en el celular (960x1280)
+      buscar    : Eiffel Tower Trocadero panoramic
+
+[ ] saint-paul.jpg
+      que es    : Parroquia Saint-Paul Saint-Louis
+      donde sale: Guia Francia
+      problema  : ocupa 456px de alto en el celular (1498x1996)
+      buscar    : Eglise Saint-Paul-Saint-Louis Marais
+
+[ ] pirates-of-the-caribbean.jpg
+      que es    : Pirates of the Caribbean
+      donde sale: Disneyland Park
+      problema  : ocupa 456px de alto en el celular (960x1280)
+      buscar    : Pirates of the Caribbean Disneyland Paris ride
+
+[ ] moulin-rouge.jpg
+      que es    : Moulin Rouge
+      donde sale: Guia Francia
+      problema  : ocupa 456px de alto en el celular (960x1280)
+      buscar    : Moulin Rouge Paris night
+
+[ ] les-voyages-de-pinocchio.jpg
+      que es    : Les Voyages de Pinocchio
+      donde sale: Disneyland Park
+      problema  : ocupa 456px de alto en el celular (853x1138)  + ADEMAS ESTA BORROSA
+      buscar    : Les Voyages de Pinocchio Disneyland Paris
+
+[ ] jardines-de-versalles.jpg
+      que es    : Jardines de Versalles
+      donde sale: Guia Francia
+      problema  : ocupa 456px de alto en el celular (960x1280)
+      buscar    : Versailles gardens aerial
+
+------------------------------------------------------------------------
+GRUPO 2 - PIXELADAS: se ven borrosas porque son chicas
+------------------------------------------------------------------------
+BUSCAR GRANDES, minimo 1200px de ancho. En Google Imagenes:
+   Herramientas -> Tamano -> Grande
+
+[ ] place-du-tertre.jpg
+      que es    : Place du Tertre
+      donde sale: Guia Francia
+      problema  : mide 261x195, se ve pixelada
+      buscar    : Place du Tertre Montmartre artists
+
+[ ] saint-eustache.jpg
+      que es    : Iglesia de Saint-Eustache
+      donde sale: Guia Francia
+      problema  : mide 330x247, se ve pixelada
+      buscar    : Eglise Saint-Eustache Paris
+
+[ ] le-passage-enchante-daladdin.jpg
+      que es    : Le Passage Enchanté d'Aladdin
+      donde sale: Disneyland Park
+      problema  : mide 500x298, se ve pixelada
+      buscar    : Passage Enchante Aladdin Disneyland Paris
+
+[ ] plaza-gardens.jpg
+      que es    : Plaza Gardens Restaurant
+      donde sale: Restaurants
+      problema  : mide 500x333, se ve pixelada
+      buscar    : Plaza Gardens Restaurant Disneyland Paris
+
+[ ] opera-garnier.jpg
+      que es    : Ópera Garnier
+      donde sale: Guia Francia
+      problema  : mide 515x340, se ve pixelada
+      buscar    : Opera Garnier Paris facade
+
+[ ] champ-de-mars.jpg
+      que es    : Champ de Mars
+      donde sale: Guia Francia
+      problema  : mide 630x405, se ve pixelada
+      buscar    : Champ de Mars Paris
+
+[ ] panteon.jpg
+      que es    : Panteón
+      donde sale: Guia Francia
+      problema  : mide 669x446, se ve pixelada
+      buscar    : Pantheon Paris exterior
+
+[ ] rue-rosiers.jpg
+      que es    : Rue des Rosiers
+      donde sale: Guia Francia
+      problema  : mide 800x600, se ve pixelada
+      buscar    : Rue des Rosiers Marais Paris
+
+[ ] sacre-coeur.jpg
+      que es    : Basílica del Sacré-Cœur
+      donde sale: Guia Francia
+      problema  : mide 800x540, se ve pixelada
+      buscar    : Sacre-Coeur basilica Montmartre
+
+[ ] le-chateau-de-la-belle-au-bois-dormant.jpg
+      que es    : Le Château de la Belle au Bois Dormant
+      donde sale: Disneyland Park
+      problema  : mide 802x532, se ve pixelada
+      buscar    : Chateau Belle au Bois Dormant Disneyland Paris
+
+[ ] dumbo-the-flying-elephant.jpg
+      que es    : Dumbo the Flying Elephant
+      donde sale: Disneyland Park
+      problema  : mide 826x550, se ve pixelada
+      buscar    : Dumbo Flying Elephant Disneyland Paris
+
+------------------------------------------------------------------------
+GRUPO 3 - FALTA (no existe ninguna)
+------------------------------------------------------------------------
+
+[ ] muro-del-te-amo.jpg
+      que es    : Muro del "Te Amo" (Le Mur des Je t'aime)
+      donde sale: Guia Francia - Dia 3 Montmartre
+      problema  : imgur borro la que habia, la ficha quedo sin foto
+      buscar    : Le Mur des Je t aime Montmartre
+
+========================================================================
+TOTAL: 9 verticales + 11 pixeladas + 1 que falta = 21
+
+No hace falta que las consigas todas juntas. Con las que dejes,
+corro 'python tools/audit-fotos.py' y te confirmo cuales quedaron OK.
