@@ -1,0 +1,28 @@
+# Coordenadas de los shows que faltan en el mapa
+#
+# COMO SACAR LA COORDENADA (Google Maps):
+#   1. maps.google.com  ->  buscar "Disneyland Paris"
+#   2. BOTON DERECHO sobre el edificio del teatro
+#   3. arriba de todo del menu aparecen dos numeros (ej: 48.870012, 2.772787)
+#   4. hacerles CLICK: se copian solos
+#   5. pegarlos aca abajo despues de la barra |
+#
+# Una linea por show. NO cambiar el nombre de la izquierda (tiene que quedar
+# igual que en la app o no matchea). Las lineas con # se ignoran.
+#
+# nombre exacto | lat, lon
+
+# [DLP · Frontierland]  pista: Frontierland Theater (OSM: 48.870012, 2.772787)
+Rhythms of The Pride Lands — Lion King | 
+
+# [DAW · World of Frozen]  pista: es en el lago de World of Frozen, al aire libre
+A Celebration in Arendelle | 
+
+# [DAW · Worlds of Pixar]  pista: Studio Theater? (OSM: 48.867280, 2.780210)
+TOGETHER: A Pixar Musical Adventure | 
+
+# [DAW · Production Courtyard]  pista: Animation Celebration? (OSM: 48.867370, 2.778210)
+Minnie's Dream Factory | 
+
+# [DAW · Production Courtyard]  pista: Animagique Theater? (OSM: 48.868160, 2.779160)
+Mickey and the Magician | 
