@@ -1,0 +1,990 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-12T12:14:17Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 650088652,
+  "lat": 48.8741170,
+  "lon": 2.7778260,
+  "tags": {
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "diet:vegetarian": "yes",
+    "name": "Café Hyperion",
+    "opening_hours:signed": "no",
+    "source": "survey",
+    "url:price": "http://www.dlrpmagic.com/planning/dining/restaurant-menus/cafe-hyperion/",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/cafe-hyperion/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9860326543,
+  "lat": 48.8658429,
+  "lon": 2.7784887,
+  "tags": {
+    "amenity": "restaurant",
+    "indoor_seating": "yes",
+    "name": "Super Diner",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13603285964,
+  "lat": 48.8661485,
+  "lon": 2.7741492,
+  "tags": {
+    "addr:street": "Adventure Way",
+    "amenity": "fast_food",
+    "drive_through": "no",
+    "name": "Chez Marie"
+  }
+},
+{
+  "type": "node",
+  "id": 13603285965,
+  "lat": 48.8661996,
+  "lon": 2.7742813,
+  "tags": {
+    "addr:street": "Adventure Way",
+    "amenity": "fast_food",
+    "drive_through": "no",
+    "name": "Chez Berlioz"
+  }
+},
+{
+  "type": "node",
+  "id": 13603285966,
+  "lat": 48.8662415,
+  "lon": 2.7744208,
+  "tags": {
+    "addr:street": "Adventure Way",
+    "amenity": "fast_food",
+    "drive_through": "no",
+    "name": "Chez Toulouse"
+  }
+},
+{
+  "type": "way",
+  "id": 40278387,
+  "center": {
+    "lat": 48.8723569,
+    "lon": 2.7746682
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "cuisine": "chicken",
+    "name": "Café de la Brousse",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009"
+  }
+},
+{
+  "type": "way",
+  "id": 49736351,
+  "center": {
+    "lat": 48.8658437,
+    "lon": 2.7784923
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "american",
+    "diet:vegetarian": "yes",
+    "indoor_seating": "yes",
+    "name": "Super Diner",
+    "outdoor_seating": "yes",
+    "source": "Cadastre. Mise à jour : 2010;survey",
+    "url:price": "http://www.dlrpmagic.com/planning/dining/restaurant-menus/cafe-des-cascadeurs/",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-walt-disney-studios/cafe-des-cascadeurs/"
+  }
+},
+{
+  "type": "way",
+  "id": 78038168,
+  "center": {
+    "lat": 48.8719326,
+    "lon": 2.7738610
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "cuisine": "waffle",
+    "name": "Cool Post",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+    "wall": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 78038196,
+  "center": {
+    "lat": 48.8745150,
+    "lon": 2.7748991
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "kiosk",
+    "check_date:opening_hours": "2024-10-24",
+    "name": "March Hare Refreshments",
+    "opening_hours:signed": "no",
+    "source": "blueprint",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 78039043,
+  "center": {
+    "lat": 48.8711429,
+    "lon": 2.7775190
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "Pret A Manger",
+    "brand:wikidata": "Q2109109",
+    "building": "yes",
+    "cuisine": "sandwich",
+    "drive_through": "no",
+    "name": "Pret A Manger",
+    "short_name": "Pret",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 87218499,
+  "center": {
+    "lat": 48.8741370,
+    "lon": 2.7755220
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "check_date:opening_hours": "2024-10-24",
+    "name": "L'Arbre Enchanté",
+    "opening_hours:signed": "no",
+    "source": "survey",
+    "website:price": "http://www.dlpguide.com/planning/dining/restaurant-menus/larbre-enchante/"
+  }
+},
+{
+  "type": "way",
+  "id": 204492491,
+  "center": {
+    "lat": 48.8748993,
+    "lon": 2.7750481
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "retail",
+    "check_date:opening_hours": "2024-10-24",
+    "name": "The Old Mill",
+    "opening_hours:signed": "no",
+    "smoking:outside": "separated",
+    "source": "survey",
+    "website:price": "http://www.dlrpmagic.com/planning/dining/restaurant-menus/the-old-mill/"
+  }
+},
+{
+  "type": "way",
+  "id": 205730568,
+  "center": {
+    "lat": 48.8744230,
+    "lon": 2.7793734
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "name": "Rocket Café",
+    "source": "survey;bing",
+    "website:price": "http://www.dlpguide.com/planning/dining/restaurant-menus/rocket-cafe/"
+  }
+},
+{
+  "type": "way",
+  "id": 295701506,
+  "center": {
+    "lat": 48.8732604,
+    "lon": 2.7781040
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "name": "Cool Station",
+    "opening_hours:signed": "no",
+    "source": "survey;bing",
+    "website:price": "http://www.dlrpmagic.com/planning/dining/restaurant-menus/cool-station/"
+  }
+},
+{
+  "type": "way",
+  "id": 395168196,
+  "center": {
+    "lat": 48.8675089,
+    "lon": 2.7759442
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "french",
+    "diet:vegetarian": "yes",
+    "food": "re",
+    "level": "0",
+    "name": "Bistrot Chez Rémy",
+    "opening_hours": "Mo-Su,PH 11:30-20:00",
+    "room": "yes",
+    "wikidata": "Q131345098"
+  }
+},
+{
+  "type": "way",
+  "id": 1094521916,
+  "center": {
+    "lat": 48.8659600,
+    "lon": 2.7755621
+  },
+  "tags": {
+    "addr:street": "Adventure Way",
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "The Regal View Restaurant & Lounge"
+  }
+},
+{
+  "type": "way",
+  "id": 1101506654,
+  "center": {
+    "lat": 48.8668517,
+    "lon": 2.7790571
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Hollywood & Lime"
+  }
+},
+{
+  "type": "way",
+  "id": 1150670989,
+  "center": {
+    "lat": 48.8654916,
+    "lon": 2.7789611
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "asian",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "indoor_seating": "no",
+    "name": "WEB Food Truck",
+    "outdoor_seating": "no",
+    "takeaway": "only"
+  }
+},
+{
+  "type": "way",
+  "id": 1150670994,
+  "center": {
+    "lat": 48.8656557,
+    "lon": 2.7783212
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "american",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "indoor_seating": "no",
+    "name": "FAN-tastic Food Truck",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1151054591,
+  "center": {
+    "lat": 48.8666166,
+    "lon": 2.7752248
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "american",
+    "name": "Kiosque La Vache qui Rit",
+    "name:en": "Kiosque Laugh'N'Go!"
+  }
+},
+{
+  "type": "way",
+  "id": 1165411520,
+  "center": {
+    "lat": 48.8700574,
+    "lon": 2.7824721
+  },
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "building:part": "yes",
+    "cuisine": "coffee_shop",
+    "indoor": "room",
+    "level": "0",
+    "name": "Starbucks",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1165411521,
+  "center": {
+    "lat": 48.8698316,
+    "lon": 2.7828967
+  },
+  "tags": {
+    "addr:postcode": "77700",
+    "amenity": "fast_food",
+    "brand": "Pret A Manger",
+    "brand:wikidata": "Q2109109",
+    "cuisine": "sandwich",
+    "indoor": "room",
+    "indoor_seating": "yes",
+    "level": "0",
+    "name": "Pret A Manger",
+    "opening_hours": "Mo-Su 06:30-20:30",
+    "outdoor_seating": "no",
+    "short_name": "Pret",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1213388224,
+  "center": {
+    "lat": 48.8683733,
+    "lon": 2.7767487
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building:part": "yes",
+    "fast_food": "cafeteria"
+  }
+},
+{
+  "type": "way",
+  "id": 1216756117,
+  "center": {
+    "lat": 48.8702125,
+    "lon": 2.7797564
+  },
+  "tags": {
+    "amenity": "bar",
+    "building:part": "yes",
+    "name": "Fleur de Lys"
+  }
+},
+{
+  "type": "way",
+  "id": 1216756126,
+  "center": {
+    "lat": 48.8704422,
+    "lon": 2.7795808
+  },
+  "tags": {
+    "amenity": "bar",
+    "building:part": "yes",
+    "name": "Castle Club Lounge"
+  }
+},
+{
+  "type": "way",
+  "id": 1216756127,
+  "center": {
+    "lat": 48.8703407,
+    "lon": 2.7792620
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "french",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "Royal Banquet",
+    "website": "https://www.disneylandparis.com/fr-fr/restaurants/disneyland-hotel/royal-banquet/"
+  }
+},
+{
+  "type": "way",
+  "id": 1216756129,
+  "center": {
+    "lat": 48.8706373,
+    "lon": 2.7797899
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "french",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "La Table de Lumière",
+    "website": "https://www.disneylandparis.com/fr-fr/restaurants/disneyland-hotel/la-table-de-lumiere/"
+  }
+},
+{
+  "type": "way",
+  "id": 1223755262,
+  "center": {
+    "lat": 48.8716357,
+    "lon": 2.7767470
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "american;tex-mex",
+    "name": "The Lucky Nugget Saloon",
+    "opening_hours": "Mo-Su,PH 11:30-21:30",
+    "wikidata": "Q123438258"
+  }
+},
+{
+  "type": "way",
+  "id": 1223755263,
+  "center": {
+    "lat": 48.8714247,
+    "lon": 2.7769481
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-08-04",
+    "cuisine": "barbecue",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Silver Spur Steakhouse",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1223755264,
+  "center": {
+    "lat": 48.8714195,
+    "lon": 2.7766299
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-10-24",
+    "check_date:opening_hours": "2024-10-24",
+    "cuisine": "asian",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Last Chance Cafe",
+    "opening_hours": "Mo-Su,PH 11:30-21:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q123438264"
+  }
+},
+{
+  "type": "way",
+  "id": 1226260299,
+  "center": {
+    "lat": 48.8677442,
+    "lon": 2.7794767
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "indoor_seating": "yes",
+    "name": "Hollywood Gardens Restaurant",
+    "outdoor_seating": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1226302856,
+  "center": {
+    "lat": 48.8717590,
+    "lon": 2.7746722
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "tex-mex",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "Casa de Coco – Restaurante de Familia",
+    "opening_hours": "Mo-Su,PH 11:00-21:30",
+    "operator": "Euro Disney Associés S.A.S.",
+    "wikidata": "Q123438271"
+  }
+},
+{
+  "type": "way",
+  "id": 1226302857,
+  "center": {
+    "lat": 48.8720108,
+    "lon": 2.7746628
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "african",
+    "name": "Restaurant Hakuna Matata",
+    "opening_hours": "Mo-Su,PH 11:30-17:00",
+    "operator": "Euro Disney Associés S.A.S."
+  }
+},
+{
+  "type": "way",
+  "id": 1226302867,
+  "center": {
+    "lat": 48.8709738,
+    "lon": 2.7730055
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "tex-mex",
+    "diet:vegetarian": "yes",
+    "name": "Cowboy Cookout Barbecue",
+    "opening_hours": "Mo-Su,PH 11:30-17:00",
+    "operator": "Euro Disney Associés S.A.S.",
+    "wikidata": "Q123438274"
+  }
+},
+{
+  "type": "way",
+  "id": 1228047092,
+  "center": {
+    "lat": 48.8716594,
+    "lon": 2.7731888
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "indian",
+    "name": "Colonel Hathi’s Outpost Restaurant",
+    "opening_hours": "Mo-Su,PH 11:00-21:30"
+  }
+},
+{
+  "type": "way",
+  "id": 1237114456,
+  "center": {
+    "lat": 48.8740874,
+    "lon": 2.7737021
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-10-24",
+    "check_date:opening_hours": "2024-10-24",
+    "cuisine": "fish",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Toad Hall Restaurant",
+    "opening_hours": "Mo-Su,PH 11:30-17:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1240805707,
+  "center": {
+    "lat": 48.8727150,
+    "lon": 2.7751789
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-08-04",
+    "cuisine": "oriental",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Agrabah Café Restaurant",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1243668337,
+  "center": {
+    "lat": 48.8733797,
+    "lon": 2.7726888
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-08-02",
+    "cuisine": "caribbean",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Captain Jack's - Restaurant des Pirates",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1267201550,
+  "center": {
+    "lat": 48.8733156,
+    "lon": 2.7746381
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "german",
+    "name": "Au Chalet de la Marionnette",
+    "opening_hours": "Mo-Su,PH 11:30-20:00"
+  }
+},
+{
+  "type": "way",
+  "id": 1271516006,
+  "center": {
+    "lat": 48.8656858,
+    "lon": 2.7800453
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-08-02",
+    "cuisine": "italian",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Stark Factory",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1271516007,
+  "center": {
+    "lat": 48.8659757,
+    "lon": 2.7800472
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "check_date": "2024-08-02",
+    "cuisine": "american",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "indoor_seating": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "PYM Kitchen",
+    "outdoor_seating": "no",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1279285180,
+  "center": {
+    "lat": 48.8714231,
+    "lon": 2.7762050
+  },
+  "tags": {
+    "amenity": "ice_cream",
+    "branch": "Ice House",
+    "brand": "Ben & Jerry's",
+    "building": "yes",
+    "cuisine": "ice_cream",
+    "name": "Ben & Jerry's Ice House"
+  }
+},
+{
+  "type": "way",
+  "id": 1294768018,
+  "center": {
+    "lat": 48.8640059,
+    "lon": 2.7740608
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "fish",
+    "name": "Nordic Crowns Tavern"
+  }
+},
+{
+  "type": "way",
+  "id": 1338725880,
+  "center": {
+    "lat": 48.8653886,
+    "lon": 2.7768874
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "hot_dog",
+    "indoor_seating": "yes",
+    "name": "Café Luminosity",
+    "outdoor_seating": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1343552235,
+  "center": {
+    "lat": 48.8658749,
+    "lon": 2.7736384
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "La Terrasse Panoramique"
+  }
+},
+{
+  "type": "way",
+  "id": 1355436991,
+  "center": {
+    "lat": 48.8718889,
+    "lon": 2.7781100
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "french",
+    "diet:vegetarian": "yes",
+    "name": "Market House Deli",
+    "opening_hours": "Mo-Su,PH 11:00-22:30",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/market-house-deli/"
+  }
+},
+{
+  "type": "way",
+  "id": 1355436995,
+  "center": {
+    "lat": 48.8718648,
+    "lon": 2.7783279
+  },
+  "tags": {
+    "amenity": "ice_cream",
+    "building:part": "yes",
+    "name": "The Ice Cream Company",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/ice-cream-company/"
+  }
+},
+{
+  "type": "way",
+  "id": 1355436996,
+  "center": {
+    "lat": 48.8718067,
+    "lon": 2.7784228
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building:part": "yes",
+    "cuisine": "coffee_shop",
+    "name": "The Coffee Grinder"
+  }
+},
+{
+  "type": "way",
+  "id": 1355437000,
+  "center": {
+    "lat": 48.8720294,
+    "lon": 2.7779180
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "american",
+    "name": "Cable Car Bake Shop",
+    "operator": "Euro Disney Associés S.A.S.",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/cable-car-bake-shop/"
+  }
+},
+{
+  "type": "way",
+  "id": 1355437002,
+  "center": {
+    "lat": 48.8720644,
+    "lon": 2.7777290
+  },
+  "tags": {
+    "amenity": "ice_cream",
+    "building:part": "yes",
+    "name": "The Gibson Girl Ice Cream Parlour",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/gibson-girl-ice-cream-parlour/"
+  }
+},
+{
+  "type": "way",
+  "id": 1355437015,
+  "center": {
+    "lat": 48.8716761,
+    "lon": 2.7777370
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "american",
+    "diet:vegetarian": "yes",
+    "name": "Walt’s – an American restaurant",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/walts-american-restaurant/"
+  }
+},
+{
+  "type": "way",
+  "id": 1355437017,
+  "center": {
+    "lat": 48.8718797,
+    "lon": 2.7773390
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "hot_dog",
+    "name": "Casey's Corner",
+    "opening_hours": "Mo-Su,PH 11:00-23:00",
+    "website": "https://www.disneylandparis.fr/restaurants/parc-disneyland/caseys-corner/"
+  }
+},
+{
+  "type": "way",
+  "id": 1359114709,
+  "center": {
+    "lat": 48.8726023,
+    "lon": 2.7781190
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "name": "Plaza Gardens Restaurant"
+  }
+},
+{
+  "type": "way",
+  "id": 1359847732,
+  "center": {
+    "lat": 48.8737948,
+    "lon": 2.7759600
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "french",
+    "name": "Auberge de Cendrillon"
+  }
+},
+{
+  "type": "way",
+  "id": 1359852385,
+  "center": {
+    "lat": 48.8742143,
+    "lon": 2.7762605
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building:part": "yes",
+    "cuisine": "pizza",
+    "name": "Pizzeria Bella Notte"
+  }
+},
+{
+  "type": "way",
+  "id": 1379850346,
+  "center": {
+    "lat": 48.8716960,
+    "lon": 2.7749675
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "mexican",
+    "name": "Overland Trail Cafe"
+  }
+},
+{
+  "type": "way",
+  "id": 1392173862,
+  "center": {
+    "lat": 48.8675039,
+    "lon": 2.7795995
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building:part": "yes",
+    "cuisine": "coffee_shop",
+    "indoor_seating": "no",
+    "name": "Searchlight: refreshments and snacks",
+    "outdoor_seating": "no",
+    "takeaway": "only",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1392173868,
+  "center": {
+    "lat": 48.8670757,
+    "lon": 2.7795726
+  },
+  "tags": {
+    "amenity": "ice_cream",
+    "building": "yes",
+    "name": "Ice Cream Creations"
+  }
+},
+{
+  "type": "way",
+  "id": 1466584340,
+  "center": {
+    "lat": 48.8686788,
+    "lon": 2.7773515
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "fast_food": "cafeteria"
+  }
+}
+
+  ]
+}
