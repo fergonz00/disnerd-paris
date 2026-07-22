@@ -3,7 +3,18 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-06-26
+## 📌 Dónde quedamos — última sesión: 2026-07-22
+
+**Sesión 2026-07-22 (viajeros de España no podían abrir la app):** era un bloqueo de ISP, no un bug de la app.
+- **Causa:** `index.html` cargaba supabase-js desde `cdn.jsdelivr.net`, que resuelve a **Cloudflare** (`104.17.207.5` / `104.17.208.5`). Los ISP españoles (Movistar/Vodafone/Orange/Digi) bloquean rangos enteros de Cloudflare por las órdenes anti-piratería de LaLiga.
+- **Por qué rompía TODO:** `const { createClient } = supabase;` era la primera línea del **único** bloque `<script>`. Si el bundle no cargaba → `ReferenceError` → moría el script entero (login, navegación, tabs, filtros, acordeones). Síntoma: la página se ve perfecta pero el botón "✨ Ingresar" no hace nada.
+- **Fix:** `supabase.min.js` (v2.110.8, `dist/umd`, byte-idéntico al de jsDelivr) commiteado al repo y servido por Netlify. `.gitattributes` con `-text` para que autocrlf no lo toque. Además `createClient` en try/catch + guarda `!sb` en `doLogin` + try/catch en la query (avisa "no hay conexión" en vez de morir callado).
+- Verificado en prod: **cero** requests a jsdelivr; el único host externo al cargar es `fonts.googleapis.com` (degrada solo a fuente fallback). Login real contra Supabase OK.
+- Commit `15fc7a6`.
+- ⚠️ **Regla nueva: NO agregar `<script src>` de CDNs externos.** Todo JS va local al repo. Cualquier CDN (jsDelivr, unpkg, cdnjs) está sobre Cloudflare y deja la app muerta en España.
+- **Exposición que queda:** las 45 fotos salen de `i.imgur.com` (Fastly). Si se bloquea, se pierden las fotos pero la app **sigue funcionando**. Si Sofi reporta fotos rotas desde España, bajarlas a `/fotos/`.
+
+## 📌 Sesión anterior: 2026-06-26
 
 **Sesión 2026-06-26 (fix marcado por una viajera):** se fusionaron **Blue Lagoon** y **Captain Jack** en un solo restaurante. Eran el MISMO lugar (el viejo "Blue Lagoon Restaurant" de DLP fue rebautizado *Captain Jack's – Restaurant des Pirates* en 2017, dentro de Pirates of the Caribbean) y la guía tenía la descripción partida en dos cards.
 - Eliminé la card "Blue Lagoon Restaurant" y volqué todo su texto dentro de **Captain Jack** (descripción unificada: dentro de la atracción, botes, cielo estrellado + taberna pirata, cocina caribeña/cajun; mantiene badge ⭐ y tip de reservar con anticipación). Saqué la frase "menos icónico que Blue Lagoon".
