@@ -12,7 +12,18 @@ Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona client
 - Verificado en prod: **cero** requests a jsdelivr; el único host externo al cargar es `fonts.googleapis.com` (degrada solo a fuente fallback). Login real contra Supabase OK.
 - Commit `15fc7a6`.
 - ⚠️ **Regla nueva: NO agregar `<script src>` de CDNs externos.** Todo JS va local al repo. Cualquier CDN (jsDelivr, unpkg, cdnjs) está sobre Cloudflare y deja la app muerta en España.
-- **Exposición que queda:** las 45 fotos salen de `i.imgur.com` (Fastly). Si se bloquea, se pierden las fotos pero la app **sigue funcionando**. Si Sofi reporta fotos rotas desde España, bajarlas a `/fotos/`.
+
+**Segunda parte de la misma sesión — las 45 fotos de imgur bajadas al repo (commit `718bb69`):**
+- `i.imgur.com` está sobre Fastly y también entra en los bloqueos. Ahora **las 116 imágenes de la app salen de `fotos/`**, cero externas.
+- 44 bajadas con nombres kebab-case derivados del `alt` (misma convención que las 72 previas), cero colisiones, validadas con PIL (ninguna corrupta ni duplicada).
+- ⚠️ **1 foto se perdió: `XKinJD1` = Muro del "Te Amo"** (Montmartre, Día 3). **Ya estaba muerta en imgur** (redirigía a `removed.png`, 503 bytes) — o sea que hacía rato no se veía para NADIE, no solo España. No se notaba porque el `<img>` tenía `onerror` que la escondía. Saqué la etiqueta; la card conserva todo su texto.
+  - **Pendiente:** pedirle esa foto a Sofi → guardarla como `fotos/muro-del-te-amo.jpg` y volver a poner el `<img class="atraccion-foto">` en la card (index.html, `lugar-card` del Muro del "Te Amo").
+- **Fotos huérfanas en `fotos/`** (quedaron de cambios de contenido previos, no molestan): `blue-lagoon.jpg` (restaurante fusionado en Captain Jack) y `disney-junior.jpg` (show reemplazado por Minnie's Dream Factory).
+- `fotos/` pesa ahora **99 MB** / 116 archivos. Máximo por archivo 2,6 MB (límite GitHub: 100 MB, sin problema).
+- **Único host externo que queda: `fonts.googleapis.com`.** Google NO está en los bloqueos de LaLiga, y si fallara la app degrada sola a la fuente de fallback (sigue 100% funcional). Si algún día se quiere blindar del todo, hay que bajar los woff2 y reescribir el `@font-face`.
+
+### ⚠️ Regla de fotos (desde 2026-07-22)
+**Las fotos nuevas van SIEMPRE a `fotos/` en el repo. Nunca más imgur ni ningún hosting externo.** Aparte del bloqueo de España, imgur borra imágenes por su cuenta (ya nos comió una).
 
 ## 📌 Sesión anterior: 2026-06-26
 
