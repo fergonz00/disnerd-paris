@@ -419,7 +419,8 @@
   /* ─── MAPA INTERACTIVO ─────────────────────────────── */
   .mapa-wrap { background: var(--blanco); border-radius: 1.2rem; padding: 0.6rem;
     box-shadow: 0 2px 12px var(--sombra); margin-bottom: 0.8rem; position: relative; }
-  .mapa-svg { width: 100%; height: auto; display: block; touch-action: manipulation; }
+  .mapa-svg { display: block; width: 100%; height: auto; max-height: 47vh; margin: 0 auto;
+    border-radius: 1rem; touch-action: pan-y; overflow: hidden; }
   .mapa-region { transition: fill-opacity .18s; }
   .mapa-region.dim { fill-opacity: .18 !important; }
   .mapa-land-label { font-size: 21px; font-weight: 700; fill: #5a5148; pointer-events: none;
@@ -456,7 +457,20 @@
     font-family: inherit; font-weight: 600; }
   .md-volver-estrat { margin-top: 0.8rem; background: var(--lavanda); }
 
-  .mapa-capas { display: flex; gap: 0.5rem; margin-bottom: 0.7rem; }
+  .mapa-sticky { padding: 0.2rem 0 0.4rem; }
+  .mapa-viewport { position: relative; }
+  .mapa-filtros { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.5rem; }
+  .mapa-zoomctrl { position: absolute; top: 10px; right: 10px; display: flex;
+    flex-direction: column; gap: 6px; z-index: 2; }
+  .mapa-zoomctrl button { width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid rgba(180,160,200,0.45); background: rgba(255,255,255,0.94);
+    color: var(--texto); font-size: 1.15rem; font-weight: 700; line-height: 1; cursor: pointer;
+    box-shadow: 0 2px 6px var(--sombra); display: flex; align-items: center; justify-content: center;
+    -webkit-tap-highlight-color: transparent; font-family: inherit; }
+  .mapa-zoomctrl button:active { transform: scale(.9); }
+  .mapa-orient { font-family: 'Cormorant Garamond', serif; fill: var(--texto-suave);
+    pointer-events: none; }
+  .mapa-capas { display: flex; gap: 0.5rem; margin: 0 0 0.6rem; }
   .mapa-capa-btn { flex: 1; border: 1.5px solid var(--lavanda); background: var(--blanco);
     color: var(--texto); border-radius: 0.9rem; padding: 0.55rem 0.5rem; font-size: 0.84rem;
     cursor: pointer; font-family: inherit; font-weight: 600; }
@@ -3482,8 +3496,10 @@
     btn.classList.add('activo');
     document.getElementById(contenidoId).classList.add('activo');
     // el mapa se dibuja recien cuando se abre su solapa, no al cargar la app
-    const mm = /^(dlp|wds)-mapa$/.exec(contenidoId), cm = document.getElementById(contenidoId);
-    if(mm && !cm.dataset.listo){ renderMapa(mm[1] === 'wds' ? 'daw' : 'dlp'); cm.dataset.listo = '1'; }
+    // El mapa se dibuja al abrir su solapa. Se redibuja al cambiar de parque
+    // porque los IDs del SVG (mapa-svg, mapa-zoomlayer) son unicos, como en Orlando.
+    const mm = /^(dlp|wds)-mapa$/.exec(contenidoId);
+    if(mm){ const p = mm[1] === 'wds' ? 'daw' : 'dlp'; if(_mapaPid !== p) renderMapa(p); }
   }
 
   // ─── MAPA INTERACTIVO ────────────────────────────────
@@ -3571,117 +3587,160 @@
 
 
   // ─── Render del mapa ───────────────────────────────────────────────────
-  // Mismo modelo que Orlando: dos capas, chips que filtran por INTENSIDAD, y
-  // las tierras se filtran CLICKEANDO la region (volver a tocarla la libera).
-  const _capa = {};                 // capa activa por parque
-  const _filtro = {};               // chip activo por parque
+  // Misma arquitectura que Orlando: card de encabezado + bloque sticky
+  // (capas / filtros / mapa / leyenda) + ficha abajo. Las dos capas son grupos
+  // SVG que se muestran y ocultan, así el zoom no se pierde al cambiar de capa.
+  let _mapaPid = null;                    // parque cuyo mapa está a la vista
+  const _capa = {}, _filtro = {};
+  // Orlando tiene UNA pantalla de mapa, asi que usa ids fijos. Aca hay dos
+  // parques a la vez en el DOM, asi que los ids van prefijados y estos helpers
+  // resuelven siempre contra el parque que se esta mirando.
+  const _mid = id => document.getElementById(_dom(_mapaPid) + '-' + id);
+  const _mall = sel => (document.getElementById(_dom(_mapaPid) + '-mapa') || document).querySelectorAll(sel);
 
-  function renderMapa(pid, capa){
+  function renderMapa(pid){
     const M = MAPAS[pid], cont = document.getElementById(_dom(pid) + '-mapa');
     if(!M || !cont) return;
-    capa = capa || _capa[pid] || 'atr';
-    _capa[pid] = capa; _filtro[pid] = 'all';
-    const esAtr = capa === 'atr';
+    _mapaPid = pid;
+    _capa[pid] = _capa[pid] || 'atr';
+    _filtro[pid] = 'all';
 
     const lands = M.lands.map(L =>
       `<path class="mapa-region" data-land="${L.name}" d="${L.d}" fill="${L.tint}"
         fill-opacity="0.5" stroke="${L.tint}" stroke-width="2"
-        onclick="mapaLand('${pid}','${L.name}')"/>`).join('');
-    const etiq = M.lands.map(L =>
+        onclick="mapaLand('${L.name}')"/>`).join('')
+      + M.lands.map(L =>
       `<text class="mapa-land-label" x="${L.lx}" y="${L.ly}" text-anchor="middle"
-        onclick="mapaLand('${pid}','${L.name}')">${L.label}</text>`).join('');
+        onclick="mapaLand('${L.name}')">${L.label}</text>`).join('');
 
-    const puntos = esAtr
-      ? Object.entries(M.pins).map(([n, p]) => ({ n, ...p, color: MAPA_INT[p.int] || MAPA_INT.green }))
-      : Object.entries(M.food).map(([n, p]) => ({ n, ...p, land: '', int: 'food',
-          color: p.fav ? '#c9a96e' : '#b58fb0' }));
-
-    const pins = puntos.map(p =>
-      `<g class="mapa-pin" data-nombre="${p.n.replace(/"/g, '&quot;')}" data-land="${p.land || ''}"
-        data-int="${p.int}" data-must="${p.must || 0}" data-show="${p.show || 0}"
+    const pin = (n, p, color) =>
+      `<g class="mapa-pin" data-nombre="${n.replace(/"/g, '&quot;')}" data-land="${p.land || ''}"
+        data-int="${p.int || ''}" data-must="${p.must || 0}" data-show="${p.show || 0}"
         data-fav="${p.fav || 0}" data-per="${p.per || 0}"
-        transform="translate(${p.x},${p.y})" onclick="mapaSel('${pid}', this.dataset.nombre)">
+        transform="translate(${p.x},${p.y})" onclick="mapaSel(this.dataset.nombre)">
         <circle class="pin-pulse" r="11" fill="none" stroke="var(--dorado)" stroke-width="3"/>
         <circle class="pin-ring" r="13" fill="none" stroke="var(--dorado)" stroke-width="3"/>
         <circle class="pin-hit" r="18" fill="transparent"/>
-        <circle class="pin-dot" r="8" fill="${p.color}" stroke="#fff" stroke-width="2.5"/>
-      </g>`).join('');
+        <circle class="pin-dot" r="8" fill="${color}" stroke="#fff" stroke-width="2.5"/>
+      </g>`;
+    const pinsAtr = Object.entries(M.pins)
+      .map(([n, p]) => pin(n, p, MAPA_INT[p.int] || MAPA_INT.green)).join('');
+    const pinsFood = Object.entries(M.food)
+      .map(([n, p]) => pin(n, p, p.fav ? '#c9a96e' : '#b58fb0')).join('');
 
-    const chips = esAtr
-      ? `<button class="mapa-chip activo" onclick="mapaFiltro('${pid}','all',this)">Todo</button>
-         <button class="mapa-chip" onclick="mapaFiltro('${pid}','must',this)">⭐ Imperdibles</button>
-         <button class="mapa-chip" onclick="mapaFiltro('${pid}','fuerte',this)">🎢 Adrenalina</button>
-         <button class="mapa-chip" onclick="mapaFiltro('${pid}','tranqui',this)">🧸 Tranquilas</button>`
-      : `<button class="mapa-chip activo" onclick="mapaFiltro('${pid}','all',this)">Todo</button>
-         <button class="mapa-chip" onclick="mapaFiltro('${pid}','fav',this)">⭐ Mis favoritos</button>
-         <button class="mapa-chip" onclick="mapaFiltro('${pid}','per',this)">👸 Con personajes</button>`;
-
-    // leyenda: solo los colores que realmente aparecen en esta capa
-    const ORD = ['red', 'yellow', 'green', 'blue'];
-    const presentes = [...new Set(puntos.map(p => p.int))];
-    const leyenda = esAtr
-      ? presentes.filter(i => MAPA_INT_TXT[i]).sort((a, b) => ORD.indexOf(a) - ORD.indexOf(b))
-          .map(i => `<span class="mapa-leg"><i style="background:${MAPA_INT[i]}"></i>${MAPA_INT_TXT[i]}</span>`).join('')
-      : `<span class="mapa-leg"><i style="background:#c9a96e"></i>Mi favorito</span>
-         <span class="mapa-leg"><i style="background:#b58fb0"></i>Otros</span>`;
-
-    cont.innerHTML = `
-      <div class="mapa-capas">
-        <button class="mapa-capa-btn ${esAtr ? 'activo' : ''}" onclick="mapaCapa('${pid}','atr')">🎢 Atracciones</button>
-        <button class="mapa-capa-btn ${esAtr ? '' : 'activo'}" onclick="mapaCapa('${pid}','rest')">🍽️ Para comer</button>
-      </div>
-      <div class="mapa-chips">${chips}</div>
-      <div class="mapa-wrap">
-        <span class="mapa-brujula">${M.orient}</span>
-        <svg class="mapa-svg" viewBox="0 0 1000 1000" role="img" aria-label="Mapa de ${M.titulo}">
-          ${lands}${pins}${etiq}
+    const svg = `<div class="mapa-viewport">
+      <svg id="${_dom(pid)}-mapa-svg" class="mapa-svg" viewBox="0 0 1000 1000" role="img" aria-label="Mapa de ${M.titulo}">
+        <g id="${_dom(pid)}-mapa-zoomlayer">
+          ${lands}
+          <g id="${_dom(pid)}-mapa-capa-atr">${pinsAtr}</g>
+          <g id="${_dom(pid)}-mapa-capa-rest" style="display:none">${pinsFood}</g>
           <g transform="translate(${M.entrada[0]},${M.entrada[1]})">
             <circle r="10" fill="#7aa87f" stroke="#fff" stroke-width="3"/>
             <text y="30" text-anchor="middle" class="mapa-land-label" font-size="17">Entrada</text>
           </g>
-        </svg>
-        <div class="mapa-leyenda">${leyenda}</div>
+          <text class="mapa-orient" x="62" y="52" font-size="17" font-style="italic">${M.orient}</text>
+        </g>
+      </svg>
+      <div class="mapa-zoomctrl">
+        <button type="button" onclick="mapaZoom(1.45)" aria-label="Acercar">+</button>
+        <button type="button" onclick="mapaZoom(0.69)" aria-label="Alejar">−</button>
+        <button type="button" onclick="mapaZoomReset()" aria-label="Ver todo el mapa">⤢</button>
       </div>
-      <div class="mapa-detalle" id="${_dom(pid)}-mapa-det">
-        <div class="mapa-vacio">${esAtr
-          ? 'Tocá un punto para ver la atracción, o una zona de color para ver solo esa tierra 💫'
-          : 'Tocá un punto para ver el restaurante 🍽️'}</div>
-      </div>`;
+    </div>`;
+
+    cont.innerHTML = `
+      <div class="estrategia-card" style="background:var(--celeste-light);border-left:3px solid var(--celeste);margin-bottom:0.4rem">
+        <h4>${M.emoji} Mapa de ${M.titulo}</h4>
+        <p style="color:var(--texto-suave);font-size:0.85rem;margin-top:0.3rem">Elegí qué querés ver: las atracciones o los lugares para comer. Tocá un punto y su ficha aparece abajo — el mapa queda fijo arriba. Pellizcá o usá + / − para acercar.</p>
+      </div>
+      <div class="mapa-sticky">
+        <div class="mapa-capas">
+          <button class="mapa-capa-btn activo" data-capa="atr" onclick="mapaCapa('atr')">🎢 Atracciones</button>
+          <button class="mapa-capa-btn" data-capa="rest" onclick="mapaCapa('rest')">🍽️ Para comer</button>
+        </div>
+        <div id="${_dom(pid)}-mapa-filtros"></div>${svg}<div id="${_dom(pid)}-mapa-legend"></div>
+      </div>
+      <div class="mapa-detalle" id="${_dom(pid)}-mapa-detalle"></div>`;
+
+    mapaCapa(_capa[pid]);
+    mapaZoomReset();
+    _zBind();
   }
 
-  function mapaCapa(pid, capa){ window._mapaSolo = null; renderMapa(pid, capa); }
+  // ── capas: atracciones / para comer ──
+  function _mapaFiltrosHTML(){
+    if(_capa[_mapaPid] === 'rest') return `<div class="mapa-filtros">
+      <button class="mapa-chip activo" onclick="mapaFiltro('all',this)">Todo</button>
+      <button class="mapa-chip" onclick="mapaFiltro('fav',this)">⭐ Mis favoritos</button>
+      <button class="mapa-chip" onclick="mapaFiltro('per',this)">👸 Con personajes</button>
+    </div>`;
+    return `<div class="mapa-filtros">
+      <button class="mapa-chip activo" onclick="mapaFiltro('all',this)">Todo</button>
+      <button class="mapa-chip" onclick="mapaFiltro('must',this)">⭐ Imperdibles</button>
+      <button class="mapa-chip" onclick="mapaFiltro('fuerte',this)">🎢 Adrenalina</button>
+      <button class="mapa-chip" onclick="mapaFiltro('tranqui',this)">🧸 Tranquilas</button>
+    </div>`;
+  }
+  function _mapaLegendHTML(){
+    if(_capa[_mapaPid] === 'rest') return `<div class="mapa-leyenda">
+      <span class="mapa-leg"><i style="background:#c9a96e"></i>Mi favorito</span>
+      <span class="mapa-leg"><i style="background:#b58fb0"></i>Otros</span>
+    </div>`;
+    // solo los colores que realmente aparecen en este parque
+    const hay = new Set(Object.values(MAPAS[_mapaPid].pins).map(p => p.int));
+    return '<div class="mapa-leyenda">' + ['red', 'yellow', 'green', 'blue'].filter(i => hay.has(i))
+      .map(i => `<span class="mapa-leg"><i style="background:${MAPA_INT[i]}"></i>${MAPA_INT_TXT[i]}</span>`)
+      .join('') + '</div>';
+  }
+  function mapaCapa(capa){
+    const pid = _mapaPid;
+    _capa[pid] = capa; _filtro[pid] = 'all';
+    _mall('.mapa-capa-btn').forEach(b => b.classList.toggle('activo', b.dataset.capa === capa));
+    const ga = _mid('mapa-capa-atr'), gr = _mid('mapa-capa-rest');
+    if(ga) ga.style.display = capa === 'atr' ? '' : 'none';
+    if(gr) gr.style.display = capa === 'rest' ? '' : 'none';
+    _mid('mapa-filtros').innerHTML = _mapaFiltrosHTML();
+    _mid('mapa-legend').innerHTML = _mapaLegendHTML();
+    _mall('.mapa-region').forEach(r => r.classList.remove('dim'));
+    _mall('.mapa-pin').forEach(p => p.classList.remove('hide', 'on', 'solo'));
+    window._mapaSolo = null;
+    _mid('mapa-detalle').innerHTML = capa === 'rest'
+      ? `<div class="mapa-vacio">Tocá un lugar para comer y su ficha aparece acá.</div>`
+      : `<div class="mapa-vacio">Tocá un punto para ver la atracción, o una zona de color para ver solo esa tierra 💫</div>`;
+  }
 
-  function _pins(pid){ return document.querySelectorAll('#' + _dom(pid) + '-mapa .mapa-pin'); }
-  function _match(pid, d){
-    const f = _filtro[pid];
+  function _mapaPinsActivos(){
+    const g = _mid(_capa[_mapaPid] === 'rest' ? 'mapa-capa-rest' : 'mapa-capa-atr');
+    return g ? g.querySelectorAll('.mapa-pin') : [];
+  }
+  function _mapaMatch(d){
+    const f = _filtro[_mapaPid];
     if(f === 'all') return true;
-    if(_capa[pid] === 'rest') return d[f] === '1';
+    if(_capa[_mapaPid] === 'rest') return d[f] === '1';
     if(f === 'must') return d.must === '1';
     if(f === 'fuerte') return d.int === 'red' || d.int === 'yellow';
     if(f === 'tranqui') return d.int === 'green' || d.int === 'blue' || d.show === '1';
     return true;
   }
-  function mapaFiltro(pid, f, btn){
-    _filtro[pid] = f;
-    if(window._mapaSolo) mapaVerTodas(pid);        // usar un filtro sale del modo "sólo una"
-    const cont = document.getElementById(_dom(pid) + '-mapa');
-    cont.querySelectorAll('.mapa-chip').forEach(c => c.classList.remove('activo'));
+  function mapaFiltro(f, btn){
+    _filtro[_mapaPid] = f;
+    if(window._mapaSolo) mapaVerTodas();          // usar un filtro sale del modo "sólo una"
+    _mall('.mapa-filtros .mapa-chip').forEach(c => c.classList.remove('activo'));
     if(btn) btn.classList.add('activo');
-    cont.querySelectorAll('.mapa-region').forEach(r => r.classList.remove('dim'));
-    _pins(pid).forEach(p => p.classList.toggle('hide', !_match(pid, p.dataset)));
+    _mall('.mapa-region').forEach(r => r.classList.remove('dim'));
+    _mapaPinsActivos().forEach(p => p.classList.toggle('hide', !_mapaMatch(p.dataset)));
   }
   // click en una tierra: la aísla; volver a tocarla libera el mapa
-  function mapaLand(pid, land){
-    const cont = document.getElementById(_dom(pid) + '-mapa');
-    const regions = cont.querySelectorAll('.mapa-region');
+  function mapaLand(land){
+    const regions = _mall('.mapa-region');
     const target = [...regions].find(r => r.dataset.land === land);
-    const yaActiva = target && !target.classList.contains('dim')
-                     && [...regions].some(r => r.classList.contains('dim'));
-    _filtro[pid] = 'all';
-    cont.querySelectorAll('.mapa-chip').forEach((c, i) => c.classList.toggle('activo', i === 0));
+    const activo = target && !target.classList.contains('dim')
+                   && [...regions].some(r => r.classList.contains('dim'));
+    _filtro[_mapaPid] = 'all';
+    _mall('.mapa-filtros .mapa-chip').forEach((c, i) => c.classList.toggle('activo', i === 0));
     window._mapaSolo = null;
-    const pins = _pins(pid);
-    if(yaActiva){
+    const pins = _mapaPinsActivos();
+    if(activo){
       regions.forEach(r => r.classList.remove('dim'));
       pins.forEach(p => p.classList.remove('hide', 'solo'));
       return;
@@ -3690,15 +3749,14 @@
     pins.forEach(p => { p.classList.remove('solo'); p.classList.toggle('hide', p.dataset.land !== land); });
   }
 
-  function mapaSel(pid, nombre){
-    const cont = document.getElementById(_dom(pid) + '-mapa');
-    cont.querySelectorAll('.mapa-pin').forEach(p =>
+  function mapaSel(nombre){
+    const pid = _mapaPid;
+    _mall('.mapa-pin').forEach(p =>
       p.classList.toggle('on', p.dataset.nombre === nombre));
-    const det = document.getElementById(_dom(pid) + '-mapa-det');
+    const det = _mid('mapa-detalle');
     const aviso = window._mapaSolo === nombre
-      ? `<div class="mapa-solo-aviso" id="mapa-solo-aviso">Estás viendo solo esta atracción
-         <button onclick="mapaVerTodas('${pid}')">Ver todas</button></div>` : '';
-
+      ? `<div class="mapa-solo-aviso" id="${_dom(pid)}-mapa-solo-aviso">Estás viendo solo esta atracción
+         <button onclick="mapaVerTodas()">Ver todas</button></div>` : '';
     // La ficha NO se duplica: se lee de la card que ya existe en el HTML.
     const f = _capa[pid] === 'rest' ? fichaResto(nombre) : fichaDe(pid, nombre);
     if(!f){ det.innerHTML = `${aviso}<h4>${nombre}</h4>`; return; }
@@ -3713,29 +3771,85 @@
   }
 
   // esconde todos los pins menos el elegido (se llega así desde la estrategia)
-  function mapaSoloPin(pid, nombre){
-    const cont = document.getElementById(_dom(pid) + '-mapa');
-    cont.querySelectorAll('.mapa-pin').forEach(p => {
+  function _mapaSoloPins(nombre){
+    _mapaPinsActivos().forEach(p => {
       const es = p.dataset.nombre === nombre;
       p.classList.toggle('hide', !es);
       p.classList.toggle('solo', es);
       p.classList.toggle('on', es);
     });
-    cont.querySelectorAll('.mapa-region').forEach(r => r.classList.add('dim'));
+    _mall('.mapa-region').forEach(r => r.classList.add('dim'));
   }
-  function mapaVerTodas(pid){
+  function mapaVerTodas(){
     window._mapaSolo = null;
-    const cont = document.getElementById(_dom(pid) + '-mapa');
-    if(!cont) return;
-    cont.querySelectorAll('.mapa-pin').forEach(p => { p.classList.remove('hide', 'solo'); });
-    cont.querySelectorAll('.mapa-region').forEach(r => r.classList.remove('dim'));
-    const av = document.getElementById('mapa-solo-aviso'); if(av) av.remove();
+    _mall('.mapa-pin').forEach(p => p.classList.remove('hide', 'solo'));
+    _mall('.mapa-region').forEach(r => r.classList.remove('dim'));
+    const av = _mid('mapa-solo-aviso'); if(av) av.remove();
+  }
+
+  // ── Zoom del mapa (con límites, solo el mapa) ──────────────
+  let _z = { s: 1, tx: 0, ty: 0 };
+  const Z_MIN = 1, Z_MAX = 2.6, Z_VBW = 1000, Z_VBH = 1000;
+  let _zt = { mode: null, x: 0, y: 0, d: 0, s0: 1, md: false };
+  function _zClamp(){
+    _z.s = Math.max(Z_MIN, Math.min(Z_MAX, _z.s));
+    _z.tx = Math.max(Z_VBW * (1 - _z.s), Math.min(0, _z.tx));
+    _z.ty = Math.max(Z_VBH * (1 - _z.s), Math.min(0, _z.ty));
+  }
+  function _zApply(){
+    _zClamp();
+    const g = _mid('mapa-zoomlayer');
+    if(g) g.setAttribute('transform', `translate(${_z.tx.toFixed(2)} ${_z.ty.toFixed(2)}) scale(${_z.s.toFixed(4)})`);
+    const svg = _mid('mapa-svg');
+    if(svg) svg.style.touchAction = _z.s > 1.01 ? 'none' : 'pan-y';
+  }
+  function _zPt(cx, cy){
+    const svg = _mid('mapa-svg');
+    const p = svg.createSVGPoint(); p.x = cx; p.y = cy;
+    return p.matrixTransform(svg.getScreenCTM().inverse());
+  }
+  function _zZoomAt(cx, cy, factor){
+    const f = _zPt(cx, cy), oldS = _z.s;
+    const newS = Math.max(Z_MIN, Math.min(Z_MAX, oldS * factor)), k = newS / oldS;
+    _z.tx = f.x - (f.x - _z.tx) * k; _z.ty = f.y - (f.y - _z.ty) * k; _z.s = newS; _zApply();
+  }
+  function mapaZoom(factor){
+    const svg = _mid('mapa-svg'); if(!svg) return;
+    const r = svg.getBoundingClientRect(); _zZoomAt(r.left + r.width / 2, r.top + r.height / 2, factor);
+  }
+  function mapaZoomReset(){ _z = { s: 1, tx: 0, ty: 0 }; _zApply(); }
+  function _zDist(t){ return Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY); }
+  function _zBind(){
+    const svg = _mid('mapa-svg'); if(!svg || svg._zb) return; svg._zb = 1;
+    svg.addEventListener('touchstart', e => {
+      if(e.touches.length === 2){ _zt.mode = 'pinch'; _zt.d = _zDist(e.touches); _zt.s0 = _z.s; e.preventDefault(); }
+      else if(e.touches.length === 1){ _zt.mode = _z.s > 1.01 ? 'pan' : 'idle'; _zt.x = e.touches[0].clientX; _zt.y = e.touches[0].clientY; }
+    }, { passive: false });
+    svg.addEventListener('touchmove', e => {
+      if(_zt.mode === 'pinch' && e.touches.length >= 2){
+        const d = _zDist(e.touches), target = Math.max(Z_MIN, Math.min(Z_MAX, _zt.s0 * d / (_zt.d || 1)));
+        const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2, cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const f = _zPt(cx, cy), k = target / _z.s;
+        _z.tx = f.x - (f.x - _z.tx) * k; _z.ty = f.y - (f.y - _z.ty) * k; _z.s = target; _zApply(); e.preventDefault();
+      } else if(_zt.mode === 'pan' && e.touches.length === 1){
+        const t = e.touches[0], ctm = svg.getScreenCTM();
+        _z.tx += (t.clientX - _zt.x) / ctm.a; _z.ty += (t.clientY - _zt.y) / ctm.d;
+        _zt.x = t.clientX; _zt.y = t.clientY; _zApply(); e.preventDefault();
+      }
+    }, { passive: false });
+    svg.addEventListener('touchend', e => { if(e.touches.length === 0) _zt.mode = null; });
+    svg.addEventListener('wheel', e => { e.preventDefault(); _zZoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1.12 : 0.89); }, { passive: false });
+    svg.addEventListener('mousedown', e => { if(_z.s > 1.01){ _zt.md = true; _zt.x = e.clientX; _zt.y = e.clientY; e.preventDefault(); } });
+    if(!window._zWin){ window._zWin = 1;
+      window.addEventListener('mousemove', e => { if(!_zt.md) return; const s = _mid('mapa-svg'); if(!s) return; const ctm = s.getScreenCTM(); _z.tx += (e.clientX - _zt.x) / ctm.a; _z.ty += (e.clientY - _zt.y) / ctm.d; _zt.x = e.clientX; _zt.y = e.clientY; _zApply(); });
+      window.addEventListener('mouseup', () => { _zt.md = false; });
+    }
   }
 
   // ─── Estrategia clickeable ─────────────────────────────────────────────
   // Portado de Orlando. Allá los ítems salen de datos (steps[].at[]); acá la
-  // estrategia es HTML escrito a mano, asi que se recorren los items li del DOM y
-  // se hace clickeable el que resuelve a una ficha con pin en el mapa.
+  // estrategia es HTML escrito a mano, así que se recorren los items li del DOM
+  // y se hace clickeable el que resuelve a una ficha con pin en el mapa.
   const _GEN_ESTRAT = /^(almuerzo|desayuno|cena|merienda|comida|shopping|shows?|snacks?)$/i;
   function _tituloRef(t){
     let x = String(t).replace(/⭐+/g, ' ').replace(/^[^\p{L}\p{N}]+/u, '').replace(/\s*\([^)]*\)\s*$/, '').trim();
@@ -3758,7 +3872,7 @@
     return out;
   }
   function _estratResolver(pid, texto){
-    if(!MAPAS[pid]) return null;                                   // parque sin mapa
+    if(!MAPAS[pid]) return null;                                     // parque sin mapa
     const titulo = _tituloRef(texto);
     if(titulo.length > 55 || _GEN_ESTRAT.test(titulo)) return null;  // frases genéricas
     const k = _normRef(texto); if(!k || k.length < 4) return null;
@@ -3802,9 +3916,9 @@
     const corta = f.desc.length > 210 ? f.desc.slice(0, 210).replace(/\s+\S*$/, '') + '…' : f.desc;
     const card = document.createElement('li');
     card.className = 'estrat-ficha';
+    card.dataset.n = nombre;
     card.innerHTML = `${foto}<div class="ef-body"><strong>${f.nombre}</strong><p>${corta}</p>
       <button class="ef-mapa" onclick="estratAlMapa('${pid}', this.closest('.estrat-ficha').dataset.n)">🗺️ Ver en el mapa</button></div>`;
-    card.dataset.n = nombre;
     li.after(card); li.classList.add('abierta');
   }
   // va al mapa con esa ficha abierta y aislada; recuerda de dónde vino
@@ -3814,9 +3928,9 @@
     if(btn) cambiarTab(btn, d + '-mapa');
     window._volverEstrat = pid;
     window._mapaSolo = nombre;              // se setea ANTES para que la ficha muestre el aviso
-    if(_capa[pid] === 'rest') renderMapa(pid, 'atr');
-    mapaSel(pid, nombre);
-    mapaSoloPin(pid, nombre);
+    if(_capa[pid] === 'rest') mapaCapa('atr');
+    mapaSel(nombre);
+    _mapaSoloPins(nombre);
     document.getElementById(d + '-mapa').scrollIntoView({ block: 'start' });
     window.scrollBy(0, -60);
   }
@@ -3828,7 +3942,7 @@
     if(btn) cambiarTab(btn, d + '-estrategia');
     setTimeout(() => {
       const li = document.querySelector(`#${d}-estrategia .estrat-link.abierta`);
-      if(li){ li.scrollIntoView({ block: 'center' }); }
+      if(li) li.scrollIntoView({ block: 'center' });
     }, 30);
   }
   // ─── DÍAS FRANCIA ────────────────────────────────────
