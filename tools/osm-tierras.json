@@ -1,0 +1,607 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-06T03:25:00Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 258856843,
+  "lat": 48.8707952,
+  "lon": 2.7791228,
+  "tags": {
+    "name": "Disneyland Railroad Main Street Station",
+    "public_transport": "station",
+    "railway": "station",
+    "ref:FR:STIF": "412814",
+    "source": "STIF - 12/2016",
+    "tourism": "attraction",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/main-street-usa/attractions/disneyland-railroad.xhtml",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856858,
+  "lat": 48.8701941,
+  "lon": 2.7721388,
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77700",
+    "addr:street": "Frontierland",
+    "name": "Disneyland Railroad Frontierland Depot",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "survey",
+    "tourism": "attraction",
+    "train": "yes",
+    "website": "http://parks.disneylandparis.co.uk/disneyland-park/lands/frontierland/attractions/disneyland-railroad.xhtml",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856870,
+  "lat": 48.8746234,
+  "lon": 2.7735731,
+  "tags": {
+    "name": "Disneyland Railroad Fantasyland Station",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "survey",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 258856876,
+  "lat": 48.8747210,
+  "lon": 2.7794141,
+  "tags": {
+    "name": "Disneyland Railroad Discoveryland Station",
+    "operator": "Disneyland",
+    "public_transport": "station",
+    "railway": "station",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2274931740,
+  "lat": 48.8720709,
+  "lon": 2.7795316,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Main Street East",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 2999825244,
+  "lat": 48.8709089,
+  "lon": 2.7784603,
+  "tags": {
+    "name": "Main Street Vehicles",
+    "tourism": "attraction",
+    "website": "https://www.disneylandparis.fr/parcs-et-activites/attractions/parc-disneyland/main-street-vehicles.html"
+  }
+},
+{
+  "type": "node",
+  "id": 9860264908,
+  "lat": 48.8654931,
+  "lon": 2.7793363,
+  "tags": {
+    "name": "Marvel Avengers Campus",
+    "place": "locality",
+    "wikidata": "Q54954056",
+    "wikipedia": "fr:Avengers Campus"
+  }
+},
+{
+  "type": "node",
+  "id": 9860264910,
+  "lat": 48.8672582,
+  "lon": 2.7765926,
+  "tags": {
+    "name": "Worlds of Pixar",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 9921085308,
+  "lat": 48.8704159,
+  "lon": 2.7749621,
+  "tags": {
+    "name": "Frontierland",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 9921085309,
+  "lat": 48.8721222,
+  "lon": 2.7733235,
+  "tags": {
+    "name": "Adventureland",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 9921085310,
+  "lat": 48.8741546,
+  "lon": 2.7750187,
+  "tags": {
+    "name": "Fantasyland",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 9921085311,
+  "lat": 48.8735495,
+  "lon": 2.7791895,
+  "tags": {
+    "name": "Discoveryland",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 10246213472,
+  "lat": 48.8664190,
+  "lon": 2.7796794,
+  "tags": {
+    "board_type": "welcome_sign",
+    "information": "board",
+    "name": "Avengers Campus",
+    "tourism": "information",
+    "wikidata": "Q54954056",
+    "wikipedia": "fr:Avengers Campus"
+  }
+},
+{
+  "type": "node",
+  "id": 10735624909,
+  "lat": 48.8720261,
+  "lon": 2.7796375,
+  "tags": {
+    "bus": "yes",
+    "name": "Main Street East",
+    "public_transport": "stop_position"
+  }
+},
+{
+  "type": "node",
+  "id": 11851727105,
+  "lat": 48.8716619,
+  "lon": 2.7780443,
+  "tags": {
+    "name": "Main Street U.S.A.",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 12383396918,
+  "lat": 48.8642716,
+  "lon": 2.7740217,
+  "tags": {
+    "name": "World of Frozen",
+    "place": "locality",
+    "wikidata": "Q65044325",
+    "wikipedia": "fr:World of Frozen"
+  }
+},
+{
+  "type": "node",
+  "id": 13634209825,
+  "lat": 48.8661726,
+  "lon": 2.7770252,
+  "tags": {
+    "name": "Adventure Way",
+    "place": "locality"
+  }
+},
+{
+  "type": "way",
+  "id": 40223250,
+  "center": {
+    "lat": 48.8696255,
+    "lon": 2.7777227
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "layer": "-1",
+    "name": "Main Street West"
+  }
+},
+{
+  "type": "way",
+  "id": 40223253,
+  "center": {
+    "lat": 48.8715270,
+    "lon": 2.7772515
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street West",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 40223257,
+  "center": {
+    "lat": 48.8700125,
+    "lon": 2.7727875
+  },
+  "tags": {
+    "amenity": "theatre",
+    "building": "yes",
+    "name": "Frontierland Theater",
+    "source": "Cadastre. Mise à jour : 2014;survey",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 40251256,
+  "center": {
+    "lat": 48.8717531,
+    "lon": 2.7792676
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street East",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 40251257,
+  "center": {
+    "lat": 48.8724343,
+    "lon": 2.7790777
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street East",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 40278374,
+  "center": {
+    "lat": 48.8701241,
+    "lon": 2.7779292
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street West",
+    "tunnel": "building_passage"
+  }
+},
+{
+  "type": "way",
+  "id": 40278375,
+  "center": {
+    "lat": 48.8707317,
+    "lon": 2.7777474
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street West",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 40404111,
+  "center": {
+    "lat": 48.8748028,
+    "lon": 2.7799054
+  },
+  "tags": {
+    "addr:city": "Marne-la-Vallée",
+    "addr:postcode": "77777",
+    "addr:street": "Avenue Blanche Neige",
+    "amenity": "cinema",
+    "building": "yes",
+    "check_date": "2024-04-02",
+    "name": "Discoveryland Theatre",
+    "note": "Cinéma 4D",
+    "old_name": "Captin Eo;Chérie, j'ai rétréci le public;Captin Eo;Ant Man;Disney&Pixar Short Film Festival;Path Of The Jedi",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "phone": "+33825300500",
+    "ref:FR:CNC": "no",
+    "source": "survey;knowledge",
+    "website": "https://www.disneylandparis.com/fr-be/attractions/parc-disneyland/discoveryland-theatre/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 78037656,
+  "center": {
+    "lat": 48.8702256,
+    "lon": 2.7722312
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Disneyland Railroad Frontierland Depot",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "Cadastre. Mise à jour : 2010,survey",
+    "train": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 87075631,
+  "center": {
+    "lat": 48.8703515,
+    "lon": 2.7741939
+  },
+  "tags": {
+    "leisure": "playground",
+    "name": "Frontierland Playground",
+    "source": "bing",
+    "website": "https://www.disneylandparis.fr/attractions/parc-disneyland/pocahontas-indian-village/"
+  }
+},
+{
+  "type": "way",
+  "id": 404987277,
+  "center": {
+    "lat": 48.8718843,
+    "lon": 2.7777057
+  },
+  "tags": {
+    "area": "yes",
+    "description": "Rue marchande",
+    "highway": "living_street",
+    "lit": "yes",
+    "name": "Main Street",
+    "surface": "paving_stones",
+    "wikipedia": "fr:Main Street USA"
+  }
+},
+{
+  "type": "way",
+  "id": 1058552009,
+  "center": {
+    "lat": 48.8718498,
+    "lon": 2.7791987
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street East",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1086799532,
+  "center": {
+    "lat": 48.8639528,
+    "lon": 2.7729866
+  },
+  "tags": {
+    "area": "yes",
+    "attraction": "log_flume",
+    "building": "yes",
+    "check_date": "2026-02-05",
+    "fee": "no",
+    "layer": "1",
+    "name": "Frozen Ever After",
+    "opening_date": "2026-03-29",
+    "wikidata": "Q20164536",
+    "wikipedia:fr": "Frozen Ever After"
+  }
+},
+{
+  "type": "way",
+  "id": 1094501590,
+  "center": {
+    "lat": 48.8661236,
+    "lon": 2.7751879
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "Adventure Way"
+  }
+},
+{
+  "type": "way",
+  "id": 1103133248,
+  "center": {
+    "lat": 48.8655820,
+    "lon": 2.7737864
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "Adventure Way"
+  }
+},
+{
+  "type": "way",
+  "id": 1108503204,
+  "center": {
+    "lat": 48.8719089,
+    "lon": 2.7789681
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street East"
+  }
+},
+{
+  "type": "way",
+  "id": 1151088003,
+  "center": {
+    "lat": 48.8652846,
+    "lon": 2.7791916
+  },
+  "tags": {
+    "barrier": "wall",
+    "material": "metal",
+    "name": "Cache Avengers Campus"
+  }
+},
+{
+  "type": "way",
+  "id": 1196904442,
+  "center": {
+    "lat": 48.8718650,
+    "lon": 2.7777344
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "footway",
+    "incline": "0%",
+    "lit": "yes",
+    "motor_vehicle": "private",
+    "name": "Main Street",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 1219812448,
+  "center": {
+    "lat": 48.8711919,
+    "lon": 2.7772895
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "name": "Main Street West"
+  }
+},
+{
+  "type": "way",
+  "id": 1338725876,
+  "center": {
+    "lat": 48.8647713,
+    "lon": 2.7738101
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "World of Frozen"
+  }
+},
+{
+  "type": "way",
+  "id": 1338725896,
+  "center": {
+    "lat": 48.8643457,
+    "lon": 2.7741701
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "World of Frozen"
+  }
+},
+{
+  "type": "way",
+  "id": 1338730951,
+  "center": {
+    "lat": 48.8649003,
+    "lon": 2.7754117
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "Adventure Way",
+    "surface": "sett"
+  }
+},
+{
+  "type": "way",
+  "id": 1355343100,
+  "center": {
+    "lat": 48.8716768,
+    "lon": 2.7782856
+  },
+  "tags": {
+    "building:part": "yes",
+    "name": "Main Street Motors",
+    "operator": "Euro Disney Associés S.A.S.",
+    "shop": "gift"
+  }
+},
+{
+  "type": "way",
+  "id": 1355343103,
+  "center": {
+    "lat": 48.8717437,
+    "lon": 2.7787620
+  },
+  "tags": {
+    "building:part": "yes",
+    "name": "Stock Main Street BSE"
+  }
+},
+{
+  "type": "way",
+  "id": 1465196202,
+  "center": {
+    "lat": 48.8663654,
+    "lon": 2.7773661
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "Adventure Way"
+  }
+},
+{
+  "type": "way",
+  "id": 1474327702,
+  "center": {
+    "lat": 48.8641962,
+    "lon": 2.7737954
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "World of Frozen"
+  }
+},
+{
+  "type": "relation",
+  "id": 16186984,
+  "center": {
+    "lat": 48.8718639,
+    "lon": 2.7777131
+  },
+  "tags": {
+    "name": "Main Street Vehicles",
+    "network": "Main Street Vehicles",
+    "ref": "Main Street Vehicles",
+    "route": "bus",
+    "type": "route"
+  }
+}
+
+  ]
+}
