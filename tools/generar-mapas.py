@@ -61,6 +61,10 @@ def datos_app():
                 badges[nm.group(1).strip()] = re.findall(r'<span class="badge[^"]*">([^<]*)</span>', card)
 
     blk = re.search(r'id="pantalla-restaurants"(.*?)(?=<div class="pantalla" id=|\Z)', c, re.DOTALL).group(1)
+    for card in re.findall(r'<div class="atraccion"[^>]*>.*?(?=<div class="atraccion"|\Z)', blk, re.DOTALL):
+        nm = re.search(r'<span class="nombre">([^<]+)</span>', card)
+        if nm:
+            badges[nm.group(1).strip()] = re.findall(r'<span class="badge[^"]*">([^<]*)</span>', card)
     zonas = {}
     for z, cuerpo in re.findall(r'<div class="resto-zona-group" data-zona="([^"]+)"(.*?)(?=<div class="resto-zona-group"|\Z)',
                                 blk, re.DOTALL):
@@ -86,6 +90,7 @@ def main():
     lands = json.load(open(os.path.join(RAIZ, 'tools', 'mapa-lands.json'), encoding='utf-8'))
     osm_r = json.load(open(os.path.join(RAIZ, 'tools', 'osm-restaurantes.json'), encoding='utf-8'))
     alturas, badges, zonas = datos_app()
+    badges_rest = badges
     asign = tierras_de_la_app()
 
     puntos = []
@@ -105,8 +110,11 @@ def main():
 
         pins = {}
         for n, xy in p['pins'].items():
-            i = intensidad(n, alturas, badges)
-            pins[n] = {'x': xy[0], 'y': xy[1], 'land': de.get(n, ''), 'int': i}
+            bs = badges.get(n, [])
+            pins[n] = {'x': xy[0], 'y': xy[1], 'land': de.get(n, ''),
+                       'int': intensidad(n, alturas, badges),
+                       'must': 1 if any('⭐' in b for b in bs) else 0,
+                       'show': 1 if any('Show' in b for b in bs) else 0}
 
         # lugares para comer
         food, sin_match = {}, []
@@ -119,7 +127,10 @@ def main():
                 continue
             q = min(cand, key=lambda z: abs(len(z['k']) - len(k)))
             x, y = m['svg'](q['lat'], q['lon'])
-            food[r] = {'x': x, 'y': y, 'osm': q['nombre']}
+            bs = badges_rest.get(r, [])
+            food[r] = {'x': x, 'y': y, 'osm': q['nombre'],
+                       'fav': 1 if any('⭐' in b for b in bs) else 0,
+                       'per': 1 if any('personaje' in b.lower() or 'princesa' in b.lower() for b in bs) else 0}
 
         print(f"\n=== {p['titulo']} ===")
         cuenta = {}
