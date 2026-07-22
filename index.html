@@ -8,7 +8,9 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <title>Disnerd Paris</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- supabase-js 2.110.8 servido local (NO desde cdn.jsdelivr.net): los ISP de España
+     bloquean rangos de Cloudflare por LaLiga y la app quedaba muerta para los viajeros de allá -->
+<script src="supabase.min.js"></script>
 <style>
   :root {
     --celeste: #e8b0c4;
@@ -3322,11 +3324,18 @@
 
 <script>
   // ─── SUPABASE ───────────────────────────────────────
-  const { createClient } = supabase;
-  const sb = createClient(
-    'https://wjfglsafgaltusmbnccl.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqZmdsc2FmZ2FsdHVzbWJuY2NsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzM2OTksImV4cCI6MjA4OTAwOTY5OX0.OOwgyKDNQsbBaGDaL0OhJfc8eOsCClvvAPW0VFBKrOA'
-  );
+  // Envuelto en try/catch a propósito: si el bundle no cargó, `supabase` no existe y el
+  // ReferenceError se llevaba puesto TODO este script (login, nav, tabs, acordeones).
+  // Ahora la app avisa en pantalla y el resto sigue funcionando.
+  let sb = null;
+  try {
+    sb = supabase.createClient(
+      'https://wjfglsafgaltusmbnccl.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqZmdsc2FmZ2FsdHVzbWJuY2NsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzM2OTksImV4cCI6MjA4OTAwOTY5OX0.OOwgyKDNQsbBaGDaL0OhJfc8eOsCClvvAPW0VFBKrOA'
+    );
+  } catch (e) {
+    console.error('No cargó supabase-js:', e);
+  }
 
   let usuarioActual = null;
 
@@ -3338,10 +3347,23 @@
     const u = document.getElementById('login-usuario').value.trim().toLowerCase();
     const c = document.getElementById('login-clave').value;
     document.getElementById('login-error').textContent = '';
+    if(!sb){
+      document.getElementById('login-error').innerHTML =
+        'No se pudo cargar la app 😕<br>Probá recargar la página, o cambiar de WiFi a datos móviles (o al revés).';
+      return;
+    }
     if(!u||!c){ document.getElementById('login-error').textContent='Completá los datos'; return; }
 
-    const { data, error } = await sb.from('disnerd_paris_users')
-      .select('*').eq('usuario', u).eq('clave', c).single();
+    let data, error;
+    try {
+      ({ data, error } = await sb.from('disnerd_paris_users')
+        .select('*').eq('usuario', u).eq('clave', c).single());
+    } catch (e) {
+      console.error('Error de red en login:', e);
+      document.getElementById('login-error').innerHTML =
+        'No hay conexión con el servidor 📡<br>Revisá tu internet y probá de nuevo.';
+      return;
+    }
 
     if(error || !data){
       document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos';

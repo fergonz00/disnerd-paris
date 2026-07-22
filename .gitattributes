@@ -1,0 +1,3 @@
+# El bundle de supabase-js va byte-por-byte como lo publica npm.
+# Sin esto, autocrlf le mete CRLF y puede alterar template literals multilinea.
+supabase.min.js -text

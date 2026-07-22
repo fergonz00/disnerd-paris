@@ -3,7 +3,15 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-06-02
+## 📌 Dónde quedamos — última sesión: 2026-06-26
+
+**Sesión 2026-06-26 (fix marcado por una viajera):** se fusionaron **Blue Lagoon** y **Captain Jack** en un solo restaurante. Eran el MISMO lugar (el viejo "Blue Lagoon Restaurant" de DLP fue rebautizado *Captain Jack's – Restaurant des Pirates* en 2017, dentro de Pirates of the Caribbean) y la guía tenía la descripción partida en dos cards.
+- Eliminé la card "Blue Lagoon Restaurant" y volqué todo su texto dentro de **Captain Jack** (descripción unificada: dentro de la atracción, botes, cielo estrellado + taberna pirata, cocina caribeña/cajun; mantiene badge ⭐ y tip de reservar con anticipación). Saqué la frase "menos icónico que Blue Lagoon".
+- Resultado: **19 restaurantes** (DLP pasó de 8 → 7), HTML balanceado 63/63 atraccion/chevron.
+- Commit `de42826`, pusheado a `main`, deployado a `paris.disnerd.com.ar`.
+- ⚠️ Nota: Blue Lagoon SÍ existió en París (no es solo de California) — solo está renombrado. No re-agregar como restaurante aparte.
+
+## 📌 Sesión anterior: 2026-06-02
 
 **Estado:** working tree limpio, `main` sincronizado con `origin/main` y deployado a `paris.disnerd.com.ar`. HTML balanceado (validado: div/span/p/li OK, 64 chevron = 64 atraccion).
 
