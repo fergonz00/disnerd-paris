@@ -1,2 +1,4 @@
 *.pdf
 guia_sofi.txt
+__pycache__/
+*.pyc
