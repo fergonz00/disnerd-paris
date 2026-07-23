@@ -3,7 +3,7 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-07-23
+## 📌 Dónde quedamos — última sesión: 2026-07-23 (larga: mapa, fichas, shows)
 
 Sesión larga. La app pasó de ser una guía de texto a tener **mapa interactivo, fichas al nivel de Orlando y cero dependencias externas**.
 
@@ -45,11 +45,25 @@ Portado de Orlando. **Diferencia de implementación**: allá los ítems salen de
 - **24 fichas nuevas**: 7 atracciones que estaban en el listado oficial y faltaban (las dos *arcades* de Main Street son las más útiles: son el atajo techado cuando llueve o pasa el desfile; **Les Tapis Volants** era la única atracción operativa que faltaba en DAW) y 17 lugares para comer (solo servicio en mesa y rápido — **sin kioscos**, filtrado con la clasificación del propio sitio de Disney).
 - ⚠️ **Al insertar cards nuevas, insertar TODAS las de una zona en UNA operación.** De a una corre las posiciones del texto y el ancla de cierre del grupo deja de servir: las cards terminan FUERA del div de su zona y los filtros las ignoran. Me costó tres intentos.
 
-### 🖼️ Fotos: 141, ninguna sin usar y ninguna pesada
+### 🎭 Shows: los 20 pasan a fichas con foto y pin (no eran cards)
 
-- **0 fichas sin foto.** Carpeta en 38 MB (venía de 122).
+Eran secciones de texto en la solapa Shows (sin foto, sin acordeón, sin pin) y 6 estaban **duplicados** como ficha en Atracciones. Ahora los 20 son fichas `.atraccion` completas.
+
+- Se convirtieron manteniendo la **agrupación por categoría** de la solapa Shows (cierre, desfiles, Avengers Campus…), no por tierra.
+- Se sacaron los 6 duplicados de Atracciones (Rhythms, PhilharMagique, A Celebration, TOGETHER, Minnie's Dream Factory, Mickey and the Magician), conservándoles la descripción larga.
+- ⚠️ **`fichas()` ahora lee la solapa Atracciones Y la de Shows.** La tierra del show sale de su **pin en `MAPAS`**, no del section-label (los shows se agrupan por categoría, no por tierra).
+- Los 20 con **pin azul** en el mapa. Como no viven en la solapa Atracciones, su tierra y su coordenada salen de `coords.json` (cargadas a mano). `generar-mapas.py` usa la tierra de coords cuando el pin no está en Atracciones, y marca `int='blue'` para los tipo show. `audit-mapa.py` suma los shows de coords para poder verificar punto-en-polígono.
+- **Vencidos sacados:** Dancing with Deadpool (terminó 15-jul) y Minnie's Marching Band (reemplazada por la Princess Cavalcade). **Nuevos:** Disney Princess Cavalcade (arrancó 24-jul), Guardians of the Galaxy, Warriors of Wakanda. **Pedestal for Mjolnir** quedó marcado "sin confirmar" — no figura en la cartelera oficial 2026, preguntarle a Sofi.
+
+### 🖼️ Fotos: 155, ninguna sin usar y ninguna pesada
+
+- **0 fichas sin foto.** Carpeta en 42 MB.
 - `tools/optimizar-fotos.py --aplicar` achica al lado máximo de 1600px, calidad 85, progresivo, respetando la orientación EXIF. La app dibuja a 700px, así que sobra. Había fotos de 8256px y 12,5 MB — el viajero se bajaba eso con roaming.
 - `tools/audit-fotos.py` reporta fichas sin foto, verticales que quedan altísimas, baja resolución y huérfanas.
+
+### 🍽️ Restaurantes ampliados
+
+Las 36 fichas de restaurante pasaron de mediana 262 a **335 caracteres** (las atracciones están en ~400). Verificado contra la web oficial (tipo de servicio, cocina, rango de precio, si se reserva). La capa "Para comer" del mapa filtra por **con / sin reserva** (colores de Orlando `#c9a227`/`#e8934a`, emoji 🍽️/🥤), con la clasificación del sitio oficial.
 
 ### ✅ Datos corregidos (verificados contra fuente oficial)
 
@@ -60,14 +74,17 @@ Portado de Orlando. **Diferencia de implementación**: allá los ítems salen de
 - **Royal Banquet** pasa a ⭐ favorito: el PDF de Sofi lo lista y era el único de sus cinco sin la estrella.
 - ⚠️ **Error del PDF de Sofi, no de la app**: dice "Mickey and the Magician: en Disneyland" y el show es en Adventure World. La app está bien.
 
-### Pendiente
+### Estado al cerrar (chequeo final pasado)
 
-1. **Los 20 shows no tienen ficha ni foto** ← lo más grande. Están como secciones de texto (`<h4>`), no como cards: sin foto, sin badges y no se abren desde el mapa. Son 5 en DLP y 15 en DAW (Disney Tales of Magic, Stars on Parade, Disney Cascade of Lights, Stitch Live!, Heroic Welcome…).
-2. **Dos restaurantes con descripción corta**: Silver Spur Steakhouse (167 car) y Stark Factory (184). Los otros 34 están en 262 de mediana.
-3. **Los restaurantes en general** están por debajo de las atracciones (262 vs 412 de mediana).
-4. **Cuatro fotos chicas** que Fer no consiguió mejores: restaurant-hakuna-matata (596×335), au-chalet-de-la-marionnette (649×472), toad-hall-restaurant (689×551), super-diner (800×450). Se dejan.
-5. **Dos fotos huérfanas**: `blue-lagoon.jpg` y `disney-junior.jpg`, de cambios viejos. Preguntar si se borran.
-6. Los restaurantes de **hoteles y Disney Village** no están en el mapa (quedan fuera de los parques). Si se quisieran, haría falta un mapa del resort.
+Los dos parques + Francia quedaron completos. Inventario: **45 atracciones** (32 DLP + 13 DAW), **20 shows** (5 + 15, todos con foto y pin), **36 restaurantes**, **46 lugares de Francia**, **155 fotos**. Chequeo final: 0 imágenes rotas, 0 errores JS, 0 fichas sin foto, 0 duplicados, audit-mapa TODO OK, filtros de los dos parques dan exacto, circuito estrategia→ficha→mapa→volver OK.
+
+### Pendiente (nada urgente)
+
+1. **Pedestal for Mjolnir**: marcado "sin confirmar". Preguntarle a Sofi si sigue en cartelera 2026.
+2. **Cuatro fotos chicas** que Fer no consiguió mejores: restaurant-hakuna-matata (596×335), au-chalet-de-la-marionnette (649×472), toad-hall-restaurant (689×551), super-diner (800×450). Se dejan.
+3. **Dos fotos huérfanas**: `blue-lagoon.jpg` y `disney-junior.jpg`, de cambios viejos. Preguntar si se borran.
+4. Los restaurantes de **hoteles y Disney Village** no están en el mapa (quedan fuera de los parques). Si se quisieran, haría falta un mapa del resort.
+5. **Error del PDF de Sofi** (no de la app): "Mickey and the Magician: en Disneyland" — es en Adventure World. Avisarle para que lo corrija en su documento.
 
 ## 📌 Sesión anterior: 2026-07-22
 
