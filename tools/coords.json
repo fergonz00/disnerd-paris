@@ -349,5 +349,68 @@
   "lon": 2.7786377,
   "osm": "The Twilight Zone Tower of Terror",
   "tipo": "exacto"
+ },
+ {
+  "pid": "daw",
+  "tierra": "",
+  "nombre": "Les Tapis Volants - Flying Carpets Over Agrabah",
+  "lat": 48.8682805,
+  "lon": 2.7783643,
+  "osm": "Les Tapis Volants - Flying Carpets Over Agrabah",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Discovery Arcade",
+  "lat": 48.8719,
+  "lon": 2.77837,
+  "osm": "Discovery Arcade",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Liberty Arcade",
+  "lat": 48.87148,
+  "lon": 2.77757,
+  "osm": "Liberty Arcade",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Main Street Vehicles",
+  "lat": 48.8709089,
+  "lon": 2.7784603,
+  "osm": "Main Street Vehicles",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Horse-Drawn Streetcars",
+  "lat": 48.8710386,
+  "lon": 2.778876,
+  "osm": "Horse-Drawn Streetcars",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Rustler Roundup Shootin' Gallery",
+  "lat": 48.8714968,
+  "lon": 2.775526,
+  "osm": "Rustler Roundup Shootin' Gallery",
+  "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Frontierland Playground",
+  "lat": 48.8703515,
+  "lon": 2.7741939,
+  "osm": "Frontierland Playground",
+  "tipo": "manual"
  }
 ]
