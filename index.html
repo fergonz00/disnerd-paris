@@ -444,6 +444,11 @@
   /* ítems de estrategia que tienen ficha: clickeables para ver la ficha + el mapa */
   .estrat-link { cursor: pointer; position: relative; }
   .estrat-link .estrat-ic { font-size: 0.78rem; margin-left: 0.35rem; opacity: .55; }
+  /* nombre de atraccion detectado dentro del texto de la estrategia */
+  .estrat-nombre { cursor: pointer; font-weight: 700; color: var(--texto);
+    border-bottom: 1.5px dotted var(--celeste); }
+  .estrat-nombre .estrat-ic { font-size: 0.72rem; margin-left: 0.2rem; opacity: .55;
+    border: none; font-weight: 400; }
   .estrat-link:hover { color: var(--texto); }
   .estrat-link.abierta { font-weight: 700; }
   /* Portado tal cual de Orlando: la foto va como MINIATURA al costado, no arriba
@@ -4279,6 +4284,82 @@
   function _fichaPorNombre(pid, nombre, tipo){
     return tipo === 'rest' ? fichaResto(nombre) : fichaDe(pid, nombre);
   }
+  // Como la estrategia menciona los nombres en el texto ("Zona Toy Story: Slinky
+  // Dog Zigzag Spin, Toy Soldiers Parachute Drop y RC Racer"), a veces el ítem
+  // entero no resuelve pero adentro hay 2 o 3 atracciones. Estos alias cubren
+  // las formas en que la guía escribe algunos nombres.
+  const _ALIAS_TXT = {
+    'crush coaster': "Crush's Coaster",
+    'crushs coaster': "Crush's Coaster",
+    'tower of terror': 'The Twilight Zone Tower of Terror',
+    'ratatouille': 'Ratatouille: The Adventure',
+    'hyperspace mountain': 'Star Wars Hyperspace Mountain',
+    'star tours': 'Star Tours: The Adventures Continue',
+    'indiana jones and the temple of peril': 'Indiana Jones et le Temple du Péril',
+  };
+
+  // Busca nombres de fichas DENTRO de un texto y devuelve [{ini, fin, ficha}]
+  function _buscarEnTexto(pid, texto){
+    const hits = [];
+    const bajo = texto.toLowerCase();
+    const cand = _estratFichas(pid).map(x => ({ f: x.f, tipo: x.tipo, txt: x.f.nombre }));
+    Object.entries(_ALIAS_TXT).forEach(([alias, nombre]) => {
+      const x = _estratFichas(pid).find(y => y.f.nombre === nombre);
+      if(x) cand.push({ f: x.f, tipo: x.tipo, txt: alias });
+    });
+    // los más largos primero, para que "Cars Road Trip" gane sobre "Cars"
+    cand.sort((a, b) => b.txt.length - a.txt.length);
+    cand.forEach(c => {
+      const t = c.txt.toLowerCase();
+      if(t.length < 5) return;
+      let i = bajo.indexOf(t);
+      while(i >= 0){
+        const solapa = hits.some(h => i < h.fin && i + t.length > h.ini);
+        // que sea palabra entera, no un pedazo de otra
+        const antes = i === 0 || !/[\p{L}\p{N}]/u.test(texto[i - 1]);
+        const desp = i + t.length >= texto.length || !/[\p{L}\p{N}]/u.test(texto[i + t.length]);
+        if(!solapa && antes && desp) hits.push({ ini: i, fin: i + t.length, f: c.f, tipo: c.tipo });
+        i = bajo.indexOf(t, i + 1);
+      }
+    });
+    return hits.sort((a, b) => a.ini - b.ini);
+  }
+
+  // Envuelve los nombres encontrados en spans clickeables, tocando solo nodos de
+  // texto para no romper el <strong> y demás markup que ya está escrito.
+  function _linkearNombres(pid, el){
+    let n = 0;
+    const nodos = [];
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while(w.nextNode()){
+      const t = w.currentNode;
+      if(t.parentElement.closest('.estrat-nombre, .estrat-ficha')) continue;
+      if(t.nodeValue.trim().length > 3) nodos.push(t);
+    }
+    nodos.forEach(nodo => {
+      const hits = _buscarEnTexto(pid, nodo.nodeValue);
+      if(!hits.length) return;
+      const frag = document.createDocumentFragment();
+      let pos = 0;
+      hits.forEach(h => {
+        if(h.ini > pos) frag.appendChild(document.createTextNode(nodo.nodeValue.slice(pos, h.ini)));
+        const s = document.createElement('span');
+        s.className = 'estrat-nombre';
+        s.textContent = nodo.nodeValue.slice(h.ini, h.fin);
+        s.dataset.ficha = h.f.nombre;
+        s.dataset.tipo = h.tipo;
+        s.onclick = ev => { ev.stopPropagation(); estratFicha(pid, h.f.nombre, s.closest('li') || s, h.tipo); };
+        s.insertAdjacentHTML('beforeend', '<span class="estrat-ic">🗺️</span>');
+        frag.appendChild(s);
+        pos = h.fin;
+        n++;
+      });
+      if(pos < nodo.nodeValue.length) frag.appendChild(document.createTextNode(nodo.nodeValue.slice(pos)));
+      nodo.parentNode.replaceChild(frag, nodo);
+    });
+    return n;
+  }
+
   // recorre los items li de la solapa Estrategia y hace clickeables los que resuelven
   function montarEstrategia(){
     [['dlp', 'dlp-estrategia'], ['daw', 'wds-estrategia']].forEach(([pid, id]) => {
@@ -4288,7 +4369,11 @@
       cont.querySelectorAll('li').forEach(li => {
         if(li.querySelector('.estrat-ic')) return;
         const x = _estratResolver(pid, li.textContent);
-        if(!x) return;
+        if(!x){
+          // el ítem entero no resuelve: puede tener 2 o 3 nombres adentro
+          n += _linkearNombres(pid, li);
+          return;
+        }
         li.classList.add('estrat-link');
         li.dataset.ficha = x.f.nombre;
         li.dataset.tipo = x.tipo;
@@ -4296,10 +4381,15 @@
         li.insertAdjacentHTML('beforeend', '<span class="estrat-ic">🗺️</span>');
         n++;
       });
+      // los párrafos también nombran atracciones (en DAW, Crush's Coaster y
+      // Frozen Ever After son títulos sueltos, no ítems de lista)
+      cont.querySelectorAll('p, h4').forEach(p => {
+        if(p.closest('.estrat-ficha')) return;
+        n += _linkearNombres(pid, p);
+      });
       cont.dataset.enganchada = n;
     });
   }
-
   // abre/cierra la ficha debajo del ítem, con el botón "ver en el mapa"
   function estratFicha(pid, nombre, li, tipo){
     const sig = li.nextElementSibling;
