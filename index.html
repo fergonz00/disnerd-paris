@@ -446,15 +446,22 @@
   .estrat-link .estrat-ic { font-size: 0.78rem; margin-left: 0.35rem; opacity: .55; }
   .estrat-link:hover { color: var(--texto); }
   .estrat-link.abierta { font-weight: 700; }
-  .estrat-ficha { list-style: none; margin: 0.5rem 0 0.7rem -1.2rem; background: var(--celeste-light);
-    border-radius: 0.9rem; overflow: hidden; box-shadow: 0 2px 10px var(--sombra); }
-  .estrat-ficha img { width: 100%; height: auto; display: block; }
-  .estrat-ficha .ef-body { padding: 0.7rem 0.85rem 0.85rem; }
-  .estrat-ficha strong { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--texto); }
-  .estrat-ficha p { font-size: 0.8rem; color: var(--texto-suave); line-height: 1.55; margin: 0.25rem 0 0.6rem; }
-  .ef-mapa, .md-volver-estrat { background: var(--celeste); color: #fff; border: none;
-    border-radius: 0.6rem; padding: 0.42rem 0.8rem; font-size: 0.79rem; cursor: pointer;
-    font-family: inherit; font-weight: 600; }
+  /* Portado tal cual de Orlando: la foto va como MINIATURA al costado, no arriba
+     y a todo el ancho — la ficha inline tiene que ser compacta para no romper
+     la lectura de la lista de la estrategia. */
+  .estrat-ficha { list-style: none; background: var(--dorado-light); border-radius: 0.7rem;
+    padding: 0.55rem; margin: 0.35rem 0 0.55rem -1.2rem; display: flex; gap: 0.6rem;
+    align-items: flex-start; }
+  .estrat-ficha img { width: 96px; height: 72px; object-fit: cover; border-radius: 0.5rem;
+    flex-shrink: 0; }
+  .estrat-ficha .ef-body { flex: 1; min-width: 0; }
+  .estrat-ficha .ef-body strong { display: block; font-size: 0.85rem; color: var(--texto);
+    margin-bottom: 0.1rem; }
+  .estrat-ficha .ef-body p { font-size: 0.78rem; color: var(--texto-suave); line-height: 1.5;
+    margin: 0 0 0.45rem; }
+  .estrat-ficha .ef-mapa, .md-volver-estrat { background: var(--celeste); color: #fff;
+    border: none; border-radius: 0.6rem; padding: 0.4rem 0.75rem; font-size: 0.8rem;
+    cursor: pointer; font-family: inherit; }
   .md-volver-estrat { margin-top: 0.8rem; background: var(--lavanda); }
 
   .mapa-sticky { padding: 0.2rem 0 0.4rem; }
@@ -4300,7 +4307,9 @@
     document.querySelectorAll('.estrat-ficha').forEach(e => e.remove());
     document.querySelectorAll('.estrat-link.abierta').forEach(e => e.classList.remove('abierta'));
     const f = _fichaPorNombre(pid, nombre, tipo); if(!f) return;
-    const foto = f.img ? `<img src="${f.img}" loading="lazy" onerror="this.style.display='none'">` : '';
+    // sin loading="lazy": la ficha se arma a pedido y la carga diferida no se
+    // dispara, la miniatura quedaba en blanco
+    const foto = f.img ? `<img src="${f.img}" alt="${f.nombre}" onerror="this.style.display='none'">` : '';
     const corta = f.desc.length > 210 ? f.desc.slice(0, 210).replace(/\s+\S*$/, '') + '…' : f.desc;
     const card = document.createElement('li');
     card.className = 'estrat-ficha';
