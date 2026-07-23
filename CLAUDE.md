@@ -3,7 +3,73 @@
 Guía de viaje de Disneyland Paris + París para los clientes de **Sofi Disnerd** (@disnerd.sofi).
 Single-file HTML/CSS/JS inline. Login con Supabase, admin "sofi" gestiona clientes.
 
-## 📌 Dónde quedamos — última sesión: 2026-07-22
+## 📌 Dónde quedamos — última sesión: 2026-07-23
+
+Sesión larga. La app pasó de ser una guía de texto a tener **mapa interactivo, fichas al nivel de Orlando y cero dependencias externas**.
+
+### 🚨 Lo primero: España bloquea Cloudflare (la app no abría para los viajeros de allá)
+
+Los ISP españoles (Movistar/Vodafone/Orange/Digi) bloquean **rangos enteros de IPs de Cloudflare** por las órdenes anti-piratería de LaLiga. `cdn.jsdelivr.net` resuelve a Cloudflare, así que el bundle de Supabase no cargaba — y como `const { createClient } = supabase;` era la primera línea del único `<script>`, el `ReferenceError` **mataba TODA la app**: se veía perfecta pero el botón "Ingresar" no hacía nada.
+
+- `supabase.min.js` (v2.110.8, UMD) commiteado al repo. `.gitattributes` con `-text` para que autocrlf no lo corrompa.
+- `createClient` en try/catch + guarda en `doLogin`, para que si algo externo falla el resto del script sobreviva.
+- Las **116 fotos bajadas de imgur** a `fotos/` (imgur está en Fastly, mismo riesgo). Una ya estaba muerta: la del Muro del "Te Amo" — se consiguió una nueva.
+- ⚠️ **REGLA: nada de CDNs externos, ni JS ni fotos.** El único host externo que queda es `fonts.googleapis.com` (Google no está en los bloqueos y degrada solo).
+
+### 🗺️ Mapa interactivo (lo más grande de la sesión)
+
+Solapa **🗺️ Mapa** entre Shows y Comer, en los dos parques. **Arquitectura portada de Orlando, función por función.**
+
+- **Los datos se generan, no se dibujan a mano.** `tools/proyectar.py` (rota el parque para que quede como lo ve el viajero desde la entrada) + `tools/tierras.py` (Voronoi multi-semilla dentro del contorno real de OSM) + `tools/generar-mapas.py` (junta todo y escribe el bloque `MAPAS`).
+- Para regenerar: `python tools/proyectar.py && python tools/tierras.py && python tools/generar-mapas.py`, y después pegar `tools/_mapas.js` en el `index.html`.
+- **Dos capas**: 🎢 Atracciones (color por intensidad) y 🍽️ Para comer (color por con/sin reserva). Los filtros y colores son **los de Orlando**: `Todo | ⭐ Imperdibles | 🎢 Adrenalina | 🧸 Tranquilas` y `Todo | 🍽️ Con reserva | 🥤 Sin reserva`, `MAPA_FOOD_COLOR = {rr:'#c9a227', rl:'#e8934a'}`.
+- **Zoom completo**: botones + − ⤢, pinch, rueda, arrastrar. Límites 1 a 2.6 con clamp. `touchAction` dinámico.
+- **Click en la tierra** para aislarla, con toggle. Bloque **sticky** para que el mapa quede fijo arriba.
+- **51/51 fichas con pin**, cada una dentro de su tierra, 0 solapamientos. `python tools/audit-mapa.py` lo verifica.
+- ⚠️ **Ojo con los IDs**: Orlando tiene UNA pantalla de mapa y usa ids fijos. Acá los dos parques viven a la vez en el DOM, así que van prefijados (`dlp-mapa-svg`, `wds-mapa-svg`) y se resuelven con los helpers `_mid()` / `_mall()`.
+
+### 💡 Estrategia → ficha → mapa
+
+Portado de Orlando. **Diferencia de implementación**: allá los ítems salen de datos (`steps[].at[]`); acá la estrategia es HTML escrito a mano, así que se recorren los `li` del DOM.
+
+- Si el ítem entero no resuelve, **se buscan los nombres DENTRO del texto** y cada uno queda clickeable. Sin esto DAW enganchaba solo 2 (la guía agrupa "Zona Toy Story: Slinky…, Toy Soldiers… y RC Racer" en un ítem). Ahora **DLP 14 y DAW 13**.
+- Se recorren solo nodos de texto con un TreeWalker, así no se rompe el `<strong>` que ya estaba.
+- `_normRef` tiene los artículos **franceses** (et, du, au, aux, des) además de los EN/ES, si no "Indiana Jones and the Temple of Peril" no matchea con "…et le Temple du Péril".
+- La ficha inline es **flex con miniatura de 96×72** (`object-fit: cover`), igual que Orlando — no a todo el ancho.
+- ⚠️ **Nada de `loading="lazy"` en las fichas que se arman a pedido** (la inline y la del mapa): la carga diferida no se dispara y la foto queda en blanco. Pasó dos veces.
+
+### 📝 Fichas: 51 atracciones y 36 lugares para comer
+
+- **Las 44 descripciones existentes ampliadas** al nivel de Orlando: de mediana 157 a 412 (DLP) y 378 (DAW), ninguna por debajo de 300 caracteres. Todo verificado contra la web oficial de Disneyland Paris antes de escribir.
+- **Los tips salieron de las fichas de atracciones** (decisión de Fer). Los de Restaurantes (6) y Guía Francia (45) **se quedan**.
+- **24 fichas nuevas**: 7 atracciones que estaban en el listado oficial y faltaban (las dos *arcades* de Main Street son las más útiles: son el atajo techado cuando llueve o pasa el desfile; **Les Tapis Volants** era la única atracción operativa que faltaba en DAW) y 17 lugares para comer (solo servicio en mesa y rápido — **sin kioscos**, filtrado con la clasificación del propio sitio de Disney).
+- ⚠️ **Al insertar cards nuevas, insertar TODAS las de una zona en UNA operación.** De a una corre las posiciones del texto y el ancla de cierre del grupo deja de servir: las cards terminan FUERA del div de su zona y los filtros las ignoran. Me costó tres intentos.
+
+### 🖼️ Fotos: 141, ninguna sin usar y ninguna pesada
+
+- **0 fichas sin foto.** Carpeta en 38 MB (venía de 122).
+- `tools/optimizar-fotos.py --aplicar` achica al lado máximo de 1600px, calidad 85, progresivo, respetando la orientación EXIF. La app dibuja a 700px, así que sobra. Había fotos de 8256px y 12,5 MB — el viajero se bajaba eso con roaming.
+- `tools/audit-fotos.py` reporta fichas sin foto, verticales que quedan altísimas, baja resolución y huérfanas.
+
+### ✅ Datos corregidos (verificados contra fuente oficial)
+
+- **Indiana Jones** decía "la única en todo Disney con un loop" — falso, Hyperspace Mountain tiene 3 inversiones. Lo correcto: fue la **primera** montaña rusa Disney en dar vuelta al público (1993). Además le faltaba el badge **Single Rider**.
+- **Autopia**: desde **1,32 m manejan solos**; de 81 cm a 1,32 m acompañados.
+- **Mickey and the Magician** decía Studio Theater → va en el **Animagique Theater** (la app lo ponía junto a TOGETHER en el mismo teatro, y no puede ser).
+- **Rhythms of the Pride Lands** decía "teatro de Adventureland" → **Frontierland Theatre**.
+- **Royal Banquet** pasa a ⭐ favorito: el PDF de Sofi lo lista y era el único de sus cinco sin la estrella.
+- ⚠️ **Error del PDF de Sofi, no de la app**: dice "Mickey and the Magician: en Disneyland" y el show es en Adventure World. La app está bien.
+
+### Pendiente
+
+1. **Los 20 shows no tienen ficha ni foto** ← lo más grande. Están como secciones de texto (`<h4>`), no como cards: sin foto, sin badges y no se abren desde el mapa. Son 5 en DLP y 15 en DAW (Disney Tales of Magic, Stars on Parade, Disney Cascade of Lights, Stitch Live!, Heroic Welcome…).
+2. **Dos restaurantes con descripción corta**: Silver Spur Steakhouse (167 car) y Stark Factory (184). Los otros 34 están en 262 de mediana.
+3. **Los restaurantes en general** están por debajo de las atracciones (262 vs 412 de mediana).
+4. **Cuatro fotos chicas** que Fer no consiguió mejores: restaurant-hakuna-matata (596×335), au-chalet-de-la-marionnette (649×472), toad-hall-restaurant (689×551), super-diner (800×450). Se dejan.
+5. **Dos fotos huérfanas**: `blue-lagoon.jpg` y `disney-junior.jpg`, de cambios viejos. Preguntar si se borran.
+6. Los restaurantes de **hoteles y Disney Village** no están en el mapa (quedan fuera de los parques). Si se quisieran, haría falta un mapa del resort.
+
+## 📌 Sesión anterior: 2026-07-22
 
 **Sesión 2026-07-22 (viajeros de España no podían abrir la app):** era un bloqueo de ISP, no un bug de la app.
 - **Causa:** `index.html` cargaba supabase-js desde `cdn.jsdelivr.net`, que resuelve a **Cloudflare** (`104.17.207.5` / `104.17.208.5`). Los ISP españoles (Movistar/Vodafone/Orange/Digi) bloquean rangos enteros de Cloudflare por las órdenes anti-piratería de LaLiga.
@@ -71,7 +137,8 @@ Working tree limpio. 64 atracciones (`.atraccion` == `.chevron`). 70 fotos en `/
 | | |
 |---|---|
 | Carpeta local | `C:\proyectos\App Disney Paris\` |
-| Archivo principal | `index.html` (~2500 líneas, todo inline) |
+| Archivo principal | `index.html` (~4400 líneas, todo inline) |
+| Herramientas | `tools/` — generadores del mapa y audits (Python) |
 | Repo GitHub | `fergonz00/disnerd-paris` (rama `main`) |
 | Deploy Netlify | `disnerd-paris.netlify.app` |
 | Dominio público | **`paris.disnerd.com.ar`** (HTTPS activo) |
@@ -103,11 +170,13 @@ Bottom nav: Inicio · Disney · Francia · Panel (oculto si no sos Sofi).
 
 ## Convenciones técnicas críticas
 
-- **Imgur:** `imgur.com/ID` → convertir a `i.imgur.com/ID.jpg`. URLs `imgur.com/a/ID` son álbumes, no sirven.
+- **NADA de hosts externos** (ni CDN de JS ni fotos): España bloquea Cloudflare y Fastly. Todo va al repo. Ver la sesión 2026-07-23.
+- **Fotos nuevas:** a `fotos/`, nombre en kebab-case ASCII. Después correr `python tools/optimizar-fotos.py --aplicar`.
 - **Fotos en acordeones:** `height: auto`, nunca `object-fit: cover` con height fijo (deforma verticales).
 - **Cards de portada:** `object-fit: cover` + misma altura.
 - **Atracciones/lugares:** solo 1 abierto a la vez por tab/día (lógica en `toggleAtraccion` / `toggleLugar`).
-- **`.chevron` count** debe coincidir con **`.atraccion` count** (actualmente 39).
+- **`.chevron` count** debe coincidir con **`.atraccion` count**.
+- ⚠️ Al verificar con regex, usar `<div class="atraccion" onclick` **exacto**: `class=.atraccion.` con comodines cuenta también `atraccion-header` y `atraccion-body` y tapa los errores.
 - **Balance HTML:** todos los tags balanceados. Verificar con Python antes de pushear.
 - **Clases CSS custom:** `.cierre-calido` (WhatsApp en cada pantalla) · `.cafe-tip` (recomendaciones café cerca de lugares).
 
