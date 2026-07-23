@@ -1346,10 +1346,6 @@
     769.2,
     619.8
    ],
-   "Mickey et son Orchestre PhilharMagique": [
-    855.0,
-    548.0
-   ],
    "Discovery Arcade": [
     593.7,
     690.7
@@ -1374,9 +1370,25 @@
     260.6,
     624.3
    ],
-   "Rhythms of The Pride Lands — Lion King": [
+   "Disney Tales of Magic": [
+    556.8,
+    477.1
+   ],
+   "Disney Stars on Parade": [
+    563.5,
+    707.4
+   ],
+   "A Million Splashes of Colour": [
+    557.9,
+    681.3
+   ],
+   "The Lion King: Rhythms of the Pride Lands": [
     161.3,
     587.1
+   ],
+   "Mickey et son Orchestre PhilharMagique": [
+    855.1,
+    547.5
    ]
   },
   "entrada": [
@@ -3297,6 +3309,14 @@
     444.1,
     852.0
    ],
+   "Disney Cascade of Lights": [
+    551.3,
+    333.0
+   ],
+   "A Celebration in Arendelle": [
+    571.1,
+    236.4
+   ],
    "Mickey and the Magician": [
     376.8,
     864.9
@@ -3309,9 +3329,45 @@
     409.0,
     740.5
    ],
-   "A Celebration in Arendelle": [
-    571.1,
-    236.4
+   "Stitch Live!": [
+    388.3,
+    774.7
+   ],
+   "Animation Academy": [
+    420.3,
+    753.6
+   ],
+   "Heroic Welcome": [
+    253.4,
+    518.9
+   ],
+   "Guardians of the Galaxy": [
+    223.0,
+    531.0
+   ],
+   "Warriors of Wakanda": [
+    228.7,
+    560.6
+   ],
+   "Avengers Unite!": [
+    199.2,
+    545.7
+   ],
+   "The Amazing Spider-Man Show": [
+    268.2,
+    604.5
+   ],
+   "Pedestal for Mjolnir Worthiness": [
+    225.3,
+    559.2
+   ],
+   "Disney Princess Cavalcade": [
+    437.8,
+    560.3
+   ],
+   "Musical Moment with Rapunzel and Flynn": [
+    451.9,
+    565.3
    ]
   },
   "entrada": [

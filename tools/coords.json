@@ -234,15 +234,6 @@
   "tipo": "exacto"
  },
  {
-  "pid": "dlp",
-  "tierra": "🚀 Discoveryland",
-  "nombre": "Mickey et son Orchestre PhilharMagique",
-  "lat": 48.8744859,
-  "lon": 2.7798537,
-  "osm": "Mickey's PhilharMagic",
-  "tipo": "exacto"
- },
- {
   "pid": "daw",
   "tierra": "❄️ World of Frozen",
   "nombre": "Frozen Ever After",
@@ -415,47 +406,182 @@
  },
  {
   "pid": "dlp",
-  "tierra": "",
-  "nombre": "Rhythms of The Pride Lands — Lion King",
+  "tierra": "Fantasyland",
+  "nombre": "Disney Tales of Magic",
+  "lat": 48.87318,
+  "lon": 2.77601,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "Main Street U.S.A.",
+  "nombre": "Disney Stars on Parade",
+  "lat": 48.8716,
+  "lon": 2.7782,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "Main Street U.S.A.",
+  "nombre": "A Million Splashes of Colour",
+  "lat": 48.87175,
+  "lon": 2.7779,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "Frontierland",
+  "nombre": "The Lion King: Rhythms of the Pride Lands",
   "lat": 48.870013,
   "lon": 2.772788,
-  "osm": "Frontierland Theater",
-  "tipo": "teatro"
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "Discoveryland",
+  "nombre": "Mickey et son Orchestre PhilharMagique",
+  "lat": 48.87449,
+  "lon": 2.77985,
+  "osm": "show",
+  "tipo": "show"
  },
  {
   "pid": "daw",
-  "tierra": "",
-  "nombre": "Mickey and the Magician",
-  "lat": 48.86816,
-  "lon": 2.77916,
-  "osm": "Animagique Theater",
-  "tipo": "teatro"
+  "tierra": "World of Frozen",
+  "nombre": "Disney Cascade of Lights",
+  "lat": 48.8649,
+  "lon": 2.7747,
+  "osm": "show",
+  "tipo": "show"
  },
  {
   "pid": "daw",
-  "tierra": "",
-  "nombre": "TOGETHER: A Pixar Musical Adventure",
-  "lat": 48.86728,
-  "lon": 2.78021,
-  "osm": "Studio Theater",
-  "tipo": "teatro"
- },
- {
-  "pid": "daw",
-  "tierra": "",
-  "nombre": "Minnie's Dream Factory",
-  "lat": 48.86737,
-  "lon": 2.77821,
-  "osm": "Studio D / Animation Celebration",
-  "tipo": "teatro"
- },
- {
-  "pid": "daw",
-  "tierra": "",
+  "tierra": "World of Frozen",
   "nombre": "A Celebration in Arendelle",
   "lat": 48.86427,
   "lon": 2.77402,
-  "osm": "lago de World of Frozen (al aire libre)",
-  "tipo": "teatro"
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Production Courtyard",
+  "nombre": "Mickey and the Magician",
+  "lat": 48.86816,
+  "lon": 2.77916,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Worlds of Pixar",
+  "nombre": "TOGETHER: A Pixar Musical Adventure",
+  "lat": 48.86728,
+  "lon": 2.78021,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Production Courtyard",
+  "nombre": "Minnie's Dream Factory",
+  "lat": 48.86737,
+  "lon": 2.77821,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Production Courtyard",
+  "nombre": "Stitch Live!",
+  "lat": 48.86755,
+  "lon": 2.7786,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Production Courtyard",
+  "nombre": "Animation Academy",
+  "lat": 48.8675,
+  "lon": 2.77815,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "Heroic Welcome",
+  "lat": 48.86529,
+  "lon": 2.77884,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "Guardians of the Galaxy",
+  "lat": 48.86528,
+  "lon": 2.77923,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "Warriors of Wakanda",
+  "lat": 48.86551,
+  "lon": 2.77931,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "Avengers Unite!",
+  "lat": 48.86531,
+  "lon": 2.77956,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "The Amazing Spider-Man Show",
+  "lat": 48.86595,
+  "lon": 2.77909,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Marvel Avengers Campus",
+  "nombre": "Pedestal for Mjolnir Worthiness",
+  "lat": 48.86549,
+  "lon": 2.77934,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Adventure Way",
+  "nombre": "Disney Princess Cavalcade",
+  "lat": 48.86617,
+  "lon": 2.77703,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
+  "tierra": "Adventure Way",
+  "nombre": "Musical Moment with Rapunzel and Flynn",
+  "lat": 48.86625,
+  "lon": 2.7769,
+  "osm": "show",
+  "tipo": "show"
  }
 ]

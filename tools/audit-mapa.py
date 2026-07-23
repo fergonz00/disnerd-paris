@@ -13,6 +13,16 @@ parser ANTES que de los datos. Por eso el conteo de fichas se imprime siempre.
 """
 import json, os, sys
 from tierras import tierras_de_la_app, dentro
+import json as _json, os as _os
+
+
+def _con_shows(asign):
+    # los shows viven en coords.json con su tierra; el audit los suma a la asignacion
+    cj = _json.load(open(_os.path.join(RAIZ, 'tools', 'coords.json'), encoding='utf-8'))
+    for e in cj:
+        if e.get('tipo') == 'show' and e.get('tierra'):
+            asign.setdefault(e['pid'], {})[e['nombre']] = e['tierra']
+    return asign
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +51,7 @@ def puntos_del_path(d):
 def main():
     sys.stdout.reconfigure(encoding='utf-8')
     mapa = json.load(open(os.path.join(RAIZ, 'tools', 'mapa-lands.json'), encoding='utf-8'))
-    asign = tierras_de_la_app()
+    asign = _con_shows(tierras_de_la_app())
     problemas = 0
 
     for pid, m in mapa.items():

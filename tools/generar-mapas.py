@@ -105,6 +105,13 @@ def main():
     badges_rest = badges
     asign = tierras_de_la_app()
 
+    # Los shows no viven en la solapa Atracciones (van en la solapa Shows), así
+    # que su tierra no sale de tierras_de_la_app: viene de coords.json, donde se
+    # cargó a mano. Y su intensidad es siempre 'blue' (Show).
+    coords = json.load(open(os.path.join(RAIZ, 'tools', 'coords.json'), encoding='utf-8'))
+    tierra_coords = {c['nombre']: c['tierra'] for c in coords if c.get('tierra')}
+    es_show = {c['nombre'] for c in coords if c.get('tipo') == 'show'}
+
     puntos = []
     for e in osm_r['elements']:
         t = e.get('tags', {})
@@ -123,8 +130,10 @@ def main():
         pins = {}
         for n, xy in p['pins'].items():
             bs = badges.get(n, [])
-            pins[n] = {'x': xy[0], 'y': xy[1], 'land': de.get(n, ''),
-                       'int': intensidad(n, alturas, badges),
+            land = de.get(n) or tierra_coords.get(n, '')
+            inten = 'blue' if n in es_show else intensidad(n, alturas, badges)
+            pins[n] = {'x': xy[0], 'y': xy[1], 'land': land,
+                       'int': inten,
                        'must': 1 if any('⭐' in b for b in bs) else 0,
                        'show': 1 if any('Show' in b for b in bs) else 0}
 
