@@ -489,7 +489,9 @@
   .mapa-chip.activo { background: var(--celeste-light); border-color: var(--celeste); font-weight: 700; }
   .mapa-detalle { background: var(--blanco); border-radius: 1.2rem; padding: 1rem;
     box-shadow: 0 2px 12px var(--sombra); min-height: 90px; scroll-margin-top: 60px; }
-  .mapa-detalle img { width: 100%; height: auto; border-radius: 0.8rem; margin-bottom: 0.6rem; }
+  .mapa-detalle .md-foto { width: 100%; height: auto; border-radius: 0.8rem;
+    margin: 0.8rem 0 0.5rem; display: block; }
+  .mapa-detalle p.md-desc { margin: 0.3rem 0 0; }
   .mapa-detalle .md-land { font-size: 0.66rem; letter-spacing: 2px; text-transform: uppercase;
     font-weight: 700; color: var(--dorado); }
   .mapa-detalle h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
@@ -4133,13 +4135,13 @@
     // La ficha NO se duplica: se lee de la card que ya existe en el HTML.
     const f = _capa[pid] === 'rest' ? fichaResto(nombre) : fichaDe(pid, nombre);
     if(!f){ det.innerHTML = `${aviso}<h4>${nombre}</h4>`; return; }
-    const foto = f.img ? `<img src="${f.img}" loading="lazy" onerror="this.style.display='none'">` : '';
+    const foto = f.img ? `<img class="md-foto" src="${f.img}" alt="${f.nombre}" onerror="this.style.display='none'">` : '';
     const badges = f.badges && f.badges.length
       ? `<div class="badges">${f.badges.map(b => `<span class="badge">${b}</span>`).join('')}</div>` : '';
     const volver = window._volverEstrat === pid
       ? `<button class="md-volver-estrat" onclick="estratVolver()">← Volver a la estrategia</button>` : '';
-    det.innerHTML = `${aviso}${foto}<div class="md-land">${f.tierra || ''}</div>
-      <h4>${f.nombre}</h4>${badges}<p>${f.desc}</p>${volver}`;
+    det.innerHTML = `${aviso}<div class="md-land">${f.tierra || ''}</div>
+      <h4>${f.nombre}</h4>${badges}${foto}<p class="md-desc">${f.desc}</p>${volver}`;
     det.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
@@ -4314,10 +4316,12 @@
     const btn = document.querySelector(`#${PANTALLA_DE[pid]} [data-tab-mapa]`);
     if(btn) cambiarTab(btn, d + '-mapa');
     window._volverEstrat = pid;
-    window._mapaSolo = nombre;              // se setea ANTES para que la ficha muestre el aviso
-    // si el item es un lugar para comer, se cambia a esa capa (igual que Orlando)
+    // Primero la capa: si el item es un lugar para comer hay que cambiarla, y
+    // mapaCapa() limpia _mapaSolo. Si se setea antes, lo pisa y el mapa no se
+    // aisla ni aparece el aviso "solo esta atraccion".
     const quiere = tipo === 'rest' ? 'rest' : 'atr';
     if(_capa[pid] !== quiere) mapaCapa(quiere);
+    window._mapaSolo = nombre;
     mapaSel(nombre);
     _mapaSoloPins(nombre);
     document.getElementById(d + '-mapa').scrollIntoView({ block: 'start' });
