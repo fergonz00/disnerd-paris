@@ -1,158 +1,183 @@
-FOTOS QUE HAY QUE CAMBIAR O AGREGAR  ---  App Disney Paris
-========================================================================
+FOTOS QUE NECESITO  ---  App Disney Paris
+==========================================================================
 
 DONDE GUARDARLAS:  C:\proyectos\App Disney Paris\fotos\
-EL NOMBRE TIENE QUE SER EXACTO, con los guiones incluidos. Si lo cambias, la
-app no la encuentra y la ficha queda sin foto.
 
-Si lo que bajaste es .png o .webp: NO alcanza con renombrarlo a .jpg. Dejalo
-como esta y avisame, que yo lo convierto.
-
-------------------------------------------------------------------------
-GRUPO 1 - VERTICALES: quedan gigantes, ocupan media pantalla del celular
-------------------------------------------------------------------------
-BUSCAR HORIZONTALES (apaisadas). En Google Imagenes:
+EL NOMBRE TIENE QUE SER EXACTO, con los guiones. Si lo cambias, la ficha
+queda sin foto.
+Buscar HORIZONTALES y de al menos 1200px de ancho. En Google Imagenes:
    Herramientas -> Relacion de aspecto -> Panoramica
-Ideal 1600x1000 o parecido.
-
-[ ] saint-sulpice.jpg
-      que es    : Iglesia de Saint-Sulpice
-      donde sale: Guia Francia
-      problema  : ocupa 513px de alto en el celular (330x495)  + ADEMAS ESTA BORROSA
-      buscar    : Saint-Sulpice church Paris facade
-
-[ ] saint-germain.jpg
-      que es    : Abadía de Saint-Germain-des-Prés
-      donde sale: Guia Francia
-      problema  : ocupa 513px de alto en el celular (3754x5631)
-      buscar    : Saint-Germain-des-Pres abbey exterior
-
-[ ] bastilla.jpg
-      que es    : Plaza de la Bastilla
-      donde sale: Guia Francia
-      problema  : ocupa 487px de alto en el celular (719x1024)  + ADEMAS ESTA BORROSA
-      buscar    : Place de la Bastille aerial
-
-[ ] torre-eiffel.jpg
-      que es    : Torre Eiffel
-      donde sale: Guia Francia
-      problema  : ocupa 456px de alto en el celular (960x1280)
-      buscar    : Eiffel Tower Trocadero panoramic
-
-[ ] saint-paul.jpg
-      que es    : Parroquia Saint-Paul Saint-Louis
-      donde sale: Guia Francia
-      problema  : ocupa 456px de alto en el celular (1498x1996)
-      buscar    : Eglise Saint-Paul-Saint-Louis Marais
-
-[ ] pirates-of-the-caribbean.jpg
-      que es    : Pirates of the Caribbean
-      donde sale: Disneyland Park
-      problema  : ocupa 456px de alto en el celular (960x1280)
-      buscar    : Pirates of the Caribbean Disneyland Paris ride
-
-[ ] moulin-rouge.jpg
-      que es    : Moulin Rouge
-      donde sale: Guia Francia
-      problema  : ocupa 456px de alto en el celular (960x1280)
-      buscar    : Moulin Rouge Paris night
-
-[ ] les-voyages-de-pinocchio.jpg
-      que es    : Les Voyages de Pinocchio
-      donde sale: Disneyland Park
-      problema  : ocupa 456px de alto en el celular (853x1138)  + ADEMAS ESTA BORROSA
-      buscar    : Les Voyages de Pinocchio Disneyland Paris
-
-[ ] jardines-de-versalles.jpg
-      que es    : Jardines de Versalles
-      donde sale: Guia Francia
-      problema  : ocupa 456px de alto en el celular (960x1280)
-      buscar    : Versailles gardens aerial
-
-------------------------------------------------------------------------
-GRUPO 2 - PIXELADAS: se ven borrosas porque son chicas
-------------------------------------------------------------------------
-BUSCAR GRANDES, minimo 1200px de ancho. En Google Imagenes:
    Herramientas -> Tamano -> Grande
+Si bajas un .png o .webp, dejalo asi y avisame que yo lo convierto.
 
-[ ] place-du-tertre.jpg
-      que es    : Place du Tertre
-      donde sale: Guia Francia
-      problema  : mide 261x195, se ve pixelada
-      buscar    : Place du Tertre Montmartre artists
+--------------------------------------------------------------------------
+GRUPO 1 - ATRACCIONES NUEVAS (7)
+--------------------------------------------------------------------------
+Fichas que la app no tiene y estan en el listado oficial de Disney.
 
-[ ] saint-eustache.jpg
-      que es    : Iglesia de Saint-Eustache
-      donde sale: Guia Francia
-      problema  : mide 330x247, se ve pixelada
-      buscar    : Eglise Saint-Eustache Paris
+ 1. [ ] les-tapis-volants-flying-carpets-over-agrabah.jpg
+        que es : Les Tapis Volants - Flying Carpets Over Agrabah
+        zona   : DAW · Toon Studio
+        buscar : Flying Carpets Over Agrabah Disneyland Paris
 
-[ ] le-passage-enchante-daladdin.jpg
-      que es    : Le Passage Enchanté d'Aladdin
-      donde sale: Disneyland Park
-      problema  : mide 500x298, se ve pixelada
-      buscar    : Passage Enchante Aladdin Disneyland Paris
+ 2. [ ] discovery-arcade.jpg
+        que es : Discovery Arcade
+        zona   : DLP · Main Street
+        buscar : Discovery Arcade Disneyland Paris Main Street
 
-[ ] plaza-gardens.jpg
-      que es    : Plaza Gardens Restaurant
-      donde sale: Restaurants
-      problema  : mide 500x333, se ve pixelada
-      buscar    : Plaza Gardens Restaurant Disneyland Paris
+ 3. [ ] liberty-arcade.jpg
+        que es : Liberty Arcade
+        zona   : DLP · Main Street
+        buscar : Liberty Arcade Disneyland Paris Main Street
 
-[ ] opera-garnier.jpg
-      que es    : Ópera Garnier
-      donde sale: Guia Francia
-      problema  : mide 515x340, se ve pixelada
-      buscar    : Opera Garnier Paris facade
+ 4. [ ] main-street-vehicles.jpg
+        que es : Main Street Vehicles
+        zona   : DLP · Main Street
+        buscar : Main Street Vehicles Disneyland Paris
 
-[ ] champ-de-mars.jpg
-      que es    : Champ de Mars
-      donde sale: Guia Francia
-      problema  : mide 630x405, se ve pixelada
-      buscar    : Champ de Mars Paris
+ 5. [ ] horse-drawn-streetcars.jpg
+        que es : Horse-Drawn Streetcars
+        zona   : DLP · Main Street
+        buscar : Horse Drawn Streetcars Disneyland Paris
 
-[ ] panteon.jpg
-      que es    : Panteón
-      donde sale: Guia Francia
-      problema  : mide 669x446, se ve pixelada
-      buscar    : Pantheon Paris exterior
+ 6. [ ] rustler-roundup-shootin-gallery.jpg
+        que es : Rustler Roundup Shootin' Gallery
+        zona   : DLP · Frontierland
+        buscar : Rustler Roundup Shootin Gallery Disneyland Paris
 
-[ ] rue-rosiers.jpg
-      que es    : Rue des Rosiers
-      donde sale: Guia Francia
-      problema  : mide 800x600, se ve pixelada
-      buscar    : Rue des Rosiers Marais Paris
+ 7. [ ] frontierland-playground.jpg
+        que es : Frontierland Playground
+        zona   : DLP · Frontierland
+        buscar : Frontierland Playground Disneyland Paris
 
-[ ] sacre-coeur.jpg
-      que es    : Basílica del Sacré-Cœur
-      donde sale: Guia Francia
-      problema  : mide 800x540, se ve pixelada
-      buscar    : Sacre-Coeur basilica Montmartre
+--------------------------------------------------------------------------
+GRUPO 2 - LUGARES PARA COMER NUEVOS (17)
+--------------------------------------------------------------------------
+Sin kioscos ni carritos: solo servicio en mesa y servicio rapido, segun
+la clasificacion del propio sitio de Disney.
 
-[ ] le-chateau-de-la-belle-au-bois-dormant.jpg
-      que es    : Le Château de la Belle au Bois Dormant
-      donde sale: Disneyland Park
-      problema  : mide 802x532, se ve pixelada
-      buscar    : Chateau Belle au Bois Dormant Disneyland Paris
+ 8. [ ] au-chalet-de-la-marionnette.jpg
+        que es : Au Chalet de la Marionnette
+        zona   : DLP · Fantasyland
+        buscar : Au Chalet de la Marionnette Disneyland Paris
 
-[ ] dumbo-the-flying-elephant.jpg
-      que es    : Dumbo the Flying Elephant
-      donde sale: Disneyland Park
-      problema  : mide 826x550, se ve pixelada
-      buscar    : Dumbo Flying Elephant Disneyland Paris
+ 9. [ ] cable-car-bake-shop.jpg
+        que es : Cable Car Bake Shop
+        zona   : DLP · Main Street
+        buscar : Cable Car Bake Shop Disneyland Paris
 
-------------------------------------------------------------------------
-GRUPO 3 - FALTA (no existe ninguna)
-------------------------------------------------------------------------
+10. [ ] cafe-hyperion.jpg
+        que es : Cafe Hyperion
+        zona   : DLP · Discoveryland
+        buscar : Cafe Hyperion Disneyland Paris
 
-[ ] muro-del-te-amo.jpg
-      que es    : Muro del "Te Amo" (Le Mur des Je t'aime)
-      donde sale: Guia Francia - Dia 3 Montmartre
-      problema  : imgur borro la que habia, la ficha quedo sin foto
-      buscar    : Le Mur des Je t aime Montmartre
+11. [ ] casa-de-coco.jpg
+        que es : Casa de Coco
+        zona   : DLP · Frontierland
+        buscar : Casa de Coco Disneyland Paris
 
-========================================================================
-TOTAL: 9 verticales + 11 pixeladas + 1 que falta = 21
+12. [ ] caseys-corner.jpg
+        que es : Casey's Corner
+        zona   : DLP · Main Street
+        buscar : Casey's Corner Disneyland Paris
 
-No hace falta que las consigas todas juntas. Con las que dejes,
-corro 'python tools/audit-fotos.py' y te confirmo cuales quedaron OK.
+13. [ ] colonel-hathis-outpost-restaurant.jpg
+        que es : Colonel Hathi's Outpost Restaurant
+        zona   : DLP · Adventureland
+        buscar : Colonel Hathi's Outpost Restaurant Disneyland Paris
+
+14. [ ] cowboy-cookout-barbecue.jpg
+        que es : Cowboy Cookout Barbecue
+        zona   : DLP · Frontierland
+        buscar : Cowboy Cookout Barbecue Disneyland Paris
+
+15. [ ] last-chance-cafe.jpg
+        que es : Last Chance Cafe
+        zona   : DLP · Frontierland
+        buscar : Last Chance Cafe Disneyland Paris
+
+16. [ ] market-house-deli.jpg
+        que es : Market House Deli
+        zona   : DLP · Main Street
+        buscar : Market House Deli Disneyland Paris
+
+17. [ ] pizzeria-bella-notte.jpg
+        que es : Pizzeria Bella Notte
+        zona   : DLP · Fantasyland
+        buscar : Pizzeria Bella Notte Disneyland Paris
+
+18. [ ] restaurant-hakuna-matata.jpg
+        que es : Restaurant Hakuna Matata
+        zona   : DLP · Adventureland
+        buscar : Restaurant Hakuna Matata Disneyland Paris
+
+19. [ ] the-lucky-nugget-saloon.jpg
+        que es : The Lucky Nugget Saloon
+        zona   : DLP · Frontierland
+        buscar : The Lucky Nugget Saloon Disneyland Paris
+
+20. [ ] toad-hall-restaurant.jpg
+        que es : Toad Hall Restaurant
+        zona   : DLP · Fantasyland
+        buscar : Toad Hall Restaurant Disneyland Paris
+
+21. [ ] victorias-home-style-restaurant.jpg
+        que es : Victoria's Home-Style Restaurant
+        zona   : DLP · Main Street
+        buscar : Victoria's Home-Style Restaurant Disneyland Paris
+
+22. [ ] nordic-crowns-tavern.jpg
+        que es : Nordic Crowns Tavern
+        zona   : DAW · World of Frozen
+        buscar : Nordic Crowns Tavern Disneyland Paris
+
+23. [ ] super-diner.jpg
+        que es : Super Diner
+        zona   : DAW · Production Courtyard
+        buscar : Super Diner Disneyland Paris
+
+24. [ ] the-hollywood-gardens-restaurant.jpg
+        que es : The Hollywood Gardens Restaurant
+        zona   : DAW · Production Courtyard
+        buscar : The Hollywood Gardens Restaurant Disneyland Paris
+
+--------------------------------------------------------------------------
+GRUPO 3 - REEMPLAZAR, SE VEN PIXELADAS (5)
+--------------------------------------------------------------------------
+Ya estan en la app pero son chicas. Mismo nombre, se pisan.
+
+25. [ ] jardines-de-versalles.jpg
+        que es : Jardines de Versalles
+        zona   : Guia Francia
+        problema: mide 617x324, se ve pixelada
+        buscar : Versailles gardens aerial
+
+26. [ ] panteon.jpg
+        que es : Panteon
+        zona   : Guia Francia
+        problema: mide 669x446, se ve pixelada
+        buscar : Pantheon Paris exterior
+
+27. [ ] torre-eiffel.jpg
+        que es : Torre Eiffel
+        zona   : Guia Francia
+        problema: mide 677x453, se ve pixelada
+        buscar : Eiffel Tower Trocadero panoramic
+
+28. [ ] saint-germain.jpg
+        que es : Abadia Saint-Germain-des-Pres
+        zona   : Guia Francia
+        problema: mide 678x452, se ve pixelada
+        buscar : Saint-Germain-des-Pres abbey exterior
+
+29. [ ] saint-paul.jpg
+        que es : Parroquia Saint-Paul Saint-Louis
+        zona   : Guia Francia
+        problema: mide 678x452, se ve pixelada
+        buscar : Eglise Saint-Paul-Saint-Louis Marais
+
+==========================================================================
+TOTAL: 7 atracciones + 17 para comer + 5 a reemplazar = 29
+
+No hace falta que las consigas todas juntas. Con las que dejes, corro
+el audit y te digo cuales quedaron OK.
