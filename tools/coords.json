@@ -412,5 +412,50 @@
   "lon": 2.7741939,
   "osm": "Frontierland Playground",
   "tipo": "manual"
+ },
+ {
+  "pid": "dlp",
+  "tierra": "",
+  "nombre": "Rhythms of The Pride Lands — Lion King",
+  "lat": 48.870013,
+  "lon": 2.772788,
+  "osm": "Frontierland Theater",
+  "tipo": "teatro"
+ },
+ {
+  "pid": "daw",
+  "tierra": "",
+  "nombre": "Mickey and the Magician",
+  "lat": 48.86816,
+  "lon": 2.77916,
+  "osm": "Animagique Theater",
+  "tipo": "teatro"
+ },
+ {
+  "pid": "daw",
+  "tierra": "",
+  "nombre": "TOGETHER: A Pixar Musical Adventure",
+  "lat": 48.86728,
+  "lon": 2.78021,
+  "osm": "Studio Theater",
+  "tipo": "teatro"
+ },
+ {
+  "pid": "daw",
+  "tierra": "",
+  "nombre": "Minnie's Dream Factory",
+  "lat": 48.86737,
+  "lon": 2.77821,
+  "osm": "Studio D / Animation Celebration",
+  "tipo": "teatro"
+ },
+ {
+  "pid": "daw",
+  "tierra": "",
+  "nombre": "A Celebration in Arendelle",
+  "lat": 48.86427,
+  "lon": 2.77402,
+  "osm": "lago de World of Frozen (al aire libre)",
+  "tipo": "teatro"
  }
 ]
