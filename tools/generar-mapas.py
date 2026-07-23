@@ -33,6 +33,18 @@ LEYENDA = {'red': 'Mucha adrenalina', 'yellow': 'Intensidad media',
            'green': 'Familia', 'blue': 'Show'}
 COLOR = {'red': '#e8958a', 'yellow': '#f0c97a', 'green': '#7ec8a0', 'blue': '#6baed6'}
 
+# Igual que Orlando: la capa de comida se filtra por CON / SIN reserva.
+# rr = se reserva (servicio en mesa o buffet) · rl = se entra y listo.
+# La clasificacion sale de la web oficial de Disneyland Paris, no se estima.
+COLOR_COMIDA = {'rr': '#c9a227', 'rl': '#e8934a'}
+RESERVA = {
+    'Agrabah Café': 'rr', 'Auberge de Cendrillon': 'rr', 'Captain Jack': 'rr',
+    'Silver Spur Steakhouse': 'rr', 'The Lucky Nugget Saloon': 'rr',
+    "Walt's — An American Restaurant": 'rr', 'Plaza Gardens Restaurant': 'rr',
+    'Royal Banquet': 'rr',
+    'Bistrot Chez Rémy': 'rr', 'PYM Kitchen': 'rr', 'The Regal View Restaurant': 'rr',
+}
+
 
 def norm(s):
     s = unicodedata.normalize('NFD', s)
@@ -129,6 +141,7 @@ def main():
             x, y = m['svg'](q['lat'], q['lon'])
             bs = badges_rest.get(r, [])
             food[r] = {'x': x, 'y': y, 'osm': q['nombre'],
+                       'res': RESERVA.get(r, 'rl'),
                        'fav': 1 if any('⭐' in b for b in bs) else 0,
                        'per': 1 if any('personaje' in b.lower() or 'princesa' in b.lower() for b in bs) else 0}
 
@@ -137,7 +150,9 @@ def main():
         for v in pins.values():
             cuenta[v['int']] = cuenta.get(v['int'], 0) + 1
         print(f"  intensidad: " + ', '.join(f"{LEYENDA[k]}={v}" for k, v in sorted(cuenta.items())))
-        print(f"  lugares para comer: {len(food)}/{len(zonas.get(zona, []))}")
+        rr = sum(1 for v in food.values() if v['res'] == 'rr')
+        print(f"  lugares para comer: {len(food)}/{len(zonas.get(zona, []))}"
+              f"   ({rr} con reserva, {len(food)-rr} sin reserva)")
         for r, v in food.items():
             extra = '' if v['osm'] == r else f"   (OSM: {v['osm']})"
             print(f"     {r}{extra}")
@@ -152,6 +167,7 @@ def main():
 
     js = ('const MAPA_INT = ' + json.dumps(COLOR, ensure_ascii=False, separators=(',', ':')) + ';\n'
           '  const MAPA_INT_TXT = ' + json.dumps(LEYENDA, ensure_ascii=False, separators=(',', ':')) + ';\n'
+          '  const MAPA_FOOD_COLOR = ' + json.dumps(COLOR_COMIDA, ensure_ascii=False, separators=(',', ':')) + ';\n'
           '  const MAPAS = ' + json.dumps(salida, ensure_ascii=False, separators=(',', ':')) + ';')
     open(os.path.join(RAIZ, 'tools', '_mapas.js'), 'w', encoding='utf-8').write(js)
     print(f"\n-> tools/_mapas.js  ({len(js)/1024:.0f} KB)")
