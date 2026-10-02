@@ -3858,6 +3858,8 @@
           <input type="text" id="nuevo-nombre" placeholder="Nombre (se muestra en la app)">
           <input type="text" id="nuevo-usuario" placeholder="Usuario">
           <input type="password" id="nuevo-clave" placeholder="Contraseña">
+          <label style="font-size:0.85rem;color:var(--texto-suave);margin-top:0.3rem">Fecha de vuelta (15 días después se desactiva solo):</label>
+          <input type="date" id="nuevo-vuelta">
           <button class="btn-agregar" onclick="agregarCliente()">+ Agregar cliente</button>
           <div id="msg-agregar"></div>
         </div>
@@ -4641,7 +4643,7 @@
       <div class="cliente-row" style="${c.activo===false?'opacity:0.5':''}">
         <div class="cliente-info">
           <div class="nombre">${c.nombre}${c.activo===false?' <span style="font-size:0.7rem;color:#c0392b">⛔ desactivado</span>':''}</div>
-          <div class="usuario">@${c.usuario}</div>
+          <div class="usuario">@${c.usuario} · vuelta <input type="date" value="${c.fecha_checkout||''}" onchange="setVuelta(${c.id},this.value)" style="font-size:0.75rem;padding:0.1rem 0.3rem;border:1px solid #e0d5c5;border-radius:0.4rem">${!c.fecha_checkout&&c.activo!==false&&c.usuario!=='sofi'?' ⚠️':''}</div>
         </div>
         ${c.usuario !== 'sofi' ? `<div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:flex-end"><button class="btn-eliminar" style="background:${c.activo===false?'#27ae60':'#95a5a6'};color:#fff" onclick="toggleActivo(${c.id},${c.activo===false})">${c.activo===false?'Reactivar':'Desactivar'}</button><button class="btn-eliminar" onclick="eliminarCliente(${c.id})">Eliminar</button></div>` : '<span style="font-size:0.75rem;color:var(--dorado)">admin</span>'}
       </div>
@@ -4651,8 +4653,30 @@
 
   async function toggleActivo(id, activo){
     if(!activo && !confirm('¿Desactivar este cliente? Ya no va a poder entrar a la app. Lo podés reactivar cuando quieras.')) return;
-    await sb.from('disnerd_paris_users').update({activo}).eq('id', id);
+    const cambios = {activo};
+    if(activo){
+      // Si se reactiva con la vuelta vieja, la tarea de las 6am lo vuelve a desactivar.
+      const v = pedirVuelta();
+      if(v === undefined) return;
+      cambios.fecha_checkout = v;
+    }
+    await sb.from('disnerd_paris_users').update(cambios).eq('id', id);
     cargarClientes();
+  }
+
+  async function setVuelta(id, fecha){
+    await sb.from('disnerd_paris_users').update({fecha_checkout: fecha || null}).eq('id', id);
+    cargarClientes();
+  }
+
+  // Fecha de vuelta del nuevo viaje al reactivar. undefined = cancelo, null = sin fecha.
+  function pedirVuelta(){
+    const v = prompt('Fecha de vuelta del nuevo viaje (DD/MM/AAAA).\nQuince días después se desactiva solo. Si la dejás vacía, queda activo sin fecha.', '');
+    if(v === null) return undefined;
+    if(!v.trim()) return null;
+    const m = v.trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if(!m){ alert('No entendí la fecha. Escribila así: 25/12/2026'); return undefined; }
+    return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
   }
 
   async function eliminarCliente(id){
@@ -4668,12 +4692,14 @@
     const msg = document.getElementById('msg-agregar');
     msg.textContent = '';
     if(!nombre||!usuario||!clave){ msg.className='msg-err'; msg.textContent='Completá todos los campos'; return; }
-    const { error } = await sb.from('disnerd_paris_users').insert([{nombre, usuario, clave}]);
+    const fecha_checkout = document.getElementById('nuevo-vuelta').value || null;
+    const { error } = await sb.from('disnerd_paris_users').insert([{nombre, usuario, clave, fecha_checkout}]);
     if(error){ msg.className='msg-err'; msg.textContent='Error: usuario ya existe'; return; }
     msg.className='msg-ok'; msg.textContent='¡Cliente agregado!';
     document.getElementById('nuevo-nombre').value='';
     document.getElementById('nuevo-usuario').value='';
     document.getElementById('nuevo-clave').value='';
+    document.getElementById('nuevo-vuelta').value='';
     cargarClientes();
     setTimeout(()=>msg.textContent='', 3000);
   }
