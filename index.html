@@ -3934,6 +3934,10 @@
       document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos';
       return;
     }
+    if(data.activo === false){
+      document.getElementById('login-error').textContent = 'Tu acceso a la app ya terminó 💛 Si volvés a viajar, escribile a Sofi y te lo reactiva.';
+      return;
+    }
     usuarioActual = data;
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
@@ -4630,16 +4634,25 @@
   async function cargarClientes(){
     const { data } = await sb.from('disnerd_paris_users').select('*').order('id');
     if(!data){ document.getElementById('lista-clientes').textContent='Error al cargar'; return; }
-    const html = data.map(c => `
-      <div class="cliente-row">
+    // activos primero; los desactivados quedan abajo, apagados
+    data.sort((a,b) => (a.activo===false) - (b.activo===false));
+    const inactivos = data.filter(c => c.activo===false).length;
+    const html = (inactivos ? `<p style="font-size:0.75rem;color:var(--texto-suave);text-align:center;margin:0 0 0.5rem">${data.length-inactivos} activos · ${inactivos} desactivados (abajo)</p>` : '') + data.map(c => `
+      <div class="cliente-row" style="${c.activo===false?'opacity:0.5':''}">
         <div class="cliente-info">
-          <div class="nombre">${c.nombre}</div>
+          <div class="nombre">${c.nombre}${c.activo===false?' <span style="font-size:0.7rem;color:#c0392b">⛔ desactivado</span>':''}</div>
           <div class="usuario">@${c.usuario}</div>
         </div>
-        ${c.usuario !== 'sofi' ? `<button class="btn-eliminar" onclick="eliminarCliente(${c.id})">Eliminar</button>` : '<span style="font-size:0.75rem;color:var(--dorado)">admin</span>'}
+        ${c.usuario !== 'sofi' ? `<div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:flex-end"><button class="btn-eliminar" style="background:${c.activo===false?'#27ae60':'#95a5a6'};color:#fff" onclick="toggleActivo(${c.id},${c.activo===false})">${c.activo===false?'Reactivar':'Desactivar'}</button><button class="btn-eliminar" onclick="eliminarCliente(${c.id})">Eliminar</button></div>` : '<span style="font-size:0.75rem;color:var(--dorado)">admin</span>'}
       </div>
     `).join('');
     document.getElementById('lista-clientes').innerHTML = html;
+  }
+
+  async function toggleActivo(id, activo){
+    if(!activo && !confirm('¿Desactivar este cliente? Ya no va a poder entrar a la app. Lo podés reactivar cuando quieras.')) return;
+    await sb.from('disnerd_paris_users').update({activo}).eq('id', id);
+    cargarClientes();
   }
 
   async function eliminarCliente(id){
