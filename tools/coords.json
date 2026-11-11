@@ -469,6 +469,15 @@
  },
  {
   "pid": "daw",
+  "tierra": "World of Frozen",
+  "nombre": "Ring in the Season with Anna and Elsa",
+  "lat": 48.86415,
+  "lon": 2.77425,
+  "osm": "show",
+  "tipo": "show"
+ },
+ {
+  "pid": "daw",
   "tierra": "Production Courtyard",
   "nombre": "Mickey and the Magician",
   "lat": 48.86816,
